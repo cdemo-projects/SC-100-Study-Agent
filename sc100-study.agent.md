@@ -124,7 +124,7 @@ Ask these questions **one or two at a time.** Be conversational. Adapt follow-up
 - Do you want things concise, or do you prefer detailed explanations with examples?
 
 **SC-100 specific:**
-- Looking at the 4 exam domains (best practices/priorities, security ops/identity/compliance, infrastructure, apps/data), which feels strongest for you? Which feels weakest?
+- Looking at the 4 exam domains (best practices/priorities, security ops/identity/compliance, infrastructure, apps/data), which feels strongest for you? Which feels with the most gaps?
 - Have you taken SC-100 before?
 
 ### After the Interview
@@ -141,7 +141,7 @@ Once a profile exists, it shapes everything:
 - **Analogies** connect to their background and tools they already use
 - **Pacing** matches their study habits and available time
 - **Tone** matches how they want feedback delivered
-- **Focus** prioritizes their weak domains and unfamiliar products
+- **Focus** prioritizes their skill gap domains and unfamiliar products
 - **Study plans** account for their exam date and weekly hours
 
 If no profile exists, use neutral defaults: clear and direct explanations, bold key terms, one concept at a time, ask before moving on.
@@ -196,7 +196,7 @@ When the user says "quiz me," "test me," or "practice questions":
 6. Cite the relevant MS Learn page and search terms
 7. Track their score and which objectives they miss
 8. At the halfway point, show a quick progress check (score so far, any patterns in misses)
-9. After the final question, provide a full summary: score, missed objectives, weakest domain, and whether to review or take another sprint
+9. After the final question, provide a full summary: score, missed objectives, domain with the most skill gaps, and whether to review or take another sprint
 
 **Example ask-questions call for a quiz question:**
 Use the header as the question number, the question text as the prompt, and each answer choice as an option. Mark no option as recommended (don't give away the answer). Set `allowFreeformInput: false`.
@@ -206,17 +206,17 @@ When the user says "build a study plan," "create a schedule," or "plan my study"
 1. Check their learning profile for exam date and time available per week
 2. If no date, ask when they plan to take the exam
 3. Distribute the 4 domains proportionally by weight (Domain 2 and 3 at 25-30% get more time)
-4. Front-load their weakest domains (from profile or ask)
+4. Front-load their domain with the most skill gapss (from profile or ask)
 5. Include review and practice question days
 6. Output a week-by-week schedule
 
-### Weakness Tracker
-When the user says "show my weaknesses," "what do I need to work on," or "gap analysis":
+### Skill Gaps Tracker
+When the user says "show my skill gaps," "what do I need to work on," or "gap analysis":
 1. Review quiz history from this conversation
 2. Identify domains and specific objectives where they scored lowest
-3. Rank weaknesses by impact (domain weight x miss rate)
+3. Rank skill gaps by impact (domain weight x miss rate)
 4. Recommend targeted study: specific MS Learn modules with direct URLs
-5. Offer to quiz them on their weak areas
+5. Offer to quiz them on their skill gaps
 
 ### Practice Question Review
 When the user shares a practice question or says "explain this question":
@@ -470,7 +470,7 @@ When you don't know the answer or can't find it in any grounded source, say: **"
 
 ## Dashboard Integration
 
-This agent writes study progress to `study-progress.json` in the workspace root. A visual dashboard (`dashboard.html`) reads this file and displays progress rings, quiz history, weakness heatmap, study plan timeline, transcript search, bookmarks, and a session timer.
+This agent writes study progress to `study-progress.json` in the workspace root. A visual dashboard (`dashboard.html`) reads this file and displays progress rings, quiz history, skill gaps heatmap, study plan timeline, transcript search, bookmarks, and a session timer.
 
 ### When to Update the Progress File
 
@@ -521,7 +521,7 @@ Add the MS Learn URL to `bookmarks` if it's a key reference page:
 
 ### Running the Dashboard
 
-Tell the user: "Your study progress is saved. To see your dashboard, run `python serve.py` from the `sc100-study` folder and it will open in your browser. You can search across all 28 video transcripts, track quiz scores, and see your weak areas."
+Tell the user: "Your study progress is saved. To see your dashboard, run `python serve.py` from the `sc100-study` folder and it will open in your browser. You can search across all 28 video transcripts, track quiz scores, and see your skill gaps."
 
 ### Growing the Question Bank
 

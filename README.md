@@ -13,7 +13,7 @@ This agent helps you study for SC-100 by combining AI-powered teaching with live
 | **Teach** | Ask about any concept | Explains concepts with MS Learn references and search guidance |
 | **Quiz** | "quiz me" / "test me" | Scenario-based questions matching the exam's architect-level style |
 | **Study Plan** | "build a study plan" | Week-by-week schedule based on your exam date and available time |
-| **Weakness Tracker** | "show my weaknesses" | Gap analysis from quiz history, ranked by domain weight |
+| **Skill Gaps Tracker** | "show my skill gaps" | Gap analysis from quiz history, ranked by domain weight |
 | **Practice Question Review** | "explain this question" | Breaks down why each answer is right or wrong |
 | **MS Learn Navigation** | "help me search" | Teaches exact search terms and URL patterns for exam day |
 
@@ -36,11 +36,51 @@ Every answer cites its source. You can ask "show me your sources" at any time to
 
 Passing score: **700**
 
+## Prerequisites
+
+- [VS Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions installed
+- A GitHub Copilot subscription (individual, business, or enterprise)
+- Python 3.10+ (only needed for the dashboard and transcript search)
+- [Git](https://git-scm.com/) (to clone the repo)
+
 ## Setup
 
-### 1. Install MCP Servers
+### 1. Clone the Repo
 
-Create or edit your MCP config file:
+```bash
+git clone https://github.com/cdemo-projects/sc100-study-coach.git
+cd sc100-study-coach
+```
+
+Or download the ZIP from the green **Code** button on GitHub and extract it.
+
+### 2. Install the Agent
+
+Copy the agent file to your VS Code user prompts folder. This is what makes `@sc100-study` available in Copilot Chat.
+
+**Windows (PowerShell):**
+```powershell
+# For VS Code
+Copy-Item "sc100-study.agent.md" "$env:APPDATA\Code\User\prompts\"
+
+# For VS Code Insiders
+Copy-Item "sc100-study.agent.md" "$env:APPDATA\Code - Insiders\User\prompts\"
+```
+
+**macOS/Linux:**
+```bash
+# For VS Code
+cp sc100-study.agent.md ~/.config/Code/User/prompts/
+
+# For VS Code Insiders
+cp sc100-study.agent.md ~/.config/Code\ -\ Insiders/User/prompts/
+```
+
+If the `prompts` folder doesn't exist, create it first.
+
+### 3. Set Up MCP Servers
+
+These give the agent live access to Microsoft documentation. Create or edit your MCP config file:
 - **Windows:** `%APPDATA%\Code\User\mcp.json` (or `Code - Insiders` for Insiders)
 - **macOS/Linux:** `~/.config/Code/User/mcp.json`
 
@@ -61,21 +101,17 @@ Create or edit your MCP config file:
 
 The **Azure MCP server** is built into VS Code with the [Azure Tools extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
 
-### 2. Install the Agent
+Restart VS Code after adding the servers.
 
-Copy `sc100-study.agent.md` to your VS Code user prompts folder:
-- **Windows:** `%APPDATA%\Code\User\prompts\` (or `Code - Insiders\User\prompts\`)
-- **macOS/Linux:** `~/.config/Code/User/prompts/`
+### 4. Start Studying
 
-### 3. Use It
-
-Type `@sc100-study` in VS Code Copilot Chat.
+Open VS Code Copilot Chat and type `@sc100-study` followed by your message. The agent will greet you and offer to build your learning profile.
 
 ## Usage
 
 ### First Time
 
-When you first message `@sc100-study`, the agent will offer a short learning profile interview. This is optional but recommended. It asks about your background, how you learn, your study habits, and which SC-100 domains feel strongest or weakest. Your answers are saved to `LEARNING_PROFILE.md` so every future session is personalized.
+When you first message `@sc100-study`, the agent will offer a short learning profile interview. This is optional but recommended. It asks about your background, how you learn, your study habits, and which SC-100 domains feel strongest or with the most gaps. Your answers are saved to `LEARNING_PROFILE.md` so every future session is personalized.
 
 ### Example Commands
 
@@ -85,7 +121,7 @@ When you first message `@sc100-study`, the agent will offer a short learning pro
 | "Quiz me on Domain 2" | Generates scenario-based questions on security ops, identity, and compliance |
 | "Quiz me" | Quizzes across all 4 domains |
 | "Build a study plan" | Creates a week-by-week schedule based on your exam date and available hours |
-| "Show my weaknesses" | Analyzes your quiz history and ranks weak objectives by impact |
+| "show my skill gaps" | Analyzes your quiz history and ranks skill gap objectives by impact |
 | "Explain this question" + paste a practice question | Breaks down what the question tests, each answer choice, and the MS Learn reference |
 | "Help me search for Conditional Access" | Gives exact MS Learn search terms, URL, and navigation path for exam day |
 | "Show me your sources" | Lists every source the agent is grounded on |
@@ -95,13 +131,13 @@ When you first message `@sc100-study`, the agent will offer a short learning pro
 ### Tips
 
 - **Every teaching response** ends with the SC-100 domain it covers, the MS Learn search terms, and a key takeaway
-- **Quiz mode** tracks your score and which objectives you miss, so the weakness tracker gets smarter over time
-- **The study plan** front-loads your weakest domains and accounts for exam weight (Domains 2 and 3 are 25-30%)
+- **Quiz mode** tracks your score and which objectives you miss, so the Skill Gaps Tracker gets smarter over time
+- **The study plan** front-loads your with the most gaps domains and accounts for exam weight (Domains 2 and 3 are 25-30%)
 - **MS Learn navigation coaching** is built into every response, not just a separate mode. You're building exam-day search muscle memory as you study
 
-### 4. Study Dashboard (Optional)
+### 5. Study Dashboard (Optional)
 
-A visual dashboard tracks your progress, quiz scores, weaknesses, and lets you search across all 28 video transcripts.
+A visual dashboard tracks your progress, quiz scores, skill gaps, and lets you search across all 28 video transcripts.
 
 ```bash
 cd sc100-study
@@ -113,7 +149,7 @@ Opens at `http://localhost:8100`. Features:
 | Tab | Description |
 |-----|-------------|
 | **Overview** | Domain progress rings, quick stats, recent quiz results |
-| **Weakness Map** | Color-coded heatmap per objective (green/yellow/red/gray) |
+| **Skill Gaps Map** | Color-coded heatmap per objective (green/yellow/red/gray) |
 | **Quiz History** | Full table of all quiz sessions with scores and missed objectives |
 | **Study Plan** | Visual timeline with weekly milestones |
 | **Transcripts** | Full-text search across 28 SC-100 video transcripts with timestamps |
