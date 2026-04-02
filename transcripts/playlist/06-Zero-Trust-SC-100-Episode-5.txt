@@ -1,0 +1,611 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:08] Welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, we will
+have a look at Zero Trust,
+[00:19] the fundamental concept
+behind all our efforts
+[00:22] as a cybersecurity architect.
+[00:25] Discover the essentials
+of Zero Trust
+[00:27] and learn how this powerful
+security framework shapes the
+[00:30] priorities and practices
+[00:31] of Microsoft
+cybersecurity architects
+[00:33] in today's ever-evolving
+digital landscape.
+[00:37] The content of this video is
+mostly aligned with the area
+[00:40] of attention, security best
+practices, and priorities
+[00:44] from a certification
+perspective.
+[00:46] Now, why Zero Trust?
+[00:49] That is what you are
+here for to find out.
+[00:53] What is it?
+[00:54] Let us get started
+with some thinking.
+[00:56] A question.
+[00:57] What is the main
+goal of Zero Trust?
+[01:00] A. To eliminate the need for
+firewalls and encryption.
+[01:04] B. To verify the
+identity and security
+[01:06] of every request and resource.
+[01:09] C. To reduce the cost and
+complexity of IT infrastructure.
+[01:14] The answer is B. The core
+principle of Zero Trust is
+[01:17] to never trust, always verify.
+[01:20] This means that every request
+[01:22] and resource should be
+authenticated, authorized,
+[01:25] and encrypted, regardless of
+where they originate from
+[01:29] or where they are located.
+[01:31] Zero Trust aims to minimize
+the attack surface
+[01:33] and prevent unauthorized
+access or data breaches.
+[01:37] And for A, yes, we will do
+firewalls and encryption.
+[01:41] These are important
+elements in our toolbox.
+[01:43] And for C, yes, we need
+to think about the cost.
+[01:47] And cost needs to be balanced.
+[01:49] We will spend more on elements
+of high risk for which we need
+[01:53] to make a risk acceptable.
+[01:55] And in other videos, I
+have said that it helps
+[01:57] to bring elements back
+to risk statements.
+[02:00] But some cost is to be expected.
+[02:01] While I am mentioning this,
+I realized I also need
+[02:04] to say something
+about complexity.
+[02:07] Avoid it. Less is more.
+[02:10] Things do not get more secure
+if you add complexity.
+[02:14] Think of terms like minimal
+viable product or skeleton crew.
+[02:18] What is the minimum which
+has the most impact?
+[02:22] But let's move forward
+to Zero Trust itself.
+[02:25] What is Zero Trust?
+[02:27] What are the three principles?
+[02:28] And what are the six
+pillars of Zero Trust,
+[02:31] plus one other element?
+[02:33] And how can we combine
+them together?
+[02:35] But we also need to discuss
+how to apply Zero Trust
+[02:38] in our efforts as a
+cybersecurity architect.
+[02:42] Today's organizations
+need a new security model
+[02:45] that more effectively
+adapts to the complexity
+[02:47] of the modern environment.
+[02:49] A model that embraces the hybrid
+workplace and protects people,
+[02:52] devices, apps, and data
+wherever they are located.
+[02:58] We need that since
+we often do not have
+[03:00] to control over the location.
+[03:02] Think of working from
+home or an internet cafe.
+[03:05] The security model
+that can be conceived
+[03:07] for this could be
+called Zero Trust.
+[03:10] A Zero Trust approach should
+extend throughout the entire
+[03:13] digital estate and serve as an
+integrated security philosophy
+[03:17] and end-to-end strategy.
+[03:19] The foundation of Zero Trust
+was laid by the efforts
+[03:21] of the Jericho Forum,
+which was later brought
+[03:24] under the wings of
+The Open Group.
+[03:26] Zero Trust intends to be able
+to adapt to complexities
+[03:30] of a modern environment that
+embraces the mobile workforce
+[03:33] and protects user accounts,
+devices, applications,
+[03:37] and data wherever
+they are located.
+[03:39] With Zero Trust, we move away
+[03:41] from a trust-by-default
+perspective
+[03:43] to a trust-by-exception one.
+[03:46] Microsoft develops
+services and products
+[03:48] with a Zero Trust mindset.
+[03:49] Microsoft defines Zero Trust as
+a proactive, integrated approach
+[03:53] to security that applies
+to three core principles.
+[03:57] These are across all the
+layers of our digital estate.
+[04:00] And those core principles
+are assume breach,
+[04:04] verify explicitly,
+and least privilege.
+[04:09] But we should never lose
+sight of why we do security,
+[04:11] why we apply Zero Trust.
+[04:13] We do it to enable our business,
+to make sure our company,
+[04:17] our users, and our processes can
+continue without interruption.
+[04:21] If things are good,
+they're good.
+[04:23] But if there's an indication
+[04:24] of things not being
+good, then we act.
+[04:27] It's thinking like this that
+is facilitated by Zero Trust.
+[04:32] Let's dig a little bit deeper.
+[04:35] The three principles
+of Zero Trust --
+[04:37] assume breach,
+verify explicitly,
+[04:38] and least privilege --
+are based on the idea
+[04:40] that security should not depend
+on static or implicit factors,
+[04:44] such as network boundaries
+or trust relationships,
+[04:47] but rather on dynamic
+and explicit factors,
+[04:50] such as identity verification
+and context-aware policies.
+[04:54] These principles aim to reduce
+the risk of unauthorized access
+[04:57] or data leakage, as well as to
+improve visibility and control
+[05:01] over the network environment.
+[05:03] The three principles are
+not mutually exclusive,
+[05:06] but rather complementary
+and interdependent,
+[05:10] forming a holistic approach
+to achieving Zero Trust.
+[05:14] Verify explicitly.
+[05:16] This means that every
+request for access
+[05:18] or data should be authenticated,
+authorized, and encrypted,
+[05:22] regardless of where
+it originates
+[05:24] from or where it is going.
+[05:26] No source or destination
+should be trusted by default,
+[05:30] and security policies should be
+enforced at a granular level.
+[05:33] For example, using certificates
+and multi-factor authentication
+[05:37] to verify the identity
+of users and devices,
+[05:39] and applying encryption and
+segmentation to protect data
+[05:42] in transit and at rest.
+[05:45] Least privilege.
+[05:46] This means that
+every user, device,
+[05:48] and application should have
+the minimum level of access
+[05:51] and permissions needed
+[05:52] to perform their function,
+and nothing more.
+[05:55] This reduces the attack surface
+[05:56] and minimizes the potential
+damage of a breach.
+[05:59] For example, using
+role-based access control
+[06:02] and just-in-time provisioning
+to limit the scope and duration
+[06:05] of access, and applying
+micro-segmentation
+[06:08] and firewall rules to isolate
+and restrict network traffic.
+[06:13] Assume breach.
+[06:14] This means that security should
+not rely on perimeter defense
+[06:17] or trust assumptions, but rather
+operate under the assumption
+[06:20] that the network is
+already compromised,
+[06:22] and monitor for anomalies
+and threats continuously.
+[06:26] This enables faster
+detection and response
+[06:29] and improves the resilience
+of the security posture.
+[06:32] For example, using
+behavioral analytics
+[06:34] and threat intelligence
+to identify
+[06:36] and block malicious activities,
+and applying automation
+[06:39] and orchestration to
+streamline incident response.
+[06:43] Now, a question.
+[06:45] Can you think of
+technical examples
+[06:47] of how these principles
+could be implemented?
+[06:50] With every video, every
+topic, please try to think,
+[06:55] imagine on how you
+can do something.
+[06:58] Verify explicitly.
+[07:00] Conditional access
+is a great example,
+[07:02] and we will discuss
+it in another video.
+[07:05] Least privilege.
+[07:07] Some examples are
+mentioned on the slide,
+[07:09] but Privilege Identity
+Management, or PIM,
+[07:11] is a great example,
+[07:12] or just-in-time virtual machine
+access with Defender for Cloud.
+[07:16] Assume breach, also known
+as assume compromise.
+[07:20] A great example is what we
+typically do in networking
+[07:23] with virtual networks
+in Azure or subnets,
+[07:25] by controlling traffic by
+using network security groups.
+[07:28] Those are layers of
+compartmentalization
+[07:30] where we can reduce
+the blast radius,
+[07:33] sealing off a network
+segment to contain it
+[07:36] to avoid further spread.
+[07:38] Next to the three principles.
+[07:40] There's technology pillars
+we will use in Zero Trust.
+[07:44] Six of them.
+[07:47] Next to the principles.
+[07:48] There are six
+architectural concepts,
+[07:50] pillars that help us
+focus on specific aspects
+[07:53] that require attention.
+[07:55] These pillars are identity,
+endpoints, data, apps,
+[07:59] infrastructure, and network.
+[08:01] And there is another element
+[08:03] that brings all these
+pillars together.
+[08:05] And I myself, I think of this
+[08:06] as a seventh element
+or a seventh pillar.
+[08:09] The one that glues together all
+the other ones, the other six,
+[08:12] and that's the element where we
+get visibility and automation
+[08:15] and orchestration that will help
+us control the other pillars.
+[08:20] Enriching our knowledge, helping
+us to feed other decisions,
+[08:23] and driving automation
+orchestration patterns.
+[08:28] To put things into perspective,
+[08:29] I have some presentation
+materials to help.
+[08:32] The graphic we are using here is
+[08:35] from the Microsoft Cybersecurity
+Reference Architecture,
+[08:37] the MCRA.
+[08:38] That's a great resource
+to support your learning.
+[08:41] In the series of videos, there's
+a separate video on the MCRA,
+[08:44] so I will not explain it here.
+[08:46] I will borrow a couple
+of graphics from it.
+[08:49] First, we see an overview.
+[08:51] We see the pillars from
+Zero Trust represented
+[08:54] in the graphic.
+[08:55] And in blue, there's
+an orchestration
+[08:57] and control element.
+[08:59] In the next graphic, we
+add some more detail
+[09:01] to the different aspects.
+[09:03] Information like adding
+telemetry and logging
+[09:07] that can help us
+drive a decision.
+[09:12] From a Zero Trust
+Architecture perspective,
+[09:14] then we have a graphic that also
+shows where certain products
+[09:17] and services in the portfolio
+could fit in to be of help.
+[09:21] Help in providing more
+information or help
+[09:23] with providing more controls.
+[09:25] Many of these have been created
+to help with a certain aspect
+[09:28] of Zero Trust or to help
+with the bigger picture.
+[09:33] From an exam perspective, you
+will benefit from getting
+[09:35] to know these products better
+to understand what they do
+[09:38] and how they could be leveraged,
+and they will get exposure
+[09:41] in other videos in the series.
+[09:44] So now we have an idea about
+the concept of Zero Trust.
+[09:48] But how could we go
+about to make it so?
+[09:50] How to implement?
+[09:51] As you can imagine, you would
+not be the first nor the last
+[09:54] to ask that question.
+[09:56] And Microsoft has been
+gathering great information
+[09:58] about implementing Zero Trust
+and has made it available
+[10:01] on a dedicated set of web
+pages on Microsoft Learn.
+[10:05] The link to that
+is aka.ms/ztguide.
+[10:09] You'll see it on the slide.
+[10:12] Through those pages, you will
+find excellent information
+[10:14] on what to do and
+where to start.
+[10:17] There are actually also
+examples for Zero Trust --
+[10:22] to apply Zero Trust to specific
+services, such as Azure,
+[10:25] Microsoft 365, or Copilots.
+[10:27] Go and check it out,
+and go start applying.
+[10:30] But in this video, we will focus
+on the main body of knowledge
+[10:34] when it comes to applying
+and deploying Zero Trust,
+[10:36] based on advisories you
+will find on the web page.
+[10:39] We start here with identity Zero
+Trust deployment objectives.
+[10:42] Overall, we will
+have three primary
+[10:44] and three secondary objectives.
+[10:46] Primary are things that need to
+be done as soon as possible.
+[10:49] And secondary are things that
+can be done a little bit later.
+[10:52] And this pattern of primary and
+secondary objectives is repeated
+[10:56] for every architectural pillar.
+[10:58] We will look at some of
+the pillars that you need
+[11:00] to investigate the primaries and
+secondaries a bit by yourself.
+[11:03] So here we see the identity one.
+[11:05] And if we move to the next
+one, we see applications,
+[11:09] where essentially, we need to
+know what applications exist
+[11:13] in an organization and
+how they are used.
+[11:16] And that will drive
+other decisions.
+[11:18] We are first
+establishing visibility
+[11:20] and leveraging the information
+[11:21] to start driving yet
+other decisions.
+[11:25] If we look at data, know your
+data, know what it represents,
+[11:29] where it is, and where you
+actually would like it to go.
+[11:33] And without proper
+classification,
+[11:35] we do not know what is
+important and what not.
+[11:38] We may be protecting something
+that is not so important
+[11:42] and not protecting enough
+of what is important.
+[11:45] Understanding data, what
+it is, and being able
+[11:47] to label it is crucial.
+[11:51] If you look at endpoints,
+[11:52] endpoints are usually the
+places where users interact.
+[11:55] Examples are
+telephones, laptops.
+[11:58] But we also need to consider
+any other endpoint device.
+[12:01] Think about Internet of Things,
+[12:04] operational technology,
+for example.
+[12:07] We need to know what
+devices are there,
+[12:09] how we can get information
+from endpoints,
+[12:12] and then how we can start making
+access decisions, and how safe
+[12:15] to safeguard these endpoints.
+[12:18] When it's about
+infrastructure, what is that?
+[12:20] Well, what is
+infrastructure in general?
+[12:22] Typically, we use the term for
+platforms like Azure, AWS, GCP,
+[12:27] and its elements like platform
+as a service structures,
+[12:31] public cloud, but
+also private cloud.
+[12:34] The things that make up
+a workload: Kubernetes,
+[12:37] storage accounts, functions,
+database, containers, etc.
+[12:41] Do we know what we have?
+[12:42] Do we have insights?
+[12:44] Do we have control mechanisms?
+[12:47] Networks, similar.
+[12:49] What do we have?
+[12:50] How is it connected?
+[12:51] Can we segment, and
+do we have controls?
+[12:54] Elements that will
+help us do isolation.
+[12:56] For example, in case
+of an incident,
+[12:58] let's think of a
+bulkhead pattern
+[13:00] where we can seal off
+an impacted segment
+[13:03] to limit further spreading.
+[13:06] And then we tie it all together.
+[13:07] It's not an official term, but
+I think of the overall element
+[13:11] that binds everything
+together as the umbrella.
+[13:14] This umbrella will let us
+weave everything together
+[13:16] to have information, visibility
+that will drive decisions
+[13:19] for further modernizing
+the access controls.
+[13:22] The more attention we have
+accounted for in the pillars,
+[13:26] the more visibility
+we will have overall.
+[13:28] The more we can understand
+[13:29] and make decisions to
+allow or disallow.
+[13:32] Information feeds our
+appetite to get better
+[13:35] at implementing Zero Trust.
+[13:39] Back to the simplified overview.
+[13:41] Get familiar with these pillars
+and with the overall glue
+[13:44] of visibility, automation,
+[13:45] orchestration, and
+start doing that.
+[13:48] I often think of an orchestra.
+[13:50] We have amazing
+independent instruments,
+[13:52] but we need to make
+them work together.
+[13:55] Now, if you're maybe more sports
+fan, we have amazing players,
+[13:58] but we just need to make
+sure they play together
+[14:01] and play well to
+win another match.
+[14:05] Now, how to get started?
+[14:07] Some tips.
+[14:08] How to get started?
+[14:09] Where to start?
+[14:11] There is no good
+single answer to that.
+[14:13] Get started somewhere, and
+you will get visibility.
+[14:17] That will help to understand
+and drive your next move.
+[14:20] Look for what is happening in
+your organization and look
+[14:22] for a project, program,
+or maybe even an incident
+[14:25] that you could leverage to grow
+on modernizing access controls.
+[14:30] Grow on completing
+the principles
+[14:31] and architectural
+pillars of Zero Trust.
+[14:36] Some specific guidance.
+[14:37] Look for an opportunity, maybe
+based on existing guidance
+[14:41] from the Zero Trust
+implementation guide pages.
+[14:44] And there's two
+examples of that here.
+[14:47] On the implementation
+guide page,
+[14:48] you will find modernization
+plan for Zero Trust in general,
+[14:52] but also plans
+based on something
+[14:55] that is much more specific, a
+certain service or product.
+[15:00] Maybe your organization
+has started
+[15:03] or is thinking about
+using Copilot.
+[15:05] Use that momentum to make sure
+Zero Trust aspects get covered.
+[15:10] Use the guidance.
+[15:12] We're now coming to an
+end for this video.
+[15:15] What we discussed is Zero Trust.
+[15:17] What is it, how to
+find more information,
+[15:19] and how to apply principles.
+[15:21] An important task for us as
+cybersecurity architects is
+[15:23] to weave the principles and
+pillars into our designs
+[15:27] and to validate if
+all the aspects
+[15:28] of Zero Trust are catered
+for in an environment.
+[15:32] And if not, then
+start improving.
+[15:34] If they are, there is always
+room for improvement,
+[15:36] and there's always more.
+[15:39] For more information, use
+the training materials
+[15:41] for the cybersecurity
+architect certification
+[15:43] on Microsoft Learn.
+[15:45] Much of the content there
+on Zero Trust is based
+[15:47] on the information
+you can easily access
+[15:49] through the short links
+listed on this presentation.
+[15:53] And thank you for
+watching the video.
+[15:54] I trust that you have learned
+something today from the video,
+[15:57] and hope you will continue
+your learning journey
+[15:59] by watching other videos in the
+cybersecurity architect series.
+[16:02] Goodbye for now, and
+please stay secure.

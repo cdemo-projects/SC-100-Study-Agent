@@ -1,0 +1,184 @@
+[00:00] [ Music ]
+[00:10] BOBBIE RUSSELL: Imagine
+you're facing a sophisticated
+[00:12] cyber attack targeting
+your cloud infrastructure.
+[00:15] Would you know how to respond?
+[00:17] Could you design a
+security strategy
+[00:19] that protects sensitive data
+across hybrid environments?
+[00:22] What if your
+executive team asked
+[00:24] for a risk mitigation
+plan today?
+[00:27] Let me introduce you to a course
+where you'll step into the role
+[00:30] of a cybersecurity architect,
+[00:32] tackling real-world
+scenarios like these.
+[00:35] Hello. I'm Bobbie Russell.
+[00:37] I'm a Microsoft Trainer
+specializing in AI, security,
+[00:41] and compliance technologies
+here at Microsoft.
+[00:44] I'm here to take you
+through the SC-100:
+[00:46] Microsoft Cybersecurity
+Architect course
+[00:48] and give you a tour of what you
+can expect during this course.
+[00:52] This course is generally one
+of my favorite ways to learn.
+[00:56] I love how it brings together
+all the skills I've picked
+[00:59] up around security
+and compliance
+[01:01] and lets me apply them in a
+real-world design scenario.
+[01:05] This course introduces
+you to the role
+[01:06] of a Microsoft cybersecurity
+architect and the skills needed
+[01:10] to design and evaluate security
+strategies across hybrid
+[01:14] and multi-cloud environments.
+[01:16] By the end of this
+course, you'll learn how
+[01:18] to design security strategies
+[01:20] that protect your organization's
+data, infrastructure,
+[01:23] and operations across hybrid
+and multi-cloud environments.
+[01:28] You'll gain hands-on experience
+with Microsoft Defender,
+[01:31] Sentinel, Entra ID, and Purview
+to build resilient, compliant,
+[01:36] and threat-aware architectures.
+[01:38] This course includes a lab
+that allows you to dive
+[01:41] into real-world scenarios and
+design security solutions
+[01:44] that align with business
+and technical requirements.
+[01:48] Each lab features a
+mandatory design activity
+[01:51] where you analyze a business
+case and architect a solution,
+[01:55] and an optional
+technical walkthrough
+[01:57] to configure and deploy it.
+[01:59] While labs aren't part of the
+live classroom delivery due
+[02:02] to time constraints, they're
+available online through GitHub
+[02:06] and authorized lab hosters,
+so you can explore them
+[02:09] at your own pace and reinforce
+your learning anytime.
+[02:14] This course is designed
+specifically for those
+[02:16] who have a working knowledge
+[02:17] of Microsoft's
+security technologies
+[02:19] and experience implementing or
+administering solutions in areas
+[02:23] like identity and access,
+platform protection,
+[02:27] security operations, and hybrid
+or multi-cloud environments.
+[02:31] While not mandatory, it's
+strongly recommended
+[02:34] that learners have passed one
+[02:35] of the following associate-level
+courses before taking this
+[02:39] course: the SC-200,
+SC-300, AZ-500, or MS-500.
+[02:47] There is a certification exam
+associated with this course.
+[02:51] Completing this course
+will provide you
+[02:53] with a solid foundation for
+understanding what to focus
+[02:56] on for the exam SC-100:
+[02:59] Microsoft Cybersecurity
+Architect.
+[03:01] However, it also requires
+experience and practice
+[03:06] to put these skills into
+action before you are truly
+[03:08] well prepared.
+[03:10] If you're looking to
+enhance your skills
+[03:12] as a Microsoft cybersecurity
+architect or are preparing
+[03:15] for a certification exam, this
+is the perfect course for you.
+[03:19] So what's in it for you?
+[03:21] Why should you take this course
+[03:22] out of all the
+courses out there?
+[03:24] This course gives you the
+confidence to step into the role
+[03:27] of a cybersecurity architect
+and design security strategies
+[03:32] that actually work
+in the real world.
+[03:34] You'll gain confidence designing
+real-world strategies that align
+[03:38] with business goals and
+Microsoft security tools.
+[03:41] Whether you're aiming for
+certification or just want
+[03:44] to level up your strategic
+security skills,
+[03:47] this course helps you connect
+the dots between tools,
+[03:50] threats, and transformation.
+[03:53] You can take this course using
+our self-paced training material
+[03:57] or joining one of our
+instructor-led sessions taught
+[03:59] by Microsoft trainers, like me.
+[04:02] Our instructor-led
+training is designed
+[04:04] to suit all learning styles.
+[04:07] Whether you prefer listening,
+visual engagement,
+[04:09] or hands-on experience,
+we've got you covered.
+[04:13] Microsoft trainers deliver
+classes using PowerPoint,
+[04:17] demonstrations, and whiteboards,
+[04:19] while incorporating real-world
+experience into the classroom.
+[04:23] You'll have lots of
+opportunities to engage
+[04:25] and ask questions,
+ensuring a comprehensive
+[04:28] and interactive
+learning experience.
+[04:31] Let's sum it up now.
+[04:33] This course shows how to design
+[04:35] and implement
+security strategies
+[04:37] that align with business goals.
+[04:40] No expert-level
+experience required.
+[04:42] You'll learn how to
+connect the dots
+[04:44] between Microsoft security
+tools, real-world threats,
+[04:47] and enterprise needs, helping
+you make smarter decisions
+[04:51] faster and reclaim
+valuable time in your day.
+[04:55] You are the most valuable
+resource an organization has.
+[04:59] Let's make the best
+use of your day.
+[05:01] Ready to enroll?
+[05:03] Check out the description
+below for more details.
+[05:06] Thanks for watching.
+[05:08] [ Music ]

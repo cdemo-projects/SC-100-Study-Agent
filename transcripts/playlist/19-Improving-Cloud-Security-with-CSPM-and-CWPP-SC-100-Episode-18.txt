@@ -1,0 +1,403 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello and
+welcome to this video.
+[00:08] My name is Marco Nuijen and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architect.
+[00:17] In this video, I want to
+explore CSPM and CWPP with you.
+[00:23] The content of this video is
+mostly aligned with the area
+[00:26] of solutions for infrastructure
+[00:27] from a certification
+perspective.
+[00:30] Now, question, How is
+your security posture?
+[00:33] This is the main
+question for this video.
+[00:36] How is it and what can
+be done to improve?
+[00:40] One of our responsibilities as
+a cybersecurity architect is
+[00:43] to assess and recommend
+improvements.
+[00:45] We assess how well
+our design works,
+[00:47] but also how well they align
+with the best practices
+[00:49] and standards for
+implementing something.
+[00:52] That is where the concepts of
+CSPM and CWPP are relevant.
+[00:57] They can provide us
+with information
+[00:59] on the configured state,
+but also inform us
+[01:01] about the actual threats
+happening to a workload.
+[01:05] With any defense, we need to
+think of what is essential.
+[01:08] What would be the baseline
+for a functional service?
+[01:11] When I say baseline, I hope you
+start thinking Microsoft Cloud
+[01:15] Security Benchmark, MCSB.
+[01:17] So I want to highlight two
+control domains from the MCSB,
+[01:21] Asset Management,
+AM, and Posture
+[01:23] and Availability Management, PV.
+[01:26] Asset Management covers controls
+to ensure security, visibility,
+[01:30] and governance over
+your resources,
+[01:32] including recommendations
+on permissions
+[01:34] for security personnel, security
+access to asset inventory,
+[01:38] and managing approvals for
+services and resources.
+[01:42] Posture and Vulnerability
+Management focuses on controls
+[01:44] for assessing and improving
+cloud security posture,
+[01:47] including vulnerability
+scanning, penetration testing,
+[01:51] and remediation, as well as
+security configuration tracking,
+[01:55] reporting, and correction
+in cloud sources.
+[01:58] Both have relevance
+when it comes
+[02:00] to understanding what we have
+[02:02] and understanding how we
+can protect what we have.
+[02:06] AM and PV control elements.
+[02:08] On the screen, you can now
+see the control elements
+[02:10] from those MCSB domains.
+[02:13] The question is, How
+can we cover these?
+[02:15] Let's think about
+that for a moment.
+[02:18] but not too long, right?
+[02:19] Some of these may be more
+related to other topics
+[02:23] in the video series
+and online content.
+[02:26] But if we just take the first
+one from every domain here,
+[02:28] then how do we do that?
+[02:30] How do we know what we have?
+[02:32] How do we establish baselines?
+[02:33] And how do we verify that?
+[02:35] Well, if you take
+Azure as an example,
+[02:37] some of these are already
+implemented automatically.
+[02:40] Any resource, any asset on
+Azure, we will know about
+[02:44] and it will be evaluated in
+comparison to a baseline
+[02:47] by making use of the
+Azure Policy Engine.
+[02:50] And the results of that
+are easily surfaced for us
+[02:52] in Defender for Cloud.
+[02:55] Defender for Cloud
+integrates the features
+[02:56] of a cloud security posture
+management solution
+[02:59] that recommends actions that
+you can take to avoid breaches,
+[03:02] and capabilities to prevent
+those from happening.
+[03:05] And it also does Cloud Workload
+Protection, CWP, CWPP,
+[03:10] with tailored protections for
+servers, containers, storage,
+[03:13] databases, and other workloads
+to further avoid breaches
+[03:16] and to get alerts on
+anomalous behavior.
+[03:19] So, more capabilities towards
+detecting and responding.
+[03:23] Defender for Cloud can
+also extend into the parts
+[03:26] where code is kept
+and developed.
+[03:28] With a DevSecOps solution that
+harmonizes security management
+[03:31] at the code level
+across different cloud
+[03:33] and pipeline environments.
+[03:35] For this video, we
+will inspect CSPM
+[03:37] and CWP in a bit more detail.
+[03:41] CSPM, Cloud Security Posture
+Management, will help us
+[03:44] by verifying a baseline.
+[03:46] It will help us detect
+variations from the baseline
+[03:48] by default for Azure
+that can be extended
+[03:50] to other service providers,
+[03:52] making sure we have
+a comprehensive view
+[03:54] of our entire estate.
+[03:56] It can also include
+private clouds.
+[03:59] We will have a dashboard
+listing the asset
+[04:01] and exposing security
+weaknesses on those assets.
+[04:06] We can manage the
+security posture,
+[04:07] hence cloud security
+posture management.
+[04:12] To make it more practical,
+[04:13] we will use what is
+known as secure score.
+[04:17] In the series, there's a
+video on what scores mean,
+[04:19] and basically,
+what is consistent
+[04:21] with an advisory will
+earn you points.
+[04:23] The more points,
+the better secured.
+[04:26] Score is a great way
+to drive improvement.
+[04:30] Here we see an example
+around secure score.
+[04:33] Go check score.
+[04:35] Go understand what it is and
+where you can do improvements.
+[04:38] Go and do.
+[04:39] Go be more secure.
+[04:40] Manage your score actively.
+[04:42] Really go to the dashboards
+and start inspecting those.
+[04:46] Other capabilities, from a cloud
+security posture management
+[04:49] perspective, in the event of
+a cloud, are path analysis
+[04:51] and Cloud Security Explorer.
+[04:54] The Cloud Security Explorer
+makes it easier for humans
+[04:56] to extract details without
+having to write scripts or code.
+[05:00] Think of it as a graphic layer
+between you and the raw data.
+[05:05] Attack path analysis is
+to see the big picture.
+[05:08] If there are several assets that
+do not follow best practice,
+[05:12] then what would be the outcome
+for the whole sequence?
+[05:14] What's the whole chain?
+[05:15] How would an attacker use
+misconfiguration of one
+[05:18] to their advantage to
+compromise the entire chain?
+[05:21] The attack path analysis
+can visualize that for us.
+[05:24] But be aware, in some
+cases functionality needs
+[05:27] to be enabled that can
+bring additional cost.
+[05:30] It will always depend on what
+agreements and licenses you have
+[05:32] in place, but understand
+there are differences
+[05:34] in plans and features.
+[05:38] The table that I'm bringing
+up right now shows some
+[05:41] of these differences
+in plans and features.
+[05:43] The foundation column is active
+by default and foundational CSPM
+[05:47] for Cloud Security Explorer
+and attack path analysis.
+[05:50] But it also opens up a path
+to additional capabilities.
+[05:53] And in the last
+couple of columns,
+[05:56] you can see there are different
+possibilities and capabilities
+[05:59] for certain target solutions,
+although AWS, GCP,
+[06:03] and Azure are now on
+par with each other.
+[06:07] But make sure you understand
+tables like we see here,
+[06:11] and they will evolve over time.
+[06:12] So always look at
+the documentation
+[06:14] to explain the
+capabilities in its latest
+[06:16] and greatest iteration.
+[06:20] Cloud Workload Protection, or
+CWP, is a functional Defender
+[06:25] for cloud that helps you
+[06:26] to protect workloads
+more thoroughly.
+[06:29] Whereas CSPM checks how the
+service is set up on a platform,
+[06:32] CWP goes deeper and it examines
+how the resource is set up
+[06:37] and uses other agents
+and information to find
+[06:40] out more information
+about the configuration
+[06:42] and potential vulnerabilities.
+[06:45] There's also another aspect
+of Cloud Workload Protection
+[06:48] that involves
+behavioral analysis.
+[06:50] It checks if the workload
+is acting as usual or not.
+[06:54] It also detects if
+there are any signs
+[06:57] of the workload contacting
+malicious actors based
+[07:00] on threat intelligence.
+[07:02] To use CWP, you need to
+activate some features.
+[07:06] You usually need to
+enable defenders
+[07:08] to get Cloud
+Workload Protection,
+[07:10] CWP, for your workloads.
+[07:12] And there are many defenders
+that you can activate
+[07:14] and integrate with
+Defender for Cloud.
+[07:17] But any Defender you activate
+will improve the security
+[07:20] of the workload for
+the enterprise,
+[07:22] and it will deliver us more data
+and insight that can be used
+[07:26] for further analysis, also
+[07:27] for further enriching
+our visibility overall.
+[07:30] So, the suggestion is to examine
+which ones are already active
+[07:33] and which ones we could benefit
+from by activating them.
+[07:37] Get more visibility,
+get more intelligence,
+[07:39] and more information that can
+help the security operations
+[07:44] team to be at their best.
+[07:47] There are a couple of
+links for you to be able
+[07:49] to explore things in more depth.
+[07:51] The first one is the main
+content page for Defender
+[07:55] for Cloud, which is an
+amazing starting point.
+[07:57] The second link here is
+to the Ninja trainings
+[07:59] on Defender for Cloud.
+[08:01] Ninja trainings, if you're
+not familiar with them,
+[08:03] they are trainings directly from
+the teams that create a product,
+[08:06] and it ranges from
+very informational
+[08:08] to very, very detailed.
+[08:09] So go and check it out according
+[08:11] to the level you want
+to find out about.
+[08:14] I also would like to highlight
+external attack service
+[08:18] management, where Defender
+for Cloud is helping us
+[08:21] to understand our security
+posture and also helps
+[08:23] to surface additional
+information based
+[08:26] on cloud workload protection.
+[08:28] We also need to think
+about how things look
+[08:30] like from the outside world.
+[08:32] CWP and CSPM are internal tools
+that monitor our own assets
+[08:37] and how they are behaving.
+[08:39] But what happens if
+we look at our assets
+[08:41] from the perspective
+of the Internet?
+[08:44] That's where external attack
+service management can help.
+[08:47] It's external attack
+service management.
+[08:49] It's a service that
+runs on a scan
+[08:51] that you can set
+up and customize.
+[08:54] The idea is that you can
+provide some information
+[08:56] about your enterprise to the
+service, such as an IP address
+[08:59] or a domain name
+for your resources.
+[09:02] We call that seeding.
+[09:04] You seed the engine
+with the information,
+[09:06] and it will grow from the seeds.
+[09:08] The service will go out and
+check what is publicly available
+[09:11] about those seeded resources.
+[09:13] And it will also start
+examining the surface of them,
+[09:16] like how an attacker might
+probe them from the outside.
+[09:19] If it finds a domain name that
+has a website associated to it,
+[09:24] it will go and
+analyze that website
+[09:25] and give us more information on
+what the external world can see
+[09:28] of our environment,
+of our website.
+[09:31] It will also give
+us recommendations
+[09:32] on what can be improved, apart
+from the recommendations
+[09:35] from Defender for Cloud.
+[09:37] So consider this another
+ability, another capability
+[09:40] for us to not be only
+inside-inside, inside-out,
+[09:45] but looking from the outside
+to the inside world,
+[09:47] strengthening our overall
+security posture.
+[09:51] So coming to a conclusion,
+in this video,
+[09:54] we looked at Cloud Security
+Posture Management
+[09:56] and Cloud Workflow Protection,
+two core functions
+[09:59] that come together in
+Defender for Cloud.
+[10:03] A couple of places to
+go to and learn more.
+[10:05] I can highly recommend
+the Ninja training again,
+[10:08] and Ninja trainings in general.
+[10:09] That's a couple of links
+for you to explore
+[10:12] in more detail are listed
+on the presentation here.
+[10:16] Thank you for
+watching the video.
+[10:17] Maybe meet you in another one.
+[10:19] And until that time,
+please stay safe.

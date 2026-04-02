@@ -1,0 +1,411 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello,
+welcome to this video.
+[00:08] My name is Marco Nuijen, and
+I'm a Trainer at Microsoft.
+[00:11] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:16] In this video, we focus on
+aspects of data security,
+[00:20] discover the essentials of
+data security and learn how
+[00:22] to protect sensitive information
+with practical strategies
+[00:26] for data discovery,
+classification, handling,
+[00:29] and encryption in
+this insightful video
+[00:31] for cybersecurity professionals.
+[00:34] The content for this video is
+mostly aligned with the area
+[00:37] of solutions that is about
+applications and data
+[00:40] from a certification
+perspective.
+[00:43] And what about data?
+[00:44] That's the main question
+for this video.
+[00:47] In the video, in this video,
+I want to focus on the topics
+[00:50] of data discovery,
+data classification,
+[00:53] data handling, and
+data encryption.
+[00:57] Understanding the nature and
+location of data is essential
+[01:00] for effective data management.
+[01:02] This awareness applies both
+from a functional standpoint
+[01:05] and in contexts such as
+regulatory compliance.
+[01:08] For example, organizations
+must be prepared
+[01:11] to respond appropriately when
+an EU citizen requests access
+[01:14] to their personal data,
+as mandated by GDPR
+[01:18] and many similar regulations.
+[01:21] Compliance requires not
+only identifying relevant
+[01:24] information, but also
+ensuring adherence
+[01:26] to applicable laws and policies.
+[01:28] So identifying, accessing,
+[01:30] and managing data raises
+an important question.
+[01:34] How can data be
+located efficiently?
+[01:38] What processes are in place
+to handle these tasks?
+[01:41] Who is responsible for managing
+and accessing the data?
+[01:44] And these concerns typically
+fall into the purview
+[01:46] of compliance architects
+and data architects.
+[01:50] However, it is
+important to recognize
+[01:52] that robust data governance is a
+collaborative effort involving
+[01:55] all stakeholders, and applying
+a Zero Trust approach further
+[01:58] emphasizes the significance
+of secure data handling,
+[02:01] as data security
+constitutes a key pillar
+[02:04] of the Zero Trust framework, and
+organizations are encouraged
+[02:08] to consult, establish guidance
+[02:10] to ensure best practices
+in safeguarding data.
+[02:14] For the architectural
+pillar of Zero Trust,
+[02:16] there are six objectives.
+[02:19] The first three are essential
+and should be prioritized.
+[02:22] These initial objectives are,
+classify and label data,
+[02:25] using automation for
+accuracy where possible,
+[02:28] and perform manual labeling if
+necessary, apply encryption,
+[02:33] access controls, and
+content markings,
+[02:36] protect sensitive
+information with encryption
+[02:38] or restrict access and
+clearly indicate sensitivity
+[02:41] with markings like watermarks or
+headers, control access to data,
+[02:45] restrict access to sensitive
+data to enhance protection.
+[02:50] Refer to the Zero Trust
+guidance for more details,
+[02:52] but these steps provide
+a foundational approach
+[02:55] to securing data.
+[02:57] And we also have the Microsoft
+Cloud Security Benchmark,
+[03:00] the MCSB, and that has a
+control domain on data also,
+[03:04] and that is, of course,
+aligned with the principles
+[03:06] from Zero Trust that we
+have just seen before.
+[03:09] Something we will
+encounter many times
+[03:11] in guidance is protecting
+data by using encryption,
+[03:15] so maybe it's good to address
+that in a bit more detail here.
+[03:19] Encryption, encryption is a
+process of transforming data
+[03:23] into an unreadable form
+using a secret key
+[03:26] so that only authorized
+parties can access it.
+[03:29] Encryption is essential
+for protecting data
+[03:32] from unauthorized access,
+modification, or leakage.
+[03:36] There are three main scenarios
+where encryption can be applied,
+[03:40] at rest, in transit, and in use.
+[03:44] Encryption at rest typically
+means encrypting data
+[03:46] where it's stored, on a disk,
+server, or cloud solution.
+[03:49] It prevents unauthorized
+users from accessing the data
+[03:52] if they gain physical access
+to the storage device
+[03:54] or compromise the network.
+[03:57] Encryption in transit
+means encrypting data
+[03:59] when it is transferred over a
+network, such as the internet,
+[04:02] a virtual private network,
+VPN, or a local area network.
+[04:06] It prevents unauthorized users
+from intercepting or tampering
+[04:09] with the data while
+it is in motion.
+[04:11] Sometimes it's referred to
+as "encryption in flight."
+[04:16] Encryption in use
+means encrypting data
+[04:18] when it is processed
+by an application
+[04:20] or a service or a device.
+[04:22] This prevents unauthorized users
+[04:24] from accessing the data while
+it's being used or manipulated.
+[04:28] Each scenario has
+different challenges
+[04:30] and solutions for encryption.
+[04:32] For example, encryption at rest
+requires secure key management
+[04:35] and access control policies.
+[04:37] Encryption in transit
+requires secure protocols
+[04:39] and certificates, and encryption
+[04:41] in use typically
+requires secure hardware
+[04:44] and software environments.
+[04:45] There are various tools and
+services to help encrypt data
+[04:48] in different scenarios, such
+as Azure Storage Service
+[04:52] Encryption, Azure Disk
+Encryption, Azure VPN Gateway,
+[04:57] and Azure Confidential
+Computing.
+[05:00] These solutions enable customers
+to protect data from threats,
+[05:04] and often they are also assisted
+to comply with regulations
+[05:08] and standards such as GDPR,
+HIPAA, PCI DSS, and NIST,
+[05:12] to just name a couple of these.
+[05:14] Encryption, it will often make
+use of cryptographic keys,
+[05:18] and for that we can use
+capabilities, technologies
+[05:21] like Azure Key Vault, which
+will be a separate topic
+[05:24] in another video of this series.
+[05:27] A diagram for now for us to
+have a look at from the MCRA
+[05:31] to give some more context.
+[05:33] We are working with data
+and protection that relates
+[05:36] to the theme of
+information protection.
+[05:38] We need to make sure
+we have included
+[05:40] that in our designs
+and our deployments.
+[05:43] From a technological point
+of view, the best features
+[05:46] for this we find with Microsoft
+Purview, and on the slide,
+[05:50] I've marked the area of
+attention from the MCRA.
+[05:54] Microsoft Purview is a
+unified governance solution
+[05:57] that helps manage and govern
+on-premises, multi-cloud,
+[06:00] and software as a service data,
+data wherever it resides.
+[06:03] With Purview, you can
+discover, catalog,
+[06:06] and classify all
+your data assets
+[06:08] across the entire enterprise,
+[06:10] and you can also track
+the lineage of your data
+[06:12] and understand its quality
+and compliance status.
+[06:15] Purview enables you to create a
+holistic and up-to-date data map
+[06:18] of your data landscape
+so you can gain insights
+[06:21] and make informed
+decisions about your data.
+[06:24] Now, Purview is a large
+family, and for this video,
+[06:26] we limit ourselves
+to how it can help
+[06:28] with understanding our
+data, classification,
+[06:31] labeling, and handling.
+[06:34] One of the key features
+of Purview is its ability
+[06:36] to automatically discover and
+classify your data assets
+[06:40] across different sources such as
+Azure, Blob Storage, SQL Server,
+[06:43] Power BI, or maybe even
+an Oracle database.
+[06:47] Purview scans your data
+sources periodically
+[06:50] and applies built-in or custom
+classifiers to identify the type
+[06:54] of data and sensitivity
+of your data.
+[06:57] For example, Purview can detect
+[06:59] if your data contains personal
+information, such as names,
+[07:02] email addresses, phone
+numbers, credit card numbers,
+[07:05] and then assign the
+appropriate classification
+[07:08] to your data asset.
+[07:11] You can also create your own
+classifiers based on keywords,
+[07:13] regular expressions,
+or logical rules.
+[07:16] By discovering and classifying
+your data, Purview helps
+[07:19] to understand what kind of data
+you have, where it is located,
+[07:23] and how it is structured.
+[07:25] You can also use Purview to
+enforce data governance policies
+[07:28] and compliance regulations
+such as GDPR and HIPAA
+[07:31] by applying data
+protection actions based
+[07:34] on the classification labels.
+[07:36] For instance, you
+can mask, encrypt,
+[07:38] or delete sensitive
+data, or restrict access
+[07:40] to authorized users only.
+[07:44] Purview also
+provides a dashboard
+[07:45] that shows the distribution
+and status of your data assets
+[07:47] so you can monitor and audit
+your data landscape at a glance.
+[07:51] In essence, Purview can help
+with the data discovery
+[07:54] and classification and the
+primary element we've seen
+[07:56] from Zero Trust guidance
+and the MCSB control.
+[08:00] Now let's look at how some
+of the data elements look
+[08:03] like in Purview, a
+couple of examples,
+[08:06] and then specifically
+classification, connectors,
+[08:08] and data loss prevention.
+[08:11] Here we see an example of
+the classifiers in Purview.
+[08:15] They are used in several
+solutions within Purview.
+[08:18] The view here is from
+information protection.
+[08:20] Just imagine you would like
+to do information protection.
+[08:24] You would need to understand
+the information first, right,
+[08:27] to be able to protect it.
+[08:28] That is where these
+classifiers help,
+[08:30] and there are three main
+types of classifiers.
+[08:33] There's sensitive
+information type, SIT,
+[08:36] which will use pattern matching.
+[08:38] There's exact data
+match, EDM, which relies
+[08:41] on leveraging a database
+of specific words,
+[08:45] and there are
+trainable classifiers,
+[08:47] which employ machine learning
+to identify similar patterns.
+[08:51] The classifiers help to
+find and understand data.
+[08:56] And then there's data
+loss prevention.
+[08:58] Classifiers assist
+data loss prevention
+[09:01] by identifying data types.
+[09:03] That allows you
+to enforce rules,
+[09:05] such as preventing internal data
+from being shared externally,
+[09:10] and now, if we know the
+data, we can label it.
+[09:14] We can apply automatic
+labels based on content
+[09:16] or provide users with a
+classification structure
+[09:19] that is typically available in
+products that people can see
+[09:22] to help them label content.
+[09:24] And we may also assist by
+offering default classifications
+[09:27] or suggestion options
+identified by one
+[09:29] of the classifiers
+we've just mentioned.
+[09:33] A Purview is an overall
+data capability,
+[09:37] and a Purview connector
+is a vital tool
+[09:39] that allows Microsoft Purview
+to reach and interact
+[09:42] with data sources
+across both cloud
+[09:44] and on-premises environments.
+[09:46] Effectively, it
+extends connectivity
+[09:49] and empowers the
+Purview capabilities
+[09:51] like the classifiers
+for data discovery,
+[09:53] the data loss prevention
+[09:54] for protecting sensitive
+information, and labeling
+[09:57] for managing data by enabling
+organizations to analyze,
+[10:00] classify, and control
+data wherever it resides.
+[10:04] With connectors, Purview can
+go beyond its default scope,
+[10:08] integrating with different
+systems and platforms
+[10:10] to ensure comprehensive
+governance, protection,
+[10:12] and compliance across
+all data assets.
+[10:17] Now we are at the
+end of this video.
+[10:18] We discovered and we discussed
+topics around data discovery,
+[10:22] data classification, data
+handling, and data encryption.
+[10:26] We also discussed
+how a capability
+[10:28] like Purview can
+help us with that.
+[10:31] To get a better and
+deeper understanding
+[10:33] of Microsoft Purview
+and its capabilities,
+[10:37] I can recommend looking
+at the starting page
+[10:39] of Purview, aka.ms/purview.
+[10:43] Thank you for
+watching this video.
+[10:45] There are more in the series
+[10:47] and maybe we'll see
+you in another one.
+[10:49] Until that time,
+please stay safe.

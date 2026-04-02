@@ -1,0 +1,486 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, we will
+focus on general aspects
+[00:20] of the cybersecurity
+architect role,
+[00:22] discover what it truly means to
+be a cybersecurity architect,
+[00:25] as we unravel the key
+role, essential skills,
+[00:29] and preparation tips in this
+engaging, informative video.
+[00:33] What is a cybersecurity
+architect?
+[00:35] That's the main question
+for this video.
+[00:38] What is it?
+[00:39] A simple question
+to get us started
+[00:41] with our first topic,
+you may choose here.
+[00:44] Is it A or B?
+[00:45] Does an architect translate
+strategy into capabilities,
+[00:48] or does an architect configure
+products and services
+[00:51] to secure the enterprise?
+[00:54] I would opt for A, translate.
+[00:56] The answer is more holistic
+and broader and more focusing
+[00:59] on longer-term strategy.
+[01:02] And it's also in line with
+the definition you will find
+[01:04] on our certification pages.
+[01:06] In this video, we
+will explore the role
+[01:08] of the cybersecurity
+architect in more detail.
+[01:11] What is the role?
+[01:12] What is required, for example,
+from a knowledge perspective?
+[01:15] And what are ways to get
+started with architecting?
+[01:18] I'd say start with the exam
+page for the certification.
+[01:23] In another video in the series,
+I explain about the page
+[01:25] and what you can find there.
+[01:28] And the first thing you find
+[01:29] on that page is the
+job task statement.
+[01:32] The statement is calibrated
+regularly by a team
+[01:35] of subject matter experts from
+inside and outside of Microsoft.
+[01:39] We can find the statement for
+the cybersecurity architect
+[01:41] on the SC-100 exam page, for
+which you can use a short link.
+[01:48] On my presentation screen, you
+can see the job task statement
+[01:51] at the moment of this recording.
+[01:53] Now, over time, this
+will be adjusted,
+[01:56] but the essence will
+remain the same.
+[01:58] The cybersecurity architect
+is a person with broad and,
+[02:01] in some places, deep
+knowledge of specific areas.
+[02:05] And we work with a
+lot of other people
+[02:08] and people in other roles.
+[02:10] For me, an important takeaway
+is the scope of the task
+[02:13] for a cybersecurity architect.
+[02:15] It is very holistic as a
+job, but there is also a lot
+[02:18] of attention to detail.
+[02:20] And we work together
+with many, many others.
+[02:22] Security is a team sport.
+[02:25] We do it together with others.
+[02:27] Let's talk a bit about that.
+[02:30] You know, a chain is only as
+strong as its weakest link.
+[02:33] And we work with others
+[02:34] to ensure the whole
+chain is strong enough
+[02:37] and that all efforts
+link together.
+[02:40] We work with the business
+and technical leadership
+[02:42] and translate their direction,
+vision, and strategy
+[02:45] into something that
+can be implemented,
+[02:47] managed, and maintained.
+[02:49] A large part of our role is
+[02:50] to ensure all teams
+are on the same page.
+[02:53] And for us, it's important to
+be involved and involved early.
+[02:57] In many organizations
+I've been in,
+[02:59] security was the last approval
+[03:01] to get before going
+into production.
+[03:03] That's not good.
+[03:05] Often, rework is
+needed, or things move
+[03:07] into production with
+serious issues.
+[03:09] Bottom line is
+everyone is unhappy,
+[03:12] aside from the attackers.
+[03:14] We want to be involved
+early, be on the happy path,
+[03:17] and make sure things are
+moving into operations
+[03:20] and continued operations
+are possible.
+[03:22] So yes, we work with a lot of
+other roles and individuals.
+[03:27] Different audiences or teams
+or audiences will, however,
+[03:30] need a different focus.
+[03:32] We need to work with all of them
+to support in what they need.
+[03:35] Their specific needs
+need to be addressed.
+[03:37] Throughout the video series, we
+will look at different aspects
+[03:40] through a lens of
+recommendations, best practices,
+[03:43] and frameworks, all elements
+you need to understand for you
+[03:47] to be able to leverage them.
+[03:49] Important is that you
+take a holistic approach.
+[03:52] But one of my questions to you
+is, what do you know already?
+[03:57] Because we do expect
+you to be familiar
+[03:59] with some elements already, and
+we will build on top of that.
+[04:04] From a certification
+perspective,
+[04:06] you need to have a standing
+certification on identity,
+[04:09] security operations
+analyst, or Azure security.
+[04:13] And then if you pass the
+cybersecurity architect exam,
+[04:16] you will get the certification.
+[04:19] But from a knowledge
+perspective, you will need more.
+[04:22] If I were to simplify it
+a bit, I'd be bringing it
+[04:25] down to being holistic in
+general, have a good knowledge
+[04:28] in services, technologies,
+processes, and all elements
+[04:32] that are part of the
+Zero Trust concept.
+[04:34] Next to that, knowing about
+identity, data, apps, endpoints,
+[04:39] network, and infrastructure.
+[04:42] If you go back to the
+information on the exam page,
+[04:45] you will find that all the
+online training content is
+[04:48] organized in four main areas.
+[04:52] And those main areas are
+broken down into sub-areas,
+[04:55] all of which is explained well
+[04:56] in the study guide you will also
+find on the certification page.
+[05:01] But the main areas are security
+best practices and priorities,
+[05:04] security operations,
+identity and compliance,
+[05:07] solutions for applications
+and data, and before that,
+[05:10] solutions for infrastructure.
+[05:13] The most fundamental concept
+for the certification
+[05:16] and job is knowledge
+on Zero Trust and how
+[05:18] to apply principles from that.
+[05:21] We will explore Zero Trust
+in more detail in one
+[05:24] of our videos, but it
+will come up many,
+[05:26] many times in the course
+content and in my videos.
+[05:30] The pillars and the
+principles of Zero Trust.
+[05:33] Here we have a representation
+[05:36] of the fundamental Zero Trust
+principles of assume breach,
+[05:39] verify explicitly,
+and least privilege.
+[05:43] And it also shows some
+[05:44] of the architectural
+pillars we will inspect
+[05:46] in the video series.
+[05:48] And we do all of this
+to enable the business.
+[05:51] Never lose that out of sight.
+[05:53] We exist to help the business
+to be able to continue and run
+[05:57] as securely as we can.
+[05:59] Security is always balanced.
+[06:03] Where do you start?
+[06:04] One question that will be asked
+often is, where do we start?
+[06:07] We want to make things
+better, but there's so much.
+[06:10] So where to start?
+[06:12] Well, it depends.
+[06:13] There is no simple
+answer to the question.
+[06:15] We need to know what we
+have, where we are going,
+[06:18] what is available to us.
+[06:20] Think of resources, personnel,
+money, etc. It is not easy.
+[06:25] Starting cannot be easy at all.
+[06:27] But get started,
+start somewhere,
+[06:30] learn along the way, and adjust.
+[06:32] There are a lot of
+reference materials for you
+[06:34] to become familiar with
+and for you to leverage.
+[06:37] Some are very detailed
+and technical.
+[06:40] Some will be more conceptual.
+[06:42] Match it to your needs and
+to the needs of the people
+[06:45] and roles you are engaging with,
+[06:46] and match it to
+the business need.
+[06:49] But I like to be practical.
+[06:51] In the videos, I will
+share my thoughts with you
+[06:53] and support you with practical
+links, examples, and content.
+[06:57] As an architect in the field
+working with customers,
+[07:00] I realized it can
+be good to start
+[07:02] with cloud, the public cloud.
+[07:04] It has much built-in
+[07:06] and additional capabilities can
+be turned on relatively simple.
+[07:09] And yes, yes, yes, there's
+cost and money and personnel
+[07:12] and all the other things,
+but start somewhere,
+[07:14] and from there, extend.
+[07:16] So as a principle, start
+with something in cloud
+[07:20] and then extend and embrace.
+[07:22] Grow, learn, adjust.
+[07:24] Grow, learn, adjust.
+[07:27] Another driver can
+be an incident,
+[07:29] something bad happened.
+[07:31] Turn it for the good.
+[07:32] A practical reason for that is
+[07:35] that when there's an
+incident, there's focus.
+[07:37] There's attention.
+[07:38] There's momentum.
+[07:39] Leverage that to get something
+done and make sure it persists.
+[07:45] The downside is that the
+urgency often does not last,
+[07:48] and there's a risk of something
+being a point solution.
+[07:52] In general, we prefer a holistic
+approach to a point solution.
+[07:57] The investments should
+be of bigger benefit.
+[08:01] On the slide, identity
+is highlighted.
+[08:04] Some say identity is
+the new perimeter,
+[08:07] or identity is the new security.
+[08:10] The fact is that a lot of good
+and bad things can happen
+[08:14] through the uses of an identity.
+[08:17] Securing identities
+[08:18] and associated privileges
+should be a major focus area,
+[08:21] and we'll have separate
+videos on that.
+[08:23] If you do not secure identities
+and their privileges,
+[08:26] you run a big risk of
+being impacted negatively.
+[08:30] You will face a breach, which
+brings us to risk thinking.
+[08:36] Try to relate things
+back to risk.
+[08:39] What is the risk we have?
+[08:40] How big is it?
+[08:42] What's the likelihood?
+[08:43] And if it happens, then
+what's the impact?
+[08:46] Based on a risk-based
+approach, it will be possible
+[08:49] to start quantifying risks and
+prioritizing risks that need
+[08:52] to be actively addressed.
+[08:54] It can help you and your
+organization to decide what
+[08:57] to do and what to do
+first, second, and so on.
+[09:01] In life and in business,
+[09:03] everything is always
+about priorities.
+[09:06] Do we avoid risk?
+[09:07] Do we mitigate risk?
+[09:09] Do we transfer risk?
+[09:10] Do we accept risk?
+[09:12] If we have a risk that
+cannot be accepted,
+[09:15] then we must do something,
+something that is people,
+[09:18] process, or
+technically oriented.
+[09:21] Something that makes
+the risk acceptable.
+[09:24] Ultimately, accepting risk
+is a business decision.
+[09:28] And we work with risk
+management professionals
+[09:30] in your the organization,
+if possible.
+[09:32] Many large organizations
+have a special discipline
+[09:34] for managing risk.
+[09:36] As a cybersecurity architect, we
+will work with lots of others.
+[09:41] From a practical perspective,
+the public cloud also helps.
+[09:44] They are risks that we
+transfer to our cloud partner,
+[09:48] risks like physical
+security of data centers.
+[09:51] The risk does not go away.
+[09:53] We still care about it.
+[09:55] But we don't have to make
+all the effort ourselves.
+[09:58] And we can spend time and
+energy on all the other risks.
+[10:03] What also helps is to use
+things that worked well
+[10:06] for others before:
+best practices.
+[10:08] Best practices are
+recommended ways to do things
+[10:11] that have been found to be
+most effective or efficient.
+[10:15] Best practices help you to
+avoid mistakes and ensure
+[10:18] that your resources and
+efforts aren't wasted.
+[10:21] The best practices are
+patterns that work out well.
+[10:24] And of course, if it was found
+that something did not work
+[10:27] out well, we'd also
+like to know about it.
+[10:29] Patterns and anti-patterns.
+[10:32] An example of an anti-pattern
+is customization.
+[10:35] Customization works as an
+anti-pattern for patching.
+[10:38] It will delay deploying a patch
+or will make it impossible.
+[10:42] And I guarantee you
+will see customizations
+[10:44] in any environment.
+[10:46] We need to when we need to,
+but we would like to avoid it.
+[10:49] But maybe you can think of
+an anti-pattern by yourself.
+[10:51] Or maybe even better,
+go and search for them.
+[10:55] The frameworks and
+concepts we will discuss
+[10:57] in the video series are all
+[10:58] about patterns and
+anti-patterns.
+[11:01] So more detail on that later,
+[11:02] and a high-level view
+of some of them now.
+[11:08] The MCSB is a baseline with
+security recommendations.
+[11:13] The CAF, Cloud Adoption
+Framework, is a framework on how
+[11:16] to adopt to cloud and has a
+security-specific pillar.
+[11:20] The Well-Architected
+Framework, the WAF,
+[11:22] is about building a
+workload for cloud
+[11:24] and also has a specific
+security pillar.
+[11:27] More info on these can
+be easily accessed
+[11:29] by using the short-link
+name of the framework.
+[11:32] At the top of the slide,
+I have put an example.
+[11:36] Just swap the x's with
+the three-letter acronym
+[11:39] of the framework, and you will
+get the full library for that.
+[11:43] But again, we will
+cover these separately.
+[11:46] These are next to Zero Trust
+foundational security topics
+[11:49] for the cybersecurity
+architect role.
+[11:53] A couple of tips before
+we close the session.
+[11:56] Keep it simple.
+[11:58] Adding complexity can
+always be done later.
+[12:01] And typically, things
+do not get more secure
+[12:04] when they're more complicated.
+[12:06] Do not boil the ocean.
+[12:08] There's much we need to do, but
+it cannot be done all at once.
+[12:12] So start, but start
+with something
+[12:13] that will contribute
+to a bigger picture.
+[12:15] Start with something that
+will significantly contribute
+[12:19] to a greater effort.
+[12:21] And be empowered.
+[12:22] We will change things, and
+we'll encounter pushback.
+[12:25] We need to ensure we have a
+mandate from our organization
+[12:28] to be able to make changes.
+[12:30] Some of these changes will get a
+lot of resistance on the people,
+[12:33] process, or technology side.
+[12:35] And things we may suggest may
+impact the way how people are
+[12:39] doing things currently.
+[12:40] And also be pragmatic.
+[12:42] Just be practical.
+[12:44] It's nice to have big dreams,
+but things need to be realized.
+[12:47] And attackers will
+not wait for us.
+[12:51] We've come to the
+end of this video,
+[12:52] and the elements we've
+covered are what's the role
+[12:55] of the cybersecurity architect,
+what are the requirements,
+[12:58] and where to get started.
+[13:00] So thank you very much
+for watching this video.
+[13:03] There are more in the series.
+[13:04] I hope you go and
+find another one.
+[13:05] Meet you again there, and
+until then, stay safe.

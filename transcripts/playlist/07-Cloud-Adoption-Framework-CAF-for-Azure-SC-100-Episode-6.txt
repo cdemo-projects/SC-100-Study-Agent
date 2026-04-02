@@ -1,0 +1,595 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Niujen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+Cybersecurity Architect.
+[00:17] In this video, I
+want to explain more
+[00:19] about the Cloud
+Adoption Framework
+[00:20] and security aspects of it.
+[00:23] The content of this video is
+mostly aligned with the area
+[00:26] of attention, security best
+practice and priorities
+[00:29] from a certification
+perspective.
+[00:32] Our main question for this video
+is how we secure ourselves while
+[00:35] adopting cloud.
+[00:36] Starting, extending, growing
+into cloud solutions.
+[00:39] For new, what
+guidelines can we use?
+[00:42] For existing, what
+can we do to improve?
+[00:45] But first a question
+for you, what is it?
+[00:48] What is the Cloud
+Adoption Framework?
+[00:51] Is it the certification program
+that validates the skills
+[00:54] and knowledge of
+cloud professionals?
+[00:57] Is it a cloud service
+provider that offers a range
+[00:59] of cloud solutions, or
+is it the methodology
+[01:03] that guides organizations
+through the process
+[01:05] of migrating applications
+and data to the cloud?
+[01:14] Answer C is the most applicable,
+but what about security aspects?
+[01:20] Let's look at the
+learning objectives.
+[01:24] There are three main aspects to
+shed light on in this video,
+[01:28] and they are, what is the
+Cloud Adoption Framework;
+[01:32] what is Cloud Adoption
+Framework secure, CAF secure;
+[01:36] and what are CAF landing zones?
+[01:42] The Microsoft Cloud
+Adoption Framework
+[01:43] for Azure is a full
+lifecycle framework
+[01:46] that enables cloud
+architects, IT professionals,
+[01:50] and business decision makers
+[01:51] to achieve their
+cloud adoption goals.
+[01:54] It provides the best
+practices, documentation,
+[01:57] and tools that
+help you to create
+[01:58] and implement your business
+[01:59] and technology strategies
+for the cloud.
+[02:02] Essentially, it is
+everything we have learned
+[02:04] about cloud deployments since
+we and our customers started
+[02:07] with that, and it is data
+specifically towards Azure.
+[02:12] Fundamental guidance,
+best practices,
+[02:14] and lessons learned
+are projected
+[02:15] on deploying into Azure.
+[02:17] In general, if you follow
+the guidance and advisories
+[02:20] from the Cloud Adoption
+Framework, you're more likely
+[02:23] to be successful in
+your cloud deployment.
+[02:27] You can easily access
+the information
+[02:30] on the Cloud Adoption Framework
+through a short link.
+[02:32] I've listed it here on
+the slide, aka.ms/caf --
+[02:37] Charlie, Alpha, Foxtrot.
+[02:39] That link will bring
+you to the main page
+[02:41] of the framework and
+all its content.
+[02:44] When you go there, you will
+notice there's a lot of content.
+[02:47] From a cybersecurity
+architect perspective,
+[02:50] we are most interested in the
+security areas of the framework,
+[02:55] but we do need to have a general
+understanding of the rest.
+[02:58] So my tip is to read and
+understand as much as you can
+[03:01] on the Cloud Adoption Framework
+and regularly go back to it.
+[03:05] It has stabilized
+over the years,
+[03:07] but it will be kept up to date.
+[03:09] You should keep up to date also.
+[03:14] From a high level, we can break
+it down to a couple of elements.
+[03:18] These are called methodologies.
+[03:20] The Cloud Adoption
+Framework consists
+[03:22] of nine main activities
+called methodologies.
+[03:27] Each methodology is
+a process or stage
+[03:29] that an organization
+will need to navigate
+[03:31] through to adopt to the cloud.
+[03:35] Here we have an overview of
+those nine methodologies,
+[03:38] strategy, plan, ready,
+migrate, innovate, manage,
+[03:41] govern, organize, and secure.
+[03:44] And these will be put into
+context, into stages,
+[03:48] or a lifecycle, if you will.
+[03:50] Here we see the lifecycle.
+[03:52] It is not so much that
+an activity is limited
+[03:54] to a certain time.
+[03:56] It is more where the start is
+and where the emphasis is at.
+[04:00] If you notice, bottom
+three are more continuous.
+[04:04] We need to do these, all
+the time, everywhere,
+[04:06] in every stage, and as you
+can see, Secure is one
+[04:09] of the continuous elements.
+[04:11] And that's good
+for us, isn't it?
+[04:14] The security aspects, the
+security-specific parts
+[04:17] of the Cloud Adoption Framework,
+can be located easily, again,
+[04:21] by using a short link.
+[04:22] You'll see that on the graphic,
+aka.ms.force-cache-secure.
+[04:28] The secure methodology
+provides a vision
+[04:31] of the complete end state
+to guide improvements
+[04:33] of your security
+program over time.
+[04:36] The Cloud Adoption Framework
+provides security guidance
+[04:39] for this security journey
+by providing clarity
+[04:41] on the processes,
+best practices,
+[04:43] models, and experiences.
+[04:46] This guidance is based
+on lessons learned
+[04:48] and real-world experiences
+of real customers,
+[04:50] the Microsoft security journey,
+and work with organizations
+[04:54] like NIST, the Open
+Group, and others.
+[04:58] It is all connected, and
+it is all brought together
+[05:01] in the Cloud Adoption Framework.
+[05:03] And of course, that
+includes the thinking
+[05:05] with a zero-trust mindset also.
+[05:10] Let's look at the
+alignment with business
+[05:12] and security disciplines
+in a bit more detail.
+[05:16] On the business side,
+things are shifting.
+[05:18] There's a digital
+transformation,
+[05:20] threat landscape,
+platform changes,
+[05:22] and a shift in expectations,
+for example, to be more agile.
+[05:26] But also, there's a shortage
+of staff, a growing amount
+[05:30] of assets, and exposure with
+an increased amount of threats
+[05:33] that put pressure
+on the business.
+[05:35] Our Cloud Adoption
+should focus heavily
+[05:38] on business alignment
+in three categories.
+[05:41] The first is Risk Insights.
+[05:43] Align and integrate security
+insights and risk signals
+[05:47] and sources to the
+business initiatives.
+[05:50] Ensure repeatable processes.
+[05:51] Educate all teams on the
+application of those insights
+[05:55] and hold teams accountable
+for improvements.
+[05:58] The second is
+Security Integration.
+[06:00] Integrate security knowledge,
+skills, and insights deeper
+[06:03] into daily operations
+of the business
+[06:05] in an IT environment via
+repeatable processes
+[06:09] and deep partnerships at all
+levels of the organization.
+[06:13] The third would be
+Operational Resilience.
+[06:16] Focus on ensuring the
+organization's resilience
+[06:19] by being able to continue
+operations during an attack,
+[06:23] even if it's at a
+degraded state,
+[06:25] and that the organization
+rapidly bounces back
+[06:27] to full operations.
+[06:29] And then we have specific
+security disciplines
+[06:32] which we need to have or
+that we need to mature.
+[06:35] This transformation will
+affect each security
+[06:38] discipline differently.
+[06:40] While each of these disciplines
+is extremely important
+[06:43] and requires investment, these
+are ordered roughly by the ones
+[06:48] that have the most immediate
+opportunities for quick wins
+[06:51] as you adopt to cloud.
+[06:53] Access Controls.
+[06:55] Application of network
+[06:56] and identity create access
+boundaries and segmentation
+[07:00] to reduce the frequency and
+reach of any security breach.
+[07:04] Security Operations.
+[07:06] Monitor IT operations
+to detect, respond,
+[07:08] and recover from a breach.
+[07:10] Use data to continuously
+reduce risk of breach.
+[07:15] As with protection, maximize
+protection of all assets,
+[07:20] infrastructure, devices,
+data, applications, networks,
+[07:23] and identities to minimize the
+risk to the overall environment.
+[07:28] Security governance.
+[07:30] Delegated decisions
+accelerate innovation
+[07:33] and introduce new risks.
+[07:35] Monitor decisions,
+configurations, and use data
+[07:39] to govern decisions made
+across the environment
+[07:41] and within all workloads
+across the whole portfolio.
+[07:45] Innovation Security.
+[07:47] As an organization adopts
+DevOps processes and models
+[07:50] to increase the
+pace of innovation,
+[07:52] security must become an
+integral part of DevSecOps,
+[07:57] DevSecOps processes, and
+integrate security expertise
+[08:00] and resources directly into
+this high-speed cycle.
+[08:04] This involves shifting
+some decision-making
+[08:06] from centralized teams to
+empower workload-focused teams.
+[08:12] All this needs to be brought
+[08:13] under responsibility
+and accountability.
+[08:16] We will need to have security
+functions and security rules.
+[08:20] I've included a short link
+to easily find the content
+[08:23] on functions and rules in the
+Cloud Adoption Framework,
+[08:25] which is what we see here,
+aka.msforgedlesssecurityrules.
+[08:31] The diagram depicts specific
+organizational functions
+[08:34] within security.
+[08:35] The functions depicted
+represent an ideal view
+[08:38] of a complete enterprise
+security team.
+[08:40] Security teams with limited
+resources may not have formal
+[08:44] responsibilities defined
+around all these functions.
+[08:47] Each function should be
+performed by one or more people,
+[08:51] and each person could perform
+one or more functions depending
+[08:54] on factors such as culture,
+budget, and available resources.
+[08:59] The task for us is to
+verify if these functions
+[09:03] and responsibilities
+exist and are owned
+[09:06] within an organization.
+[09:10] Here we find specific roles
+[09:11] and responsibilities you will
+encounter throughout Microsoft
+[09:14] documentation, including the
+Microsoft Cloud Security
+[09:17] Benchmark, Rapid Modernization
+Plans, or RAMPs,
+[09:21] to secure privileges,
+privileged access,
+[09:23] and in our security best
+practices around Azure.
+[09:27] So we can understand
+the roles needed,
+[09:28] but there is also guidance on
+what is expected of these roles.
+[09:32] Again, a good way to start your
+efforts, verification of tasks.
+[09:38] One of our tasks as a
+cybersecurity architect is
+[09:41] to assess the current situation.
+[09:43] In another video, I
+explained about assessments
+[09:45] that you can leverage
+from Microsoft Learn,
+[09:47] and assessments help
+assess, go, and do.
+[09:52] And for assessing the alignment
+[09:54] with the Cloud Adoption
+Framework, there are two
+[09:56] that I'd like to highlight.
+[09:59] One way to assess Cloud
+Adoption Framework is
+[10:02] to do a Cloud Adoption
+Security Review, or CASR.
+[10:06] It will help you to
+identify opportunities
+[10:08] for critical security
+optimizations to better align
+[10:12] to the security
+methodology, or CAF,
+[10:14] and improve your Azure
+landing zone security.
+[10:18] We've not talked about landing
+zones, but we will in a moment.
+[10:22] It is based on questions,
+and at the end
+[10:24] of all the assessment questions,
+[10:26] you will receive
+actionable recommendations
+[10:28] to incrementally
+improve your security.
+[10:31] "Actionable" means that you
+can use those recommendations
+[10:35] and put them into your Azure
+DevOps or GitHub project
+[10:38] and track the
+implementation progress
+[10:40] through standard project
+management processes and tasks.
+[10:43] You can create multiple
+versions, like milestones
+[10:46] of the assessment and track
+your progress over time,
+[10:49] all on the way to improvement.
+[10:53] And here, we find an example
+[10:55] of the CASR landing page
+on Microsoft Learn.
+[10:58] It's for you to go
+and inspect that.
+[11:01] In the same area on
+Microsoft Learn,
+[11:03] we can also find another
+CAF-related assessment,
+[11:06] like this one, one I
+regularly use myself
+[11:09] to validate my knowledge or
+to leverage in a workshop.
+[11:13] To go through all the questions
+will take too much time here,
+[11:16] but we can go and have a brief
+look, and I challenge you to go
+[11:20] and inspect it on your
+own after this video.
+[11:25] Here we see an example
+of a question set.
+[11:28] Each of them will
+have more detail.
+[11:30] It really gets you
+thinking, right?
+[11:33] And here's an example of
+a CASR that I did before.
+[11:38] An example outcome, you will
+have a list of recommendations
+[11:42] to go and do, and then you can
+run the assessment again and see
+[11:45] that you've, you know,
+improved your score.
+[11:50] A couple of moments
+ago in the video,
+[11:52] I mentioned landing zones,
+and that we would get
+[11:54] to them, and here they are.
+[11:57] What are landing zones?
+[11:58] Well, I asked AI, Copilot,
+what it thinks about it.
+[12:03] Technology like Copilot
+will help us to get
+[12:05] to answers quickly, so leverage
+that to your own benefit.
+[12:11] From a security perspective,
+AI will make a difference.
+[12:14] That will speed up an analysis
+we can do of a tremendous amount
+[12:16] of data, but let's talk now
+for now about landing zones.
+[12:21] Essentially, it's
+a lessons learned,
+[12:22] best practices-based template
+to get an environment up
+[12:25] and running, considering
+everything in the framework
+[12:28] that is there from the Cloud
+Adoption Framework perspective,
+[12:33] which includes, of course,
+principles of security
+[12:35] and zero trust in
+general, right?
+[12:37] Remember, zero trust
+is never far away,
+[12:40] and it's an important
+fundamental concept.
+[12:43] Informational landing
+zones can be found
+[12:45] in the Cloud Adoption Framework
+as part of the ready pillar.
+[12:48] It is considered as part of
+the readying in environments
+[12:51] to get started with
+deployments, for example,
+[12:54] greenfields for migration,
+but as mentioned,
+[12:59] it has all the security
+elements represented in it.
+[13:01] Have cryptographic keys?
+[13:03] Sure you have.
+[13:03] Deploy key vault.
+[13:05] Concentrate your network
+traffic for inspection?
+[13:06] Sure, use a connectivity
+hub, et cetera, et cetera.
+[13:10] So for easy reference, I've
+listed a short link again
+[13:13] that will guide you
+to the page directly.
+[13:16] We will need that in a moment
+to look at an example.
+[13:21] On the grand scheme of things,
+we can make a simple division
+[13:24] in two types of landing zones.
+[13:27] One that is needed from a
+central organization perspective
+[13:30] and one that's used for a
+workload, an application,
+[13:33] like a business
+unit or something.
+[13:34] I've listed here the
+official terminology of it.
+[13:37] We have a platform landing
+zone, subscriptions deployed
+[13:40] to provide centralized
+services, often operated by one
+[13:44] or several central teams split
+by function; for example,
+[13:47] networking, identity,
+and those will be used
+[13:50] by various workloads
+and applications.
+[13:54] Application landing zones, one
+or more subscriptions deployed
+[13:58] as an environment for an
+application or workload.
+[14:02] Landing zone, we see an example
+of the landing zone concept,
+[14:05] and it's a big picture
+for a little screen.
+[14:08] It's better to go to the page,
+[14:10] and there I can explain
+what you will need
+[14:11] to go and have a look at.
+[14:14] On the page, you can download
+the slide yourself, the graphic,
+[14:18] and then, you can
+inspect it more closely,
+[14:22] like I'm doing here.
+[14:23] Here we have an enlargement
+of part of a landing zone.
+[14:27] It's about governance.
+[14:28] It has all the elements
+listed that should be present
+[14:31] or that should be part
+of a governance design.
+[14:34] We can literally
+use this graphic
+[14:35] to get started, do
+a comparison with.
+[14:38] Let's do one more.
+[14:41] Azure Hierarchy, here
+another enlargement,
+[14:44] this time to help design
+or check the governance
+[14:46] and hierarchy in Azure.
+[14:48] The tenant root group is a given
+in Azure, and it's recommended
+[14:51] to create your own
+company hierarchy.
+[14:54] Here we can see a common
+practice-based example,
+[14:56] and make sure you include some
+freedom to be able to undelete
+[15:00] by decommissioning
+a subscription
+[15:02] for some time before deleting it
+-- a delete is irreversible --
+[15:07] and allow room for
+testing new capabilities.
+[15:09] Give people a
+playground, a sandbox,
+[15:12] where some basic rules apply,
+[15:14] but where you are not too
+restricted in what they can do.
+[15:17] More lenient Azure
+policies, for example.
+[15:19] And for us, it's an ideal
+opportunity to learn early
+[15:22] about new developments, and
+that will help to standardize
+[15:25] and transition to
+production more smoothly.
+[15:28] And before I forget, sandboxes,
+they should be time-limited.
+[15:33] You don't want them
+to become production.
+[15:36] They are only there to test
+[15:37] and prepare towards a
+production environment.
+[15:41] Let's recap what we
+looked at in this video.
+[15:43] We looked at the Cloud Adoption
+Framework, and specifically,
+[15:46] the secure area and
+landing zone concepts.
+[15:49] Now go out and try
+an assessment,
+[15:51] read on the Cloud
+Adoption Framework,
+[15:54] and look at the landing zone
+concepts, plenty of work,
+[15:56] and there will always be more.
+[15:59] Here again are some links that
+I was sharing in the video
+[16:03] that you can use for
+further inspection.
+[16:05] Thank you for watching the
+video, and please come back
+[16:07] for more videos in the series.
+[16:09] See you next time.
+[16:10] Until then, stay safe.

@@ -1,0 +1,282 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:08] Welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:17] Discover what it takes to become
+a Microsoft cybersecurity
+[00:20] architect as we explore
+the role, key focus areas,
+[00:23] and top strategies to jumpstart
+your certification journey.
+[00:27] In this video, we
+will look at the role
+[00:29] and the certification Microsoft
+Cybersecurity Architect.
+[00:34] In this video, I want to help
+you with a couple of aspects.
+[00:37] What is the role of a
+cybersecurity architect?
+[00:39] What are the areas to focus on?
+[00:41] And how can you prepare?
+[00:45] The cybersecurity architect
+video series is all
+[00:47] about the aspects that
+come with the role
+[00:49] of a cybersecurity architect.
+[00:51] Let us start with
+the role first.
+[00:53] What is expected?
+[00:55] For that, you should always
+go to the certification page
+[00:58] to read what the role is about.
+[01:00] I've included a short
+link in the presentation
+[01:02] that can help you easily
+find the certification page.
+[01:06] There will be a lot of links
+[01:07] like this throughout the
+entire video series.
+[01:10] It makes it easier, hopefully,
+[01:11] for you to further
+investigate a topic.
+[01:14] What we see is a screenshot of
+the Job Task Statement as found
+[01:18] on the certification page.
+[01:19] It sums up what is expected from
+a Microsoft security architect.
+[01:24] What is it that you do as
+a cybersecurity architect?
+[01:27] Well, you translate a
+cybersecurity strategy
+[01:30] into capabilities that
+protect the assets, business,
+[01:33] and operations of
+an organization.
+[01:35] You design, guide the
+implementation of,
+[01:38] and maintain security solutions
+[01:40] that follow Zero Trust
+principles and best practices.
+[01:43] And that will include
+working with a lot
+[01:45] of other professionals
+[01:46] at different levels
+in an organization.
+[01:48] And you also need to ensure
+compliance, operations,
+[01:52] and the general security
+posture are catered for.
+[01:55] It's quite a bold task,
+and I do not expect
+[01:58] that to change any time soon,
+[02:00] but do make sure you check
+the task every now and then
+[02:03] since we calibrate it regularly.
+[02:05] It gets calibrated about once a
+year by a team from Microsoft
+[02:09] and customer representatives.
+[02:13] Audiences and needs.
+[02:14] Well, security is a team
+sport, and for securing,
+[02:18] we need to work with a lot of
+people in different roles.
+[02:21] We will engage with a lot
+of different audiences
+[02:23] and stakeholders, and every
+audience has their own needs.
+[02:27] For our tasks as a cybersecurity
+architect, we are a bit
+[02:31] in the middle of this graphic.
+[02:33] Our strongest effort lies
+with architecture and policy,
+[02:36] but we are involved
+in all other aspects.
+[02:39] We work with the business and
+senior leadership on the vision
+[02:42] and translate that, and we
+work with the implementation
+[02:45] and operations to ensure
+things get deployed,
+[02:47] managed, and maintained.
+[02:50] The graphic used is from
+the Microsoft Cybersecurity
+[02:52] Reference Architectures, or
+MCRA, which we will discuss
+[02:56] in one of the videos in the
+series, and it is graphics
+[02:59] like this that will
+help you to understand
+[03:01] or maybe even explain the
+role, graphics from the MCRA
+[03:05] and from other places.
+[03:07] But let us look at other
+main areas of attention.
+[03:11] Areas of attention, well,
+the certification, course,
+[03:15] and videos are organized around
+four main areas of expertise
+[03:18] that we expect from Microsoft
+cybersecurity architects.
+[03:22] And these areas are security
+best practices and priorities;
+[03:26] security operations,
+identity and compliance;
+[03:29] solutions for infrastructure;
+and solutions
+[03:32] for applications and data.
+[03:35] We will have videos on topics
+within each of these areas.
+[03:38] As you can imagine, these areas
+are not strict boundaries.
+[03:42] The first one listed is
+about best practices.
+[03:44] They will be relevant
+always and everywhere.
+[03:47] So we will see them back
+again and again and again.
+[03:50] But in the video series, I have
+reduced the amount of overlap,
+[03:53] and the videos will not only
+cover some aspects of a topic,
+[03:57] you will need to identify
+and research the parts
+[04:00] that you are not familiar
+with by yourselves,
+[04:02] conceptually and technically.
+[04:05] The concepts and
+frameworks that align
+[04:06] with security best practices
+and priorities are fundamental,
+[04:09] and the most fundamental
+concept here is Zero Trust.
+[04:13] Now, Zero Trust is a concept
+that goes back years and years,
+[04:17] and it's the foundation under
+all our efforts on security.
+[04:21] It helps to organize elements so
+they can be addressed properly.
+[04:26] We will not discuss Zero
+Trust in length here.
+[04:28] That is for another video,
+but I want to bring it
+[04:32] to your attention here.
+[04:33] Essentially, we are thinking
+of seven categories,
+[04:37] six pillars plus
+another category,
+[04:39] that need to be addressed
+in our architectures.
+[04:42] And maybe you're expecting
+the graphic and you see six,
+[04:46] so what's the seventh?
+[04:47] Well, it's the thing that
+brings everything together.
+[04:48] It's the visibility,
+automation, and orchestration.
+[04:52] And the task for us is
+to ensure everything
+[04:54] in an organization becomes
+visible and cross-correlated,
+[04:58] and we can use Zero Trust as
+a guiding framework for that.
+[05:01] Above these pillars, there
+will be also other things
+[05:05] like principles, three of them.
+[05:07] But again, we will
+have many videos
+[05:09] that will assess your
+further learning.
+[05:12] Now, how to prepare
+for the exam.
+[05:14] And how to prepare, start
+with the exam page,
+[05:17] as is shown, again,
+on my screen.
+[05:19] That's the starting point.
+[05:21] You will find all relevant
+information there,
+[05:24] and it will be up to date.
+[05:27] Explore the tips you will
+find on the exam page.
+[05:29] There's a study guide
+that will explain
+[05:31] in detail what you're
+expected to know.
+[05:33] Use this video series I
+have recorded for you,
+[05:37] but also use other resources
+like the pages to content
+[05:40] on Microsoft Learn to
+prepare yourselves,
+[05:42] and the short links
+I share with you
+[05:44] in the videos in this series.
+[05:47] The exam prep videos
+are also available,
+[05:50] and they are short
+recaps per focus area
+[05:52] to help you prepare
+for the exam.
+[05:55] And if you want to see what
+an exam UI will look like,
+[05:57] then explore the sandbox.
+[06:00] Look at the sandbox, because the
+exam interface may have changed
+[06:04] since you last saw it, if
+you've ever seen it before.
+[06:07] And it was, for
+example, a major change
+[06:09] to the interface early 2024.
+[06:12] And if you have never seen
+it, well, it will help you
+[06:14] to get more comfortable
+with the exam experience,
+[06:17] maybe reduce your
+stress a little bit
+[06:19] by knowing what
+you're getting into.
+[06:21] In the exam guide, you will
+also find a lot of links
+[06:24] to more information on the
+exam process and what kind
+[06:27] of questions you can expect,
+[06:29] or how to keep your
+certification alive
+[06:32] by doing renewals and much more.
+[06:34] So go and enjoy the
+exam guide later.
+[06:38] Another element you'll find
+in the exam page is a set
+[06:41] of free practice
+assessment questions.
+[06:43] Use them to verify what
+you've learned and use them
+[06:47] to understand where you need
+to invest more time to learn.
+[06:51] As you can see, they
+are without charge.
+[06:54] The exam itself, however,
+[06:55] will require a contribution
+from your side.
+[07:00] This brings us to the
+end of this video.
+[07:01] We looked briefly at the role
+of a cybersecurity architect,
+[07:05] explored the focus areas,
+and discussed a couple
+[07:07] of preparation resources.
+[07:10] Thank you for watching,
+but that's not all.
+[07:13] There is more, and there's
+always more, more questions
+[07:16] and hopefully more answers
+and more videos on the role
+[07:19] of a Microsoft
+cybersecurity architect.
+[07:21] Go find one, go enjoy,
+and please stay safe.

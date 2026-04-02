@@ -1,0 +1,312 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, we will
+discuss aspects of endpoints.
+[00:21] The content of this video is
+mostly aligned with the area
+[00:24] of solutions for infrastructure
+[00:26] from a certification
+perspective.
+[00:29] So, a question: How do we
+control the endpoints?
+[00:32] How do we control endpoint?
+[00:34] That's the main question
+we should think of.
+[00:36] There are so many, and every one
+[00:38] of them is an opportunity
+for an attacker.
+[00:41] What we want to discuss is
+how to secure endpoints,
+[00:44] what kind of endpoints there
+are, and what are capabilities.
+[00:49] Zero Trust, six technology
+pillars, and three principles,
+[00:53] and we could argue whether
+there's a seventh pillar
+[00:55] about visibility,
+automation, orchestration.
+[00:58] But as one of our tasks as
+a cybersecurity architect,
+[01:02] it's to ensure that
+all these pillars
+[01:04] and elements get coverage
+[01:06] and that we bring
+everything together.
+[01:08] For now, our focus
+is on the endpoint.
+[01:11] When an identity has been
+granted access to a resource,
+[01:14] data can flow to a variety
+of different endpoints.
+[01:17] From IoT devices to smartphones
+to bring your own devices,
+[01:22] to partner-managed devices,
+and on-premises workloads
+[01:25] to cloud-hosted servers.
+[01:27] This diversity creates a
+massive attack surface.
+[01:31] There typically
+are many devices,
+[01:34] and we need to get
+that under control.
+[01:36] We need to make the
+risk acceptable,
+[01:39] and we need to get data from
+the endpoints to be included
+[01:42] in the overall analysis.
+[01:45] A recurring benchmark is the
+Microsoft cloud security
+[01:48] benchmark, the MCSB.
+[01:50] The MCSB has several places
+[01:52] where it pays attention
+to endpoints.
+[01:55] Endpoint security is the
+most prominent control
+[01:57] that does this, but there are
+other relevant controls as well.
+[02:01] What is endpoint security?
+[02:03] The one that is directly
+associated with the endpoints.
+[02:07] It's a straightforward process.
+[02:10] First, create something
+on the endpoint,
+[02:12] install some protection.
+[02:14] Second, use something
+that's modern.
+[02:16] Third, keep it up to date.
+[02:19] From a Microsoft portfolio, that
+could be Defender for Endpoint,
+[02:23] and for endpoints running as
+infrastructure as a service
+[02:25] on cloud solutions, that could
+be Defender for Servers,
+[02:28] which basically is based
+on the same engine:
+[02:30] Defender for Endpoint.
+[02:32] But what about other
+kinds of endpoints?
+[02:35] Like we're seeing more and more
+from an IoT and OT perspective.
+[02:39] Internet of Things and
+operational technology.
+[02:42] We need to ensure that
+they are also included
+[02:45] in our architectures.
+[02:46] From a portfolio perspective,
+that could be done
+[02:49] through Defender for IoT
+that we could leverage.
+[02:53] We want to understand
+our systems better,
+[02:56] so we can secure them,
+maintain their security,
+[02:59] and improve on the security.
+[03:01] We want to apply the controls
+from the MCSB to them.
+[03:04] And if we cannot, we may want
+[03:05] to exclude them from
+any interaction.
+[03:09] I've looked at some
+aspects of the endpoint
+[03:11] that we should think about.
+[03:12] First, what kind
+of endpoint is it?
+[03:15] This is the first question
+we should answer.
+[03:18] A mobile phone is
+different from a server.
+[03:21] An IoT device is
+different from a laptop.
+[03:24] They are all endpoints, but they
+have very different features
+[03:27] and very different dynamics.
+[03:28] Besides the size
+of the hardware,
+[03:30] what about the operating system?
+[03:33] Different operating systems
+have different capabilities.
+[03:36] But they all have the
+need for updates.
+[03:38] That's something they do share.
+[03:40] So we need to include
+update management
+[03:42] in our solutions as well.
+[03:44] Not updating is falling behind,
+and it opens up a window
+[03:47] of opportunity for attackers
+if we're not up to date.
+[03:50] What if we cannot update, which
+is common for OT environments
+[03:54] where changes are not allowed?
+[03:57] We need to know, so we can
+design and implement it
+[04:00] for that situation,
+finding a way
+[04:03] to protect that vulnerability.
+[04:05] From an MCSB point of view,
+this is where we deal
+[04:08] with asset management and
+secure configuration aspects,
+[04:12] or network security controls, or
+MCSB data protection controls.
+[04:17] Maybe the device is not suited
+to handle the kind of data
+[04:20] that is sensitive or
+labeled as critical.
+[04:24] Now, not every device will be
+under our management or control.
+[04:28] Or maybe not yet,
+or maybe never.
+[04:31] How will you handle that?
+[04:34] Bring your own device is a usual
+situation we see in enterprises.
+[04:37] And we see more and more
+enterprises moving away
+[04:40] from that because it's very hard
+to manage processes and data
+[04:44] on a device that
+you cannot control.
+[04:47] That is why the middle
+acronyms on the slides,
+[04:51] where they are relevant: MDM,
+mobile device management,
+[04:54] and MAM, mobile
+application management.
+[04:57] With MDM, we manage
+the whole device.
+[04:59] With MAM, we usually
+manage an application.
+[05:03] MAM, mobile application
+management, is often used
+[05:07] in situations where a
+device cannot be managed
+[05:10] by the organization, such as
+[05:11] when employees bring their
+own personal devices
+[05:14] for work purposes,
+bring your own device.
+[05:16] In this case, MAM allows the
+organization to separate
+[05:20] and secure the work-related
+application data on the device
+[05:23] without affecting the
+personal apps and data.
+[05:29] Are we covered?
+[05:31] There are so many capabilities
+we can start leveraging.
+[05:34] Some of which we already
+named, and there's content
+[05:37] of that also online and in
+other videos in this series.
+[05:40] Here I'm highlighting an example
+you'll find in the MCRA.
+[05:44] It is the slide that the
+MCRA started out with to try
+[05:47] and bring everything together.
+[05:49] And you will find this slide
+in the downloadable version
+[05:51] of the MCRA at aka.ms/mcra.
+[05:56] What I've did here -- what I've
+done here is I've highlighted
+[05:59] the areas in this
+general overview
+[06:01] where you will find the most
+relevance when it comes
+[06:03] to securing the endpoints.
+[06:05] What we are looking
+for is a capability
+[06:07] that can help us understand
+and control the endpoints
+[06:10] and potentially the
+environment that they are in.
+[06:13] These are some of the
+capabilities to consider based
+[06:15] on the mapping:
+Defender for Cloud;
+[06:18] cloud security posture
+management, CSPM;
+[06:20] cloud workload protection, CWPP,
+[06:22] and which are both
+covered in another video.
+[06:26] Defender for Endpoint,
+antivirus, and more,
+[06:28] and also endpoint detection
+and response capabilities,
+[06:31] and operational
+management capabilities.
+[06:34] We also see Defender for IoT,
+which helps with discovery
+[06:37] and control for IoT
+and OT devices.
+[06:41] And we see capabilities
+like SCCM,
+[06:45] System Center
+Configuration Manager,
+[06:47] capability to manage systems
+that are typically on premises,
+[06:49] or you might call it a
+private cloud situation.
+[06:53] We also see Intune in the
+diagram, which is cloud-based
+[06:56] and is suitable for doing MDM
+and MAM, as we discussed.
+[07:03] Next, and probably last for
+this video, I've got a slide,
+[07:06] a full slide from the MCRA,
+[07:07] so the one that I was using
+for the highlighting.
+[07:10] Use this to think about
+what endpoints are there
+[07:13] and how we can integrate
+them into our architecture.
+[07:15] And as usual for the MCRA, we
+can use it for heat mapping.
+[07:19] Do we have the capability?
+[07:21] Are we catering for it?
+[07:23] For example, there
+is IoT and OT.
+[07:25] Do you have it covered?
+[07:26] If not, get started.
+[07:28] To start thinking maybe of
+using a Defender for that.
+[07:31] In the original MCRA slide,
+like this one, there are lots
+[07:33] of links also added to the
+slide that will bring you
+[07:37] to related content by clicking
+on the area in that slide.
+[07:40] Very, very useful to
+quickly understand more.
+[07:44] Now, we are at the
+end for this video.
+[07:46] The topic was endpoint and
+endpoint considerations.
+[07:49] Make sure your endpoints are
+covered in some kind of way
+[07:52] and are catered for
+in your architectures
+[07:55] and in your environments.
+[07:58] To learn more about specific
+Defender for Endpoint,
+[08:00] you can access the Ninja
+training on Defender
+[08:02] for Endpoint and
+Defender for IoT.
+[08:05] I've shown the short links here
+to those trainings on the slide.
+[08:11] There's always more content.
+[08:12] There's always more
+links available.
+[08:14] For this video, we'll keep
+it where we are right now.
+[08:18] So thank you for
+watching the video.
+[08:20] Go out and explore,
+and please stay safe.

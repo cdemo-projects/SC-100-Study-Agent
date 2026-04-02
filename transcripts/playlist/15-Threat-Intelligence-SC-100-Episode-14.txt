@@ -1,0 +1,615 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello,
+welcome to this video.
+[00:08] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:11] This video is part of a series
+of videos about the role
+[00:14] of Microsoft
+Cybersecurity Architect.
+[00:16] In this video, we will
+discuss the topic
+[00:18] of "Threat Intelligence."
+[00:20] Unlock the power of
+threat intelligence
+[00:22] with this insightful video as
+we explore why it matters,
+[00:25] how it works, and what every
+cybersecurity architect needs
+[00:28] to know to stay ahead
+of cyber threats.
+[00:32] The content of this video is
+mostly lined with the area
+[00:36] of security operations,
+identity, and compliance
+[00:39] from a certification
+perspective.
+[00:41] Now, a question, why do we
+need threat intelligence?
+[00:44] That's the main question
+for this video.
+[00:47] So what is it?
+[00:49] You can choose.
+[00:50] You can look at the
+question and the answers
+[00:52] and decide for yourself.
+[00:53] Threat intelligence is the
+process of collecting,
+[00:56] analyzing, and disseminating
+information about current
+[00:59] or potential cyberattacks,
+or if it's, B, the knowledge
+[01:02] of vulnerabilities and
+weaknesses over a system
+[01:05] or a network, or, C,
+the ability to predict
+[01:07] and prevent future cyberattacks
+based on past data.
+[01:11] The most correct one in this
+would be option A, right?
+[01:16] And threat intelligence
+is not just raw data,
+[01:18] but rather actionable
+information
+[01:20] that can help organizations to
+understand the motives, tactics,
+[01:24] techniques, and procedures
+of their adversaries,
+[01:27] as well as to identify
+and mitigate threats.
+[01:31] Threat intelligence
+can also help
+[01:32] to improve the security
+posture and resilience
+[01:35] of an organization by
+informing its strategy,
+[01:38] policies, and decisions.
+[01:40] Option B in here is incorrect
+[01:42] because it describes
+vulnerability assessment,
+[01:44] which is part of
+threat intelligence,
+[01:46] but not the whole concept.
+[01:48] Vulnerability assessment is
+the process of identifying
+[01:51] and evaluating the risks
+and weaknesses of a system
+[01:54] or a network that could be
+exploited by an attacker.
+[01:57] And option C is incorrect
+[01:58] because it describes threat
+forecasting or anticipation,
+[02:02] which is also a part
+of threat intelligence
+[02:04] but not the whole concept.
+[02:06] Threat forecasting or
+anticipation is the process
+[02:09] of using historical
+data, current trends,
+[02:11] and expert opinions to estimate
+the likelihood, impact,
+[02:15] and nature of future
+cyberattacks.
+[02:19] Learning objectives.
+[02:20] The objective is to understand
+what threat intelligence is
+[02:23] and how we can integrate
+it in our systems
+[02:26] and to have better understanding
+of threats that are out there.
+[02:31] Threat intelligence is the
+process of collecting,
+[02:34] analyzing, and disseminating
+information about current
+[02:37] and emerging threats to
+an organization's assets,
+[02:39] operations, and reputations.
+[02:42] Threat intelligence can help
+organizations to identify
+[02:45] and prioritize the most
+relevant and imminent threats,
+[02:48] as well as to understand
+the tactics, techniques,
+[02:52] and procedures, TTPs, of the
+threat actors behind them.
+[02:56] Threat intelligence can also
+provide recommendations
+[02:58] for mitigating and preventing
+potential attacks,
+[03:01] as well as for enhancing the
+overall security posture
+[03:04] of the organization.
+[03:06] It helps us to learn about
+threat actors' goals, targets,
+[03:09] and attack methods,
+allows us to make faster,
+[03:12] more informed data-based
+security decisions,
+[03:15] and change our approach
+from reactive to proactive
+[03:18] in the fight against our
+enemies, against our --
+[03:21] the threat actors
+that are out there.
+[03:23] And there are many
+threat actors.
+[03:25] And it is essential to project
+[03:27] and protect ourselves
+against them.
+[03:30] And for that we need
+the information,
+[03:32] the kind of information we
+get from threat intelligence.
+[03:36] Now, threat intelligence can be
+classified into like three kinds
+[03:40] of levels: strategic,
+operational, and technical.
+[03:44] Strategic threat intelligence
+provides a high-level overview
+[03:47] of the threat landscape
+and long-term trends
+[03:50] and implications
+[03:52] for an organization's
+business objectives.
+[03:55] Feeds into the risk appetite
+and the security strategy.
+[03:58] Operational threat
+intelligence focuses more
+[04:01] on the current campaigns,
+activities, and intentions
+[04:03] of specific threat
+actors or groups,
+[04:06] as well as their capabilities,
+infrastructure, and tools.
+[04:09] Technical threat intelligence
+provides detailed
+[04:12] and actionable information about
+the indicator of compromise,
+[04:16] our IOCs, signatures,
+vulnerabilities,
+[04:19] and exports that are associated
+[04:21] with a particular threat
+or attack vector.
+[04:25] Technical and strategic threat
+intelligence are complementary.
+[04:28] They are interrelated.
+[04:30] Technical threat intelligence
+helps to detect and respond
+[04:33] to immediate threats,
+[04:34] while strategic threat
+intelligence helps to anticipate
+[04:37] and prepare for future threats.
+[04:40] Technical threat intelligence is
+usually collected and analyzed
+[04:43] by technical teams, such as
+security operation centers,
+[04:46] or incident response teams,
+using automated tools and feeds.
+[04:52] Strategic threat intelligence is
+usually produced and consumed
+[04:55] by executive teams, such as
+chief information security
+[04:58] officers and board members,
+[05:00] using human analysis
+and reports.
+[05:03] Both types of threat
+intelligence require
+[05:06] collaboration and communication
+across the organization,
+[05:10] as well as external sources and
+partners to ensure relevance,
+[05:13] accuracy, and timelines.
+[05:17] Here, I have an
+infographic from the MCRA,
+[05:19] where before we just looked
+at part of it, and it shows
+[05:22] where threat
+intelligence fits in.
+[05:24] In essence, all roles and
+responsibilities will benefit
+[05:27] from more intelligence,
+part of what we get
+[05:31] through threat
+intelligence information
+[05:33] about attackers
+and their methods.
+[05:37] Now, getting informed,
+who are the adversaries?
+[05:41] What are their patterns?
+[05:43] What can we do to bring in data
+[05:44] into our systems
+to find matches?
+[05:47] Or what can we do to take
+samples from internal and reach
+[05:50] that for more insights?
+[05:52] How can we stay informed?
+[05:53] Well, written use, talk to
+colleagues, be aware of trends.
+[05:57] And there are many sources
+for you to stay informed,
+[06:01] many sources that can
+help you start thinking
+[06:02] about what the impact will
+be for your organization.
+[06:06] But we are not
+here to read news.
+[06:09] Any news item I will show
+in this video, by the way,
+[06:12] would be outdated anyway by
+the time you watch this,
+[06:14] so let's look at
+something more practical.
+[06:17] On the graphic, you
+can see some names.
+[06:20] Those are names that Microsoft
+uses to refer to adversaries
+[06:23] that Microsoft has detected.
+[06:25] That is the name we will use in
+our reports and you will see
+[06:27] in our news bulletins,
+blogs, portals,
+[06:29] and inside products
+and services.
+[06:32] In our news, we will use these
+names and in our products,
+[06:35] you will see them again.
+[06:38] In the past, Microsoft
+used elements
+[06:39] from the Si periodic table of
+elements to reference attackers,
+[06:43] but then shifted to natural
+phenomena, the weather, storm,
+[06:47] tsunami, things like that.
+[06:49] And this is what we see back
+in some of the products
+[06:51] and services where threat
+intelligence information is
+[06:53] embedded, for example,
+in Defender XDR.
+[06:56] Now, I do not expect you
+to know all the actors
+[06:58] or know all the names
+we use, but be aware
+[07:01] that we have a
+system for naming.
+[07:03] When we mention a storm, then
+that's an attacker group
+[07:05] that is emerging
+or in development,
+[07:07] or it can be an attack
+pattern that we are not able
+[07:09] to associate with an
+existing group yet.
+[07:13] There are also yearly reports
+that are good to look at,
+[07:16] the Microsoft Digital
+Defense report.
+[07:18] It's an annual publication that
+provides comprehensive overview
+[07:22] of the cybersecurity landscape
+and trends that shape it.
+[07:25] The report covers the activities
+of nation-state actors,
+[07:28] cybercriminals, activists,
+as well as techniques
+[07:31] and tools they use to
+exploit vulnerabilities
+[07:33] and compromise systems.
+[07:35] The report also highlight
+the efforts of Microsoft
+[07:37] and its partners to
+protect customers
+[07:40] and the broader ecosystem
+from these threats,
+[07:42] and often offers recommendations
+and best practices
+[07:45] for enhancing
+cybersecurity resilience.
+[07:48] The reports aims to raise
+awareness of also collaboration,
+[07:51] allowing stakeholders
+to improve security
+[07:54] and stability of
+the digital world.
+[07:57] It is a form of
+cyber intelligence,
+[07:58] and leverage it to your benefit.
+[08:02] For the current video, I've
+snapshotted an earlier version
+[08:05] of the MDDR, the one from 2024.
+[08:07] But aside from looking
+at the most report --
+[08:11] most recent reports, it
+can be beneficial to look
+[08:14] at older ones, like
+the 2024, the 2023,
+[08:17] to get an understanding
+of the threats
+[08:18] and how you can change them.
+[08:19] The short link on the graphic
+will always bring you
+[08:22] to the most recent report.
+[08:24] So use the short
+link to read more
+[08:26] about these digital
+defense reports.
+[08:29] There are trends.
+[08:30] So over the years, we
+report on trends and we do
+[08:33] that in every defense reports.
+[08:34] And some of these things we
+report are recurring issues.
+[08:39] Many of attacks that occurred
+could have been avoided
+[08:42] by following some basic
+cyber hygiene practices.
+[08:45] Many of those practices are
+present in the frameworks
+[08:48] that are part of this course,
+[08:49] the Cloud Luxor framework the
+Well-Architected framework,
+[08:53] the Microsoft Cloud security
+benchmark, and the MCRA,
+[08:56] the Microsoft Cybersecurity
+Reference Architectures.
+[08:59] So why are they still
+opportune for attackers?
+[09:02] I hope it's not because
+they are not known.
+[09:06] If not addressed, then I do
+hope it's deliberate based
+[09:09] on risk acceptance
+that you know about it
+[09:11] and you're accepting a risk that
+attackers might compromise you.
+[09:15] But let us go and
+inspect how some
+[09:17] of the threat intelligence
+information is available
+[09:19] from the UI directly.
+[09:21] Because we can integrate
+threat intel streams
+[09:23] into our environment,
+and actually,
+[09:25] one stream is already
+implemented by default in the UI
+[09:28] of Microsoft Defender XDR.
+[09:33] Microsoft Defender XDR Threat
+Intelligence gives security
+[09:36] teams the ability to project
+threat data directly
+[09:39] onto the digital estates,
+onto their own environment,
+[09:42] with features like exposure
+analysis, Intel Profiles,
+[09:46] and the Intel explorer.
+[09:48] Organizations can see how global
+threat intelligence relates
+[09:51] to their specific
+assets and risks.
+[09:54] This means you're not just
+looking at generic threat data,
+[09:57] you're able to understand which
+threats are the most relevant
+[10:01] to your digital estates, and
+prioritize your response
+[10:05] and take targeted actions.
+[10:08] By leveraging Defender XDR's
+integrated threat intelligence,
+[10:11] security teams can stay
+ahead of emerging threats,
+[10:14] improve their
+situational awareness,
+[10:15] and strengthen their
+overall security posture.
+[10:19] But threat intelligence
+is much more than knowing
+[10:22] or naming the attacker.
+[10:24] What we are typically
+interested in is understanding
+[10:27] if we can see known
+indicators in our data.
+[10:30] For example, do we see any
+evidence of communication
+[10:34] for our systems to an IP address
+[10:36] on the internet that's
+known to be malicious?
+[10:39] And how do we know what IP
+addresses are malicious?
+[10:42] That is where threat
+intelligence comes in.
+[10:44] We can ingest indicators
+into our systems.
+[10:47] And again, some of that
+is done automatically,
+[10:50] but we can also have the
+option to extend, to enrich.
+[10:54] In another video in the series,
+[10:56] the topic was "SIEM,
+SOAR, and XDR."
+[10:58] And these platforms are
+essentially a starting point
+[11:01] for ingesting cyber
+threat intelligence, CTI,
+[11:04] and Microsoft Sentinel
+will be a prime example.
+[11:07] With Sentinel we can seamlessly
+integrate a montage threat
+[11:10] intelligence from
+various sources directly
+[11:12] into the platform,
+whether it's manual
+[11:14] or through automated feeds.
+[11:17] Now with everything unified
+[11:18] within a single
+integrated environment,
+[11:21] security teams can enrich
+their cyclops data,
+[11:23] correlate insights, and act
+[11:25] on threat indicators
+more effectively.
+[11:27] But there's more.
+[11:30] Identity protection.
+[11:31] Identity protection is a
+service that essentially acts
+[11:34] as a specialized source
+[11:35] of threat intelligence
+focused on user identities.
+[11:38] In addition to traditional
+threat intelligence
+[11:41] such as indicators of compromise
+like malicious IP addresses,
+[11:45] or malware, signatures,
+identity protection collects
+[11:50] and analyzes signals
+related to user behavior,
+[11:53] credential exposure,
+and sign-in risks.
+[11:55] For example, if
+credentials associated
+[11:58] with your organization
+are found on the dark web
+[12:01] or if a user attempts to sign
+[12:02] in from a location previously
+linked to malicious activity,
+[12:06] identity protection can detect
+[12:07] and flag these events
+as high-risk signals.
+[12:10] The value here is that identity
+protection has another layer
+[12:13] of threat intelligence
+[12:14] by continuously monitoring
+identity-related activities
+[12:18] and correlating them with
+external threat data.
+[12:22] These insights are then used
+[12:24] to inform access
+decision in real time.
+[12:27] When a user attempts
+to access resources,
+[12:29] identity protection evaluates
+whether any risk indicators are
+[12:33] present, such as
+leaked credentials
+[12:35] or suspicious sign-in patterns,
+[12:37] and can apply conditional
+access policies accordingly.
+[12:42] This means access can
+be denied, limited,
+[12:44] or require additional
+authentication steps,
+[12:47] all based on live threat
+intelligence feeds.
+[12:50] In essence, identity
+protection extends the reach
+[12:53] of your threat intelligence
+program into the rim of identity
+[12:56] and access management.
+[12:58] It ensures that not only you
+are able to monitor the network
+[13:02] and device threats, but you
+are also proactively using
+[13:04] intelligence about user risk
+to enforce zero principles,
+[13:09] zero interest, verify explicitly
+for every access request.
+[13:15] This integration
+[13:17] of identity-based threat
+intelligence helps organizations
+[13:19] respond more effectively
+to evolving threats
+[13:22] and reduces the risk of
+unauthorized access due
+[13:25] to compromised credentials
+or risky behaviors.
+[13:30] And where we had this for
+users for some time already,
+[13:32] there is now also an Entra
+identity protection capability
+[13:36] that extends it to understanding
+and reporting on workloads.
+[13:42] So we need to be informed
+about attackers.
+[13:45] But what about how
+attackers work?
+[13:48] What are common patterns and
+methods used by attackers?
+[13:52] In the industry,
+there are several --
+[13:53] some examples of frameworks
+that express what was learned
+[13:56] about that, for example,
+[13:57] kill chains that explain
+specific steps attackers will
+[14:01] take to get in to compromise,
+to cripple an organization.
+[14:06] A reference framework
+for that was adopted
+[14:09] in the Microsoft Services and
+it's the MITRE ATT&CK framework.
+[14:13] You'll find this referenced in
+all the products and services
+[14:16] when it comes to
+stages in an attack.
+[14:18] On this slide, I have
+listed some of them,
+[14:20] but there are other places where
+attack is cross-referenced.
+[14:24] Let's look at the
+way it's leveraged.
+[14:26] On the slides, I have
+included the link also
+[14:28] to the MITRE ATT&CK framework.
+[14:30] Maybe you need to go out
+and inspect that also.
+[14:33] But when you are visiting
+those places, by the way,
+[14:36] maybe also go look for Atlas.
+[14:38] It's another framework
+created by MITRE,
+[14:40] and that's specifically
+tailored for AI-based patrons.
+[14:44] Now, MITRE coverage.
+[14:46] One way to use MITRE
+is illustrated here
+[14:49] in Microsoft Defender.
+[14:51] In Sentinel we could
+have analytical rules.
+[14:54] And one might wonder,
+[14:56] "Do we cover all the different
+stages an attacker can take
+[15:00] with our rules that we currently
+have in our Sentinel instance?"
+[15:03] And a mapping like this helps
+to see alignment of rules
+[15:06] and attacker techniques.
+[15:08] And then we can ask ourselves,
+"Are we overexposed
+[15:10] or underexposed for a
+certain attacker area?"
+[15:13] It can help planning and
+development of new rules.
+[15:18] We are at the end of this video,
+[15:19] and what we covered is threat
+intelligence: what it is,
+[15:22] where to find it, and how
+to start integrating it
+[15:25] into our architectures
+and products.
+[15:28] The links mentioned here will
+bring you to portals and pages
+[15:31] with more details to explore.
+[15:33] Go out, enjoy them.
+[15:35] I can especially recommend the
+yearly Digital Defense Report.
+[15:39] But I warn you, every year,
+there's so much to report,
+[15:42] so these reports are pretty big,
+so reserve some time for that.
+[15:46] So go out and do.
+[15:48] And bye for now.
+[15:50] Until next time, maybe
+in another video,
+[15:52] with one of the series.
+[15:53] Until that time,
+please stay safe.

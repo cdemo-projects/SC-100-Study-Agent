@@ -1,0 +1,818 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architect.
+[00:17] In this video, we take a
+closer look at AI, Copilot,
+[00:20] and the impact they have
+on security architecture.
+[00:23] We will explore the
+transformative power and risks
+[00:26] of AI in cybersecurity
+architecture
+[00:27] and discover how artificial
+intelligence is reshaping the
+[00:30] way we project
+digital landscapes.
+[00:33] First of all, let's start with
+seeing the bigger picture.
+[00:36] As we look at the big picture,
+[00:37] it's clear that artificial
+intelligence is fundamentally
+[00:40] changing the
+cybersecurity landscape.
+[00:43] AI is not going away.
+[00:45] It is becoming an essential part
+of how organizations operate
+[00:48] and defend themselves.
+[00:50] As cybersecurity architects,
+our role is evolving.
+[00:53] We are not just implementing
+security controls,
+[00:56] we are also responsible
+[00:57] for guiding how AI tools
+are leveraged and governed
+[00:59] within our organizations.
+[01:01] This means ensuring that
+AI is used securely,
+[01:04] ethically, and effectively.
+[01:07] We need to focus on security
+implementation at key pace
+[01:09] with the rapid adoption of AI.
+[01:12] That includes updating
+our security operations,
+[01:14] adapting our policies, and
+continuously educating our teams
+[01:18] about the risks and
+opportunities that AI brings.
+[01:22] Ultimately, our goal is to
+enable our organizations
+[01:25] to benefit from AI while
+maintaining trust, compliance,
+[01:30] and resilience against
+new and emerging threats.
+[01:34] This slide explains how AI
+changes the security landscape
+[01:37] and why organizations need
+[01:39] to adopt their
+security architecture.
+[01:42] The Microsoft Cybersecurity
+Reference Architecture now
+[01:44] includes guidance for AI,
+[01:46] recognizing that AI
+brings new risks
+[01:48] and requires updated controls.
+[01:51] AI systems interact with
+many other components,
+[01:53] so it is important to secure
+all integration points
+[01:56] and interfaces.
+[01:58] Data is at the core of AI,
+so strong data protection
+[02:01] and governance are essential.
+[02:04] Zero Trust becomes even
+more important with AI.
+[02:08] Every user, device, and AI agent
+must be verified before access
+[02:12] is granted, and security is
+a shared responsibility.
+[02:16] Microsoft provides secure
+platforms and tools,
+[02:19] but customers must
+configure, monitor,
+[02:21] and govern their own
+AI usage and data.
+[02:24] The main takeaway is to adopt
+Zero Trust, secure your data
+[02:27] and interfaces, and understand
+your responsibilities
+[02:30] when deploying AI solutions.
+[02:34] The content of this video is
+mostly aligned with the area
+[02:37] of security operations,
+identity, and compliance
+[02:39] from a certification
+perspective,
+[02:41] but AI and Copilot will become
+more relevant in all areas.
+[02:45] So what is the role of AI?
+[02:47] What would be the role of AI?
+[02:48] Have you really
+thought about that?
+[02:51] Well, first of all,
+let's do a question.
+[02:53] Consider the questions
+and possible answers.
+[02:55] Now aside from science
+fiction stories and movies,
+[02:58] AI was created to help us
+to be able to do more.
+[03:01] As we say at Microsoft,
+"Empower every person
+[03:04] and every organization on
+the planet to achieve more,"
+[03:06] so the goal is to
+support individuals
+[03:09] in reaching their potential.
+[03:11] The adoption of AI technology
+has begun and it appears
+[03:13] to be irreversible,
+and it's important
+[03:15] from a cybersecurity standpoint
+to establish clear guidelines
+[03:19] and maintain controls, and
+to utilize AI effectively
+[03:22] so it's there to help humans.
+[03:26] In this section, we're
+setting the stage
+[03:28] for the rest of the video.
+[03:30] It's learning objectives.
+[03:31] We'll explore what artificial
+intelligence really means
+[03:33] in a security context, how Zero
+Trust principles are essential
+[03:37] when working with AI, and
+the growing role of tools
+[03:40] like Copilot and AI agents.
+[03:43] We'll also look at why managing
+your data security posture is
+[03:46] more important than ever.
+[03:48] By the end, you'll see how
+these concepts connect
+[03:51] to help organizations
+stay secure and agile
+[03:54] in an AI-driven world.
+[03:57] Let's take a closer look at
+the two generations of AI,
+[04:00] traditional and generative AI.
+[04:03] Traditional AI, sometimes
+called classic AI,
+[04:05] is designed to detect
+[04:06] and classify patterns
+in large datasets.
+[04:09] It's very effective at tasks
+like analyzing a huge amount
+[04:12] of data, making recommendations,
+[04:14] or automating
+repetitive processes.
+[04:16] However, traditional
+AI struggles
+[04:18] with understanding complex,
+[04:19] nuanced information,
+especially language.
+[04:23] Generative AI is
+a newer approach.
+[04:25] It is designed to understand
+and create content,
+[04:27] such as text, images,
+or even code.
+[04:30] Voice-language models, like GPT,
+are a type of generative AI
+[04:34] that works specifically
+with text.
+[04:36] Generative AI excels at
+understanding language,
+[04:39] summarizing information,
+translating concepts,
+[04:42] and even role-playing scenarios.
+[04:44] But unlike traditional
+AI, it's not as strong
+[04:46] as processing massive datasets
+in real-time after training.
+[04:50] The key difference is
+that traditional AI is
+[04:52] about finding patterns in big
+data, while generative AI is
+[04:55] about understanding and
+generating new content based
+[04:58] on smaller, more complex inputs.
+[05:01] Both have their strengths
+and weaknesses,
+[05:03] and both are now being used
+[05:04] in security operations
+and compliance.
+[05:07] As we move forward, it's
+important to understand
+[05:09] which type of AI is best
+suited for each task,
+[05:11] and how they can
+complement each other
+[05:14] in your security architecture.
+[05:19] Let's talk about the new
+security imperatives
+[05:21] that artificial intelligence
+introduced for organizations.
+[05:26] As AI technology advances,
+it's important to recognize
+[05:30] that attackers are already
+leveraging these tools.
+[05:33] This means defenders must
+be proactive, anticipating
+[05:36] and preparing for AI-powered
+threats before they happen.
+[05:39] To stay ahead,
+organizations need to focus
+[05:42] on educating their
+users about the risks
+[05:44] and responsibilities
+that come with AI.
+[05:46] Setting clear,
+well-communicated policies
+[05:49] for AI use is essential,
+[05:51] so everyone knows what's
+allowed and what's not.
+[05:55] It's also crucial to build
+security measures directly
+[05:58] into the development
+process of AI applications,
+[06:01] rather than treating
+security as an afterthought.
+[06:04] As AI becomes more capable,
+[06:06] the value of human-generated
+data continues to rise.
+[06:09] This kind of data is vital for
+training high-quality AI models,
+[06:13] so protecting it is more
+important than ever.
+[06:17] Security teams should look to
+adopt AI-driven security tools,
+[06:20] which can help improve
+both their efficiency
+[06:22] and their ability to respond
+quickly to new threats.
+[06:25] The bottom line is this,
+[06:27] AI is changing not just the
+threat landscape, but also,
+[06:29] the very way organizations
+must approach security.
+[06:33] By adopting to these
+new challenges,
+[06:35] and by using AI both
+defensively and responsibly,
+[06:38] organizations can better
+protect themselves
+[06:40] in an AI-powered world.
+[06:43] AI and Zero Trust have a
+symbiotic relationship.
+[06:46] AI and Zero Trust together
+offer significant benefits
+[06:48] for security teams.
+[06:50] By adopting a Zero
+Trust approach,
+[06:52] security teams can better
+protect data, applications,
+[06:55] and users in an environment
+where AI is widely used.
+[06:58] Zero Trust ensures that every
+access request is verified,
+[07:01] reducing the risk of
+unauthorized access
+[07:04] or lateral movement
+by attackers.
+[07:06] At the same time, AI can help
+automate complex security tasks,
+[07:10] provide faster insights,
+[07:12] and improve threat
+detection and response.
+[07:15] This combination allows security
+teams to be more proactive,
+[07:18] efficient, and effective in
+managing modern threats,
+[07:21] while also reducing
+manual workload
+[07:24] and improving overall
+security posture.
+[07:28] At Microsoft, our
+approach to AI is all
+[07:30] about responsible
+and rapid adoption.
+[07:33] We know organizations are
+eager to unlock the power
+[07:36] of generative AI, but it's
+equally important to make sure
+[07:39] that we're minimizing
+potential risks along the way.
+[07:42] That's why we embedded
+ethical principles
+[07:45] and risk management directly
+into our AI development process,
+[07:48] by prioritizing responsibility
+as we move quickly,
+[07:51] while we empower customers
+to innovate with confidence,
+[07:54] knowing they're building
+on a foundation
+[07:55] of trust and security.
+[07:57] Striking this balance
+between speed
+[07:59] and responsibility is essential
+for organizations looking
+[08:01] to stay competitive and
+secure as AI continues
+[08:05] to change the way we work
+[08:06] and protect our
+digital environments.
+[08:09] As organizations everywhere
+embrace the possibilities of AI,
+[08:12] it's essential that development
+[08:14] and deployment are
+done responsibly,
+[08:16] guided by strong
+ethical frameworks.
+[08:19] At Microsoft, we believe and
+encourage others to join us
+[08:22] that AI should be built
+on core principles,
+[08:25] six core principles for AI.
+[08:27] It's about privacy and security.
+[08:30] It's about inclusiveness,
+accountability, transparency,
+[08:35] fairness, and
+reliability and safety;
+[08:38] but defining these
+values isn't enough.
+[08:41] To truly earn trust,
+[08:43] organizations must put these
+principles into action at scale.
+[08:47] That's why we focus on robust
+governance, clear rules,
+[08:50] comprehensive training, and best
+practices, and practical tools
+[08:54] to help operationalize
+responsible AI.
+[08:58] This approach is critical,
+not just for Microsoft,
+[09:01] but for every
+organization adopting AI.
+[09:04] By prioritizing ethical
+and responsible practices,
+[09:07] we can ensure that AI
+is trustworthy, safe,
+[09:09] and delivers value for everyone,
+[09:12] minimizing risk while fostering
+innovation and confidence
+[09:15] in the transformative
+technology --
+[09:18] something to investigate as
+a cybersecurity architect.
+[09:22] This ensures that as
+organizations adopt AI,
+[09:25] they do that in a way that
+is ethical, trustworthy,
+[09:27] and safe for everyone.
+[09:30] Let's talk about the shared
+responsibility model.
+[09:33] When you're using AI
+platforms or services,
+[09:36] security isn't just
+the provider's job.
+[09:38] It's shared.
+[09:39] For instance, Microsoft protects
+the core infrastructure
+[09:42] in AI models, but you're
+responsible for how you use AI,
+[09:46] manage user access,
+and govern your data.
+[09:48] Some tasks like
+training your users
+[09:50] and enforcing policies
+will always be up to you,
+[09:53] regardless of the platform, and
+knowing these boundaries helps
+[09:57] to keep your organization secure
+and compliant as you adopt AI.
+[10:02] Now, let's pause for a moment
+[10:07] and consider how
+our interactions
+[10:08] with computers have
+changed over time.
+[10:10] In the beginning, using a
+computer meant that you had
+[10:13] to know how to program or
+work with command lines,
+[10:16] skills that only a
+selected few possessed.
+[10:19] Then graphical user
+interfaces arrived.
+[10:22] Suddenly, computers became much
+more approachable for everyone.
+[10:26] Now with the rise of
+generative AI, we're stepping
+[10:29] into a whole new area.
+[10:30] Today, chat and conversations
+are becoming the main way we
+[10:33] interact with technology.
+[10:35] This change means that anyone
+can do complex tasks faster
+[10:39] and with far less training.
+[10:42] Generative AI chat interfaces
+are a big leap forward.
+[10:45] They're dynamic, interactive,
+and adopt to you, the user,
+[10:49] rather than making
+you adopt to them.
+[10:51] This evolution is making
+technology feel more natural
+[10:54] and intuitive, unlocking new
+potential and opportunities
+[10:57] for productivity and innovation.
+[11:00] For Microsoft
+Cybersecurity Architects,
+[11:02] this transformation is
+highly significant.
+[11:05] As AI-driven interfaces
+become more prevalent,
+[11:08] the way users interact
+with sensitive data
+[11:10] and critical systems
+are evolving rapidly.
+[11:12] This shift requires
+cybersecurity professionals
+[11:14] to rethink access controls,
+identity management,
+[11:17] and data protection strategies.
+[11:19] The intuitive nature
+[11:20] of generative AI interfaces
+lowers the barriers for users
+[11:23] to engage with complex
+systems, which,
+[11:26] while boosting productivity,
+also introduces new factors
+[11:29] for misuse or accidental
+exposure of information.
+[11:32] A cybersecurity
+architect must ensure
+[11:34] that robust security
+measures are integrated
+[11:37] into these new user experiences,
+balancing ease of use
+[11:41] with the need for
+vigilant governance,
+[11:43] monitoring, and compliance.
+[11:45] Ultimately, understanding
+[11:46] and securing these modern
+interfaces is essential
+[11:49] to safeguarding organizational
+assets in the era
+[11:52] of AI-powered productivity.
+[11:56] AI is fundamentally transforming
+the data security landscape,
+[11:59] making it easier than ever
+to discover information and,
+[12:03] as a result, exposing
+long-standing issues
+[12:05] like excessive permissions
+and weak data classification.
+[12:10] With the growing importance
+[12:12] of high-quality human-generated
+data in AI-driven environments,
+[12:15] safeguarding sensitive
+information has become more
+[12:18] urgent, and cyber attackers
+actively seek ways
+[12:20] to exploit this
+increasing value.
+[12:23] However, AI also brings new
+risks, such as the possibility
+[12:27] of data leakage through
+models and applications.
+[12:30] If these systems were not
+securely designed and managed,
+[12:33] sensitive data could end up in
+the wrong hands, whether inside
+[12:37] or outside of the organization.
+[12:39] That's why a proactive
+approach is essential.
+[12:43] Organizations must address
+over-permissioned data,
+[12:47] enforce strong governance, and
+build security and privacy
+[12:49] into the very fabric
+of their AI tools.
+[12:52] For Microsoft
+Cybersecurity Architects,
+[12:54] these shifts are
+especially critical.
+[12:58] As AI changes how users interact
+with systems and how data flows
+[13:01] through automated processes,
+it's your responsibility
+[13:04] to anticipate new ways
+information may be exposed.
+[13:08] You must design
+security frameworks
+[13:10] that not only protect sensitive
+information data, but also adapt
+[13:14] to rapidly evolving technology,
+keeping permissions,
+[13:17] identity management, and
+compliance current and robust.
+[13:21] By integrating comprehensive
+security measures throughout
+[13:24] every phase of AI adoption, from
+initial design to deployment,
+[13:27] you help safeguard
+organizational assets
+[13:30] and maintain trust in an era
+where data is more valuable
+[13:33] and vulnerable than ever.
+[13:35] This means embracing
+vigilant governance,
+[13:37] continual monitoring, and a
+dynamic approach to both risk
+[13:40] and opportunity in the age
+of AI-powered productivity.
+[13:46] Security Copilot, Microsoft's
+advanced generative AI
+[13:50] transforms how security
+teams protect organizations.
+[13:53] As a digital ally, it helps
+defenders investigate threats,
+[13:57] decode incidents, and
+automate tasks using natural
+[14:00] language commands.
+[14:02] For security architects, it
+quickly analyzes security data,
+[14:05] provides actionable insights,
+and streamlines reporting,
+[14:08] freeing up time for
+strategic work.
+[14:11] Security Copilot
+boosts team efficiency
+[14:13] by accelerating
+threat detection,
+[14:14] shortening response time, and
+enabling better collaboration
+[14:17] through natural
+language features.
+[14:20] The AI continually learns,
+adopting to new threats,
+[14:22] and refining its
+recommendations.
+[14:25] As it automates
+repetitive tasks,
+[14:28] professionals gain more time
+[14:29] for innovation while
+consistent practices
+[14:32] and real-time analysis help
+prevent vulnerabilities
+[14:34] and ensure compliance.
+[14:36] However, successful adoption
+requires setup, configuration,
+[14:39] and ongoing management.
+[14:41] Microsoft Cybersecurity
+Architects must collaborate
+[14:43] with IT, data owners,
+compliance, and security teams
+[14:46] to define roles, set
+access controls,
+[14:49] and maintain
+effective governance.
+[14:51] Open communication and
+clear objectives are vital
+[14:53] for seamless integrating
+of the Security Copilot,
+[14:57] enforcing policies, and adapting
+[14:58] to evolving organizational
+needs and threats.
+[15:03] Security Copilot agents
+are your autonomous force,
+[15:08] tackling specific security and
+IT tasks, so your team can focus
+[15:11] on strategy and innovation.
+[15:13] These purpose-built
+agents plug straight
+[15:16] into Microsoft
+security solutions,
+[15:18] quickly adapting
+to your workflows.
+[15:20] They work within Microsoft's
+Zero Trust framework,
+[15:23] learn from feedback,
+and operate securely.
+[15:25] For security teams, it means
+a faster threat response,
+[15:29] smarter risk prioritization,
+and proactive protection.
+[15:33] You stay in control; these
+agents accelerate your work.
+[15:36] They don't replace you; they
+just accelerate your work.
+[15:39] As a Microsoft
+Cybersecurity Architect,
+[15:41] deploying Security Copilot
+agents lets you build frameworks
+[15:44] that are robust, scalable,
+[15:45] and always up to date
+with the pace of AI.
+[15:48] In the future, even more Copilot
+capabilities are coming,
+[15:52] analyzing threats faster and
+taking real-time actions
+[15:54] to stop incidents
+before they escalate.
+[15:57] This is the next level, moving
+from detection to instant,
+[16:00] automated response, all in a
+secure, governed environment.
+[16:06] As we've explored Security
+Copilot, it's important
+[16:09] to remember that AI now touches
+many parts of our organizations.
+[16:13] As a Microsoft
+Cybersecurity Architect,
+[16:14] your role goes far
+beyond any single tool.
+[16:17] You're responsible for making
+sure information stays accurate,
+[16:20] protected, and governed,
+no matter where
+[16:23] or how it's being used by AI.
+[16:26] Protecting data
+[16:26] in AI environments means
+adopting a new mindset.
+[16:30] Start by discovering where AI is
+being used across the business,
+[16:33] and tools like Microsoft Purview
+can help you detect AI activity
+[16:37] and identify where sensitive
+information may be at risk,
+[16:40] whether through prompts or
+AI-generated responses.
+[16:44] Once you have a clear view,
+focus on securing data.
+[16:47] This includes applying
+sensitivity labels,
+[16:49] enabling encryption,
+[16:50] and enforcing endpoint
+data loss prevention
+[16:53] to control how information
+moves in and out of AI tools,
+[16:57] but defense is not enough.
+[16:58] You must also govern AI outputs.
+[17:01] Make sure retention policies
+and e-discovery are in place
+[17:04] to manage AI-generated
+content with the same rigor
+[17:07] as any other business data.
+[17:09] Keep assessing and addressing
+risks using analytics
+[17:12] and risk management tools.
+[17:14] Monitor for oversharing,
+track user behavior,
+[17:17] and adjust your protections
+dynamically as threats evolve.
+[17:21] For Microsoft Cybersecurity
+Architects, this ongoing cycle
+[17:24] of discovery,
+protection, governance,
+[17:26] and response is essential
+to keeping data secure
+[17:30] as AI becomes part
+of data operations.
+[17:32] Remember, securing AI
+is not a one-time task.
+[17:35] It's a continuous process
+that drives compliance,
+[17:38] protects sensitive information,
+and supports innovation
+[17:41] in a trusted environment.
+[17:44] Let's talk about DSPM, Data
+Security Posture Management.
+[17:49] Imagine DSPM as your
+organization's way
+[17:52] of understanding where
+your sensitive data lives,
+[17:54] how it is being accessed, and
+whether it's being protected.
+[17:58] The first thing you
+ask yourself is,
+[18:00] what exactly is my sensitive
+data and where is it stored?
+[18:04] DSPM helps you shine a light on
+any unprotected or at-risk data
+[18:08] by giving you visibility
+[18:10] into your entire
+security data landscape.
+[18:13] With these insights, you can
+start taking focused steps
+[18:16] to lower the risks and secure
+your most valuable information.
+[18:20] As your environment
+grows and changes,
+[18:22] DSPM continuously
+monitors for threats,
+[18:25] helping you stay one step ahead.
+[18:27] For Microsoft
+Cybersecurity Architects,
+[18:29] this means you're not
+just protecting data,
+[18:31] but also making sure it
+meets company policies
+[18:34] and regulatory requirements.
+[18:36] By using DSPM, you can
+proactively address
+[18:39] vulnerabilities,
+enforce governance,
+[18:41] and keep your security aligned
+[18:43] with the way your organization
+uses AI and the cloud.
+[18:47] This puts you in
+a strong position
+[18:48] to lead your organization
+forward in a secure,
+[18:51] resilient digital future.
+[18:54] And as organizations move
+forward with AI, it's crucial
+[18:57] to understand and to focus
+[18:58] on data security
+postures specifically
+[19:01] for AI environments.
+[19:03] AI tools like Copilot and
+other applications interact
+[19:06] with sensitive data in
+an entirely new way.
+[19:09] So relying on traditional data
+security simply is not enough.
+[19:12] We need to discover
+all AI activity,
+[19:15] understand which sensitive data
+is being accessed, and make sure
+[19:19] that data stays protected
+wherever it is used,
+[19:22] and that's where Microsoft
+Purview comes in.
+[19:25] Purview gives you full
+visibility into AI activity
+[19:28] across your organization,
+showing you exactly
+[19:31] which data is being
+accessed by AI tools,
+[19:33] including Copilot
+and custom apps.
+[19:35] With Purview, you can
+monitor, classify,
+[19:37] and secure your
+sensitive information,
+[19:39] helping to keep your
+organization's data safe
+[19:42] as AI becomes more deeply
+woven into daily workflows.
+[19:46] By adopting DSPM for AI, you can
+confidently embrace innovation
+[19:51] while maintaining strong
+security and compliance.
+[19:54] For Microsoft
+Cybersecurity Architects,
+[19:56] this approach is
+especially important.
+[19:58] It lets you proactively
+protect sensitive data,
+[20:01] align with company
+policies and regulations,
+[20:03] and adjust your strategy
+as AI continues to evolve.
+[20:06] Leveraging Purview and DSPM,
+[20:08] you can lead the way securing
+AI-driven environments,
+[20:11] minimize risk, and help your
+organizations innovate safely
+[20:13] and responsibly.
+[20:15] This continuous oversight
+and governance are key
+[20:18] to building trust and resilience
+as AI becomes an essential part
+[20:22] of business operations.
+[20:24] The summary slide highlights
+the primary topics we discussed
+[20:29] in this video.
+[20:30] It's artificial intelligence,
+the intersection of Zero Trust
+[20:33] and AI, Copilot, agents, and
+DSPM data security management
+[20:38] or data security
+posture management.
+[20:40] For more information, please
+go and investigate places
+[20:43] that were mentioned
+in the video.
+[20:44] Here's a couple of them to help
+you to find some more content
+[20:49] that you need to read.
+[20:50] Go out and do that, and we
+are at the end of this video,
+[20:53] so thank you for
+watching the video.
+[20:55] And please don't forget that
+we have got more videos
+[20:57] in the series around the
+Microsoft Cybersecurity
+[20:59] Architect role.
+[21:00] So maybe we'll see each
+other in another video.
+[21:02] Until that time, stay safe.

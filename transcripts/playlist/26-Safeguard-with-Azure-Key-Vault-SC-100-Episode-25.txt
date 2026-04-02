@@ -1,0 +1,476 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello
+welcome to this video.
+[00:08] My name is Marco Nuijen and
+I'm a Trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of Microsoft
+Cybersecurity Architects.
+[00:17] In this particular video we
+focus on aspects of key vaults.
+[00:20] We explore how to
+securely manage,
+[00:22] store and protect your
+keys and secrets.
+[00:25] Unlocking best practices
+[00:26] for safeguarding
+critical information
+[00:28] in modern cybersecurity.
+[00:31] The content of this video is
+mostly aligned with key area
+[00:33] of solutions for
+application data
+[00:35] from a certification
+perspective.
+[00:37] A question, now where
+to store secrets?
+[00:40] This is the main
+question for this video.
+[00:42] What would be a good
+place for that?
+[00:45] In this video we will
+discuss key vaults.
+[00:48] Which is a good place
+to store secrets,
+[00:50] but also keys and certificates.
+[00:52] We will also discuss some
+options around assurance
+[00:54] as provided by hardware
+security modules.
+[00:59] Azure key vault overview.
+[01:01] It lets your key vault Cloud
+service that provides a secure
+[01:04] and centralized place to store
+and manage cryptographic keys,
+[01:07] secrets, certificates.
+[01:09] And potentially all
+the sensitive data.
+[01:12] You can use to encrypt and
+protect your data with keys
+[01:15] that are only accessible
+[01:16] to authorized
+applications and users.
+[01:19] Additionally, you can rotate,
+[01:20] revoke or expire your
+keys and secrets.
+[01:22] According to your policies
+and all their usage
+[01:26] with logs and reports.
+[01:28] As the name implies,
+in Azure Key Vaults,
+[01:30] is a vault that regulates our
+logs access to its contents.
+[01:35] You can create and manage your
+Azure key vaults in Azure.
+[01:39] Once the reasons to
+use key vaults is
+[01:41] to enhance the security
+and compliance
+[01:42] with your application and data.
+[01:44] By storing your keys and
+secrets in a centralized
+[01:46] and isolated location.
+[01:49] You can prevent unauthorized
+access, a leakage
+[01:51] or sensitive information.
+[01:54] You can also ensure
+that your keys
+[01:55] and secrets are always encrypted
+at rest and in transit
+[01:58] and comply with industry
+standards and regulations.
+[02:02] Another reason, to use key
+vault, is to simplify management
+[02:05] and automation of your
+keys and secrets.
+[02:08] You can use a single interface
+to create import the leads,
+[02:12] updates and back up
+your keys and secrets.
+[02:15] As well as configure
+permissions and policies
+[02:17] for different users and roles.
+[02:19] I remind you, there will
+be multiple vaults,
+[02:22] there will be
+multiple key vaults.
+[02:24] We will come to that in a
+moment, but let's first look
+[02:26] at Azure Key Vault access.
+[02:29] Key vaults access is
+always based on identity.
+[02:33] You cannot access a
+key vault without it.
+[02:36] Key vault access is always based
+[02:38] on an identity that's
+stored in Entra.
+[02:40] You cannot access a key vault
+[02:41] without an identity
+that's authenticated
+[02:43] and authorized by Entra ID.
+[02:46] In a graphic you can see
+the older name of Entra,
+[02:49] which officially was
+Azure Active Directory
+[02:51] as part of Entra.
+[02:52] Now we refer to it as Entra ID.
+[02:55] Great. Because the least we can
+do an explicit verification,
+[02:59] right, zero trust,
+verify explicitly.
+[03:02] We can use conditional access to
+evaluate if the entity asking
+[03:05] for access should
+be given access.
+[03:08] And it's very important
+to be able to do that.
+[03:11] We are talking key vault here.
+[03:13] The place to store keys,
+secrets and certificates.
+[03:16] We don't want that
+kind of content
+[03:18] to fall into the wrong hands.
+[03:21] Now there's two types of key
+vault access, in general.
+[03:25] There's the management
+plane and the data plane.
+[03:28] The management plane, management
+plane access allows you
+[03:32] to perform operational
+with key vault itself.
+[03:34] So it's just creating, deleting
+or updating a key vault.
+[03:38] To run management
+plane access you need
+[03:41] to assign a role-based
+access control, RBAC.
+[03:44] 2D identity, such as a
+key vault contributor
+[03:47] or a key vault owner.
+[03:50] RBAC roles are scopes, two
+for example, resource group
+[03:53] or a subscription level.
+[03:55] And apply to all the key
+vaults within that scope.
+[03:58] Data plane.
+[04:00] Data plane access allows you to
+perform operational key secrets
+[04:04] and certificates stored
+in the key vaults.
+[04:06] Such as, encrypting, decrypting,
+signing or verifying.
+[04:10] To grant data plane
+access you need
+[04:11] to configure a key vault access
+policy for the identity.
+[04:14] Which specifies a
+permission for each type
+[04:16] of object and operation.
+[04:18] Key vault access policies are
+scoped with specific key vault.
+[04:22] You can also use Azure RBAC
+for the data plane access.
+[04:25] Which is a newer feature
+nowadays to default,
+[04:28] it offers more flexibility and
+consistency with other services.
+[04:32] But it's either
+by access control
+[04:34] or a key vault access policy.
+[04:37] We cannot combine both of
+them, it's one or the other.
+[04:40] So what model to choose?
+[04:42] All depends on the purpose.
+[04:44] I think a policy is more
+granular because we set it
+[04:46] up for a specific vault,
+while RBAC is managed
+[04:49] at a higher level and can
+cover multiple vaults.
+[04:52] From an operational perspective
+it's probably preferred
+[04:54] to use RBAC.
+[04:55] Less maintenance per key vault.
+[04:58] And that's something
+to be discussed
+[04:59] with the private audience
+as subject matter experts
+[05:01] and modern architect
+friends in our enterprises.
+[05:05] To summarize, key vault access
+requires both authentication
+[05:08] and authorization from Entra ID.
+[05:11] You can use RBAC roles for
+management, plane access
+[05:13] and either key vault access
+policies or Azure RBAC
+[05:17] for data plane access.
+[05:18] You should follow the
+principle of least privilege
+[05:21] and grant the minimum
+permissions required
+[05:24] for each identity.
+[05:26] Key vaults.
+[05:28] One key vault may not
+provide enough security
+[05:30] and operational benefits
+for an organization.
+[05:33] Using multiple key vaults can
+help improve the separation
+[05:36] of responsibilities.
+[05:38] The reduction of risks, the
+improvement of performance,
+[05:42] and maybe it turns
+to regulations.
+[05:44] And for example you may want
+to use different key vaults
+[05:47] for different purposes.
+[05:48] There may be various factors
+and needs that require us
+[05:52] to have multiple key
+vaults in an environment.
+[05:54] We may need to have different
+key vaults for developments,
+[05:58] test and production, for
+different workloads,
+[06:00] or departments, for different
+locations, for regions,
+[06:03] or different security levels.
+[06:06] For example, privacy,
+confidential or top secret.
+[06:10] By using multiple key vaults
+you can manage who can access
+[06:13] which secret, key
+and certificate.
+[06:15] And how they can be used.
+[06:17] You can also track
+and audit the actions
+[06:19] from these vaults
+more efficiently.
+[06:22] There will be more vaults
+in every architecture.
+[06:26] Specific ones for a per
+person, or assigned to a team,
+[06:28] or assigned to a service,
+or located near a service.
+[06:32] This can help lower the
+latency and (inaudible) costs
+[06:34] of accessing the key vault from
+a different place or services.
+[06:38] It can also help to follow the
+principle of least privilege.
+[06:41] And minimize the damage of
+a breach or a compromise.
+[06:44] Verify explicitly and also
+of course, least privilege
+[06:48] and (inaudible) breach
+compartmentalization.
+[06:51] For example, you may want
+to use a separate key vault
+[06:53] for storing encryption keys
+for your storage accounts.
+[06:56] Or a separate key vault
+[06:56] for issuing certificates
+for your web apps.
+[06:59] By using specific key
+vaults you can make sure
+[07:02] that only the
+relevant identities
+[07:03] and services can access the
+particular resource they need.
+[07:07] You can also apply different
+policies and settings
+[07:10] for each key vault, depending
+on its role and its needs.
+[07:15] Now there's best practices.
+[07:16] Frameworks and key vault
+documentation incorporates key
+[07:19] vaults best practices.
+[07:21] And many of the items mentioned
+here will also appear as alerts
+[07:24] in the (inaudible) for Cloud,
+based on your baselines
+[07:27] that will automatically verify
+how component is setup on Azure.
+[07:31] Many of these are very logical,
+at least they are for me,
+[07:34] it's about least privilege,
+[07:36] explicit verification
+and some breach.
+[07:38] Aligning with zero
+trust principles.
+[07:41] And we need elements like
+auditing and logging to be able
+[07:43] to have more information
+that can be correlated
+[07:46] with other information.
+[07:47] Allow the information sources
+to find malicious patterns.
+[07:51] And they need to
+think about deletion.
+[07:54] Before a deletion
+have purge turned on.
+[07:56] Can you imagine what
+happens if someone is able
+[07:59] to delete elements
+in a key vault?
+[08:01] We potentially lose the
+ability to decrypt.
+[08:05] For example, since we don't
+have the keys anymore
+[08:07] that were used for
+the encryption.
+[08:09] And backup, yeah
+you need to backup.
+[08:12] But be aware that the backup
+of a key vault is protected.
+[08:16] You can only restore a key vault
+backup object, in a key vault
+[08:20] within the same subscription.
+[08:22] So better make sure you
+don't delete subscriptions
+[08:24] that have key vaults
+in it directly.
+[08:27] Now what to check.
+[08:28] Many elements.
+[08:30] But maybe the MCSB could be
+a good starting point again.
+[08:33] To be able to help you with
+baselines and checklists.
+[08:36] And there's a
+section specifically
+[08:38] on key vaults in the MCSB.
+[08:42] At key vaulting, as
+there are other examples
+[08:45] for other services.
+[08:47] But there's more than key
+vault for storing keys,
+[08:50] secrets and certificates.
+[08:51] Vaulting is a very
+common principle.
+[08:54] And are many products
+and services
+[08:55] that can cater for
+vaulting need.
+[08:57] Azure key vault is
+just one of them.
+[09:00] But it is one that is
+heavily used in Azure.
+[09:03] And that is integrated with many
+[09:05] of the Azure platform
+capabilities.
+[09:07] In Azure key vault we already
+have two choices by itself,
+[09:10] a standard or a premium.
+[09:12] The choice there is about
+the way elements are stored
+[09:15] in the key vault.
+[09:17] With key vault premium, they'll
+be specialized hardware,
+[09:20] leverage to store
+information into.
+[09:22] This kind of hardware
+is currently known
+[09:23] as a Hardware Security
+Module, or HSM.
+[09:26] And the HSM is a physical device
+that provides secure storage
+[09:30] and generation of
+cryptographic keys.
+[09:33] As well as cryptographic
+operations using those keys.
+[09:37] HSM's are designed
+to protect the keys
+[09:39] from unauthorized access,
+tampering or extraction.
+[09:43] And all for high
+performance and scalability
+[09:45] for cryptographic applications.
+[09:48] HSM's can support various
+cryptographic algorithms
+[09:51] and protocols.
+[09:52] Such as somatic encryption,
+asymmetric encryption,
+[09:55] digital signatures,
+hashing or TLS.
+[09:58] HSM's can also comply
+[10:00] with various standards
+and regulations.
+[10:02] And this is where I need
+[10:03] to mention what we have
+on the slides here.
+[10:06] Regulations.
+[10:07] Many times capabilities
+are for key vaults
+[10:11] and HSM's expressed based
+on the US-based standard
+[10:14] for protecting the information.
+[10:16] FIPS, the Federal Information
+Processing Standards.
+[10:19] And on the slide we see
+different options that can align
+[10:21] with different
+compliance requirements.
+[10:24] Yes, there's more than
+key vaults, standards
+[10:26] and key vault premium.
+[10:28] And yes there will
+be changes also,
+[10:29] like recent changes that's now
+also FIPS 140-3 is supported
+[10:37] next to what we have
+with FIPS 140-2 before.
+[10:42] And we need to figure out too
+what's the best solution,
+[10:45] to make a choice when
+it comes to key vaults
+[10:47] and for the best solution.
+[10:48] So that's why I've included this
+short link for more information
+[10:51] on that, aka.ms/kvchoice.
+[10:54] And from that location you will
+be able to look at the table
+[10:58] that I've taken here
+in the graphic.
+[11:00] To see the differences
+between the capabilities
+[11:02] and all the options.
+[11:04] Go to the link later
+[11:05] and evaluate the
+information in the table.
+[11:08] And use it in a design to
+choose the right solution
+[11:11] for your environment based
+[11:12] on the requirements
+that have come in.
+[11:16] Now for now we've come to
+the end for this video.
+[11:19] We've discussed key
+vaults, we also looked
+[11:21] at other options
+as part of Azure.
+[11:23] To be able to do vaulting
+of important information.
+[11:27] Refer to reading and learning.
+[11:29] There's a couple of links
+that you can access directly.
+[11:33] Aka.ms/hsm for
+having information
+[11:36] about hardware security module.
+[11:38] Aka.ms/kv for key vaults and the
+last one here for helping you
+[11:43] to make the appropriate choice
+when it comes to the kind
+[11:46] of vaulting you may
+need to have in order
+[11:49] to fulfill your requirements
+in your designs.
+[11:53] Thank you for
+watching the video.
+[11:55] There are more in the service
+cybersecurity architect
+[11:56] video series.
+[11:57] Go and enjoy all of them.
+[11:59] We meet again, hopefully.
+[12:00] Another time please, stay safe.

@@ -1,0 +1,215 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:08] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of the Microsoft
+cybersecurity architect.
+[00:17] In this video, I want to
+explain use cases to you.
+[00:20] Jump in and learn how
+interactive use cases can help
+[00:23] you sharpen your Microsoft
+cybersecurity architect skills
+[00:26] through real-world practice
+and hands-on scenarios.
+[00:30] How to practice.
+[00:32] This is our main
+question for this video.
+[00:34] How can you practice
+what you have learned,
+[00:36] apply what you know?
+[00:39] In this video, I want
+to discuss another way
+[00:41] of applying your cybersecurity
+architect skills next
+[00:44] to what we discussed in other
+videos, like assessments
+[00:46] and scores, or using the
+practice questions you will find
+[00:49] in the exam page, or the
+questions at the exam,
+[00:52] at every end of a module
+[00:54] in the online training
+content on Microsoft Learn.
+[00:56] What else should you consider?
+[00:58] For this video, I want to
+focus on designing exercises,
+[01:01] use cases, scenario-based
+designing, applying your skills
+[01:05] to a real-world scenario,
+[01:06] translating requirements
+into a solution.
+[01:09] Start use casing.
+[01:10] We have some great
+use cases for you.
+[01:14] A use cases exercise is a way
+[01:16] of practicing your
+cybersecurity architect skills
+[01:18] by designing a
+realistic scenario
+[01:20] that involves a specific
+problem or goal
+[01:22] and the steps to achieve it.
+[01:24] A use case exercise can help
+you to apply the concepts
+[01:27] and frameworks that you
+learn in this course
+[01:30] and to think creatively
+and critically about how
+[01:33] to solve real-world
+cybersecurity challenges.
+[01:36] A use case exercise
+typically consists
+[01:38] of the following elements: a
+description of the problem
+[01:41] or goal, the context, and
+the stakeholders involved;
+[01:45] a list of assumptions
+and constraints
+[01:47] that affect the solution; a set
+of requirements or criteria
+[01:51] that the solution must meet;
+and a proposed solution
+[01:54] that addresses the
+problem or goal
+[01:56] and how it meets the
+requirement or criteria.
+[02:00] A diagram or sketch
+[02:01] that illustrates the
+solution and its components.
+[02:04] A discussion of the strengths
+and weaknesses of the solution
+[02:07] and possible alternatives
+or improvements.
+[02:12] There are several cases you
+can start practicing with.
+[02:16] In the Microsoft Learn modules,
+[02:17] you will find
+interactive use cases,
+[02:19] amazing interactive use cases.
+[02:20] Yes, yes, they are interactive.
+[02:22] Usually, they are at the
+end of a learning path.
+[02:26] At the time of this recording,
+[02:27] there are four
+interactive use cases.
+[02:30] And let me show you an example.
+[02:33] I've got a couple of slides
+[02:34] that explain how to
+get to a use case.
+[02:36] In essence, you go
+[02:37] to the courseware content
+on Microsoft Learn.
+[02:40] And from there, you navigate to
+one of the learning paths there.
+[02:43] At the end of a path, you will
+see typically the interactive
+[02:47] use case.
+[02:49] Exception is the first learning
+path where there's none,
+[02:51] but you'll get to in the
+second learning path.
+[02:53] So in total, four, four
+interactive use cases,
+[02:56] mentioned that before.
+[02:58] Let us have a look together
+at what they look like.
+[03:01] We will not actually
+do them, right?
+[03:03] That's for you to do, but we
+will go and have a look at them.
+[03:07] On the presentation, we are at
+the exam page for the SC-100.
+[03:11] On that page, scroll down a bit
+[03:13] until you find the
+preparation resources.
+[03:16] In the collection of preparation
+items, go to SC-100,
+[03:19] "Design security
+operations, identity
+[03:21] and compliance capability."
+[03:23] That is the second
+learning path.
+[03:24] And there will be two
+interactive use cases
+[03:26] in there waiting for us.
+[03:29] Scroll to the end
+[03:30] of the learning path,
+and there they are.
+[03:33] Two great interactive use cases
+for you to interact with.
+[03:36] I will select the last one and
+show you a couple of elements.
+[03:40] And before I forget, here are
+short links that can bring you
+[03:44] to the interactive
+cases directly.
+[03:46] Yes, you can skip the exam page
+navigation and auto-scrolling
+[03:50] and dive into the cases
+immediately using one
+[03:53] of these links.
+[03:54] Four cases, four links.
+[03:55] The pattern for short links is
+hopefully easy to remember.
+[04:00] Now to one of the cases.
+[04:01] Let's look quickly at one.
+[04:03] We will not do it, else you
+would not have any fun anymore
+[04:06] when you do it yourself.
+[04:07] We'll just do a
+brief walkthrough.
+[04:10] You typically start
+with the introduction.
+[04:11] You get an introduction.
+[04:13] Then it's time to
+get interactive,
+[04:15] to start working on the case.
+[04:19] You will launch the player
+to start interacting.
+[04:21] I've also marked a little
+full-screen shortcut
+[04:24] in the right bottom corner that
+many people seem to overlook.
+[04:29] The case will step in a
+step-by-step approach
+[04:32] through the case, the scenario.
+[04:35] And then there will be graphics
+[04:36] to better understand
+the current,
+[04:38] so you can start thinking about
+what needs to be planned.
+[04:42] There will be questions to
+challenge you on your abilities
+[04:45] to assess and make a decision.
+[04:48] There will be attention
+[04:48] to getting things done:
+plan and implement.
+[04:52] And at some point, it
+will come to an end,
+[04:54] which for us also marks
+the end of this video.
+[04:58] In this video, we looked
+[04:59] at another way you can practice
+your skills, doing design based
+[05:02] on an interactive case study.
+[05:04] Now, go do, go practice.
+[05:06] There are four amazing
+interactive use cases
+[05:09] to help you hone your skills
+[05:10] as a Microsoft
+cybersecurity architect.
+[05:13] Here are a couple of
+links for you to go to
+[05:15] and to have a look at,
+well, the use cases.
+[05:19] Thank you for
+watching this video.
+[05:20] Go use case, but also check out
+the other videos in this series.
+[05:24] I hope to meet you
+again in another video,
+[05:26] and until then, stay safe.

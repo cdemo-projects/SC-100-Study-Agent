@@ -1,0 +1,564 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello and
+welcome to this video.
+[00:09] My name is Marco Nuijen,
+trainer at Microsoft.
+[00:12] This video is part of a
+series of video about a role
+[00:15] for Microsoft
+Cybersecurity Architect.
+[00:17] The topic for this
+video's networking,
+[00:20] discovery how network security
+shapes your organization's
+[00:22] defense strategy as we
+dive into key concepts,
+[00:25] real world challenges
+[00:26] and actionable tips every
+cybersecurity architect should
+[00:29] know about.
+[00:31] The content of this video is
+mostly lined with the area
+[00:34] of solutions for infrastructure
+[00:36] from a certification
+perspective.
+[00:38] Now, what can we do with
+networking elements,
+[00:41] what can we do with
+networking elements
+[00:42] in our security architectures
+and employed solutions?
+[00:46] When I deliver a class,
+networking is usually a topic
+[00:49] that many people are
+very familiar with.
+[00:51] You are likely to know
+something about networking too
+[00:54] and if you need to ramp up on
+networking, there is plenty
+[00:57] of content from Microsoft
+Learn that can help you.
+[01:00] There's even a dedicated
+course on networking.
+[01:02] Today we will look at
+networking and, specifically,
+[01:05] security considerations
+around networking.
+[01:08] Now, networking is a key
+concept of zero trust,
+[01:11] but it's not the only one and we
+need to distribute our efforts
+[01:15] and cover all areas, all
+six of them and we need
+[01:18] to ensure everything works
+together and it's connected
+[01:22] and the element of zero trust
+that binds everything together,
+[01:24] visibility, orchestration
+and ultimation,
+[01:27] they defund the
+network is essential
+[01:29] to understand the patterns of
+(inaudible) apps, identity,
+[01:32] data, etc. Things happen
+over a connection,
+[01:35] without networking,
+no connection.
+[01:38] So, what is not mentioned
+[01:39] on this slide is the
+principles of zero trust.
+[01:43] Do you remember what those are?
+[01:46] Verify explicitly, least
+privilege and assume breach.
+[01:51] To me, assume breach
+is the principle
+[01:53] that I relate mostly
+to the networking.
+[01:55] When we use segmentation
+and compartmentalization,
+[01:59] that will enable us to manage
+movement from one segment
+[02:02] to another one and will enable
+us to isolate a compartment
+[02:06] in case of an incident.
+[02:08] This connected network
+segments if needed
+[02:10] to avoid further
+risk of impacts.
+[02:12] We limit the scope or damage.
+[02:15] Impact is confound, confined
+to only a part of the network,
+[02:20] we can reduce the blast radius.
+[02:23] Also, let me remind you
+that Microsoft efforts are
+[02:25] about modernizing access
+controls and verify explicitly,
+[02:28] for example, that also
+applies to the network.
+[02:31] We can use Entra aspects,
+like global secure access,
+[02:35] to be able to get into
+zero trust networking,
+[02:37] there's excellent content
+on that and a learning path
+[02:40] for the SC100 on Microsoft
+Learn, go and check it out.
+[02:43] But for now, let us focus more
+[02:44] on some traditional
+networking aspects.
+[02:48] Defense in depth.
+[02:49] In our defenses we need
+to do defense in depth,
+[02:52] a security strategy that employs
+multiple layers of protection
+[02:56] to prevent unauthorized access,
+[02:57] damage or compromise
+of assets and data.
+[03:01] The idea is to create a layer
+defense that can slow down
+[03:05] and detour attackers, even if
+they manage to breach one layer.
+[03:10] Defense in depth also provides
+redundancy and resilience
+[03:13] in case of a failure on
+incident in one layer.
+[03:16] Defense in depth applies to
+all aspects of security,
+[03:19] including physical, technical,
+administrative and operational.
+[03:25] One example of defense of
+depth in network security,
+[03:29] which involves establishing
+network segment boundaries,
+[03:32] network segments is the
+practice of dividing a network
+[03:35] into smaller,
+sub-networks or segments
+[03:38] that have different access
+levels and permissions.
+[03:41] Network segmentation can help
+reduce the attack surface,
+[03:44] limits lateral movement,
+isolate sensitive data
+[03:48] and enforce policies and
+facilitate the end response.
+[03:53] Network segmentation can be
+achieved using various methods,
+[03:55] such as, firewalls, routers,
+switches, virtual LANs,
+[04:01] software-defined networking,
+micro-segmentation
+[04:04] and zero trust network access.
+[04:07] Network segmentation boundaries
+should be defined based
+[04:09] on the principle of least
+privileges, which means,
+[04:12] granting the minimal level
+[04:13] of access necessary
+for each segment.
+[04:16] Network segmentation boundaries
+should also be varied
+[04:19] explicitly, which means,
+checking the identity
+[04:21] and context of end pre-request
+and transaction across segments.
+[04:27] Network segment boundaries
+should also assume breach,
+[04:30] which means, expecting
+that attackers will try
+[04:32] to penetrate a
+network and we need
+[04:34] to prepare for that accordingly.
+[04:37] Now, to make sure
+that our designs
+[04:40] and environments have
+everything they need,
+[04:42] we can use a baseline again.
+[04:44] Here again I'm thinking
+[04:45] about the Microsoft Cloud
+security benchmark.
+[04:47] A benchmark that we see
+coming back again and again
+[04:50] in a curriculum for Microsoft
+cybersecurity architect.
+[04:54] Specifically, the control
+for networking, NS,
+[04:57] network security, and as
+usual, with the MCSB control,
+[05:00] we start with the low number,
+which is a high priority,
+[05:02] and we work our way through the
+rest of the numbered items.
+[05:06] First, is network segmentation.
+[05:08] Should not be a surprise, right,
+[05:09] based on what I've
+mentioned so far.
+[05:13] This is about protecting
+Cloud native services
+[05:15] with network controls.
+[05:17] Any idea how we do that?
+[05:21] For me the first thing that
+now comes to mind is, well,
+[05:26] private link or
+service end points
+[05:27] to keep plethora as
+a service private.
+[05:30] Go investigate if you're
+not familiar with those,
+[05:32] we'll come back to one
+of them in a moment.
+[05:35] But use the NS controls in the
+MCSB, go through them and think
+[05:39] of an example on how you would
+achieve the control and look
+[05:43] up what is in the
+recommendations and when you do,
+[05:46] also notice that the guidance
+is not limited to Azure.
+[05:50] Right, remember, the MCSB is
+a Cloud security benchmark,
+[05:53] it does more than Azure.
+[05:55] And start thinking in patterns.
+[05:58] Some of the networking aspects
+actually triggered me to talk
+[06:01] about patterns here and
+I've listed a couple
+[06:04] of common patterns that I
+associate with networking,
+[06:08] patterns, best practices,
+framework, like,
+[06:10] architected framework, the
+Cloud (inaudible) framework,
+[06:12] the Microsoft cybersecurity
+reference architecture,
+[06:15] Microsoft Cloud security
+benchmark or effectively,
+[06:18] collections of patterns,
+things that lead
+[06:20] to a favorable outcome.
+[06:22] Then there are
+also anti-patterns
+[06:24] in those frameworks, to
+those, then the likelihood
+[06:27] of failure is very
+big, all right.
+[06:29] So if you do an anti-pattern,
+you're likely to fail,
+[06:32] if you do a pattern,
+you're likely to succeed.
+[06:34] So stay away from anti-patterns,
+[06:36] follow a pattern, be
+on the happy path.
+[06:39] If you take a firewall,
+that acts as a gatekeeper,
+[06:43] that's a gatekeeper pattern.
+[06:45] You put it in front of something
+to protect that something
+[06:48] and with many beckons we want
+something in front of them
+[06:50] to secure them or have
+a concentrated place
+[06:53] where we can aggregate
+all the traffic,
+[06:55] inspect it, maybe
+even change it.
+[06:58] Firewalls, low (inaudible),
+proxies, gateways,
+[07:01] API management systems, many
+of these align with patterns
+[07:04] that I've listed here.
+[07:07] Through the short
+link you will be able
+[07:08] to access pattern information
+in the Azure architect side.
+[07:14] Some patterns are also
+described directly
+[07:16] in the Cloud adoption framework
+[07:17] and the (inaudible)
+architected framework.
+[07:20] Why to look for patterns,
+why to include them
+[07:23] in your designs and assessments?
+[07:26] Because they're
+typically robust.
+[07:28] Technology or service will
+change, but what we want
+[07:31] to achieve is that pattern is
+likely to remain the same.
+[07:34] I want to have a gatekeeper
+[07:36] where untrusted traffic
+meets trusted traffic.
+[07:38] Great, let's implement a
+firewall from a vendor, now,
+[07:41] name a vendor, and later we
+can reconsider and we want
+[07:45] to use another
+flavor of firewall,
+[07:47] and firewalls service maybe,
+like, the Azure firewall.
+[07:49] The pattern is the same,
+[07:51] the technology is different.The
+pattern outlasts the technology.
+[07:56] So use patterns and be
+familiar with them.
+[07:58] Investigate these
+patterns, it will help you
+[08:01] in your architectural and
+you will definitely benefit
+[08:03] from learning about them in
+the certification process.
+[08:08] Now, from some pictures.
+[08:09] Networking, you can start small,
+grow big, concentrate traffic,
+[08:13] that way we can create a single
+area for control and inspection
+[08:17] and connect things together.
+[08:18] We see some examples as
+you're networking here,
+[08:21] but in most environments the
+same pattern started to develop.
+[08:26] We see a simple representation
+of that evolution model
+[08:29] at the right side of the
+graphic, it's commonly known
+[08:31] as the hoop spoke, like a wheel,
+we have a hoop in the middle
+[08:34] and we connect everything
+to that spokes.
+[08:37] The group becomes the place for
+managing traffic, inspecting
+[08:40] and so on, and then
+there are more hoops
+[08:42] and there will be connectivity
+[08:44] to on-premises and
+more and more.
+[08:46] Long story short, we see
+the pattern that evolved
+[08:49] and that are described in a
+(inaudible) practice framework,
+[08:52] like the Cloud
+adoption framework.
+[08:55] Here we have a link to
+the landing zone concept
+[08:58] in the Cloud adoption framework.
+[09:00] It has a lot of information
+on how to set up networking
+[09:02] for different options
+and situations.
+[09:05] It leverages the hoop and spoke
+model and the success with that
+[09:08] with Azure virtual VOM,
+[09:09] and so far defined
+networking capabilities.
+[09:12] All those complex diagrams are
+made up of individual components
+[09:15] and together they
+make up the pattern.
+[09:18] Go to the link that I
+shared here, aka.ms/caflz,
+[09:23] to find out more about these
+landing zone patterns.
+[09:26] And more on the available
+landing zone types, diagrams,
+[09:28] documentation, you will
+also find code there,
+[09:31] so many elements of the CAF
+are links to repositories,
+[09:34] where there's actually code that
+can be borrowed immediately
+[09:37] or that you can use as
+a foundation to build
+[09:40] on yourselves further.
+[09:46] Azure segmentation elements.
+[09:48] Segmentation is assumed breach,
+reduce the blast radius
+[09:51] of zero risk concepts.
+[09:53] What are the components we
+can leverage to achieve that?
+[09:55] Now, some of the components we
+can use for segmentation are,
+[09:58] a subscription and
+virtual network,
+[10:00] network security groups,
+application security groups,
+[10:03] firewalls and what we
+see here, of course,
+[10:06] is not a complete list, but they
+are essential for any network
+[10:09] and solution available measure,
+so make sure you have them
+[10:12] in your deployments and
+in your architectures.
+[10:16] What's the bests practice?
+[10:17] Well, apply zero trust.
+[10:20] But these are recommended
+practices for network
+[10:23] on Azure based on that.
+[10:24] We divide networks
+into segments,
+[10:26] we manage throughout
+in-between those segments,
+[10:29] for areas where we encounter
+untrusted networks,
+[10:31] we'll use a perimeter zone with
+extra protection, for example,
+[10:34] by adding a virtual
+network appliance,
+[10:36] these are typically
+solutions from third parties
+[10:39] that you can choose from a store
+[10:40] and integrate easily
+into your designs.
+[10:43] For example, when you prefer
+to use a different firewall
+[10:45] than the Azure firewall,
+[10:46] most vendors have their
+product available
+[10:49] as a virtual appliance.
+[10:51] And we practice isolation.
+[10:53] If it's important,
+if it's critical,
+[10:54] we will secure those resources.
+[10:57] As a case in point, supposed
+you've created the sequel data
+[11:00] met in Azure, and
+that's from (inaudible)
+[11:03] and by default (inaudible)
+can be accessed from, yep,
+[11:07] from a public place
+like the internet.
+[11:09] Likely that we need
+to take that out,
+[11:12] no internet access directly.
+[11:14] We need to make it
+behave more privately.
+[11:16] We need to find a
+way to secure it
+[11:18] and only make it accessible
+internally and where we need
+[11:22] to access that, how
+would we do that?
+[11:25] Assume you already have
+some understanding
+[11:26] of how that would be done.
+[11:28] And it's part of a basic
+principle that's going
+[11:31] to be required from the
+cybersecurity architectural.
+[11:34] This information is
+covered in courses
+[11:35] like the Azure security
+engineer and, if not,
+[11:38] well, maybe study about it.
+[11:41] There could be
+capability, for example,
+[11:42] a private link that can be used.
+[11:44] There are two capabilities
+that come to mind
+[11:46] and to help make (inaudible)
+[11:48] as a service capabilities
+more private, capabilities
+[11:51] that will expose for
+service, the platform
+[11:53] as a service element
+into our Azure network,
+[11:55] our V nuts and (inaudible).
+[11:57] And those are service end
+points and private link.
+[12:00] I mentioned them earlier,
+but I thought it was good
+[12:02] to do a bit more detail
+on that in this video,
+[12:06] and here you see an example of
+one of the two, of private link.
+[12:09] Of the two I would
+prefer private link
+[12:12] over service end points,
+it's much more specific,
+[12:15] also it will expose the service
+as an IP end point in one
+[12:19] of the suit nets, which gives
+me better granular control,
+[12:22] for example, by using a network
+security group for filtering.
+[12:25] But both have benefits and
+drawbacks and capabilities
+[12:28] and in price, and it's essential
+[12:30] to conduct thorough research
+independently or in consultation
+[12:33] with subject matter experts
+in your organization
+[12:36] to identify the most suitable
+solution for your circumstances.
+[12:40] Additionally, consider the
+human factor, implementation
+[12:44] or implementation of a
+tool is only effective
+[12:47] if users are equipped to utilize
+it properly and security is more
+[12:52] than just technology, right, it
+requires attention to people
+[12:56] and process also, it's not only
+about choosing the technology,
+[13:00] people need to be able to
+operate it and understand it.
+[13:03] Time to zoom out a
+little bit again.
+[13:05] Let's connect what we just
+talked about, the networking,
+[13:09] back to the Microsoft
+cybersecurity
+[13:10] reference architecture.
+[13:12] And I hope the graphic, that I
+have got here, looks familiar
+[13:15] to you, because it's
+in multiple videos,
+[13:16] it's a very wonderful slides
+to do some heat mapping with,
+[13:19] it's the raw slide we see here.
+[13:21] And I just want to
+highlight an area here.
+[13:23] You've got the same slide here,
+with the highlighted area,
+[13:26] where I think you will find
+the most elements related
+[13:29] to networking.
+[13:30] And when you're studying,
+also pay some attention
+[13:33] to the Azure capabilities
+related to networking,
+[13:35] like the web application
+firewall, the Azure firewall,
+[13:38] next to elements that we already
+discussed in this video.
+[13:43] That concludes our video
+on networking aspects.
+[13:45] Now, there is still
+lot more to learn,
+[13:47] but I think we covered some
+of the essential aspects
+[13:49] of networking in this video.
+[13:51] The rest will depend
+on your own research
+[13:53] and your existing knowledge
+and for further reading,
+[13:57] a good place to do
+research is the place
+[13:59] that I've listed here
+with the short link.
+[14:01] They are mentioned
+in design patterns,
+[14:03] there's a plot adoption
+framework and within that,
+[14:05] also specifically, the
+landing zone concepts
+[14:09] in the Cloud adoption framework.
+[14:11] Thank you for watching
+this video, there are more
+[14:13] in this area,
+cybersecurity architects
+[14:16] to support you in your learning.
+[14:18] I hope to meet you in
+another one, another time,
+[14:20] until that time,
+please, stay safe.
