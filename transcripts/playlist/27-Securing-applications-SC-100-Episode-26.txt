@@ -1,0 +1,490 @@
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:08] My name is Marco Nuijen and
+I'm a trainer at Microsoft.
+[00:11] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architect.
+[00:16] In this video, we focus on
+aspects of applications
+[00:19] and security; discover
+how to identify
+[00:22] and secure your applications
+with expert advice
+[00:25] and practical strategies
+in this episode
+[00:28] of the Microsoft Cybersecurity
+Architect video series.
+[00:32] The content of this video is
+mostly aligned with the area
+[00:34] of solutions for
+application data
+[00:36] from a certification
+perspective.
+[00:38] Now question, how
+to secure apps?
+[00:41] This is the main
+question for this video,
+[00:44] but you can ask yourselves
+other questions.
+[00:46] Do you know all your apps?
+[00:47] Do you know what they are?
+[00:49] And do you know how
+they are being used?
+[00:51] That's the kind of question you
+will need to ask yourselves
+[00:54] and others to get
+an understanding.
+[00:58] For this video, we will focus
+on three main elements,
+[01:01] applications, discovery of them,
+[01:03] and how we can control
+what we have discovered.
+[01:07] Applications are
+a separate pillar
+[01:09] in a zero-trust framework,
+and we need to ensure
+[01:12] that they receive
+adequate attention
+[01:14] in our designs and executions.
+[01:16] We need to understand apps,
+manage them, and collect data
+[01:20] from them to improve overall
+awareness to get visibility,
+[01:23] automation, and orchestration.
+[01:25] Apps are usually
+where the action is,
+[01:27] and people will use a device
+over a network to access an app
+[01:31] that will give them
+access to data.
+[01:32] For example, how you
+use your email app,
+[01:35] or a communication platform
+like Microsoft Teams.
+[01:40] How can we reach an application?
+[01:42] Where is the
+application located?
+[01:44] We may not always be able
+to see or manage that.
+[01:48] I said in the video on identity
+[01:49] that identity is the new
+boundary, it's the new security.
+[01:53] The idea here is that by
+linking an application,
+[01:56] an application access
+with identities,
+[01:58] we have a way to control it.
+[02:00] The app needs to have evidence
+[02:02] that the user is who
+they claim to be.
+[02:04] If there is no evidence,
+we can ask the application
+[02:06] to send the user somewhere
+to get verified.
+[02:09] We let the user go back
+home, for example,
+[02:12] to an Entra ID tenant.
+[02:14] There we can clearly check
+and decide on access.
+[02:18] We can see and record what
+happens towards an application.
+[02:21] We can see and coordinate from
+a zero-trust perspective,
+[02:25] from a zero-trust point of view.
+[02:28] The graphic shown
+is in the MCRA,
+[02:30] the Microsoft Security
+Reference Architecture,
+[02:32] and shows applications on the
+right side, users and devices
+[02:36] on the left side, and a
+decision engine in the middle.
+[02:40] The main point I want to
+make here is that we need
+[02:43] to integrate with
+identity for control,
+[02:46] visibility, and decisions.
+[02:49] Identity is the control plane,
+and any application touched
+[02:53] by a user in an Entra tenant
+will typically be something we
+[02:56] will be able to see.
+[02:58] More on that in a moment.
+[03:02] The Microsoft Identity Platform
+is a cloud identity service
+[03:05] that helps developers create
+apps that can sign in users
+[03:09] and access data across different
+services and platforms.
+[03:13] The platform supports various
+application types, such as web,
+[03:17] mobile, desktop, single
+page, and daemon apps,
+[03:20] and gives different
+options for authentication
+[03:23] and authorization, such
+as passwords, biometrics,
+[03:26] certificates, or
+device-based security.
+[03:29] The platform also has a
+range of development tools
+[03:32] and software development kits,
+SDKs, to help developers work
+[03:35] with different languages
+and different platforms.
+[03:37] One of the main features of the
+Microsoft Identity Platform is
+[03:41] that it uses modern protocols,
+such as Open Authentication,
+[03:45] OAuth, and OpenID Connect on
+top of OAuth, to enable safe
+[03:49] and compatible communication
+between apps and services.
+[03:52] These protocols let apps ask
+for tokens from the platform,
+[03:57] which can be used to access
+protected resources,
+[04:00] such as user profiles,
+calendars, emails, or files.
+[04:04] The platform also supports
+other protocols, such as SAML,
+[04:08] Security Assertion Markup
+Language, and W-Federation
+[04:12] for federated identity
+scenarios, where users can sign
+[04:16] in using their existing account
+from other identity providers.
+[04:20] Another feature of the
+Microsoft Identity Platform is
+[04:22] that it lets apps
+phone home to Entra.
+[04:25] By phoning home to Entra,
+apps can use its capabilities
+[04:28] to improve security,
+privacy, and performance.
+[04:30] For example, apps can use Entra
+to apply conditional access,
+[04:34] multi-factor authentication,
+password-to-sign-in,
+[04:37] or identity protection
+for their users.
+[04:40] What it brings in is
+a link to identity.
+[04:42] We get visibility and control
+over the access of an identity.
+[04:47] But an application needs to
+be designed for integration.
+[04:51] It needs to be able to
+use modern protocols,
+[04:53] otherwise we cannot use
+all of the features
+[04:55] and functions mentioned here
+from a zero-risk perspective,
+[05:00] and we will find applications
+that are not based
+[05:02] on modern protocols; and yes, we
+should try to modernize them,
+[05:06] but that will take
+time and cost,
+[05:08] and maybe not always bring a
+business benefit directly.
+[05:11] And remember, we exist,
+[05:13] we function to support the
+business; we help them
+[05:16] to get and to stay secure.
+[05:20] Modern protocols, such
+as Open Authentication
+[05:22] and OpenID Connect, are designed
+for the modern world, where apps
+[05:25] and services need to communicate
+[05:27] across different
+domains and platforms.
+[05:29] They enable federated
+identity, where users can sign
+[05:32] in using their existing account
+from other identity providers,
+[05:35] and they support
+token-based authorization,
+[05:38] where apps can access
+protected resources
+[05:40] by presenting tokens issued by
+the Microsoft Identity Platform.
+[05:45] These protocols allow apps
+to phone home to Entra
+[05:48] and use its capabilities
+to enhance security,
+[05:50] privacy, and performance.
+[05:52] Legacy protocols, such as
+Kerberos and NTLM, are designed
+[05:56] for a different era, where apps
+and services are mostly confined
+[05:58] within a company's
+own physical network.
+[06:01] They rely on domain-based
+authentication where users have
+[06:04] to provide their credentials to
+each app and service they want
+[06:07] to access, and they do
+not support token-based
+[06:10] authorization, where apps can
+access protected resources
+[06:13] by presenting tokens issued by
+the Microsoft Identity Platform.
+[06:17] These protocols, these
+legacy protocols,
+[06:19] also do not allow apps
+to phone home to Entra
+[06:22] and use its capabilities
+to enhance security,
+[06:24] privacy, and performance.
+[06:26] Therefore, modern protocols are
+preferred over legacy protocols,
+[06:30] as they align better with
+zero-trust principles
+[06:33] and offer more capabilities
+to protect, detect,
+[06:36] and respond to threats.
+[06:39] However, some apps may
+still use legacy protocols,
+[06:41] and we should try to modernize
+them as much as possible,
+[06:44] or we can think of putting
+something in front
+[06:47] of a legacy app that pulls
+it into the modern world.
+[06:50] In the graphic, we see
+an example of that
+[06:52] with Entra Identity
+Application Proxy.
+[06:55] It will allow us to
+leverage an Entra identity
+[06:57] and explicitly verify and --
+[07:00] verification capabilities
+from there to get access
+[07:03] to an application that
+natively, by itself,
+[07:06] cannot support any of that.
+[07:08] It is a proxy, or
+a gateway pattern,
+[07:10] and in the best
+practice documentations
+[07:12] and the best practice
+framework documentation
+[07:14] of the Cloud Adoption Framework
+[07:15] and the World Architecture
+Framework, you'll see patterns
+[07:18] like this being mentioned.
+[07:20] There's another thing,
+enterprise applications.
+[07:23] Any application that uses modern
+protocols and is used by a user
+[07:28] in an Entra tenant will go
+back to Entra to get a token.
+[07:32] Entra will have to verify
+the user, and it will have
+[07:35] to give a token for
+the application
+[07:37] to the verified user.
+[07:39] But since Entra can only give
+tokens for things it recognizes,
+[07:44] the application has to
+exist in the tenant.
+[07:47] The process to create
+[07:48] that presence is
+application registration,
+[07:51] and that can be done beforehand
+[07:52] by someone registering an
+application, but by default,
+[07:56] it can also happen
+automatically.
+[07:59] The first user that goes
+back to Entra to get a token
+[08:02] for an unknown application will
+start the registration process,
+[08:05] and we will see the
+application in Entra ID.
+[08:08] That gives us a control plane.
+[08:10] The application is there, but
+we can control its behavior.
+[08:14] We could say, no, that
+application is not allowed
+[08:17] to be used, and if we do that,
+our users will not be able
+[08:21] to use that application with
+their Entra ID account.
+[08:24] It is a good place to check
+as a cybersecurity architect
+[08:27] to know what applications
+are connected.
+[08:30] We see an example of
+that on the screen.
+[08:33] And then, we need to plan if
+we want it, and maybe to want
+[08:36] to control it a bit more.
+[08:39] We want to maybe learn more
+about the application.
+[08:41] What's its background?
+[08:42] What's its purpose?
+[08:44] Did we create and
+build it ourself?
+[08:46] And if we did, where are the
+designs and threat models
+[08:48] for the application
+using principles
+[08:51] from the well-architected
+framework for designing
+[08:53] and securing workloads where we
+could use elements from the MCSB
+[08:57] around securing DevOps
+and DevOps processes?
+[09:00] Or we can see what the
+application is doing
+[09:02] in real time, have a
+visualization or map
+[09:05] of all the communication
+to and from it.
+[09:08] The applications typically
+are not isolated.
+[09:10] They are connected.
+[09:11] Our application may have
+a front-end, middle-tier,
+[09:13] back-end, each with their
+specific security challenges.
+[09:16] Each can use different kinds
+[09:18] of capabilities, but
+we need to know.
+[09:21] Otherwise, we cannot protect,
+detect, and respond.
+[09:25] The graphic on the slide is
+an example of a map I took
+[09:29] from Application Insights.
+[09:31] If that's implemented,
+[09:32] it's great to help us
+in our understanding.
+[09:34] I've often used graphics
+like this generated
+[09:37] by Application Insights, the
+Application Insights engine.
+[09:40] And then, do a comparison
+with the design model
+[09:43] or the threat model,
+if that exists.
+[09:45] And then, use them all together
+to find gaps, potentially.
+[09:50] One application -- or one
+capability that we need
+[09:53] to mention when it comes
+to understanding apps
+[09:55] and knowing what they're doing
+is Defender for Cloud Apps.
+[09:59] It is part of the Defenders
+that are under the control
+[10:01] of Defender XDR, now the Unified
+Security Operations Platform,
+[10:05] but it's a very powerful
+capability to discover,
+[10:08] understand, and control
+applications after configuring
+[10:13] and feeding it, right?
+[10:14] It needs to be set up.
+[10:16] For example, by using connectors
+to applications, it can help us
+[10:19] to understand
+applications by pulling
+[10:20] in application-specific
+information,
+[10:23] or by ingesting logs from
+proxies and firewalls,
+[10:26] we can start seeing which apps
+are being used through those.
+[10:30] It is all discovery and helps
+us to see the full picture,
+[10:34] and it can also help us to
+understand the data that flows
+[10:36] through and from the application
+and how that data is treated
+[10:40] within the application and it
+can become a control element.
+[10:43] Because it's not limited to
+discovery and understanding,
+[10:46] we can start enforcing.
+[10:48] We can use it to start
+expressing rules,
+[10:51] like data labeled as internal
+should not be able to go
+[10:54] to that application;
+or we can configure
+[10:57] that the data is only allowed
+to go to the application
+[10:59] if it is encrypted --
+[11:00] for example, by using mobile
+application management
+[11:04] in an isolated bubble
+on a mobile device --
+[11:07] more discovery,
+more enhancement,
+[11:09] and more control
+for applications.
+[11:13] Here we have an example of a
+dashboard that you may want
+[11:15] to check out yourselves if your
+organization has turned on
+[11:17] and configured Defender for
+Cloud Apps functionality.
+[11:21] And if not, then maybe
+consider start using it.
+[11:24] And then there,
+before I omit it,
+[11:27] for all the discovered
+applications,
+[11:29] it will show the
+details of users,
+[11:31] data, and dynamics of them.
+[11:34] But also, it will help to
+understand compliance aspects
+[11:37] and other information
+that Defender
+[11:39] for Cloud apps is integrated
+with by a team at Microsoft
+[11:43] that evaluates applications.
+[11:45] For example, if an application
+has a certain compliance
+[11:47] statement available, it
+will be listed in Defender
+[11:51] for Cloud apps, and
+it can be very useful
+[11:53] for your compliance journey.
+[11:54] But that's a different
+topic in a different video.
+[11:59] For now, we are at the
+end for this video,
+[12:02] and the topic was applications.
+[12:03] And we looked at applications
+and discovery through Entra ID
+[12:06] or Defender for Cloud apps.
+[12:09] And Entra and Defender offer
+us a lot of other capabilities
+[12:13] to get a better understanding
+of our applications.
+[12:16] Go read, go study, and
+the most important link
+[12:20] for reading further about
+this is probably going
+[12:23] to be the platform information,
+[12:25] aka.ms versus ID platform,
+so make use of that.
+[12:29] You will find a lot
+of excellent content
+[12:30] about application protocols,
+also how to interact.
+[12:33] So it's a really, really great
+resource to go and investigate.
+[12:38] Well, thank you for
+watching this video.
+[12:40] There are more
+[12:40] in the Cybersecurity
+Architects video series.
+[12:43] Meet you, maybe, in another one,
+and until that time, stay safe.

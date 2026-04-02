@@ -1,0 +1,57 @@
+{
+  "exam_date": null,
+  "study_start_date": null,
+  "total_study_time_minutes": 0,
+  "sessions": [],
+  "domains": {
+    "1": {
+      "name": "Design solutions that align with security best practices and priorities",
+      "weight": "20-25%",
+      "progress": 0,
+      "objectives": {
+        "1.1": { "name": "Resiliency strategy for ransomware and other attacks", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "1.2": { "name": "MCRA and MCSB alignment", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "1.3": { "name": "Zero Trust and RaMP", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "1.4": { "name": "CAF and WAF security", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "1.5": { "name": "DevSecOps and Azure landing zones", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 }
+      }
+    },
+    "2": {
+      "name": "Design security operations, identity, and compliance capabilities",
+      "weight": "25-30%",
+      "progress": 0,
+      "objectives": {
+        "2.1": { "name": "Security operations (XDR, SIEM, SOAR, MITRE)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "2.2": { "name": "Identity and access management", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "2.3": { "name": "Privileged access (PIM, enterprise access model)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "2.4": { "name": "Regulatory compliance (Purview, Priva, Azure Policy)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 }
+      }
+    },
+    "3": {
+      "name": "Design security solutions for infrastructure",
+      "weight": "25-30%",
+      "progress": 0,
+      "objectives": {
+        "3.1": { "name": "Security posture management (Defender for Cloud, MCSB, Arc, EASM)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "3.2": { "name": "Server and client endpoints (IoT, OT/ICS, LAPS)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "3.3": { "name": "SaaS/PaaS/IaaS security (containers, AI services)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "3.4": { "name": "Network security and SSE (Entra Internet/Private Access)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 }
+      }
+    },
+    "4": {
+      "name": "Design security solutions for applications and data",
+      "weight": "20-25%",
+      "progress": 0,
+      "objectives": {
+        "4.1": { "name": "Microsoft 365 security (Secure Score, Defender, Purview, Copilot)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "4.2": { "name": "Application security (threat modeling, WAF, API, workload identities)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 },
+        "4.3": { "name": "Data security (encryption, Key Vault, SQL, Storage, Defender)", "status": "not-started", "quiz_correct": 0, "quiz_total": 0 }
+      }
+    }
+  },
+  "quiz_history": [],
+  "bookmarks": [],
+  "study_plan": {
+    "weeks": []
+  }
+}

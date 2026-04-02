@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SC-100 Study Dashboard</title>
+<style>
+:root {
+  --bg: #1e1e1e; --surface: #252526; --surface2: #2d2d30; --border: #3e3e42;
+  --text: #d4d4d4; --text-dim: #808080; --accent: #569cd6; --green: #4ec9b0;
+  --yellow: #dcdcaa; --red: #f44747; --orange: #ce9178; --purple: #c586c0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+
+/* Header */
+.header { background:var(--surface); border-bottom:1px solid var(--border); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+.header h1 { font-size:20px; font-weight:600; }
+.header h1 span { color:var(--accent); }
+.exam-countdown { text-align:right; }
+.exam-countdown .days { font-size:28px; font-weight:700; color:var(--accent); }
+.exam-countdown .label { font-size:12px; color:var(--text-dim); }
+
+/* Nav */
+.nav { background:var(--surface); border-bottom:1px solid var(--border); display:flex; gap:0; }
+.nav button { background:none; border:none; color:var(--text-dim); padding:12px 20px; cursor:pointer; font-size:13px; border-bottom:2px solid transparent; transition:all .2s; }
+.nav button:hover { color:var(--text); background:var(--surface2); }
+.nav button.active { color:var(--accent); border-bottom-color:var(--accent); }
+
+/* Layout */
+.content { padding:24px; max-width:1400px; margin:0 auto; }
+.tab { display:none; } .tab.active { display:block; }
+.grid { display:grid; gap:20px; }
+.grid-2 { grid-template-columns:1fr 1fr; }
+.grid-3 { grid-template-columns:1fr 1fr 1fr; }
+.grid-4 { grid-template-columns:repeat(4,1fr); }
+@media(max-width:900px) { .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; } }
+
+/* Cards */
+.card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px; }
+.card h2 { font-size:14px; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; }
+.card h3 { font-size:16px; margin-bottom:12px; }
+
+/* Progress Rings */
+.rings { display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px; padding:10px 0; }
+.ring-wrap { text-align:center; }
+.ring-wrap .label { font-size:12px; color:var(--text-dim); margin-top:8px; max-width:120px; }
+.ring-wrap .pct { font-size:20px; font-weight:700; }
+svg.ring { width:100px; height:100px; transform:rotate(-90deg); }
+svg.ring circle { fill:none; stroke-width:8; }
+svg.ring .bg { stroke:var(--surface2); }
+svg.ring .fg { stroke-linecap:round; transition:stroke-dashoffset .6s ease; }
+
+/* Heatmap */
+.heatmap { display:grid; gap:6px; }
+.heatmap-row { display:flex; align-items:center; gap:8px; }
+.heatmap-row .obj-name { font-size:12px; width:280px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.heatmap-row .bar-wrap { flex:1; height:24px; background:var(--surface2); border-radius:4px; overflow:hidden; position:relative; }
+.heatmap-row .bar { height:100%; border-radius:4px; transition:width .4s; min-width:2px; }
+.heatmap-row .bar-label { position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:11px; color:var(--text); }
+.bar.green { background:var(--green); } .bar.yellow { background:var(--yellow); } .bar.red { background:var(--red); } .bar.gray { background:var(--border); }
+
+/* Quiz History */
+.quiz-table { width:100%; border-collapse:collapse; font-size:13px; }
+.quiz-table th { text-align:left; padding:8px 12px; border-bottom:1px solid var(--border); color:var(--text-dim); font-weight:500; }
+.quiz-table td { padding:8px 12px; border-bottom:1px solid var(--surface2); }
+.quiz-table .score { font-weight:600; }
+.quiz-table .score.good { color:var(--green); } .quiz-table .score.mid { color:var(--yellow); } .quiz-table .score.bad { color:var(--red); }
+
+/* Study Plan */
+.timeline { position:relative; padding-left:30px; }
+.timeline::before { content:''; position:absolute; left:12px; top:0; bottom:0; width:2px; background:var(--border); }
+.week { position:relative; margin-bottom:20px; }
+.week::before { content:''; position:absolute; left:-22px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--border); border:2px solid var(--surface); }
+.week.completed::before { background:var(--green); }
+.week.current::before { background:var(--accent); box-shadow:0 0 8px var(--accent); }
+.week h4 { font-size:14px; margin-bottom:4px; }
+.week p { font-size:12px; color:var(--text-dim); }
+
+/* Transcript Search */
+.search-box { display:flex; gap:8px; margin-bottom:16px; }
+.search-box input { flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:4px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; }
+.search-box input:focus { border-color:var(--accent); }
+.search-box button { background:var(--accent); color:#fff; border:none; border-radius:4px; padding:10px 20px; cursor:pointer; font-size:13px; }
+.search-results { max-height:500px; overflow-y:auto; }
+.search-result { padding:12px; border-bottom:1px solid var(--surface2); }
+.search-result .file { font-size:11px; color:var(--accent); margin-bottom:4px; }
+.search-result .line { font-size:13px; }
+.search-result mark { background:var(--yellow); color:var(--bg); padding:1px 2px; border-radius:2px; }
+
+/* Bookmarks */
+.bookmark { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--surface2); }
+.bookmark a { color:var(--accent); text-decoration:none; font-size:13px; }
+.bookmark a:hover { text-decoration:underline; }
+.bookmark .domain-tag { font-size:11px; background:var(--surface2); padding:2px 8px; border-radius:10px; color:var(--text-dim); }
+
+/* Timer */
+.timer-display { text-align:center; padding:20px; }
+.timer-display .time { font-size:48px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--accent); }
+.timer-display .today { font-size:14px; color:var(--text-dim); margin-top:8px; }
+.timer-btns { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+.timer-btns button { padding:8px 20px; border-radius:4px; border:1px solid var(--border); background:var(--surface2); color:var(--text); cursor:pointer; font-size:13px; }
+.timer-btns button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+.timer-btns button:hover { opacity:0.8; }
+
+/* Stats row */
+.stats { display:flex; gap:20px; flex-wrap:wrap; }
+.stat { text-align:center; flex:1; min-width:100px; }
+.stat .value { font-size:24px; font-weight:700; color:var(--accent); }
+.stat .label { font-size:12px; color:var(--text-dim); margin-top:4px; }
+
+.empty { color:var(--text-dim); font-style:italic; text-align:center; padding:40px; }
+
+/* References */
+.ref-list { display:flex; flex-direction:column; gap:6px; }
+.ref-list a { color:var(--accent); text-decoration:none; font-size:13px; padding:8px 12px; border-radius:4px; transition:background .2s; display:block; }
+.ref-list a:hover { background:var(--surface2); text-decoration:underline; }
+.ref-list.compact a { padding:4px 8px; font-size:12px; }
+
+/* Feedback */
+.feedback-options { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+
+/* Quiz */
+.quiz-domain-btn { padding:8px 16px; border-radius:4px; border:1px solid var(--border); background:var(--surface2); color:var(--text); cursor:pointer; font-size:13px; transition:all .2s; }
+.quiz-domain-btn:hover { border-color:var(--accent); }
+.quiz-domain-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.choice-btn { display:block; width:100%; text-align:left; padding:14px 16px; margin-bottom:8px; border-radius:6px; border:1px solid var(--border); background:var(--surface2); color:var(--text); cursor:pointer; font-size:14px; transition:all .2s; line-height:1.4; }
+.choice-btn:hover:not(.answered) { border-color:var(--accent); background:var(--bg); }
+.choice-btn.correct { border-color:var(--green); background:rgba(78,201,176,0.15); }
+.choice-btn.wrong { border-color:var(--red); background:rgba(244,71,71,0.1); }
+.choice-btn.answered { cursor:default; }
+.feedback-card { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:24px; text-align:center; cursor:pointer; transition:all .2s; text-decoration:none; color:var(--text); display:block; }
+.feedback-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+.feedback-card .icon { font-size:32px; margin-bottom:12px; }
+.feedback-card h3 { font-size:15px; margin-bottom:8px; color:var(--accent); }
+.feedback-card p { font-size:12px; color:var(--text-dim); }
+
+/* Product Icons */
+.product-icon { width:24px; height:24px; vertical-align:middle; margin-right:6px; }
+.product-icon-lg { width:40px; height:40px; vertical-align:middle; margin-right:10px; }
+.domain-header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.domain-header img { width:32px; height:32px; }
+
+/* Mermaid diagrams */
+.mermaid { background:var(--surface2); padding:16px; border-radius:6px; margin:12px 0; overflow-x:auto; }
+
+/* Quiz diagram */
+.quiz-diagram { background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:16px; margin:12px 0; text-align:center; }
+.quiz-diagram img { max-width:100%; border-radius:4px; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:false, theme:'dark', themeVariables:{primaryColor:'#569cd6',primaryTextColor:'#d4d4d4',primaryBorderColor:'#3e3e42',lineColor:'#808080',secondaryColor:'#2d2d30',tertiaryColor:'#252526'}});</script>
+</head>
+<body>
+
+<div class="header">
+  <h1><img src="https://img.icons8.com/fluency/48/microsoft-defender.png" class="product-icon-lg" alt="SC-100"><span>SC-100</span> Study Dashboard</h1>
+  <div class="exam-countdown" id="countdown">
+    <div class="days" id="countdown-days">--</div>
+    <div class="label">days until exam</div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="active" onclick="showTab('overview')">Overview</button>
+  <button onclick="showTab('quiz')">Quiz</button>
+  <button onclick="showTab('heatmap')">Weakness Map</button>
+  <button onclick="showTab('quizzes')">Quiz History</button>
+  <button onclick="showTab('plan')">Study Plan</button>
+  <button onclick="showTab('transcripts')">Transcripts</button>
+  <button onclick="showTab('bookmarks')">Bookmarks</button>
+  <button onclick="showTab('timer')">Timer</button>
+  <button onclick="showTab('references')">References</button>
+  <button onclick="showTab('feedback')">Feedback</button>
+</div>
+
+<div class="content">
+  <!-- OVERVIEW -->
+  <div class="tab active" id="tab-overview">
+    <div class="grid grid-2" style="margin-bottom:20px">
+      <div class="card">
+        <h2>Domain Progress</h2>
+        <div class="rings" id="progress-rings"></div>
+      </div>
+      <div class="card">
+        <h2>Quick Stats</h2>
+        <div class="stats" id="quick-stats"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Recent Quiz Results</h2>
+      <div id="recent-quizzes"></div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="tab" id="tab-quiz">
+    <div class="card">
+      <h2>Practice Quiz</h2>
+      <div id="quiz-ui">
+        <div style="margin-bottom:16px">
+          <label style="font-size:13px;color:var(--text-dim)">Select Domain:</label>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+            <button class="quiz-domain-btn active" onclick="selectDomain('all',this)"><img src="https://img.icons8.com/fluency/20/microsoft-defender.png" class="product-icon" style="width:20px;height:20px"> All Domains</button>
+            <button class="quiz-domain-btn" onclick="selectDomain('1',this)"><img src="https://img.icons8.com/fluency/20/shield.png" class="product-icon" style="width:20px;height:20px"> Domain 1</button>
+            <button class="quiz-domain-btn" onclick="selectDomain('2',this)"><img src="https://img.icons8.com/fluency/20/monitor.png" class="product-icon" style="width:20px;height:20px"> Domain 2</button>
+            <button class="quiz-domain-btn" onclick="selectDomain('3',this)"><img src="https://img.icons8.com/fluency/20/server.png" class="product-icon" style="width:20px;height:20px"> Domain 3</button>
+            <button class="quiz-domain-btn" onclick="selectDomain('4',this)"><img src="https://img.icons8.com/fluency/20/database.png" class="product-icon" style="width:20px;height:20px"> Domain 4</button>
+          </div>
+        </div>
+        <div style="margin-bottom:16px">
+          <label style="font-size:13px;color:var(--text-dim)">Number of Questions:</label>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <input type="number" id="quiz-count" value="10" min="1" max="50" style="width:70px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:8px 12px;color:var(--text);font-size:14px;text-align:center">
+            <span style="font-size:12px;color:var(--text-dim)">10 = quick sprint &nbsp;|&nbsp; 20 = solid session &nbsp;|&nbsp; 30 = deep dive</span>
+          </div>
+        </div>
+        <button class="primary" onclick="startQuiz()" style="padding:10px 24px;border-radius:4px;border:none;background:var(--accent);color:#fff;cursor:pointer;font-size:14px">Start Quiz</button>
+      </div>
+      <div id="quiz-question" style="display:none">
+        <div id="quiz-progress" style="font-size:12px;color:var(--text-dim);margin-bottom:12px"></div>
+        <div id="quiz-scenario" style="background:var(--surface2);padding:16px;border-radius:6px;margin-bottom:16px;font-size:14px;line-height:1.6"></div>
+        <div id="quiz-stem" style="font-size:15px;font-weight:600;margin-bottom:16px"></div>
+        <div id="quiz-choices"></div>
+        <div id="quiz-feedback" style="display:none;margin-top:20px;padding:16px;border-radius:6px;line-height:1.6"></div>
+        <div id="quiz-next-wrap" style="display:none;margin-top:16px;text-align:center">
+          <button onclick="nextQuestion()" style="padding:10px 24px;border-radius:4px;border:none;background:var(--accent);color:#fff;cursor:pointer;font-size:14px">Next Question</button>
+        </div>
+      </div>
+      <div id="quiz-summary" style="display:none">
+        <h3 style="margin-bottom:16px">Quiz Complete</h3>
+        <div id="quiz-summary-content"></div>
+        <button onclick="startQuiz()" style="margin-top:16px;padding:10px 24px;border-radius:4px;border:none;background:var(--accent);color:#fff;cursor:pointer;font-size:14px">Try Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEATMAP -->
+  <div class="tab" id="tab-heatmap">
+    <div class="card">
+      <h2>Objective Strength Map</h2>
+      <p style="font-size:12px;color:var(--text-dim);margin-bottom:16px">Based on quiz performance per objective. Green = strong, Yellow = needs review, Red = weak, Gray = not tested.</p>
+      <div class="heatmap" id="heatmap"></div>
+    </div>
+  </div>
+
+  <!-- QUIZZES -->
+  <div class="tab" id="tab-quizzes">
+    <div class="card">
+      <h2>Quiz History</h2>
+      <div id="quiz-history"></div>
+    </div>
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="tab" id="tab-plan">
+    <div class="card">
+      <h2>Study Plan</h2>
+      <div id="study-plan"></div>
+    </div>
+  </div>
+
+  <!-- TRANSCRIPTS -->
+  <div class="tab" id="tab-transcripts">
+    <div class="card">
+      <h2>Transcript Search</h2>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search across all 28 video transcripts..." onkeydown="if(event.key==='Enter')searchTranscripts()">
+        <button onclick="searchTranscripts()">Search</button>
+      </div>
+      <div class="search-results" id="search-results">
+        <div class="empty">Type a keyword and press Enter to search across all SC-100 video transcripts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKMARKS -->
+  <div class="tab" id="tab-bookmarks">
+    <div class="card">
+      <h2>MS Learn Bookmarks</h2>
+      <div id="bookmarks-list"></div>
+    </div>
+  </div>
+
+  <!-- FEEDBACK -->
+  <div class="tab" id="tab-feedback">
+    <div class="card">
+      <h2>Feedback & Support</h2>
+      <p style="font-size:14px;margin-bottom:8px">Found a bug? Have an idea to make this better? Your feedback helps improve the agent for everyone.</p>
+      <div class="feedback-options">
+        <a class="feedback-card" href="https://github.com/cdemo-projects/sc100-study/issues/new?template=bug_report.md" target="_blank">
+          <div class="icon">&#128027;</div>
+          <h3>Report a Bug</h3>
+          <p>Something broken or not working as expected? Open a GitHub Issue with details.</p>
+        </a>
+        <a class="feedback-card" href="https://github.com/cdemo-projects/sc100-study/issues/new?template=feature_request.md" target="_blank">
+          <div class="icon">&#128161;</div>
+          <h3>Request a Feature</h3>
+          <p>Have an idea for a new study mode, dashboard feature, or improvement?</p>
+        </a>
+        <a class="feedback-card" href="https://github.com/cdemo-projects/sc100-study/issues" target="_blank">
+          <div class="icon">&#128196;</div>
+          <h3>View Open Issues</h3>
+          <p>See what's being worked on and what others have reported.</p>
+        </a>
+        <a class="feedback-card" id="feedback-form-link" href="#" onclick="alert('Feedback form coming soon!'); return false;">
+          <div class="icon">&#128172;</div>
+          <h3>General Feedback</h3>
+          <p>Share your experience, what's working, what could be better. Quick and easy.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="tab" id="tab-references">
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Official Microsoft Sources</h2>
+        <div class="ref-list">
+          <a href="https://learn.microsoft.com/credentials/certifications/resources/study-guides/sc-100" target="_blank">SC-100 Study Guide</a>
+          <a href="https://learn.microsoft.com/credentials/certifications/exams/sc-100/" target="_blank">SC-100 Certification Page</a>
+          <a href="https://learn.microsoft.com/training/paths/sc-100-design-solutions-best-practices-priorities/" target="_blank">SC-100 Learning Paths</a>
+          <a href="https://learn.microsoft.com/credentials/certifications/exams/sc-100/practice/assessment?assessment-type=practice&assessmentId=87" target="_blank">SC-100 Free Practice Assessment</a>
+          <a href="https://learn.microsoft.com/security/cybersecurity-reference-architecture/mcra" target="_blank">Microsoft Cybersecurity Reference Architectures (MCRA)</a>
+          <a href="https://learn.microsoft.com/azure/well-architected/security/" target="_blank">Well-Architected Framework - Security Pillar</a>
+          <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/secure/" target="_blank">Cloud Adoption Framework - Security</a>
+          <a href="https://learn.microsoft.com/security/zero-trust/" target="_blank">Microsoft Zero Trust Guidance</a>
+          <a href="https://techcommunity.microsoft.com/category/security" target="_blank">Microsoft Security Blog</a>
+          <a href="https://github.com/MicrosoftDocs/azure-docs" target="_blank">Microsoft Docs GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>YouTube References</h2>
+        <div class="ref-list">
+          <a href="https://www.youtube.com/playlist?list=PLahhVEj9XNTfRZMathQ5fn1akTwV7R3w_" target="_blank">SC-100 Study Playlist (27 videos)</a>
+          <a href="https://www.youtube.com/watch?v=2Qu5gQjNQh4" target="_blank">John Savill's SC-100 Study Cram</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <h2>Key MS Learn Landing Pages by Domain</h2>
+      <div class="grid grid-2" style="gap:16px">
+        <div>
+          <h3 style="font-size:13px;color:var(--accent);margin-bottom:8px">Domain 1: Best Practices & Priorities</h3>
+          <div class="ref-list compact">
+            <a href="https://learn.microsoft.com/security/zero-trust/" target="_blank">Zero Trust</a>
+            <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/secure/" target="_blank">Cloud Adoption Framework - Security</a>
+            <a href="https://learn.microsoft.com/security/cybersecurity-reference-architecture/" target="_blank">Cybersecurity Reference Architecture</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:13px;color:var(--green);margin-bottom:8px">Domain 2: Security Ops & Identity</h3>
+          <div class="ref-list compact">
+            <a href="https://learn.microsoft.com/azure/sentinel/" target="_blank">Microsoft Sentinel</a>
+            <a href="https://learn.microsoft.com/entra/" target="_blank">Microsoft Entra</a>
+            <a href="https://learn.microsoft.com/defender-xdr/" target="_blank">Microsoft Defender XDR</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:13px;color:var(--orange);margin-bottom:8px">Domain 3: Infrastructure Security</h3>
+          <div class="ref-list compact">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/" target="_blank">Defender for Cloud</a>
+            <a href="https://learn.microsoft.com/azure/azure-arc/" target="_blank">Azure Arc</a>
+            <a href="https://learn.microsoft.com/entra/global-secure-access/" target="_blank">Global Secure Access (SSE)</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:13px;color:var(--purple);margin-bottom:8px">Domain 4: Apps & Data Security</h3>
+          <div class="ref-list compact">
+            <a href="https://learn.microsoft.com/purview/" target="_blank">Microsoft Purview</a>
+            <a href="https://learn.microsoft.com/defender-cloud-apps/" target="_blank">Defender for Cloud Apps</a>
+            <a href="https://learn.microsoft.com/azure/key-vault/" target="_blank">Azure Key Vault</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMER -->
+  <div class="tab" id="tab-timer">
+    <div class="card">
+      <div class="timer-display">
+        <div class="time" id="timer-time">00:00:00</div>
+        <div class="today">Session time</div>
+        <div class="timer-btns">
+          <button class="primary" id="timer-toggle" onclick="toggleTimer()">Start</button>
+          <button onclick="resetTimer()">Reset</button>
+        </div>
+        <div style="margin-top:24px">
+          <div class="stat">
+            <div class="value" id="total-study-time">0h</div>
+            <div class="label">Total study time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let data = null;
+let transcriptIndex = null;
+let timerInterval = null;
+let timerSeconds = 0;
+let timerRunning = false;
+
+// Tab navigation
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Load data
+async function loadData() {
+  try {
+    const res = await fetch('/data');
+    data = await res.json();
+    render();
+  } catch(e) {
+    console.log('No server, using embedded data');
+    data = window.__embeddedData || null;
+    if(data) render();
+  }
+}
+
+function render() {
+  renderCountdown();
+  renderProgressRings();
+  renderQuickStats();
+  renderRecentQuizzes();
+  renderHeatmap();
+  renderQuizHistory();
+  renderStudyPlan();
+  renderBookmarks();
+  renderTotalStudyTime();
+}
+
+// Countdown
+function renderCountdown() {
+  if(!data.exam_date) { document.getElementById('countdown-days').textContent = '--'; return; }
+  const diff = Math.ceil((new Date(data.exam_date) - new Date()) / 86400000);
+  document.getElementById('countdown-days').textContent = diff > 0 ? diff : 'Today!';
+  if(diff <= 7) document.getElementById('countdown-days').style.color = 'var(--red)';
+  else if(diff <= 14) document.getElementById('countdown-days').style.color = 'var(--yellow)';
+}
+
+// Progress Rings
+function renderProgressRings() {
+  const container = document.getElementById('progress-rings');
+  container.innerHTML = '';
+  const colors = ['#569cd6','#4ec9b0','#ce9178','#c586c0'];
+  Object.entries(data.domains).forEach(([id, d], i) => {
+    const pct = d.progress || 0;
+    const circumference = 2 * Math.PI * 42;
+    const offset = circumference - (pct/100) * circumference;
+    container.innerHTML += `
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 100 100">
+          <circle class="bg" cx="50" cy="50" r="42"/>
+          <circle class="fg" cx="50" cy="50" r="42" stroke="${colors[i]}"
+            stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"/>
+        </svg>
+        <div class="pct" style="color:${colors[i]}">${pct}%</div>
+        <div class="label">Domain ${id}</div>
+      </div>`;
+  });
+}
+
+// Quick Stats
+function renderQuickStats() {
+  const totalQ = data.quiz_history.length;
+  const totalCorrect = data.quiz_history.reduce((s,q) => s + q.correct, 0);
+  const totalAsked = data.quiz_history.reduce((s,q) => s + q.total, 0);
+  const avgScore = totalAsked ? Math.round(totalCorrect/totalAsked*100) : 0;
+  const hrs = Math.round(data.total_study_time_minutes/60*10)/10;
+  const weakest = findWeakest();
+  document.getElementById('quick-stats').innerHTML = `
+    <div class="stat"><div class="value">${totalQ}</div><div class="label">Quiz sessions</div></div>
+    <div class="stat"><div class="value">${avgScore}%</div><div class="label">Avg score</div></div>
+    <div class="stat"><div class="value">${hrs}h</div><div class="label">Study time</div></div>
+    <div class="stat"><div class="value">${weakest}</div><div class="label">Weakest area</div></div>`;
+}
+
+function findWeakest() {
+  let worst = '--', worstPct = 101;
+  Object.entries(data.domains).forEach(([id, d]) => {
+    Object.entries(d.objectives).forEach(([oid, o]) => {
+      if(o.quiz_total > 0) {
+        const pct = o.quiz_correct / o.quiz_total * 100;
+        if(pct < worstPct) { worstPct = pct; worst = oid; }
+      }
+    });
+  });
+  return worst;
+}
+
+// Recent Quizzes
+function renderRecentQuizzes() {
+  const el = document.getElementById('recent-quizzes');
+  if(!data.quiz_history.length) { el.innerHTML = '<div class="empty">No quizzes yet. Use @sc100-study and say "quiz me" to get started.</div>'; return; }
+  const recent = data.quiz_history.slice(-5).reverse();
+  el.innerHTML = `<table class="quiz-table"><thead><tr><th>Date</th><th>Domain</th><th>Score</th><th>Questions</th></tr></thead><tbody>` +
+    recent.map(q => {
+      const pct = Math.round(q.correct/q.total*100);
+      const cls = pct >= 80 ? 'good' : pct >= 60 ? 'mid' : 'bad';
+      return `<tr><td>${q.date||'--'}</td><td>Domain ${q.domain||'All'}</td><td class="score ${cls}">${pct}%</td><td>${q.correct}/${q.total}</td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+// Heatmap
+function renderHeatmap() {
+  const el = document.getElementById('heatmap');
+  el.innerHTML = '';
+  Object.entries(data.domains).forEach(([did, d]) => {
+    el.innerHTML += `<h3 style="margin:16px 0 8px;font-size:13px;color:var(--accent)">Domain ${did}: ${d.name}</h3>`;
+    Object.entries(d.objectives).forEach(([oid, o]) => {
+      let pct = 0, cls = 'gray', label = 'Not tested';
+      if(o.quiz_total > 0) {
+        pct = Math.round(o.quiz_correct / o.quiz_total * 100);
+        cls = pct >= 80 ? 'green' : pct >= 50 ? 'yellow' : 'red';
+        label = `${pct}% (${o.quiz_correct}/${o.quiz_total})`;
+      }
+      el.innerHTML += `<div class="heatmap-row">
+        <div class="obj-name" title="${o.name}">${oid} ${o.name}</div>
+        <div class="bar-wrap"><div class="bar ${cls}" style="width:${Math.max(pct,5)}%"></div><div class="bar-label">${label}</div></div>
+      </div>`;
+    });
+  });
+}
+
+// Quiz History
+function renderQuizHistory() {
+  const el = document.getElementById('quiz-history');
+  if(!data.quiz_history.length) { el.innerHTML = '<div class="empty">No quiz history yet.</div>'; return; }
+  el.innerHTML = `<table class="quiz-table"><thead><tr><th>Date</th><th>Domain</th><th>Score</th><th>Correct</th><th>Total</th><th>Objectives Missed</th></tr></thead><tbody>` +
+    data.quiz_history.map(q => {
+      const pct = Math.round(q.correct/q.total*100);
+      const cls = pct >= 80 ? 'good' : pct >= 60 ? 'mid' : 'bad';
+      return `<tr><td>${q.date||'--'}</td><td>${q.domain||'All'}</td><td class="score ${cls}">${pct}%</td><td>${q.correct}</td><td>${q.total}</td><td>${(q.missed_objectives||[]).join(', ')||'--'}</td></tr>`;
+    }).reverse().join('') + '</tbody></table>';
+}
+
+// Study Plan
+function renderStudyPlan() {
+  const el = document.getElementById('study-plan');
+  if(!data.study_plan.weeks.length) { el.innerHTML = '<div class="empty">No study plan yet. Use @sc100-study and say "build a study plan" to create one.</div>'; return; }
+  const today = new Date();
+  el.innerHTML = '<div class="timeline">' + data.study_plan.weeks.map((w,i) => {
+    const start = new Date(w.start_date);
+    const end = new Date(w.end_date);
+    const status = end < today ? 'completed' : (start <= today && today <= end) ? 'current' : '';
+    return `<div class="week ${status}"><h4>Week ${i+1}: ${w.focus}</h4><p>${w.start_date} — ${w.end_date}</p><p>${w.activities||''}</p></div>`;
+  }).join('') + '</div>';
+}
+
+// Bookmarks
+function renderBookmarks() {
+  const el = document.getElementById('bookmarks-list');
+  if(!data.bookmarks.length) { el.innerHTML = '<div class="empty">No bookmarks yet. The agent will save MS Learn pages here as you study.</div>'; return; }
+  el.innerHTML = data.bookmarks.map(b =>
+    `<div class="bookmark"><a href="${b.url}" target="_blank">${b.title}</a><span class="domain-tag">Domain ${b.domain||'?'}</span></div>`
+  ).join('');
+}
+
+// Timer
+function toggleTimer() {
+  if(timerRunning) { clearInterval(timerInterval); timerRunning = false; document.getElementById('timer-toggle').textContent = 'Resume'; }
+  else { timerInterval = setInterval(() => { timerSeconds++; updateTimerDisplay(); }, 1000); timerRunning = true; document.getElementById('timer-toggle').textContent = 'Pause'; }
+}
+function resetTimer() {
+  clearInterval(timerInterval); timerRunning = false; timerSeconds = 0; updateTimerDisplay();
+  document.getElementById('timer-toggle').textContent = 'Start';
+}
+function updateTimerDisplay() {
+  const h = Math.floor(timerSeconds/3600), m = Math.floor((timerSeconds%3600)/60), s = timerSeconds%60;
+  document.getElementById('timer-time').textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+function renderTotalStudyTime() {
+  const hrs = Math.round(data.total_study_time_minutes/60*10)/10;
+  document.getElementById('total-study-time').textContent = hrs + 'h';
+}
+
+// Transcript Search
+async function searchTranscripts() {
+  const query = document.getElementById('search-input').value.trim().toLowerCase();
+  if(!query) return;
+  const el = document.getElementById('search-results');
+  el.innerHTML = '<div class="empty">Searching...</div>';
+
+  try {
+    const res = await fetch('/search?q=' + encodeURIComponent(query));
+    const results = await res.json();
+    if(!results.length) { el.innerHTML = '<div class="empty">No results found.</div>'; return; }
+    el.innerHTML = results.map(r =>
+      `<div class="search-result"><div class="file">${r.file} — ${r.timestamp}</div><div class="line">${r.highlighted}</div></div>`
+    ).join('');
+  } catch(e) {
+    el.innerHTML = '<div class="empty">Search requires the dashboard server. Run: python serve.py</div>';
+  }
+}
+
+loadData();
+loadQuestionBank();
+
+// ===== QUIZ ENGINE =====
+let quizDomain = 'all';
+let quizQuestions = [];
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswers = [];
+
+const DOMAIN_ICONS = {
+  '1': 'https://img.icons8.com/fluency/32/shield.png',
+  '2': 'https://img.icons8.com/fluency/32/monitor.png',
+  '3': 'https://img.icons8.com/fluency/32/server.png',
+  '4': 'https://img.icons8.com/fluency/32/database.png',
+  'all': 'https://img.icons8.com/fluency/32/microsoft-defender.png'
+};
+
+const PRODUCT_ICONS = {
+  'Defender XDR': 'https://img.icons8.com/fluency/24/microsoft-defender.png',
+  'Sentinel': 'https://img.icons8.com/fluency/24/microsoft-sentinel.png',
+  'Entra': 'https://img.icons8.com/fluency/24/azure-active-directory.png',
+  'Key Vault': 'https://img.icons8.com/fluency/24/key.png',
+  'Purview': 'https://img.icons8.com/fluency/24/privacy.png',
+  'Defender for Cloud': 'https://img.icons8.com/fluency/24/cloud-security.png',
+  'PIM': 'https://img.icons8.com/fluency/24/admin-settings-male.png',
+  'Zero Trust': 'https://img.icons8.com/fluency/24/verified-account.png',
+  'MCRA': 'https://img.icons8.com/fluency/24/blueprint.png',
+  'WAF': 'https://img.icons8.com/fluency/24/firewall.png'
+};
+
+const QUESTION_BANK = [];
+
+// Load question bank from file
+async function loadQuestionBank() {
+  try {
+    const res = await fetch('/questions');
+    const questions = await res.json();
+    QUESTION_BANK.push(...questions);
+    console.log(`Loaded ${QUESTION_BANK.length} questions`);
+  } catch(e) {
+    console.log('Could not load question bank from server');
+  }
+}
+
+function selectDomain(d, btn) {
+  quizDomain = d;
+  document.querySelectorAll('.quiz-domain-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function startQuiz() {
+  const count = Math.max(1, Math.min(50, parseInt(document.getElementById('quiz-count').value) || 10));
+  const pool = quizDomain === 'all' ? QUESTION_BANK : QUESTION_BANK.filter(q => q.domain === quizDomain);
+  if(pool.length === 0) { alert('No questions available for this domain yet.'); return; }
+  // Shuffle and pick up to count, cycling through if needed
+  const shuffled = pool.sort(() => Math.random() - 0.5);
+  quizQuestions = [];
+  for(let i = 0; i < count; i++) { quizQuestions.push(shuffled[i % shuffled.length]); }
+  quizIndex = 0; quizScore = 0; quizAnswers = [];
+  document.getElementById('quiz-ui').style.display = 'none';
+  document.getElementById('quiz-summary').style.display = 'none';
+  document.getElementById('quiz-question').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = quizQuestions[quizIndex];
+  const icon = DOMAIN_ICONS[q.domain] || '';
+  document.getElementById('quiz-progress').innerHTML = `<img src="${icon}" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"> Question ${quizIndex+1} of ${quizQuestions.length} | Domain ${q.domain}, Objective ${q.objective} | Score: ${quizScore}/${quizIndex}`;
+  document.getElementById('quiz-scenario').innerHTML = `<strong>Scenario:</strong> ${q.scenario}`;
+  
+  // Render diagram if present
+  let diagramHtml = '';
+  if(q.diagram) {
+    if(q.diagram.type === 'mermaid') {
+      const diagramId = 'mermaid-q-' + quizIndex;
+      diagramHtml = `<div class="quiz-diagram"><div class="mermaid" id="${diagramId}">${q.diagram.content}</div></div>`;
+    } else if(q.diagram.type === 'image') {
+      diagramHtml = `<div class="quiz-diagram"><img src="${q.diagram.url}" alt="${q.diagram.alt || 'Architecture diagram'}"><p style="font-size:11px;color:var(--text-dim);margin-top:8px">${q.diagram.caption || ''}</p></div>`;
+    }
+  }
+  
+  document.getElementById('quiz-stem').innerHTML = q.stem + diagramHtml;
+  document.getElementById('quiz-choices').innerHTML = q.choices.map((c,i) =>
+    `<button class="choice-btn" onclick="answerQuestion(${i})">${c}</button>`
+  ).join('');
+  document.getElementById('quiz-feedback').style.display = 'none';
+  document.getElementById('quiz-next-wrap').style.display = 'none';
+  
+  // Render mermaid if present
+  if(q.diagram && q.diagram.type === 'mermaid') {
+    setTimeout(() => { mermaid.run({nodes: document.querySelectorAll('.mermaid:not([data-processed])')}); }, 100);
+  }
+}
+
+function answerQuestion(idx) {
+  const q = quizQuestions[quizIndex];
+  const btns = document.querySelectorAll('.choice-btn');
+  const isCorrect = idx === q.correct;
+  if(isCorrect) quizScore++;
+  quizAnswers.push({domain: q.domain, objective: q.objective, correct: isCorrect});
+
+  btns.forEach((btn,i) => {
+    btn.classList.add('answered');
+    if(i === q.correct) btn.classList.add('correct');
+    if(i === idx && !isCorrect) btn.classList.add('wrong');
+  });
+
+  let fb = isCorrect
+    ? `<div style="color:var(--green);font-weight:600;margin-bottom:12px">Correct!</div>`
+    : `<div style="color:var(--red);font-weight:600;margin-bottom:12px">Incorrect. The correct answer is ${q.choices[q.correct].split('.')[0]}.</div>`;
+  fb += `<p style="margin-bottom:12px">${q.explanation}</p>`;
+  q.wrongExplanations.forEach(w => { fb += `<p style="font-size:13px;color:var(--text-dim);margin-bottom:6px">${w}</p>`; });
+  fb += `<p style="margin-top:12px;font-size:13px"><strong>Search Guide:</strong> ${q.searchTerms}</p>`;
+  fb += `<p style="font-size:13px;color:var(--yellow)"><strong>Exam Tip:</strong> ${q.examTip}</p>`;
+
+  const fbEl = document.getElementById('quiz-feedback');
+  fbEl.innerHTML = fb;
+  fbEl.style.display = 'block';
+  fbEl.style.background = isCorrect ? 'rgba(78,201,176,0.08)' : 'rgba(244,71,71,0.08)';
+  fbEl.style.border = `1px solid ${isCorrect ? 'var(--green)' : 'var(--red)'}`;
+
+  if(quizIndex < quizQuestions.length - 1) {
+    document.getElementById('quiz-next-wrap').style.display = 'block';
+  } else {
+    setTimeout(showSummary, 500);
+    document.getElementById('quiz-next-wrap').innerHTML = '<button onclick="showSummary()" style="padding:10px 24px;border-radius:4px;border:none;background:var(--accent);color:#fff;cursor:pointer;font-size:14px;margin-top:12px">See Results</button>';
+    document.getElementById('quiz-next-wrap').style.display = 'block';
+  }
+}
+
+function nextQuestion() {
+  quizIndex++;
+  showQuestion();
+}
+
+function showSummary() {
+  document.getElementById('quiz-question').style.display = 'none';
+  const pct = Math.round(quizScore/quizQuestions.length*100);
+  const missed = quizAnswers.filter(a => !a.correct).map(a => a.objective);
+  const cls = pct >= 80 ? 'color:var(--green)' : pct >= 60 ? 'color:var(--yellow)' : 'color:var(--red)';
+  let html = `<div style="text-align:center;margin-bottom:20px"><div style="font-size:48px;font-weight:700;${cls}">${pct}%</div><div style="color:var(--text-dim)">${quizScore} of ${quizQuestions.length} correct</div></div>`;
+  if(missed.length) {
+    html += `<h4 style="margin-bottom:8px">Objectives to Review:</h4><ul style="list-style:disc;padding-left:20px">`;
+    missed.forEach(m => { html += `<li style="margin-bottom:4px">Objective ${m}</li>`; });
+    html += '</ul>';
+  } else {
+    html += '<p style="color:var(--green);text-align:center">All correct! Great job.</p>';
+  }
+  document.getElementById('quiz-summary-content').innerHTML = html;
+  document.getElementById('quiz-summary').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,875 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello and
+welcome to this video.
+[00:09] My name is Marco Nuijen and
+I'm a Trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architect.
+[00:17] This video is a little mix
+of SIEM, SOAR and XDR.
+[00:21] Discover how modern security
+operations including SIEM,
+[00:24] SOAR and XDR work together.
+[00:26] To centralize and strengthen
+your organizations defenses,
+[00:29] ensuring full visibility
+and connectivity
+[00:32] across your digital landscape.
+[00:34] The content of this video is
+mostly aligned with the area
+[00:37] of security operations,
+identity and compliance
+[00:39] from a certification
+perspective.
+[00:42] Now a question, what
+is the entire picture?
+[00:44] The main SIEM we want to
+address in this video is
+[00:47] to bring together all the
+security related data.
+[00:49] So we understand the
+entire landscape.
+[00:51] And so we can combine things
+and everything is connected.
+[00:55] Do we see all of it?
+[00:57] The objective of the videos
+[00:59] to tie all security related
+information together.
+[01:02] From a terminology
+perspective we will focus
+[01:04] on Security Information and
+Event Management, SIEM.
+[01:08] Extended Detection
+and Response, XDR.
+[01:11] And Security Orchestration,
+Automation and Response, SOAR.
+[01:16] Zero trust is a
+security paradigm
+[01:19] that assumes no
+trust in any entity.
+[01:22] Whether internal or external and
+requires continuous verification
+[01:26] of identities, devices, data
+[01:28] and transactions before
+granting access or privileges.
+[01:32] We have a separate video on
+zero trust in the series,
+[01:34] but this video we want to think
+[01:36] or bring all
+information together.
+[01:38] Analyze the information
+and acting on it.
+[01:40] The visibility, orchestration
+and automation.
+[01:45] Our goal is to activate
+something and get data from it,
+[01:49] to see what is going on.
+[01:51] And if what is going
+on is not good, react.
+[01:55] We want more data and to do
+more comprehensive analysis
+[01:58] of the data.
+[01:59] What data?
+[02:00] Well, as much as we can get.
+[02:02] The graphic I'm using here is
+[02:04] from the Microsoft Cybersecurity
+Reference Architecture,
+[02:06] the MCRA.
+[02:07] And we focus on three aspects I
+named at the start of the video.
+[02:10] SIEM, SOAR and XDR.
+[02:12] They are in the graphic, but
+require some explanation.
+[02:17] SIEM can gather and analyze
+data from various sources,
+[02:20] such as identity and access
+management, device management,
+[02:23] data protection, encryption.
+[02:25] Network segmentation and
+firewalls and to check
+[02:27] and confirm the
+identities device data
+[02:30] and transactions in
+the environment.
+[02:32] SIEM can also spot
+anomalies and threats
+[02:34] that may indicate a
+breach or an attempt
+[02:36] to circumvent the zero trust
+policies and controls.
+[02:39] And create alerts
+and notifications
+[02:41] for further investigation
+and response.
+[02:44] SOAR can automate and
+orchestrate response actions
+[02:47] to the alerts and
+instance created
+[02:49] by the SIEM and other sources.
+[02:51] Again, based on the zero
+trust policies and controls.
+[02:54] SOAR can also perform
+remediation tasks.
+[02:57] Such as removing access,
+isolating devices,
+[03:00] blocking traffic or encrypting
+data to stop or limit the damage
+[03:05] of a breach or an attack.
+[03:07] SOAR can also escalate
+or report the incidents
+[03:09] to the relevant stakeholders.
+[03:11] And authorities to provide
+feedback and suggestions
+[03:13] for improving the
+zero trust posture.
+[03:16] The Cloud native SIEM capability
+Microsoft leverages is
+[03:19] Microsoft Sentinel.
+[03:21] And it is more than just
+the Cloud native SIEM,
+[03:23] it also does SOAR.
+[03:25] And I don't want to get into
+any type of comparisons,
+[03:28] but from what I've seen with my
+customers, one of the advantages
+[03:31] of Microsoft Sentinel, is
+that it is Cloud native.
+[03:34] It can scale elastically
+with the Cloud
+[03:36] and handle huge volumes of data.
+[03:39] Without requiring
+any infrastructure,
+[03:40] maintenance or configuration.
+[03:43] And it taps into other
+Cloud capabilities also.
+[03:46] Like false analytics and machine
+learning to detect threats
+[03:48] and anomalies that might
+otherwise go unnoticed,
+[03:51] like traditional
+rules based systems.
+[03:55] And we will see more
+and more of that
+[03:56] with the introduction
+of course of Copilot.
+[04:00] More on SOAR.
+[04:02] Automation rules in
+Sentinel allows users
+[04:05] to centrally manage the
+automation of incident handling.
+[04:08] Besides letting you assign
+playbooks to incidents
+[04:10] and alerts, automation
+rules also allow you
+[04:13] to automate responses from
+multiple analytical's at once.
+[04:16] That automatically tag,
+assign or close incidents
+[04:19] without a need for playbooks.
+[04:21] Create lists of tasks for your
+analysts to perform on triaging.
+[04:25] Investigating and
+remediating incidents.
+[04:27] And controlling the order of
+actions that are executed.
+[04:31] A playbook is a collection of
+response and remediation actions
+[04:34] and logic that can be run from
+Microsoft Sentinel as a routine.
+[04:38] A playbook can help automate
+[04:40] and orchestrate your
+threat response.
+[04:42] It can integrate
+with other systems,
+[04:44] both internal and external.
+[04:45] And can be set to run
+automatically in response
+[04:48] with specific alerts
+or incidents.
+[04:50] When triggered by
+an analytics rule
+[04:52] or an automation
+rule respectively.
+[04:55] It can also be run manually
+on-demand, in response to alerts
+[04:59] from the incident pages.
+[05:01] Playbooks, by the way, in some
+Microsoft Sentinel are based
+[05:04] on workflows that we built
+in Azure Logic apps.
+[05:08] What you need to design for
+a Sentinel implementation.
+[05:11] Needs to be
+configured, operated,
+[05:12] managed and maintained.
+[05:14] And there are training's that
+specifically focus on that.
+[05:17] And we expect you as a Microsoft
+Cybersecurity Architect
+[05:20] to be aware of that content.
+[05:22] And we just take a
+couple of elements
+[05:24] from that in this video.
+[05:26] And it starts with
+creating the backend
+[05:28] on which Microsoft Sentinel we
+will be running, the workspace,
+[05:31] which is hosted in
+a log analytics.
+[05:34] A Sentinel workspace is a
+logical container for the data
+[05:37] and configurations of
+a Sentinel instance.
+[05:39] It's based on a log
+analytics workspace,
+[05:41] which is a Cloud
+service that collects
+[05:43] and stores data from
+various sources.
+[05:45] In a data lake format.
+[05:47] A Sentinel workspace can
+have different tables
+[05:50] that store different
+types of data.
+[05:52] Such as security alerts,
+incident or user activities.
+[05:56] The data in the tables depends
+on what connectors are used
+[05:59] to bring in the data into
+the Sentinel workspace.
+[06:02] And connectors they are
+integration's with Microsoft
+[06:05] or other third-party services
+that provide security data.
+[06:09] In a Microsoft portfolio
+think of defender
+[06:11] for Cloud, Entra, Microsoft 365.
+[06:15] And these connectors
+can be configured
+[06:17] to collect data
+continuously or on-demand.
+[06:20] If these connectors that bring
+data into the workspace,
+[06:23] the log analytics (inaudible)
+on which Sentinel runs.
+[06:27] Once the data is
+in the workspace,
+[06:29] it can be analyzed
+using a query language.
+[06:33] And the query language
+is called Kusto KQL.
+[06:36] Which allows for complex
+and flexible queries
+[06:39] across multiple
+tables and sources.
+[06:42] The queries can be used to
+create analytical rules,
+[06:44] which are logic-based triggers
+that detect suspicious
+[06:47] or malicious activities
+and generate alerts
+[06:49] or incident based on the data.
+[06:51] The analytic rules can also be
+based on machine learning models
+[06:54] that can learn from data
+[06:55] and provide incidents
+and recommendations.
+[06:58] The central workspace is
+an essential component
+[07:00] of a Sentinel design.
+[07:01] As it determines how
+much data is collected,
+[07:04] stored and processed.
+[07:06] And how it used for
+monitoring response.
+[07:09] The Sentinel workspace
+can different size
+[07:11] and cost implications depending
+[07:13] on the volume,
+variety of the data.
+[07:15] The retention period and
+the number of complexity
+[07:18] of the queries that
+we do with our rules.
+[07:20] A central workspace can also
+have different compliance
+[07:23] requirements, depending
+on the sensitivity
+[07:25] and location of the data.
+[07:26] And the regulation
+to apply to it.
+[07:29] As Microsoft Cybersecurity
+Architects one
+[07:31] of your responsibilities is
+[07:32] to ensure Sentinel
+is not only designed
+[07:34] and configured according
+[07:35] to the organizations
+unique security needs
+[07:37] and regulatory requirements.
+[07:40] But also that it is
+operated efficiently
+[07:42] and can skill as demand grows.
+[07:45] You must understand the
+foundational element,
+[07:48] such as workspaces,
+connectors, analytical rules.
+[07:52] And help make strategic
+decisions about data management,
+[07:55] security monitoring
+and incident response.
+[07:58] Your expertise ensures that
+Microsoft Sentinel is aligned
+[08:01] with the organizations
+security posture.
+[08:04] That it provides
+actionable insights
+[08:05] and supports a broader goals
+of resilience and compliance.
+[08:09] In practice, this means
+[08:11] that you're guiding
+the implementation
+[08:12] from initial planning
+through ongoing operations.
+[08:16] Helping to optimize
+the environment
+[08:18] for both security effectiveness
+and cost efficiency.
+[08:23] You're understanding of these
+details is what enables the
+[08:25] organization to get the most
+value from its investments
+[08:28] in Microsoft Sentinel.
+[08:29] And maintains a strong
+security posture
+[08:31] in an evolving threat landscape.
+[08:34] Therefore, it may be
+necessary to have more
+[08:36] than one Sentinel instance.
+[08:38] More than one Sentinel workspace
+[08:39] for different
+purposes or scopes.
+[08:42] For example, a large
+organization may have separate
+[08:44] workspaces for
+different regions,
+[08:45] departments or business units.
+[08:48] Or for different types
+of data or scenarios.
+[08:50] A Sentinel workspace
+can also be connected
+[08:53] to other Sentinel workspaces
+or auto SIEM solutions
+[08:56] to enable cross-workspace
+[08:57] or cross-SIEM correlation
+and investigation.
+[09:01] If you did not notice
+then you need to ramp up.
+[09:05] There's sample content on
+Microsoft Learn to help you,
+[09:07] but I try to tip the Sentinel
+ninja training to you.
+[09:11] And I will say something
+more about that shortly.
+[09:15] But first let's
+look at log tiers.
+[09:17] Microsoft Sentinel provides
+two key storage tiers
+[09:20] to help you manage your
+security data efficiently.
+[09:23] The analytics tier, which is
+[09:24] where you handle high
+value real time logs.
+[09:26] This is the engine for
+instant threat detection
+[09:29] and false investigations.
+[09:31] And here analytic logs
+drive immediate alerts
+[09:34] and complex analysis.
+[09:36] Basic logs help to keep costs
+[09:38] down while still labeling
+important investigations.
+[09:41] And auxiliary logs
+provides extra content
+[09:44] for deeper insights.
+[09:46] The data lake tier is your
+organizations long-term archive.
+[09:50] Storing vast amounts of security
+log for up to 12 years.
+[09:53] It's designed for insights,
+deep insight investigations.
+[09:59] Supporting advanced analytics
+[10:01] and ensuring you can
+meet compliance needs
+[10:03] without high costs.
+[10:05] This long-term storage means
+you're always prepared
+[10:08] for regulatory reviews
+or historical threat.
+[10:13] As a standout feature for
+the Sentinel platform,
+[10:16] it is seamless integration
+with Microsoft Defender.
+[10:19] This allows security teams to
+access, analyze and hear threats
+[10:22] across all their data
+right from Defender.
+[10:26] Giving you one unified view
+[10:28] and enabling robust
+analytics throughout your
+[10:30] security infrastructure.
+[10:32] The systems brings
+transformative flexibility.
+[10:35] You can centralize security data
+in an open accessible format,
+[10:39] separating storage
+and compute costs.
+[10:41] To fine tune resources
+as your business grows
+[10:43] and threats change.
+[10:45] Multiple analytic engines let's
+you extract deeper insights
+[10:49] and native integration's to
+ensure your solutions can scale
+[10:53] to make the data demands.
+[10:55] Ultimately, Microsoft Sentinel
+architecture let's you unify
+[10:59] your entire security landscape,
+keep your data accessible
+[11:03] and boost your organizations
+ability to detect, investigate
+[11:06] and respond to threats.
+[11:08] This isn't just about
+building systems,
+[11:10] it's about creating
+resilient foundation
+[11:12] for its false analytics.
+[11:13] Regulatory compliance
+and the agility needed
+[11:16] for tomorrow's challenges.
+[11:19] As a Microsoft
+Cybersecurity Architect,
+[11:21] the ability to centralize
+and manage security data,
+[11:23] in an open format
+is transformative.
+[11:27] You gain the flexibility
+to separate storage
+[11:29] and compute costs, which allows
+you to optimize resources
+[11:32] as your organization grows,
+[11:33] especially threat
+landscape evolved.
+[11:36] By supporting multiple
+analytics engines we're able
+[11:38] to extract deeper insights
+from security data.
+[11:40] And empower your teams
+to response swiftly
+[11:42] and effectively through threats.
+[11:44] Native integration with Sentinel
+streamlines how you connect,
+[11:47] process and tier large
+volumes of log data.
+[11:50] Which is crucial for scaling
+your solutions and adopting
+[11:53] to ever increasing data demands.
+[11:56] This architecture enables
+you to design systems
+[11:59] that are both cost effective
+and highly performanced.
+[12:02] Giving you the control to
+tailor your security posture
+[12:05] to fit current and future needs.
+[12:07] And for a Cybersecurity
+Architect these advancements
+[12:09] mean you can unify your
+organization security landscape,
+[12:13] ensure data's always accessible,
+enhance your availability,
+[12:16] your ability to detect,
+investigate and respond.
+[12:20] You're not just
+building systems,
+[12:21] you're creating
+resilient foundation
+[12:24] that supports advanced
+analytics, regulatory compliance
+[12:26] and the agility needed for
+tomorrow's security challenges.
+[12:31] If you're ready to take your
+skills to the next level,
+[12:35] then don't miss the Microsoft
+Sentinel ninja training's.
+[12:39] This is the real deal
+crafted directly
+[12:41] by experts behind Sentinel
+[12:43] and the entire security
+compliance and identity suite.
+[12:46] You'll be learning straight
+from the source, getting access
+[12:49] to insider knowledge
+and practical know-how
+[12:51] that only the actual
+product team can deliver.
+[12:54] Use the exclusive short link
+here to jump into a treasure
+[12:58] of trove of training ranging
+from easy to follow overviews.
+[13:02] To deep dives backed with
+actionable insights.
+[13:05] What are needed to Sentinel?
+[13:06] We're aiming to master
+advanced techniques.
+[13:09] This training is your gateway
+[13:11] to understanding the
+platform exactly
+[13:13] as its creators intended.
+[13:16] And let's take a
+focused look at XDR,
+[13:19] Extended Detection Response.
+[13:20] And this ability is essential
+[13:22] to consider along side
+SIEM and SOAR solutions.
+[13:25] XDR integrates data across
+various security domains.
+[13:29] Like endpoints, networks, Cloud
+services and email platforms.
+[13:33] Giving security teams a broader
+[13:34] and deeper view of
+their environment.
+[13:37] With advanced analytics
+machine learning and AI,
+[13:39] XDR helps detect and respond
+to sophisticated threats
+[13:43] that are traditionally
+missed by other tools.
+[13:46] XDR also provides
+actionable insights
+[13:48] to fine tune zero
+trust policies.
+[13:51] And improve security.
+[13:53] Operating closer to where
+the incident occurs.
+[13:56] XDR typically delivers
+faster detection
+[13:58] and response than a SIEM system.
+[14:01] Often with significant
+automation.
+[14:04] As a cloud-based solution XDR
+unifies protection and data
+[14:08] from endpoints, networks,
+emails and more.
+[14:11] Allow analysts to focus on
+the most critical threats.
+[14:14] It's analytics deliver threats,
+timelines, both cause analysis
+[14:18] and mapping over tech change.
+[14:21] Automated detection and
+response are essential to XDR.
+[14:25] It can triage, investigate and
+remediate threats in real time.
+[14:28] Reducing the workload
+for security teams.
+[14:31] With AI driven
+behavior monitoring,
+[14:33] XDR detects anomalies
+and emerging threats
+[14:36] and can even auto
+heal affected assets.
+[14:39] Here's how XDR works.
+[14:41] It gathers and integrates data
+from endpoints, firewalls,
+[14:44] cloud services, third-party
+using agents and API's.
+[14:48] And then XDR centralizes
+data for unified disability,
+[14:52] applies analytics to find
+and prioritize threats.
+[14:55] And uses automation for
+rapid response and recovery.
+[14:58] In summary, XDR provides a
+proactive, holistic approach
+[15:01] to security, offering broader
+coverage, deeper insights
+[15:04] and faster action than
+traditional tools.
+[15:07] And it's important
+to note that SIEM,
+[15:09] SOAR and XDR capabilities
+are converging
+[15:11] into a unified
+operations platform,
+[15:14] which is called
+Microsoft Defender.
+[15:17] Referring back to this
+schematic we discussed earlier
+[15:20] in the video, it indicates
+[15:22] that the information's typically
+sent upwards to a SIEM.
+[15:25] While this process
+is very common,
+[15:27] it is worth considering
+alternative approaches.
+[15:30] Which have been implemented.
+[15:32] By expanding the schematic
+additional capabilities become
+[15:35] apparent at different levels
+providing fair opportunities
+[15:38] for you to understand
+and to action upon.
+[15:40] But it's important to note
+that the data collection
+[15:42] or loading process often
+reflects past events.
+[15:46] There's an inherent delay
+between an event occurring
+[15:49] and the logging, forwarded,
+analyzed and reformatted.
+[15:53] Consequently, centralized system
+like SIEM provide information
+[15:57] about events after
+they already happened.
+[16:01] In addition, cost and
+performance limits the ability
+[16:04] to transfer all raw
+data to higher levels.
+[16:06] Right, generally only a subset
+of key indicators is retained.
+[16:11] A deeper analysis performed
+on the raw data as needed.
+[16:14] Centralized views provide
+summarized insights,
+[16:17] but may lack some details
+available closer to the source.
+[16:21] While SIEM's aren't necessary,
+there is also value
+[16:24] in having other
+solutions such as XDR
+[16:27] that enable quicker response
+by operating closer
+[16:30] to the event occurrence.
+[16:32] This can help to reduce
+to work out of operators,
+[16:34] resulting in faster
+response times
+[16:36] and less desperate fatigue.
+[16:38] Integration of SIEM's for
+an XDR provides advantages.
+[16:42] Improved integration and unified
+incident queues can enhance
+[16:46] analysts efficiency by
+minimizing the needs to interact
+[16:49] with multiple
+interface and portals.
+[16:53] Presenting a unified platform
+that consolidates Sentinel
+[16:57] and XDR with Microsoft Defender.
+[16:59] The solution combines rapid
+protection capabilities
+[17:02] with the adaptability
+of Microsoft Sentinel.
+[17:04] The result is a comprehensive
+second platform designed
+[17:07] for effective
+security management.
+[17:09] This integrated platform
+empowers security teams
+[17:12] to efficiently monitor,
+detect and respond to threats
+[17:15] across their entire
+digital infrastructure.
+[17:18] With a false analytics
+and automation,
+[17:20] incident response
+times are improved,
+[17:22] while manual workloads
+are reduced.
+[17:25] Centralizing threat intelligent
+[17:27] and management tools
+enhances visibility,
+[17:29] streamlines workflows
+[17:30] and strengthen role
+security posture.
+[17:34] Microsoft's unified security
+operations platform offers an
+[17:37] end-to-end solution for
+security operation secops.
+[17:40] Integrating security information
+event management SIEM,
+[17:43] security orchestration,
+automation response, SOAR.
+[17:46] Extended detection and
+response, XDR and posture
+[17:49] and exposure management.
+[17:51] And also includes cloud
+security, threat intelligent
+[17:54] and generative AI solutions.
+[17:56] To deliver these capabilities
+the unified security operations
+[18:00] platform incorporates services
+such as Microsoft Defender XDR.
+[18:03] Microsoft Sentinel,
+Microsoft Security Exposure
+[18:06] and Management, Microsoft
+Security Copilot,
+[18:08] within the Microsoft
+Defender portal.
+[18:10] Additional Microsoft Defender
+services can be integrated
+[18:13] to further strengthen security
+[18:15] and provide
+comprehensive protection
+[18:17] against sophisticated effects.
+[18:20] The Defender portal serves as
+a centralized hoop to monitor,
+[18:23] detect, investigate, remediate
+and respond to both pre
+[18:27] and post breach cybersecurity
+risks and threats.
+[18:32] This slide, this graphic
+shows how Microsoft Sentinel
+[18:34] and Defender XDR work
+together as part
+[18:37] of Microsoft's unified
+security operations platform.
+[18:40] Signals from across the
+organization (inaudible)
+[18:43] endpoints, identity, cloud apps,
+or infrastructure, are collected
+[18:47] and analyzed by both
+Defender and Sentinel.
+[18:51] With this integration you
+get a single platform
+[18:53] in a Microsoft Defender portal.
+[18:54] Where you can monitor,
+investigate, respond to threats,
+[18:57] sources, including multi-cloud
+and third-party environments.
+[19:01] Defender XDR enriches
+and correlates alerts
+[19:04] from multiple Microsoft security
+products, helping reduce noise.
+[19:07] And prioritize most
+important incidents.
+[19:10] Sentinel brings in data from
+wide ranges of sources,
+[19:12] allowing for a custom analytics
+and deep strengthening.
+[19:16] By combing these two tools,
+[19:19] security teams can see the full
+picture, correlate incidents
+[19:21] across the entire environment.
+[19:23] And responds more
+quickly and effectively.
+[19:26] As unified approach streamlines
+workflows, reduce complexity
+[19:30] and empowers security teams to
+stay ahead of evolving threats.
+[19:34] How do you get into this unified
+security operation platform
+[19:36] Microsoft Defender?
+[19:39] Well, it's not a default.
+[19:41] If you start using Sentinel,
+now, it will be unified.
+[19:45] If you are using Sentinel
+already, you need to move over.
+[19:48] And more details from
+that can be found
+[19:50] on the unified security
+operations pages,
+[19:53] on Microsoft Learn.
+[19:55] For reference I have
+taken a snapshot
+[19:57] of the unified security
+operations page.
+[20:00] You can use the short
+link I created for you
+[20:02] to directly access the pages
+on unified security operations
+[20:05] on Microsoft Learn,
+aka.ms/unsecops.
+[20:11] Let's investigate a couple
+of examples before we come
+[20:15] to an end of this video.
+[20:18] First of all, the simple
+classical dashboards.
+[20:21] And the classical Sentinel
+is something many
+[20:24] of you may be familiar with.
+[20:26] And it's no longer the default
+[20:27] for the new Sentinel
+implementations.
+[20:29] But fear not, the same familiar
+aspects are still available
+[20:33] in the unified experience.
+[20:35] All aspects that are
+about the configuration
+[20:37] of Sentinel that is.
+[20:40] When it comes to the incidence,
+[20:43] the incident queue
+will now be part
+[20:44] of a unified incident queue.
+[20:48] Here we have an example
+[20:49] of the unified experience,
+the current one.
+[20:52] Sentinel is integrated
+into the UI and,
+[20:55] well the UI may be familiar
+to you from the Defender XDR.
+[20:59] The product has
+evolved significantly
+[21:00] over the last years and now
+includes many more elements
+[21:03] in just XDR.
+[21:05] And now we've got also the
+integration of Sentinel into it.
+[21:08] And as you can see,
+the menus are similar
+[21:11] to what they were
+before for Sentinel.
+[21:13] But the incident will now be
+part of the investigations
+[21:16] and response capabilities
+Microsoft Defender.
+[21:19] And that's so great.
+[21:20] No longer multiple places to
+look at and handle incidents.
+[21:24] And that for sure
+saves some time
+[21:26] and effort for happy analysts.
+[21:30] We also see in here
+the data lake.
+[21:33] It's also part of the
+Defender UI portal.
+[21:35] And the data lake will make it
+possible to long-term retention
+[21:39] and reduce costs
+[21:41] and to basically be more
+effective with data and costs.
+[21:46] Time to wrap up.
+[21:47] In this video we reviewed
+SIEM, SOAR and XDR.
+[21:51] To see more start using
+these short link,
+[21:54] and the MCR is called
+great integration
+[21:55] and overview information.
+[21:57] The page on XDR and the Sentinel
+ninja course can help you
+[22:00] to ramp up on those
+if that is needed.
+[22:03] And there's more.
+[22:04] Unified security operations
+and definitely get into that.
+[22:08] Thank you for
+watching the video.
+[22:09] In this video, in the
+series the Microsoft
+[22:12] Cybersecurity Architects.
+[22:14] There are more, we can
+read again in another,
+[22:16] but please until the time,
+get safe and stay safe.

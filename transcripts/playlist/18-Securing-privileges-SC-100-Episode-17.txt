@@ -1,0 +1,549 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:07] Welcome to this video.
+[00:09] My name is Marco Nuijen.
+[00:10] I am a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] for Microsoft
+cybersecurity architects.
+[00:17] In this video, we will focus
+on the topic of privileges.
+[00:20] Discover why securing privileges
+is crucial in cybersecurity
+[00:24] and learn essential strategies
+to protect identities,
+[00:27] ensure compliance, and enhance
+your security operations
+[00:31] as a Microsoft
+cybersecurity architect.
+[00:33] One thing we will discuss
+[00:34] in this video is the
+enterprise success model.
+[00:37] And to my surprise,
+many at the days
+[00:39] in trainings I
+deliver never heard
+[00:41] of that model before
+the training.
+[00:43] Wow. That really
+needs to change.
+[00:45] So watch this video.
+[00:47] Areas of attention.
+[00:49] The content of this video is
+mostly aligned with the area
+[00:51] of security, operations,
+identity, and compliance
+[00:54] from a certification
+perspective.
+[00:57] Let's get started
+with a question.
+[00:58] Why is securing privileges
+a top priority?
+[01:01] That's the question
+you should be able
+[01:03] to answer yourselves
+already, or hopefully,
+[01:06] after watching this video.
+[01:10] So what is it?
+[01:11] Let's do a little quiz first.
+[01:13] Why is securing
+privileges a top priority
+[01:15] from a cybersecurity
+perspective?
+[01:18] Because privileged accounts
+have access to sensitive data
+[01:22] and systems that can
+cause significant damage
+[01:24] if compromised?
+[01:25] Or is it because privileged
+accounts are easy to hack
+[01:29] and do not require
+authentication or authorization?
+[01:32] Or is it because privileged
+accounts are shared among users
+[01:35] that do not have
+any audit trails?
+[01:37] Yeah, well, the answer is A.
+[01:40] Privileged accounts are those
+that have more permissions
+[01:43] and privileges than normal
+users, such as administrators,
+[01:46] operators, or service accounts.
+[01:49] These accounts can access
+and manipulate critical data
+[01:52] and systems, such as
+databases, servers,
+[01:54] network devices, or
+cloud resources.
+[01:57] If an attacker gains control
+over a privileged account,
+[02:00] they can cause severe
+harm to the organization,
+[02:04] such as stealing
+confidential information,
+[02:06] disrupting operations,
+or installing malware.
+[02:10] Therefore, it is essential to
+secure privileged accounts
+[02:13] with strong passwords,
+multi-factor authentication,
+[02:15] least privilege, and
+regularly monitor them.
+[02:21] Securing privileges is
+important, and in this video,
+[02:24] we look at these aspects:
+privileged access,
+[02:27] the enterprise access model,
+baselines, emergency accounts,
+[02:30] and secure workstations.
+[02:33] We need to make it hard for
+the wrong people to access
+[02:37] and do something they shouldn't.
+[02:40] Verify explicitly,
+assume breach,
+[02:42] and least privilege are
+the three principles,
+[02:44] again, from Zero Trust.
+[02:46] Let's focus on least privilege.
+[02:49] You can't lose what
+you don't have.
+[02:51] If you don't have any
+permission, you don't need.
+[02:53] If you don't need a permission,
+it cannot be lost or stolen.
+[02:57] Think least privilege.
+[02:59] In your regular daily life,
+you may go to the supermarket
+[03:03] to buy some groceries.
+[03:05] What will you bring with you?
+[03:06] Only what you need.
+[03:07] Maybe you need some money, but
+not the valuable gold, bars,
+[03:10] and jewels you may have at home.
+[03:12] Too dangerous.
+[03:13] It might be stolen.
+[03:15] But also too much.
+[03:16] You don't want to haul that
+stuff around, and you shouldn't.
+[03:19] Think about that and relate that
+to accounts and privileges.
+[03:23] Only have what you
+need, when you need it.
+[03:26] The lowest amount of privileges
+to get the job done.
+[03:31] If you have a lot of
+privileges, it's more likely
+[03:33] that when your identity gets
+compromised or borrowed
+[03:36] by someone, there
+will be more damage.
+[03:40] We need to control accounts and
+the privileges that they use.
+[03:44] Years ago, Microsoft
+constructed a model
+[03:47] for identities and privileges.
+[03:48] But for cloud, that
+model was less suitable.
+[03:52] The dynamics and
+responsibilities are different.
+[03:54] And also with cloud, we
+are leveraging protocols
+[03:57] that are more dynamic in nature.
+[03:59] Something we discuss in
+another video around identity.
+[04:02] On the screen, we
+see the fundament
+[04:04] of the old tiering model.
+[04:06] This model was deprecated.
+[04:07] But in case you have an
+isolated private cloud,
+[04:09] it can still be leveraged
+by you to verify
+[04:12] or to enhance security aspects.
+[04:14] Think of disconnected systems
+for operational compliance,
+[04:16] physical or legacy
+purposes, like ICS systems,
+[04:20] industrial control systems,
+or SCADA technology
+[04:22] or operational technology.
+[04:24] If you're interested
+in the older model,
+[04:26] then please look at
+the information.
+[04:27] You can access through
+the short link referenced
+[04:29] on the slide, aka.ms/esae.
+[04:34] I find that from a
+conceptual perspective,
+[04:36] there are still a lot
+of good lessons there.
+[04:38] But that said, for cloud,
+the model was less suitable.
+[04:41] So the foundation was
+rethought and evolved
+[04:43] into what we now call the
+enterprise access model.
+[04:48] The enterprise access model
+replaces the old tiering model
+[04:52] that was designed to prevent
+unauthorized elevation
+[04:55] of privilege in an on-premises
+Windows Server Active
+[04:57] Directory environment.
+[04:59] It was based on best practices
+and lessons learned.
+[05:01] And yes, it also
+incorporates, of course,
+[05:03] Zero Trust principles.
+[05:05] If you follow the guidance of
+the Cloud Adoption Framework,
+[05:08] you will see that the
+framework is consistent
+[05:10] with the enterprise
+access model.
+[05:12] It is all related.
+[05:13] And a best practice is,
+well, it's a best practice.
+[05:17] We can use this
+model as a guide.
+[05:19] This is the way,
+like a blueprint.
+[05:21] But if we're in an existing
+situation, we can also use it
+[05:24] as a reference to
+do a gap analysis.
+[05:27] The enterprise access
+model covers all access.
+[05:29] Great. But some access
+is more critical,
+[05:32] so we need to prioritize
+the permissions
+[05:34] that would have the
+most impact if misused.
+[05:37] For example, by attackers
+or accidentally.
+[05:41] We need to secure privileges,
+the permissions that allow
+[05:43] to manage an environment,
+so let us focus on that.
+[05:49] To effectively secure
+privileged access means
+[05:52] to eliminate unauthorized
+pathways completely
+[05:54] and only allow for a
+few authorized pathways
+[05:57] that are safeguarded
+and scrutinized.
+[05:59] This diagram is explaining
+more depth in the information
+[06:02] about security, about
+privileged access,
+[06:04] for which you will find a short
+link on the slide, aka.ms/spa,
+[06:10] securing privileged access.
+[06:12] This strategy needs a
+comprehensive approach
+[06:15] that uses multiple
+technologies to protect
+[06:18] and watch those authorized
+escalation paths using Zero
+[06:21] Trust principles, such
+as explicit validation,
+[06:25] least privilege,
+and assume breach.
+[06:27] This strategy needs multiple
+coordinated initiatives
+[06:31] that create a holistic
+technology approach,
+[06:33] clear processes, and a strict
+operational execution to build
+[06:37] and maintain
+assurances over time.
+[06:41] Microsoft recommends adopting
+this privileged access strategy
+[06:44] to rapidly lower the risks
+to your organization
+[06:46] from high-impact and
+high likelihood attacks
+[06:49] from privileged access.
+[06:51] Privileged access should be
+the top security priority
+[06:54] at every organization.
+[06:56] Any compromise of these
+users has a high likelihood
+[07:01] of significant negative
+impact to the organization.
+[07:05] Privileged users have access
+to business-critical assets
+[07:08] in an organization, nearly
+always causing a major impact
+[07:12] when attackers compromise
+their accounts.
+[07:16] Now, where to get started.
+[07:18] Anywhere would be a good place,
+[07:19] but maybe start using
+the getting started.
+[07:23] There is a rapid modernization
+plan to help with that.
+[07:26] Just like with rapid
+modernization plans we've seen
+[07:29] elsewhere, for Zero
+Trust, for example,
+[07:31] there's a rapid
+modernization plan
+[07:33] for securing privileged
+access, which focuses
+[07:35] on securing the identities and
+its associated privileges.
+[07:39] I suggest you spend a good
+amount of time with that content
+[07:43] on the securing
+privileged access pages.
+[07:46] When I'm working with
+customers, I heavily make use
+[07:48] of the content and
+the linked content.
+[07:50] Securing privileges should
+be the top priority
+[07:53] for securing any environment.
+[07:57] And there are success criteria
+for a privilege strategy.
+[08:02] And we need to think
+about, for example,
+[08:04] ruthless prioritization,
+[08:06] which means doing the
+most effective actions
+[08:08] with the quickest results first.
+[08:10] Even if those efforts don't
+match existing plans, views,
+[08:13] and habits, the strategy
+outlines the steps
+[08:17] that have been learned from any
+major cybersecurity incident.
+[08:21] The lessons from these incidents
+shape the steps we help
+[08:24] organizations take to
+prevent these crises
+[08:27] from happening again
+or happening to them.
+[08:29] While security professionals
+may be tempted to try
+[08:32] to improve familiar existing
+controls like network security
+[08:35] and firewalls for newer attacks,
+[08:37] this approach often
+leads to failure.
+[08:40] The Microsoft Incident
+Response team has been dealing
+[08:42] with privileged access
+attacks for almost a decade
+[08:45] and regularly sees these classic
+security methods fail to detect
+[08:49] or stop these attacks.
+[08:51] While network security
+provides essential
+[08:54] and basic security hygiene,
+it is crucial to get
+[08:58] out of these habits and focus
+on mitigations that will stop
+[09:03] or block real-world attacks.
+[09:05] To reduce negative business
+impacts from security controls,
+[09:09] you should prioritize
+invisible security controls
+[09:11] that enhance user workflows or,
+at least, don't interfere with
+[09:15] or change user workflows.
+[09:18] While security-sensitive
+rules may require visibility,
+[09:21] security measures that
+change their daily workflow
+[09:24] to provide security assurance.
+[09:26] This implementation
+should be done carefully
+[09:29] to limit the usability impact
+and scope as much as possible.
+[09:35] And there's more.
+[09:36] There's always more.
+[09:37] And I'd like you to
+consider this approach
+[09:39] for securing privileges,
+also, a benchmark, MCSB.
+[09:43] Same elements, same thinking,
+[09:45] different approaches,
+very similar outcome.
+[09:48] And yes, they are all aligned.
+[09:50] So start with the approach
+that best suits you
+[09:53] and the people you
+need to interact with.
+[09:56] I like to take these
+elements and think
+[09:58] of what it makes me think of.
+[10:01] I do some brainstorming and
+then verify in the advisories
+[10:06] and the documentation.
+[10:07] For example, we need to
+have multiple accounts,
+[10:09] and it would be
+something to think of.
+[10:11] We need to have an account
+for regular things
+[10:13] like reading email and maybe
+browsing the internet.
+[10:16] And another one for
+specific tasks,
+[10:19] like administration tasks.
+[10:21] But even in that approach,
+[10:22] the dedicated administration
+account should not have any
+[10:24] privileges by default.
+[10:27] There should be a lifecycle
+[10:29] and checking everything
+is what it needs to be.
+[10:32] Essentially,
+lifecycle management
+[10:34] and doing housekeeping
+keep your house in order.
+[10:38] PA-5. We have PA-5,
+emergency accounts.
+[10:41] What does that mean?
+[10:42] Well, accounts that have high
+privileges need to be secured.
+[10:46] And we can use technical
+features to protect them.
+[10:49] For example, multi-factor
+authentication
+[10:51] or previous identity management.
+[10:53] But what if in an emergency,
+[10:54] that security technology
+is not available to us?
+[10:57] We still need to have a way
+to access our environment.
+[11:00] We need to have emergency
+accounts, break glass accounts.
+[11:05] And break glass accounts
+is a special type
+[11:08] of emergency accounts
+that can bypass most
+[11:11] of the normal security
+measures and grant access
+[11:13] to critical systems
+or resources.
+[11:15] Break glass accounts are usually
+kept locked away by procedures
+[11:19] until they are needed
+for an urgent situation,
+[11:22] such as a cyber attack,
+[11:23] a natural disaster,
+or technical failure.
+[11:25] Break glass accounts should
+be monitored closely
+[11:28] and carefully guarded, but
+also regularly tested.
+[11:32] You don't want to find out the
+emergency account doesn't work
+[11:35] for you when you need it.
+[11:37] And another thing, you
+have to have at least two
+[11:39] of them, not just one.
+[11:41] Because you have to
+try one periodically,
+[11:45] maybe twice a year, or when
+there's a significant change
+[11:47] in the organization, in
+the operational staff.
+[11:50] And it needs to be
+reset after using.
+[11:51] And you have to want that
+in its pristine state.
+[11:54] For more detail and guidance,
+[11:55] the MCSB can provide
+you with that.
+[11:58] How to do that for
+multiple platforms,
+[11:59] also which rules are involved.
+[12:01] So go and check out the MCSB.
+[12:05] Another control from the MCSB
+deals with the physical system
+[12:09] that is used by an identity
+that has privileges.
+[12:11] How can we trust the identity
+and privileges given
+[12:14] to that identity if the
+system is not trustworthy?
+[12:17] An attacker that can compromise
+a PC or device can impersonate
+[12:21] or steal credentials and tokens
+for all accounts on that system,
+[12:25] undermining many or maybe all
+the security assurances we've
+[12:28] set up.
+[12:30] So, for administrators
+and sensitive accounts,
+[12:32] this allows attackers
+to escalate privileges
+[12:34] and increase the access they
+have in your organization,
+[12:38] often dramatically to
+the highest level.
+[12:40] So controlling the workstation
+is also important.
+[12:43] And there's a lot of
+guidance on that.
+[12:45] And it has been out there
+for many, many years.
+[12:47] So start using the
+guidance, start doing it.
+[12:50] And if you're going to do
+that in an architecture,
+[12:52] you'll find that it is very
+often hard, and it's going
+[12:55] to cause a lot of resistance.
+[12:57] The most difficult decisions
+I've had with operators is
+[12:59] about securing the device.
+[13:02] You may think that cloud means
+we can work from any place
+[13:05] or any device, but that's not
+the case for security matters.
+[13:09] Some privileges are so crucial
+that we can't use them
+[13:12] from any location or any device.
+[13:15] We need to control
+the privilege,
+[13:17] the location, and the device.
+[13:19] That's how it is.
+[13:20] So read the guidance and discuss
+it well in your enterprise.
+[13:25] Let's summarize what we've
+discussed in this video.
+[13:28] We've looked at
+privileged access
+[13:30] and the enterprise access model.
+[13:32] We also looked at
+baselines to the MCSB,
+[13:34] and we highlighted a couple
+of specific elements from it.
+[13:37] We looked at accounts
+for emergencies,
+[13:40] break loss accounts, and
+that we also need to think
+[13:42] about physical security,
+securing the workstations
+[13:45] that are used for
+expressing privileges.
+[13:49] For more details, specific
+topics in this video, again,
+[13:52] there's a list of short
+links that you can leverage
+[13:55] for your own learning purposes.
+[13:58] Thank you for
+watching this video.
+[14:00] There are many more
+in the series,
+[14:03] and maybe you'll see me
+again in another one.
+[14:05] Until that time, stay safe.

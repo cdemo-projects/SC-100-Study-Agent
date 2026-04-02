@@ -1,0 +1,677 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, we
+will focus on aspects
+[00:18] of compliance and privacy.
+[00:21] We explored the dynamic tension
+between compliance and security
+[00:24] and discovered the essential
+tools and services
+[00:26] that help cybersecurity
+architects strike the right
+[00:28] balance in today's
+digital landscape.
+[00:31] The content of this video is
+mostly aligned with the area
+[00:34] of security operations,
+identity, and compliance
+[00:37] from a certification
+perspective.
+[00:39] Now, question: What
+is compliance?
+[00:42] What is privacy?
+[00:43] I hope after this video,
+[00:45] you will answer these two main
+questions for yourselves.
+[00:48] And what is compliance,
+and what is privacy?
+[00:49] And, of course, where do
+they fit in in our role
+[00:53] as a cybersecurity architect?
+[00:56] Before we get
+started, I'd like you
+[00:58] to consider another question.
+[01:01] Are compliance and
+security the same?
+[01:03] Yes, they are the same.
+[01:04] We are compliant, so
+we're also secure.
+[01:07] And yes, if we are secure,
+we're also compliant.
+[01:10] Or no, they are different.
+[01:13] What do you think?
+[01:16] They are different.
+[01:18] And you can be very
+compliant and very unsecure.
+[01:22] Or you can be very secure
+and very incompliant.
+[01:25] So for this answer,
+see if it's best.
+[01:28] So let's go and talk
+about what is compliance.
+[01:33] We want to inspect
+what compliance is,
+[01:35] where to encounter it,
+and what our options are
+[01:37] for helping our organizations
+to be and stay compliant.
+[01:42] Next to being and
+staying secure.
+[01:44] We also need to
+think about privacy
+[01:46] since security compliance
+[01:47] and privacy are often
+closely related.
+[01:50] So what are our options?
+[01:53] Let's first zoom out a bit and
+link it to an overview concepts
+[01:56] and materials like the
+Microsoft Cybersecurity
+[01:58] Reference Architecture.
+[02:00] Here's a busy graphic
+from the MCRA,
+[02:02] and I've highlighted a couple
+of aspects that are linked
+[02:05] to the topic of compliance.
+[02:07] Elements like
+Compliance Manager,
+[02:09] Communication Compliance, and
+the Service Trust Portal.
+[02:12] These are Microsoft services
+or portfolio products
+[02:15] that can assist with compliance.
+[02:17] But what is compliance?
+[02:20] Our organizations do not
+operate in a vacuum.
+[02:25] They are often in
+a certain industry
+[02:27] or in a certain
+region or country.
+[02:29] With that, there
+will be requirements
+[02:31] that we will need to meet.
+[02:33] If we meet the
+requirements, we comply.
+[02:35] If not, well, then there
+can be consequences.
+[02:39] It could be that you're
+not allowed to operate
+[02:41] if you don't meet
+what is needed.
+[02:43] The compliance elements that are
+needed in an industry or region.
+[02:47] Compliance is something
+that needs to be met.
+[02:48] It's a non-negotiable.
+[02:51] Now, security is not per
+se a compliance topic,
+[02:54] but we will often work
+closely with compliance
+[02:57] to make sure our organization
+meets what is required.
+[03:00] In the field, many
+[03:01] of my customers had compliance
+specialists, architects,
+[03:04] or even an entire
+compliance department.
+[03:07] If that is the case
+for your situation,
+[03:09] then work closely together
+with the compliance experts.
+[03:12] If not, then start
+reading up on compliance,
+[03:15] since no organization
+exists that does not need
+[03:17] to meet some
+compliance standard.
+[03:21] Let us start with some
+regulatory compliance elements.
+[03:24] These are all about laws or
+industry-specific requirements.
+[03:28] Things that are enforced on
+us by an external party.
+[03:32] There is, of course,
+also internal compliance
+[03:34] that we also need to think of.
+[03:36] The rules that have been set
+within the company itself.
+[03:39] And how can we prove
+that we comply?
+[03:42] We typically need
+to gather evidence
+[03:44] and have that evaluated.
+[03:46] That is what we would call
+the compliance journey.
+[03:49] Essentially, we are
+gathering evidence
+[03:51] that can be used towards
+another party, like an auditor,
+[03:55] to get proof of the fact that
+we are in a compliant state,
+[03:58] a compliance statement.
+[04:00] But only a certified
+party can validate
+[04:02] if we have done what is
+needed to be compliant.
+[04:05] In other words, most often your
+organization will need to engage
+[04:09] with an external auditor that
+will evaluate and, if okay,
+[04:13] issue you a
+compliance statement.
+[04:16] That's the only way to prove
+that you are compliant.
+[04:20] And it is a continuous process.
+[04:22] A compliance statement has
+an end date, and if you want
+[04:25] to be able to prove
+that you are compliant,
+[04:28] you must get another
+compliance statement.
+[04:29] It's a continuous process.
+[04:32] In the middle of
+the presentation,
+[04:33] I've included some information
+about the division
+[04:36] of responsibilities,
+cloud providers,
+[04:39] and you, our organization.
+[04:42] The cloud provider provides
+platforms and services on top
+[04:44] of which you do something.
+[04:46] For compliance, the challenge
+is how you can collect evidence
+[04:49] towards an auditing
+party that the platforms
+[04:52] and services are compliant.
+[04:54] You typically do not have
+access to parts that is managed
+[04:57] and maintained by
+the cloud provider.
+[05:00] A way to address this is
+[05:01] to leverage the cloud provider's
+compliance information
+[05:05] as evidence towards
+your own auditors.
+[05:07] And more on that in a moment.
+[05:10] But what is crucial
+to understand is
+[05:12] that you're not compliant
+[05:14] if the platform has
+compliance statements.
+[05:17] When I was working
+with customers,
+[05:18] I often encountered people
+that said, "We're compliant
+[05:21] because we are using a
+compliant component."
+[05:24] Not true. No.
+[05:26] You will be configuring
+something on top of that,
+[05:29] on top of a capability for which
+a compliance statement exists,
+[05:32] for something a compliance
+statement is available.
+[05:35] And when you do that,
+together with the evidence
+[05:37] from the platform,
+it is what you use
+[05:40] to get your compliance
+statement from a trusted party.
+[05:44] And you need to
+do this regularly
+[05:46] if you want to stay compliant.
+[05:50] Here are a couple of very
+common compliance regulations.
+[05:53] There are many, many more.
+[05:54] I just wanted to list
+a couple of examples.
+[05:57] Like HIPAA, healthcare-oriented,
+United States-based.
+[06:02] The payment card
+industries, PCI.
+[06:05] Maybe you should also think
+[06:06] about the Microsoft cloud
+security benchmark, the MCSB,
+[06:09] where we actually
+encounter elements
+[06:10] from PCI DSS compliance, next
+to elements of CIS and NIST.
+[06:15] Personal data and GDPR.
+[06:18] These two are already
+a bit in the area
+[06:20] that is something we
+want to discuss later
+[06:22] in this video, which is privacy.
+[06:25] And GDPR, it's all about
+citizens being able
+[06:27] to control their data and
+their information anywhere.
+[06:30] The right to forget,
+the right to insight,
+[06:32] the right to correct, the
+right on portability,
+[06:35] things that are connected to
+the rights of EU citizens,
+[06:39] the rights that EU citizens
+have over their data,
+[06:42] wherever that may be stored.
+[06:43] They can come and request,
+[06:45] including asking your
+organization for their data.
+[06:51] And after GDPR became
+into existence and became
+[06:54] into effect -- and we've seen
+many other similar compliance
+[06:57] frameworks like that worldwide.
+[07:00] So what we can do -- what
+can we do to get started?
+[07:05] A good starting place to get
+more informed on compliance
+[07:10] and regulatory standards
+[07:11] and other related areas is the
+Microsoft Compliance site.
+[07:15] I've listed an easy
+short link for accessing
+[07:17] that on the presentation
+graphic, aka.ms/compliance.
+[07:23] From there, you can find
+information about, for example,
+[07:26] Azure, Dynamics 365,
+[07:28] and Microsoft 365
+compliance offerings.
+[07:31] It is the place where we bring
+all the Microsoft compliance
+[07:35] information together.
+[07:36] Start with compliance
+and reading about it
+[07:38] from this portal, and
+please share the link.
+[07:41] I've encountered many people
+that did not know it existed,
+[07:44] and they found it to be very
+useful, so use it and share it.
+[07:49] Here's an example of
+Azure, Dynamics 365,
+[07:52] and Microsoft 365 compliance
+offerings that can help you
+[07:54] with national, regional, and
+industry-specific regulations
+[07:58] for data collection and use.
+[08:00] For each element mentioned
+here, there are pages
+[08:02] that describe the compliance
+framework and how
+[08:05] and what relates to
+it in the service
+[08:07] and products provided
+by Microsoft.
+[08:10] It is this kind of
+portal information
+[08:11] that can help our compliance
+colleagues with their job
+[08:14] and help us to understand
+their job better.
+[08:17] Remember, security
+is a team sport.
+[08:20] We work with many others,
+[08:21] and one of those
+others can be people
+[08:23] that are specifically
+responsible for compliance.
+[08:27] But it could be that your
+organization is different
+[08:29] and that you are responsible for
+cybersecurity and compliance.
+[08:32] Every organization is different.
+[08:33] Some are large, with different
+people on different teams.
+[08:36] Some are smaller.
+[08:37] It all depends, but
+whatever it is for you,
+[08:39] compliance needs to get done.
+[08:41] Like it or not, it's
+a non-negotiable.
+[08:45] And to start doing it, start
+using another resource,
+[08:50] the Service Trust Portal.
+[08:52] Again, the short link is listed
+to help you to get access
+[08:55] to that easily:
+aka.ms/servicetrust.
+[09:00] The Service Trust Portal
+caters to organizations,
+[09:02] IT professionals, and
+anyone interested
+[09:05] in understanding how Microsoft
+ensures security and compliance
+[09:08] across its cloud offerings.
+[09:11] It acts as a one-stop shop for
+accessing essential details
+[09:15] about security practices,
+compliance certification,
+[09:18] and privacy measures within
+the Microsoft cloud ecosystem.
+[09:22] It provides in-depth
+information and tools related
+[09:24] to various Microsoft services,
+including Azure, Microsoft 365,
+[09:28] and Dynamics 365, and Windows.
+[09:32] It is also the place where you
+[09:34] as a customer can download
+compliance statements.
+[09:38] The statements you can use
+towards your own auditors
+[09:41] and your compliance journey.
+[09:43] The platform and service
+provide evidence
+[09:44] of meeting some compliance
+requirements, but you also need
+[09:47] to provide your own evidence of
+the additional steps you took
+[09:50] from the point of view of the
+framework you need to follow.
+[09:54] Mind you, it is for
+customers of Microsoft.
+[09:58] Before being able to download
+evidence from this portal,
+[10:01] you need to log in with
+an account associated
+[10:03] with an Entra tenant.
+[10:07] Now, we can't ignore
+what needs to be done
+[10:09] from a compliance perspective.
+[10:10] And we should include
+it in our designs,
+[10:14] just as any other requirement
+for a solution and design.
+[10:17] It should be part of it.
+[10:18] We must figure out
+what they mean.
+[10:21] What's the risk?
+[10:21] What are the things we must do?
+[10:23] What are the things
+we try to achieve?
+[10:24] And how are we going to do it?
+[10:26] And make it something
+we can work on.
+[10:29] And we must explain the
+why, the what, and the how,
+[10:31] the rules and the guidelines.
+[10:33] From a practical point of
+view, start writing these down
+[10:36] and come up with a minimal
+viable product, test it out,
+[10:40] learning from that, and
+making changes to our designs
+[10:43] to deliver a better solution.
+[10:45] For example, consider
+data retention, legally,
+[10:48] financial transaction records
+between a stockbroker
+[10:51] and a client must be
+preserved for five years.
+[10:53] That could be an example.
+[10:55] Translating these requirements
+[10:56] into a technical solution
+involves using classifiers
+[10:59] that identify relevant
+data patterns,
+[11:02] then applying the rules to
+ensure the data is retained
+[11:04] for the mandated period and
+providing documentation
+[11:07] as evidence of compliance.
+[11:09] This approach encourages
+careful consideration
+[11:12] of system governance
+and oversight.
+[11:16] How to address compliance?
+[11:18] Well, we've learned
+what compliance means
+[11:20] and how it relates to our work.
+[11:22] But how can we monitor
+[11:24] and evaluate compliance
+in our environment?
+[11:27] How can we quantify compliance
+in our environment?
+[11:31] And one of the rules for a
+cybersecurity architect is also
+[11:34] to assess, is it
+set up correctly?
+[11:38] What are the areas
+for improvement?
+[11:40] Etc. In our toolkit, the main
+option I want you to think
+[11:45] about when it comes
+[11:46] to understanding
+compliance is Purview.
+[11:49] Another option could
+be Defender for Cloud.
+[11:52] On the presentation, we
+currently see an example
+[11:55] of Microsoft Purview, a
+specific part of Purview,
+[11:58] namely Purview
+Compliance Manager.
+[12:02] Purview is the group of products
+and services that focus
+[12:04] on data governance
+and compliance.
+[12:06] For this video, I wanted
+to limit ourselves
+[12:08] to the compliance aspects of
+Purview, the parts of Purview
+[12:12] that can assist you
+with compliance.
+[12:14] With Purview Compliance Manager,
+[12:16] you can add compliance
+frameworks to the engine
+[12:18] and then assess how
+well the elements
+[12:20] of that added framework are
+implemented in your environment.
+[12:24] If there's a match,
+you earn points.
+[12:27] So the more that is
+done, the more points,
+[12:29] the higher your score.
+[12:31] It helps to understand what's
+done and the evidence of that,
+[12:34] and what still needs
+to be addressed.
+[12:36] In essence, this is how scores
+work throughout the services.
+[12:40] And we have another video just
+on scores and how to use them.
+[12:43] Compliance score is
+not any different.
+[12:47] You can use Purview Compliance
+Manager to choose from a list
+[12:51] of predefined assessments
+for common industry
+[12:53] and regional standards
+and regulations
+[12:56] or create your own
+custom assessments
+[12:59] to meet your unique
+compliance needs.
+[13:02] The available assessments depend
+[13:03] on your licensing
+agreement with Microsoft.
+[13:07] Complete your risk
+assessments efficiently
+[13:09] through a single tool that
+collects and analyzes evidence
+[13:11] from your data
+sources and services.
+[13:14] You can also upload your
+own evidence documents
+[13:16] to support your assessment.
+[13:18] It helps to simplify
+your compliance journey.
+[13:22] Comply with the standards
+and regulations
+[13:23] that are most relevant for your
+organization and for actions
+[13:26] that are managed by Microsoft,
+[13:27] such as encrypting data
+address or in transit.
+[13:30] You can see implementation
+details and audit results.
+[13:33] For actions that
+are managed by you,
+[13:35] such as training your employees
+or defining policies,
+[13:39] you will be able to see
+recommended best practices.
+[13:43] Understand your
+compliance posture
+[13:45] by measuring your progress in
+completing improvement actions.
+[13:49] You can see your
+compliance score,
+[13:50] which reflects how well you
+align with the requirement
+[13:53] of each standard or regulation.
+[13:55] You can also see the impact
+of each action on your score
+[13:59] and prioritize the most
+important actions.
+[14:02] Purview Compliance Manager is a
+powerful tool that originated
+[14:05] from Microsoft 365 with a strong
+focus on data and compliance.
+[14:09] It simplifies many tasks when
+it comes to understanding
+[14:12] and helping to meet compliance.
+[14:16] Another capability that can
+help you with compliance,
+[14:18] specifically for infrastructure
+as a service and platform
+[14:20] as a service, is what
+we have in Azure.
+[14:24] Azure Policy.
+[14:25] The Azure Policy allows to
+define and enforce policies
+[14:29] that audit and control
+your resources in Azure.
+[14:33] To help you comply with
+different standards
+[14:35] and regulations, Azure Policy
+also provides built-in policy
+[14:39] definitions that map to
+common compliance frameworks.
+[14:42] You can assign these policies
+to your management groups,
+[14:45] subscriptions, resource groups,
+or individual resources,
+[14:48] and then monitor their
+compliance status
+[14:51] from a single dashboard.
+[14:52] Either directly in Azure Policy
+or through Defender for Cloud,
+[14:56] which includes Defender for
+Cloud regulatory compliance.
+[15:01] Here, we have an example of
+the compliance dashboard
+[15:04] in Defender for Cloud.
+[15:05] And this is part of Defender
+[15:06] for Cloud security
+posture capabilities
+[15:08] in Defender for Cloud.
+[15:10] We will come to
+Defender for Cloud
+[15:11] and cloud security posture
+management in another video.
+[15:14] Just be aware that
+you can leverage it
+[15:16] for driving compliance in
+your Azure deployments.
+[15:22] Some compliance frameworks
+also include privacy elements,
+[15:25] like GDPR, that I mentioned
+earlier in this video.
+[15:28] Under GDPR, an EU citizen
+can ask any company
+[15:32] to exercise some rights, ask for
+access, erasure, rectification,
+[15:36] portability, among others.
+[15:38] How can your organization
+handle these kinds of requests?
+[15:41] The main difficulty is usually
+to search through all the data
+[15:44] in the organization and find
+the relevant information
+[15:47] as requested.
+[15:48] This is hard, but there
+are some capabilities
+[15:50] that can assist with that.
+[15:52] Essentially, it's a question
+of data discovery, labeling,
+[15:55] and management that
+we will revisit later
+[15:58] in the series when
+we discuss data.
+[16:01] Much of that is the area
+for the Purview family.
+[16:04] But how can you handle
+privacy and privacy requests?
+[16:08] From a capabilities perspective,
+[16:10] that's the domain of
+the Priva family.
+[16:12] The emphasis is on aspects such
+as privacy risk management
+[16:15] and subject right requests.
+[16:18] And that's not all.
+[16:20] And there's always more.
+[16:21] Besides handling requests
+from individuals,
+[16:23] the capabilities can also
+help to address privacy
+[16:25] and related risks or to
+inform users about those,
+[16:29] find out if personal
+information,
+[16:32] personal data is too exposed,
+[16:34] so it can be protected
+by users themselves.
+[16:37] They can monitor and restrict
+movement of personal data
+[16:40] across units or
+geographical boundaries.
+[16:43] And it can help users discover
+and decrease the amount
+[16:45] of unused personal data
+that is kept by them.
+[16:49] It helps to be mindful
+and act on it.
+[16:52] Let's wrap up this video.
+[16:54] The subject was
+compliance and privacy.
+[16:56] I explained what they are and
+how they fit into our role
+[16:59] as a cybersecurity architect.
+[17:02] We also looked at the
+capabilities that will help
+[17:04] to cover compliance
+and privacy aspects.
+[17:07] For more information, please
+go and investigate the places,
+[17:10] the links that were
+mentioned during the video.
+[17:12] And here's a summary of
+short links for you.
+[17:17] This is the end of this video.
+[17:18] I hope you learned something.
+[17:19] nd please come again for
+another video in the series
+[17:21] on cybersecurity architecture.
+[17:23] Until next time, stay safe.

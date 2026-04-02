@@ -1,0 +1,372 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, I want to
+discuss assessments and scores.
+[00:21] Discover how a Microsoft
+cybersecurity architect assesses
+[00:24] your organization's
+security posture
+[00:26] and learn practical strategies
+to strengthen defenses
+[00:30] against evolving threats.
+[00:32] How are we?
+[00:34] This is our main
+question for the video.
+[00:36] In what state is
+our environment?
+[00:38] What do we know about it?
+[00:40] But also, what do you know
+about your knowledge?
+[00:43] What is it?
+[00:44] Let's get started
+with the question.
+[00:46] In what state is your enterprise
+from a security perspective?
+[00:49] Is it good?
+[00:50] Is it bad?
+[00:50] Or is it, "I don't know"?
+[00:52] I know it's a strange question,
+[00:53] but it represents what
+I have encountered
+[00:56] in the field of security.
+[00:57] We often don't know.
+[00:59] There's so much, and it
+is all getting connected.
+[01:03] In other videos, I've
+said that it's important
+[01:05] to get started somewhere.
+[01:08] But we want to get an
+idea of the situation,
+[01:11] and that is what this
+video is aiming at.
+[01:14] Our learning objectives are
+assessments and scores.
+[01:19] Assess the situation.
+[01:21] On the slide, I've listed
+some terms that come to mind
+[01:24] when I assess something.
+[01:25] A workload,
+implementation, a tenant,
+[01:28] anything that an
+organization deploys
+[01:30] for running their business.
+[01:32] That also includes
+non-technical aspects.
+[01:35] I was often dropped into
+a customer to assess,
+[01:38] either driven by an
+incident or driven
+[01:40] by some new tech
+being adopted into.
+[01:43] I would typically start by
+assessing the situation,
+[01:46] getting some
+situational awareness.
+[01:48] What is there?
+[01:49] Who are the stakeholders?
+[01:51] I would have many questions that
+I would try to get answered.
+[01:57] And this is something
+we would expect also
+[01:58] of a cybersecurity architect.
+[02:00] In that role, we need to talk
+with people, read documentation,
+[02:04] inspect designs, and probe
+in live environments.
+[02:08] We are looking for
+holistic understanding,
+[02:11] and we are looking
+for mismatches.
+[02:13] Is the deployment what
+is in the design?
+[02:17] Why is something deployed
+without a design?
+[02:19] What are the requirements,
+and who owns them?
+[02:22] Did anything change, or
+do things need to change?
+[02:25] What do we have?
+[02:26] How are things?
+[02:27] Who is responsible?
+[02:28] What happens if there
+is an incident?
+[02:30] We will have many, many
+questions and many observations.
+[02:34] Based on our findings, we will
+compose a holistic overview
+[02:36] of ourselves and start thinking
+[02:38] of improvements and
+where to start.
+[02:41] Or ways to embrace and
+extend, get more information,
+[02:44] and then advise improvements.
+[02:46] We will look for examples and
+references, best practices,
+[02:50] and getting into
+alignment with them.
+[02:53] The video will cover
+different aspects,
+[02:55] but I want to avoid repeating
+the same information
+[02:57] in every video.
+[02:58] That is why I have decided
+to have an independent video
+[03:01] on assessing and scoring.
+[03:03] Let's start with assessments,
+[03:05] which we can leverage
+immediately.
+[03:09] In the course and the
+videos, we cover frameworks
+[03:10] like the Well-Architected
+Framework
+[03:12] and Cloud Adoption Framework.
+[03:14] For those and for many
+more capabilities,
+[03:17] assessments have been created
+to simplify the process
+[03:20] of understanding if elements
+of the framework are present
+[03:22] in a turn-by-turn
+question approach.
+[03:25] Based on the answers, you will
+get a score and an overview
+[03:28] of elements where there
+is room for improvement.
+[03:31] But if you go and do these
+assessments, you will notice
+[03:34] that they are also
+highly informative.
+[03:36] You are confronted
+with a question
+[03:38] and will think,
+"Have we done this?"
+[03:41] Or maybe even, "This is
+something I've never
+[03:43] considered before."
+[03:45] In essence, it will not only
+probe, it will also educate.
+[03:50] You can do this for yourself,
+[03:51] but think of what this would
+look like if you did it
+[03:54] with a team, making
+it a workshop
+[03:56] to bring people together.
+[03:58] Use it as a conversation
+and education guide.
+[04:01] And at the end, there
+is an actionable score.
+[04:03] It really is a great tool,
+[04:05] and there's many
+interesting assessments
+[04:06] on Microsoft Learn pages.
+[04:08] An example from an assessment.
+[04:11] Here, I have an example from
+one of the assessments.
+[04:13] It is from the Cloud Adoption
+Framework, the security review.
+[04:17] Do we know all the components
+mentioned in the question?
+[04:20] Threat modeling.
+[04:22] Who are stakeholders?
+[04:24] What's the CIS
+control framework?
+[04:26] What is MITRE?
+[04:28] What is classification
+of workloads?
+[04:31] Based on simple questions here,
+[04:33] we could spend a
+significant amount of time
+[04:35] on the topics mentioned.
+[04:36] And yes, you need to be
+familiar with everything here
+[04:39] and in many other places from
+the certification perspective.
+[04:43] Key takeaways to
+use assessments.
+[04:45] For you, for your
+organization, it will help.
+[04:49] Know what is there,
+know what you have,
+[04:52] and then it can help decide
+to what and where to improve.
+[04:58] But what about how we have
+implemented something?
+[05:01] How is that aligned with
+what is the recommendation?
+[05:06] It is a challenge to
+find recommendations,
+[05:07] and it's even a bigger
+challenge to see if and how
+[05:10] that recommendation
+is implemented.
+[05:13] A couple of years ago, Microsoft
+started putting an effort
+[05:16] to bring information about
+recommendations into tooling
+[05:19] and project that onto
+a live environment.
+[05:22] It will show what the
+recommendation is,
+[05:25] where you deviate, and
+what you can do to get
+[05:28] into a recommended state.
+[05:30] With everything that
+matches, you get points
+[05:32] that contribute to a score.
+[05:34] Higher score, better.
+[05:35] Lower score, more
+room for improvement.
+[05:38] It takes making improvement
+points visible,
+[05:42] actionable, and traceable.
+[05:44] It has evolved over time with
+more capabilities to assign
+[05:47] to an owner, suppress, or
+do things differently,
+[05:50] but at its core, it
+has not changed.
+[05:53] It has become an instrumental
+improvement driver
+[05:56] in many organizations.
+[05:58] For me, these scores are the
+first thing I want to inspect
+[06:01] when I'm at a new environment.
+[06:03] They immediately give me a
+feeling for what the state is,
+[06:06] higher, better; low,
+work to be done.
+[06:10] They are also great
+for stakeholders,
+[06:12] for stakeholder conversations.
+[06:14] Everyone understands this score.
+[06:16] Why did it go up?
+[06:17] Why did it go down?
+[06:19] Did we not get any extra
+people to address an issue?
+[06:21] And why is the score not
+improved by doing that?
+[06:25] Well, conversations.
+[06:29] Making things visible
+and traceable.
+[06:30] Great! I love scores.
+[06:33] You should do it too.
+[06:34] Start using them and
+start making improvements
+[06:36] through them.
+[06:38] Now, where do you find these?
+[06:41] In a couple of places.
+[06:43] Also, in a couple of videos in
+the series, you will see them.
+[06:46] But in this video, I wanted
+[06:47] to expose the general
+concept of scores.
+[06:50] That way, we do not need
+to discuss it again
+[06:52] and again in each single video.
+[06:55] There are three
+scores that I would
+[06:56] like to inspect together
+here briefly: Compliance,
+[07:00] Defender for Cloud Secure Score,
+and Defender Extended Detection
+[07:05] and Response Secure
+Score, Defender XDR,
+[07:07] the ones we see here on the
+screen being mentioned.
+[07:11] Also listed on the
+screen is over time.
+[07:14] We want and need to understand
+how our score changes over time.
+[07:18] Did it get better?
+[07:19] Did it get worse?
+[07:20] How was it last month?
+[07:22] Are our efforts of improving,
+are they moving the needle?
+[07:26] But let's look at some
+[07:27] of the interface you can
+expect to see scores in.
+[07:31] Microsoft Defender Score.
+[07:33] We start with Microsoft
+Defender Score,
+[07:35] which brings together advisories
+on threats, identity,
+[07:38] endpoint data, and applications
+through different connectors
+[07:41] and Defender capabilities.
+[07:43] It shows a score, but
+also lists every element
+[07:46] that contributes to
+the score or not.
+[07:50] The services automatically
+keep track of scores, history,
+[07:53] and have details on what made
+the score improve or regress.
+[07:57] It will also project the score
+on top of the environment.
+[08:00] That can help to decide on
+what needs to be prioritized.
+[08:04] More on Microsoft Defender
+in another video.
+[08:09] Defender for Cloud Score.
+[08:11] What about our hybrid and
+multi-cloud deployments,
+[08:13] our infrastructure as
+a service and platform
+[08:16] as a service aspects of
+our IT environments?
+[08:18] For that, we can leverage
+Defender for Cloud,
+[08:22] the advisories that it is
+based on or are derived
+[08:24] from NIST, PCI, and CIS.
+[08:26] These are aggregated into
+the Microsoft Cloud Security
+[08:29] Benchmark, the MCSB, which helps
+us to get to a certain score.
+[08:34] For a score over time,
+[08:36] some additional work
+needs to be put in.
+[08:38] These are configurable
+workbooks to help with that.
+[08:41] Defender for Cloud will be
+a topic for another video.
+[08:46] Compliance Manager Score.
+[08:48] When it comes to getting
+a better understanding
+[08:50] of compliance, we can leverage
+Compliance Manager from Purview.
+[08:54] It is supplied with
+interpretation
+[08:56] for many compliance frameworks
+and standards worldwide.
+[08:59] And if we activate one
+of those templates,
+[09:02] the technology will help us to
+understand where we need to put
+[09:05] in efforts towards getting
+into a compliant state.
+[09:08] More on compliance itself and
+on Purview in another video.
+[09:13] We've come to the
+end of this video.
+[09:15] What we looked at was
+assessments and scores.
+[09:18] Both are great elements for
+your cybersecurity toolbox.
+[09:20] Start leveraging them.
+[09:23] So thank you for
+watching this video.
+[09:25] And go and check the other
+videos in the series
+[09:27] and online learning
+content to learn more.
+[09:30] And I hope we meet
+in another video.
+[09:31] Thanks again, and stay safe.

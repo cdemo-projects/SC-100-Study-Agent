@@ -1,0 +1,776 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:07] And welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:17] In this video, we will discuss
+the topic of identity,
+[00:20] discover why identity's the new
+fault line of cybersecurity,
+[00:24] and learn how to protect
+your digital world
+[00:27] in this video designed
+[00:28] for aspiring Microsoft
+cybersecurity architects.
+[00:31] The content of this video is
+mostly aligned with the area
+[00:34] of security operations,
+identity, and compliance
+[00:37] from a certification
+perspective.
+[00:39] Let's start with the question,
+[00:41] why is identity
+the new perimeter?
+[00:43] That is a question I
+hope you can articulate
+[00:45] after watching the video.
+[00:47] Maybe you already can do that.
+[00:48] Let's hope that you can
+for sure after this video.
+[00:53] What is it?
+[00:54] Let's look at another
+question to get us started.
+[00:56] So what is it?
+[00:57] An identity is important
+because it allows users
+[01:00] to access resources and services
+securely and conveniently, or B,
+[01:04] it enables organizations
+to monitor
+[01:06] and audit user activities and
+enforce policies and compliance;
+[01:10] or C, because it reduces
+the risk of data breaches,
+[01:13] cyberattacks, and unauthorized
+access by verifying the identity
+[01:17] and permissions of
+users and devices.
+[01:19] Or is it D, all of the above?
+[01:22] Well, the correct answer
+is D, all of the above.
+[01:25] Identity's important from a
+cybersecurity perspective
+[01:29] because it covers multiple
+aspects of securing
+[01:31] and managing access to
+resources and services.
+[01:34] By using identity as
+the new perimeter,
+[01:36] organizations can ensure
+that only authorized users
+[01:39] and devices can access sensitive
+data and applications,
+[01:43] regardless of where
+they are located
+[01:45] or what networks they use.
+[01:47] Additionally, identity solutions
+can provide visibility
+[01:50] and control over user activities
+and behaviors, and help detects
+[01:54] and prevent potential
+stress and vulnerabilities.
+[01:58] Identity is not only
+a security measure,
+[02:00] but it's also a business enabler
+[02:02] that can improve
+user experience,
+[02:03] productivity, and efficiency.
+[02:05] Therefore, identity's
+a crucial components
+[02:07] of any modern
+cybersecurity strategy.
+[02:12] Here we have the main
+objectives for this video.
+[02:15] And we will talk
+about identities,
+[02:17] protocols that are related,
+zero trust, and we will look
+[02:21] at some advisories
+around identity.
+[02:24] Why use an identity?
+[02:26] Identity is usually a way
+of using a digital identity
+[02:29] to access something
+or do some action.
+[02:32] The most usual form of a
+digital identity's an account,
+[02:36] and we often have more
+than one identity.
+[02:38] We can use the identity
+to manage many things.
+[02:41] In the video zero trust,
+I described the pillars
+[02:43] and principles of zero trust.
+[02:45] Identity is a pillar by itself
+in the zero trust concept.
+[02:49] And it's an important one.
+[02:51] Working with identities is
+a core value for Microsoft
+[02:54] and that has not
+changed with cloud.
+[02:56] What has changed are the
+protocols and products
+[02:59] when we talk about Microsoft.
+[03:01] Cloud and identities we
+must mention in the family
+[03:04] that are now part of Entra.
+[03:06] But we will look at
+Entra in more detail
+[03:08] in another video soon.
+[03:10] So let us review some more
+basic identity aspects.
+[03:14] The graphic shows a summary
+of the importance aspects
+[03:17] for [inaudible] identities.
+[03:19] This is the process of verifying
+that something is what it claims
+[03:22] to be, authentication.
+[03:25] Then there is the process
+[03:25] of obtaining permissions,
+authorization.
+[03:29] And everything needs to be
+managed or self-managed.
+[03:32] That will be administration.
+[03:35] And we need reporting,
+which is auditing.
+[03:38] These are the four pillars
+that make up the base
+[03:40] of identity management.
+[03:42] I call these the Four A's
+of identity management.
+[03:46] Identity's new control
+plane, or the control plane,
+[03:49] is the new perimeter because
+traditional networking
+[03:51] perimeters have become obsolete
+in the era of cloud computing
+[03:55] with mobile devices and remote
+working, it has all changed.
+[03:59] The network perimeter used
+to be a physical boundary
+[04:01] that separated the
+trusted internal network
+[04:04] from the untrusted external
+network [inaudible] is no longer
+[04:07] viable when users use devices
+and applications can be anywhere
+[04:11] and access resources and
+services over the internet.
+[04:14] Therefore, the identity
+of the user, device,
+[04:17] and applications
+becomes new perimeter
+[04:18] that determines the level
+of access and security.
+[04:22] Identity's the new perimeter,
+[04:23] because it enables
+zero trust security,
+[04:26] the zero trust security model,
+where every request is verified
+[04:30] and validated before
+granting access.
+[04:33] Identity's the new perimeter
+[04:35] because it provides
+a consistent,
+[04:37] a seamless user experience
+[04:38] across multiple
+platforms and devices.
+[04:41] Identity's the new perimeter
+[04:42] because it empowers
+organizations
+[04:44] to embrace digital
+transformation and innovation
+[04:46] without compromising
+security and privacy.
+[04:50] Now one of the most fundamental
+aspects of security
+[04:53] in the public cloud is identity.
+[04:55] Identity is the basis for a wide
+variety of security services.
+[05:00] So it's both authentication,
+authorization, encryption,
+[05:03] auditing, and compliance.
+[05:05] Identity determines
+who or what can access
+[05:07] or perform certain actions on
+data and resources in the cloud.
+[05:11] Access controls protects data
+and resources from unauthorized
+[05:15] or malicious access,
+and it decides
+[05:17] which requests should
+be permitted or denied.
+[05:20] Access control relies on
+identity to verify the identity
+[05:24] of the requestor, and
+enforce policies based
+[05:26] on the requestor's role,
+attributes, and its context.
+[05:31] Identity Access Management or
+AIM, in short, is the process
+[05:35] of defining, managing,
+and verifying identities
+[05:38] and their access
+rights in the cloud.
+[05:41] IAM lets the right individuals
+access the right resources
+[05:44] at the right time for the
+right reason while preventing
+[05:48] unauthorized or
+inappropriate access.
+[05:51] IAM also enables users to
+manage their own credentials
+[05:54] and preferences, such
+as password [inaudible]
+[05:56] and single-factor
+authentication.
+[05:59] Identity and access management
+is boundary security
+[06:02] [inaudible] clouds.
+[06:03] Unlike traditional
+perimeter-based security models
+[06:05] that rely on firewalls and VPNs,
+IAM secures access to data
+[06:09] and resource at the
+granular level,
+[06:11] regardless of where
+they are located,
+[06:13] or how they are accessed.
+[06:16] Identity access management must
+be treated as a foundation
+[06:18] of any secure and fully
+compliant public cloud
+[06:21] architecture, as it
+enables organizations
+[06:24] to achieve security,
+agility, scalability,
+[06:27] and cost efficiency
+in the cloud.
+[06:30] Now, what is an
+identity provider?
+[06:33] An identity provider, or IdP,
+is a service that can confirm
+[06:37] and prove our identity when we
+want to use a cloud resource.
+[06:41] We can provide some
+evidence for the IdP
+[06:43] such as our [inaudible] name
+and passwords or other kinds
+[06:46] of proof, and ask the IdP
+to validate our identity.
+[06:50] Then we can use the
+validation from the IdP
+[06:54] to access the resource we want.
+[06:57] This is like calling home to get
+approval before we do something.
+[07:02] Different IdP's may
+have different features
+[07:04] and abilities, but some
+common elements are
+[07:07] that they are a database
+of user identities,
+[07:09] where the IdP keeps information
+[07:11] about who we are
+and what we can do.
+[07:13] Or it can be a
+verification system,
+[07:16] where the IdP evaluates the
+evidence, and decides whether
+[07:18] to give us validation
+of our identity.
+[07:21] A security mechanism for the IdP
+defense itself and its users
+[07:25] from unauthorized
+access and attacks.
+[07:28] And we trust our IdP.
+[07:29] And we can also trust other
+IdP's that our IdP trusts.
+[07:33] And this is called federation.
+[07:36] And that lets us use our
+identities from one IdP
+[07:40] to access resources that
+are part of another IdP.
+[07:43] And this way, we don't need
+to have multiple accounts
+[07:47] and remember multiple passwords.
+[07:49] A reduction of identities is
+something we should address our
+[07:52] designs and implementations.
+[07:54] Less is more.
+[07:55] As the cybersecurity architects,
+we are very interested
+[07:58] in the IdP and how
+it will operate.
+[08:01] It's an important control
+plane, where we can monitor
+[08:04] and manage all kinds
+[08:04] of interactions with
+cloud resources.
+[08:07] And we will often collaborate
+[08:09] with identity access management
+architects and specialists
+[08:12] who create and implement
+the IdP and its policies.
+[08:16] In fact, many identity
+architects also become
+[08:20] cybersecurity architects,
+because these two fields are
+[08:23] so closely connected in
+the cloud security domain.
+[08:27] However, we will depend a lot
+on the IdP's capabilities
+[08:31] and offerings when it
+comes to what we can do,
+[08:34] and what applications require.
+[08:36] And we will have
+protocol limitations.
+[08:39] In the end, for authentication
+and authorization,
+[08:43] users will receive tickets,
+tokens, and other forms
+[08:46] that can verify [inaudible]
+identity and get permissions.
+[08:49] These are based on protocols,
+and there's many of them.
+[08:53] This is one of the challenges
+[08:55] for identity
+application architects.
+[08:57] Basically the application's
+built to be able
+[09:00] to comprehend a
+certain protocol.
+[09:03] Here are some of the protocols
+that I've put together.
+[09:06] And the first three, Security
+Assertion Markup Language, SAML,
+[09:10] and WS-Federation, and
+Open Authentication --
+[09:12] I will talk about that
+Open ID Connect --
+[09:15] are usually called
+federative modern protocols.
+[09:18] These are protocols that are
+suitable for the internet,
+[09:21] and are very common
+[09:22] for [inaudible]
+application and processes.
+[09:25] These are protocols that
+you should remember.
+[09:28] And WS-Federation, WAS-Fed,
+is from the [inaudible].
+[09:32] It's not so popular, and
+the other ones actually are
+[09:35] more widespread.
+[09:36] So if you look at security
+assertion markup language,
+[09:39] that's what many organizations
+started adopting
+[09:41] into when they started working
+beyond traditional networking
+[09:44] boundaries with other companies.
+[09:47] And I've grouped
+open authentication
+[09:50] and Open ID Connect together,
+because Open Authentication,
+[09:54] OWAS, is mainly an
+authorization protocol.
+[09:56] And Open ID Connect was built
+on top of OWAS to provide
+[09:59] with authentication
+functionally.
+[10:03] The other three protocols here
+are examples of older protocols.
+[10:07] They are of course
+legacy protocols.
+[10:10] They don't work well outside
+of a company, and even fail
+[10:13] when crossing
+network boundaries.
+[10:15] But there can be a
+lot of applications
+[10:17] that still need these in
+the existing environments.
+[10:20] A major issue for us
+[10:22] from a security perspective is
+there are no hard controls.
+[10:26] There's no way of
+defining the protocol.
+[10:31] And if you have an application
+that has a dependency
+[10:33] on a legacy protocol, we need
+to find support for that.
+[10:36] An issue with these
+legacy protocols is
+[10:39] that they were not intended to
+support zero trust principles.
+[10:43] They don't check back.
+[10:45] They don't refresh regularly,
+and zero trust principles
+[10:49] like least privilege and verify
+explicitly are hard to achieve.
+[10:53] With modern protocols,
+like SAML, OIDC, WS-Fed,
+[10:57] we can apply the check back
+ability that enables us
+[11:00] to verify explicitly from
+the zero trust principle.
+[11:04] But it also allows us
+to do that frequently.
+[11:07] Typically with modern protocols,
+[11:09] the token we have
+obtained will expire
+[11:11] and needs to be refreshed.
+[11:14] That refreshment is the
+chance we can use to recheck,
+[11:18] and if something has
+changed, act differently.
+[11:21] There is a regular
+phone-home, and by having
+[11:24] that checking moment,
+recurring checking,
+[11:26] we can start expressing
+different kind of behavior.
+[11:31] With modern protocols,
+[11:32] we can also demonstrate
+different levels of trust,
+[11:35] changing the authorization
+behavior based
+[11:37] on evidence we evaluated.
+[11:39] Let's think of an example.
+[11:40] You are working from the
+office, and you go home.
+[11:43] Same user, same device,
+different environments.
+[11:46] We can use the information
+from that and act differently
+[11:48] for the user when working from
+the office or working from home.
+[11:52] The IdP can put
+information in the token
+[11:55] that can be used in
+the application.
+[11:57] At the office, you can download.
+[11:58] At home, you cannot.
+[12:01] The slide also has
+a little diagram
+[12:03] that illustrates basic
+interaction process
+[12:06] between a user session,
+the IdP in an application.
+[12:09] In reality, it's likely to be
+more complex, but in essence,
+[12:13] this is what will happen.
+[12:14] The user accesses
+an application.
+[12:16] The application said go
+away, and redirects the user
+[12:20] to go elsewhere to authenticate
+and authorize themselves.
+[12:23] The user context is Step 3.
+[12:25] The IdP provides their identity,
+their username, password,
+[12:29] or something else,
+[inaudible] methods.
+[12:31] And then the IdP will
+verify that in Step 4
+[12:34] if everything turns out to
+be okay, hand over a piece
+[12:37] of evidence to the user, which
+the user can then bring back
+[12:40] to the application and the
+application check the evidence
+[12:44] and see what it says
+about the user,
+[12:46] and then grant the
+appropriate access
+[12:48] for that specific user
+in the application.
+[12:52] Now let's consider
+zero trust once more.
+[12:56] The zero trust strategy
+needs flexible access
+[12:59] to applications,
+systems, and data.
+[13:01] At the same time, organizations
+must protect both users
+[13:05] and the resources they
+need for their work.
+[13:08] The five steps that an
+organization should follow
+[13:10] to secure identities, well,
+they are first of all,
+[13:13] announce your credentials.
+[13:15] If users in your identity
+system have weak passwords
+[13:17] or do not use something like
+MFA, make them stronger.
+[13:21] Otherwise you will be
+compromised frequently,
+[13:23] not just occasionally or never.
+[13:25] It will happen frequently.
+[13:26] A second thing to look
+[13:28] at is reducing the
+exposure to attacks.
+[13:31] Make it harder for
+hackers, avoiding older,
+[13:34] less secure protocols.
+[13:36] Limit the access points,
+and have more controls
+[13:39] over administrative
+access to resources.
+[13:42] Third thing to consider,
+automating the threat response.
+[13:45] Reduce cost and risk by reducing
+the time criminals can stay
+[13:48] in your environment.
+[13:51] You have to also take
+a four-step increase
+[13:53] in your awareness, and
+use auditing and logging
+[13:55] of security-related events and
+others to help identify patterns
+[13:59] that may show internal
+attacks or external attempts
+[14:01] or breaches of your network.
+[14:04] And enable [inaudible]
+user help.
+[14:05] Reduce friction of your users
+[14:07] by letting your users
+stay productive,
+[14:09] even as you stay alert.
+[14:14] This is how Microsoft's zero
+trust architecture shows the
+[14:17] main technical components
+of zero trust.
+[14:20] A key basis of zero trust
+security is identities,
+[14:23] both human and non-human, or
+interactive and non-interactive.
+[14:27] They both need strong
+authentication,
+[14:29] whether they are using personal
+or core [inaudible] points
+[14:32] with compliant devices and
+requesting access based
+[14:35] on strong policies that
+follows zero trust principles,
+[14:38] which [inaudible] verification,
+these privilege [inaudible].
+[14:43] The zero trust policy access
+unified policy enforcement
+[14:47] that checks the request and
+explicitly verifies signals
+[14:50] from all six foundational
+elements based
+[14:52] on policy configuration and
+allows least privilege access.
+[14:56] Signals include the user role,
+location, device compliance,
+[15:00] data sensitivity,
+application sensitivity,
+[15:03] and more besides telemetry
+and state information.
+[15:07] The risk assessment for
+threat protection also inputs
+[15:10] into the policy to authentically
+react to threats in real time.
+[15:13] Our policy's enforced
+at the time of access
+[15:16] and continuously evaluated
+through [inaudible].
+[15:18] And the policy's further
+improved by policy optimization
+[15:23] and of course governance and
+compliance are essential
+[15:26] for a strong zero
+trust implementation.
+[15:30] Security policy assessment
+[15:31] and productivity
+optimization are needed
+[15:33] to measure the telemetry across
+the services and systems,
+[15:37] and the telemetry
+and analytics inputs
+[15:39] into the threat
+protection systems.
+[15:43] Large amounts of telemetry
+and analytics enriched
+[15:46] by threat intelligence produce
+high-quality risk assessments
+[15:49] that can be either manually
+investigated or automated.
+[15:53] Attacks happen
+quickly in the cloud,
+[15:55] and your defense systems
+must act quickly, too.
+[15:58] You almost cannot
+respond fast enough
+[16:00] or sort through the risks.
+[16:02] The risk assessment inputs into
+the policy engine for real-time
+[16:06] to do automated
+threat protection,
+[16:08] and additional manual
+investigation if needed.
+[16:12] Traffic filtering and
+segmentation is applied
+[16:15] to the evaluation
+and enforcement
+[16:17] from the zero trust policy
+before any access is given
+[16:20] to any public or
+private network.
+[16:23] And of course, data should
+have classification, labeling,
+[16:26] and encryption for emails,
+documents, and structured data.
+[16:30] When it comes to applications,
+[16:32] access to applications
+should be adaptive
+[16:34] for both [inaudible] service
+or on-premises applications.
+[16:38] And we need to apply room-temp
+controls to the infrastructure,
+[16:41] which serve as containers;
+infrastructure as a service,
+[16:44] platform as a service,
+and [inaudible] sides
+[16:46] with just-in-time and virtual
+controls actively engaged.
+[16:51] Finally, telemetry, analytics,
+and assessment from the network,
+[16:55] data, apps, and the
+infrastructure are fed back
+[16:58] into the policy optimization
+and threat protection systems.
+[17:03] Identity is an essential element
+[17:05] of zero trust
+[inaudible] portfolio,
+[17:08] and are many best practices
+related to identity.
+[17:11] That's why the frameworks
+[17:12] for best practices
+are lessons learned,
+[17:14] like the Cloud
+Adoption Framework
+[17:16] and the Well-Architected
+Framework have special
+[17:19] sectional identities.
+[17:21] In the Cybersecurity
+Architect series,
+[17:22] we also have specific
+videos on these frameworks,
+[17:27] but there we discuss more
+the security aspects
+[17:29] of these frameworks.
+[17:30] But there are, in those
+frameworks, other [inaudible]
+[17:32] like the one on identity.
+[17:37] What is the best resource
+for making things practical?
+[17:39] It's the MCSB: the Microsoft
+Cloud Security Benchmark.
+[17:43] It has a whole MCSB
+domain specifically
+[17:46] on identity management,
+and it covers lots
+[17:48] of useful advice there, and are
+frequently used as a checklist,
+[17:52] and as a list or requirements
+when I'm designing.
+[17:55] These elements of course are
+based on best practices,
+[17:58] and they align with zero trust,
+and we also see these integrated
+[18:01] in the Cloud Adoption Framework
+[18:03] and the Well-Architected
+Framework.
+[18:05] It is all related, and
+it's all coherent.
+[18:09] These are the MCSB controls and
+identity from the documentation,
+[18:13] again with lower numbers
+indicating a higher priority.
+[18:17] We need to include these
+in our designs and check
+[18:20] if they are present in any
+existing environments.
+[18:23] If they are not, then we need to
+devise a plan for improvement.
+[18:27] And try to think of
+what these are about,
+[18:30] just from a conceptual
+point of view.
+[18:32] And if we take one example here
+of one of these controls, IM1:
+[18:37] use centralized identity
+systems that focuses
+[18:40] on identity providers
+as a federation.
+[18:43] This means that we must have
+[18:45] that in our enterprise,
+in our architectures.
+[18:48] Another one that
+I can highlight,
+[18:49] this strong authentication
+controls, IM6.
+[18:53] This reminds me of moving
+away from passwords and took
+[18:56] out password lists, where
+authentication is based
+[18:58] on evidence, where
+the evidence is more
+[19:00] than just a password,
+something you know.
+[19:03] Passwords are not secure.
+[19:04] They can be hacked, leaked, they
+are [inaudible] part of people.
+[19:07] So it is things like this
+controls that you should be able
+[19:10] to connect to practical
+elements such as people,
+[19:13] process, and technologies.
+[19:15] And of course, the MCSB will
+have more details on that.
+[19:18] And so the Cloud
+Adoption Framework
+[19:21] and the Well-Architected
+Framework have.
+[19:23] But try to think of these
+controls how you would
+[19:27] understand them and how
+you would apply them.
+[19:32] Okay. That's it for now.
+[19:33] Let's recap what we
+discussed in this video.
+[19:37] So we talked about how
+identities matter,
+[19:40] and how they relate to our
+efforts to achieve zero trust.
+[19:44] Protocols are a key element,
+because many features we want
+[19:47] to use depend on authentication
+and authorization protocols.
+[19:51] Lastly, we examined three
+sources to use when designing
+[19:54] or when checking
+identity coverage
+[19:56] in our cybersecurity architects
+and implementations.
+[20:00] If you want to learn more,
+[20:01] you can access the training
+materials on Microsoft Learn.
+[20:04] And these short links, they will
+take you to the main source
+[20:08] of reference for the
+cybersecurity architect role.
+[20:12] Thank you for
+watching the video.
+[20:14] Meet you again in another one
+[20:15] in the Cybersecurity
+Architect series.
+[20:17] Until then, stay safe.

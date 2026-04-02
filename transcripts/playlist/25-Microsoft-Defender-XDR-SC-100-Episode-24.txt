@@ -1,0 +1,359 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:07] Welcome to this video.
+[00:08] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:11] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:16] In this video, we focus
+[00:17] on aspects bringing elements
+together in Defender XDR.
+[00:21] Discover how Microsoft Defender
+XDR unifies security operations
+[00:25] and empowers you to
+protect application data
+[00:28] with cutting-edge strategies,
+all in one essential video
+[00:31] for cybersecurity architects.
+[00:34] The content of this video is
+mostly aligned with the area
+[00:37] of solutions for
+application data, well,
+[00:39] it's from a certification
+perspective.
+[00:42] So why Defender XDR?
+[00:44] That's the main question for
+this video, and what we want
+[00:47] to discuss is the capabilities
+[00:48] that we can leverage
+from Defender XDR.
+[00:52] Now, Zero Trust is built
+on six main pillars,
+[00:56] often shown in this
+reference graphic.
+[00:58] Reviewing this framework
+highlights key capabilities
+[01:01] within each area, aiding
+protection, detection,
+[01:03] and response --
+Defender-focused approach.
+[01:07] Identity is mostly
+covered by Entra.
+[01:09] Data is mostly
+covered by Purview.
+[01:12] Infrastructure network is mostly
+covered by Defender for Cloud.
+[01:15] But how to deal
+with applications
+[01:17] and endpoints and
+maybe some data.
+[01:21] How can we start also to
+cross-correlate more?
+[01:24] Now, for strong coordinated
+protection and rapid action
+[01:27] across different
+areas, it is important
+[01:29] to see how Defender XDR brings
+endpoint, identity, data,
+[01:32] and app security together in one
+platform, enabling organizations
+[01:36] to implement Zero
+Trust effectively.
+[01:40] Quick orientation based on
+the graphic from the MCRA.
+[01:43] I've highlighted
+areas of interest,
+[01:47] endpoints as in servers,
+phones, laptops,
+[01:49] but also as in
+operational technology
+[01:52] and Internet of Things, IoT.
+[01:55] Identity as in modern
+identity-based protocols
+[01:59] such as SAML, WS Federation,
+and open authentication,
+[02:02] but also legacy
+identities rooted
+[02:04] in protocols as
+Kerberos and NTLM.
+[02:07] The ones we find in Entra ID
+and the ones that we find
+[02:10] with active directory
+domain services,
+[02:12] the on-premises capability
+from a directory perspective.
+[02:16] And also highlighted the
+security operation center,
+[02:19] where all data from
+everywhere flows together,
+[02:22] and we make sense of
+that holistically,
+[02:25] and where we respond in
+case of an incident.
+[02:30] Examining the MCRA from another
+perspective, specifically
+[02:33] in relation to security
+operations in a SOC,
+[02:35] reveals a clear connection to
+the mind referenced earlier.
+[02:39] Defender for Cloud and its
+associated defender's primary
+[02:42] focus on infrastructure
+and platform as a service
+[02:46] and where Defender XDR
+addresses additional areas.
+[02:50] Defender for Cloud coordinates
+its respective defender
+[02:52] similarly, and Defender XDR
+organizes several other
+[02:56] defenders as well.
+[02:59] Defenders are a family
+of products that help
+[03:01] to protect your cloud
+and hybrid environments
+[03:04] from various threats.
+[03:05] And they do this by gathering
+data from different sources
+[03:08] such as logs, alerts,
+events, and telemetry
+[03:12] and by checking the
+configuration and compliance
+[03:14] of your resource and policies
+and providing recommendations
+[03:17] to improve your
+security posture.
+[03:19] They will also be useful
+for delivering advisories
+[03:23] and alerts based on the
+latest threat intelligence
+[03:25] and behavioral analytics and
+prioritizing them according
+[03:28] to severity and impact.
+[03:31] They will also help
+detecting anomalies
+[03:33] and suspicious activities
+across your attack surface
+[03:35] and correlating them to identify
+attack chains and root causes.
+[03:40] Mapping the detected threats
+to the MITRE ATT&CK framework
+[03:44] and providing rich
+contextual information
+[03:46] and investigation tools.
+[03:48] They will also help you to
+act on the identified threats
+[03:51] by providing automation or
+a manual response action,
+[03:54] such as isolating a device,
+[03:56] blocking IP address,
+or deleting files.
+[03:58] Defenders work together.
+[04:00] They work together to
+provide a comprehensive
+[04:02] and unified defense for your
+cloud and hybrid environments,
+[04:05] and they enable you to
+achieve faster detection,
+[04:08] investigation, and response.
+[04:10] A Defender XDR is fed
+by some other sources
+[04:14] as other defenders.
+[04:16] Some of these were individual
+standalone capabilities,
+[04:19] but we need to combine
+the info from sources
+[04:21] to get the full picture.
+[04:23] To see the event for an identity
+and a device and to be able
+[04:26] to correlate that with an
+activity and application
+[04:29] when implementing data, for
+example, it is all connected,
+[04:32] and Defender XDR typically
+connects that together.
+[04:36] On the graphic, I've listed
+some capabilities that flow
+[04:38] into Defender XDR, and for
+[04:40] which the configuration is now
+controlled through Defender XDR.
+[04:45] And also listed the two other
+main players, Defender for Cloud
+[04:48] and a capability where
+everything can flow into,
+[04:50] ultimately, Microsoft Sentinel.
+[04:54] But let us connect a
+couple of dots here
+[04:55] when it comes to Defender XDR.
+[04:58] We want to solve the problem of
+visibility and connectivity.
+[05:02] A harmful payload can infect an
+endpoint and use an identity
+[05:06] on the endpoint to jump
+to other endpoints,
+[05:09] or it can compromise an
+application or data.
+[05:12] The defenders that are
+part of Defender XDR,
+[05:14] they have their role, but we
+also want them to work together.
+[05:18] That is why they are
+connected to Defender XDR,
+[05:20] and we want to bring in more
+than only the defenders.
+[05:25] And this graphic, we
+also see something else.
+[05:28] Other challenges or issues
+that we need to handle.
+[05:30] At the bottom of the graphic,
+we see insider threats,
+[05:33] insider risks,
+unintentional leaks,
+[05:36] unhappy employees, violations.
+[05:38] These are not issues caused
+by a malicious actor;
+[05:40] these are issues caused
+by normal users,
+[05:43] but we still have a
+problem with that.
+[05:46] We also need to find a way to
+handle that kind of situation.
+[05:50] Now these elements relate
+to insider risk management,
+[05:53] and the examples on the current
+slides illustrates what these
+[05:57] risk patterns could look
+like, which can be set
+[05:59] up for detection that the video
+does not cover the topic further
+[06:04] as it relates to the
+Purview capabilities.
+[06:07] There is a whole course on
+that, and some elements
+[06:09] from that foundation
+are part of the role
+[06:11] of a Microsoft
+cybersecurity architects.
+[06:14] Now back to the unified
+security operations platform,
+[06:17] back to Defender XDR and the
+integration, we integrate XDR
+[06:21] and Purview, and Sentinel
+for unified visibility
+[06:24] and complete data coverage.
+[06:26] Defender XDR has evolved into
+a single operations platform,
+[06:31] security operation platform
+with Microsoft Defender,
+[06:33] combining SIEM functionality,
+SOAR functionality,
+[06:36] and XDR capabilities, but
+also posture management,
+[06:40] cloud security,
+threat intelligence,
+[06:42] and generative AI capabilities
+in the form of Security Copilot.
+[06:46] The Defender portal
+centralizes services
+[06:48] like Microsoft Defender
+XDR, Sentinel,
+[06:50] exposure management and, like
+I said, Security Copilot,
+[06:54] enabling integrated protection
+and streamlined monitoring,
+[06:57] detection, investigation,
+and response
+[06:59] to cybersecurity threats.
+[07:02] I like this graphic that
+is in the documentation
+[07:05] about the unified security
+operations platform
+[07:08] because it shows nicely
+how things are flowing,
+[07:10] and these are flows that
+you want to inspect
+[07:12] as a cybersecurity architect and
+to validate in an environment
+[07:15] to make sure, well, they get
+turned on and are streamed
+[07:18] into a similar pattern like
+we see here on the graphic.
+[07:22] And this is the new default.
+[07:23] If you're not aware of it,
+this is the new default
+[07:25] for the Microsoft portfolio.
+[07:27] For new environments,
+everything is unified
+[07:29] into Microsoft Defender.
+[07:31] For organizations that are
+already using the independent
+[07:34] components, there is time
+[07:35] to get the integration going
+before the new default will
+[07:38] be effectuated.
+[07:41] As a Microsoft
+cybersecurity architect,
+[07:43] you need to use the
+services and dashboards
+[07:45] to assess the current state and
+identify errors for improvement.
+[07:48] You need to check which
+defenders are operating
+[07:51] and which assets are monitored
+by Microsoft Defender.
+[07:54] The platform can only
+analyze onboarded elements.
+[07:57] It can't identify
+vulnerabilities like threats
+[08:00] and vulnerability management
+issues on devices
+[08:03] that are not onboarded, where
+it doesn't have visibility.
+[08:05] For onboarded devices --
+onboarded capabilities,
+[08:08] it leverages behavioral data
+and threat intelligence
+[08:11] to help pinpoint systems
+that need attention.
+[08:14] Now collaborate with your
+organization's subject matter
+[08:17] experts or enhance your own
+knowledge by taking a course
+[08:21] like the Security Operations
+Analyst course, the SC-200,
+[08:24] which covers these
+topics in depth.
+[08:26] And the SC-200 materials
+are really also very useful
+[08:30] for preparing yourselves for
+the SC-100 Cybersecurity
+[08:33] Architect Certification.
+[08:37] We are at the end of this video.
+[08:39] The topic was Defender XDR.
+[08:42] I hope you are now better
+able to understand what it is
+[08:44] and what it can bring to you.
+[08:46] Now, for further reading,
+[08:47] the best starting place
+is the Defender XDR page.
+[08:50] Easy access by using the
+short link mentioned here.
+[08:53] But next to that, start
+learning and transitioning
+[08:55] to the unified security
+operations platform
+[08:57] with Microsoft Defender,
+aka.ms/unsecops.
+[09:01] And ramp up a bit more on
+technologies that make
+[09:05] up the security
+operations platform
+[09:07] by using the security
+operations courseware
+[09:09] at aka.ms/coursesc-200.
+[09:14] Thank you for
+watching the video.
+[09:16] There are more in the series.
+[09:17] Meet you again in another one.
+[09:18] Until that time, stay safe.

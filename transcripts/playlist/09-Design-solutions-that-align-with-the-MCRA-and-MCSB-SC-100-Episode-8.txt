@@ -1,0 +1,604 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+cybersecurity architect.
+[00:17] For this video, we will
+concentrate on two topics:
+[00:20] Microsoft Cybersecurity
+Reference Architectures,
+[00:23] the MCRA, and Microsoft Cloud
+Security Benchmark, the MCSB.
+[00:29] Discover how the
+Well-Architected Framework,
+[00:33] MCRA, and the MCSB can
+help you make smarter,
+[00:38] more secure decisions in your
+cloud architecture journey.
+[00:43] The areas of attention.
+[00:44] So the content of this video is
+mostly aligned with the area
+[00:48] of attention: security best
+practices and priorities.
+[00:51] And that's from a
+certification perspective.
+[00:54] And the main question: How
+to MCRA and how to MCSB.
+[00:57] Can we do it?
+[00:58] Yes, we can.
+[00:59] But what are they, and how can
+we leverage these resources
+[01:02] as a cybersecurity architect?
+[01:04] Do you want to use these?
+[01:06] Absolutely.
+[01:08] So let us get into it.
+[01:09] First of all, what is the MCRA?
+[01:12] A quick question.
+[01:13] What is it?
+[01:14] What do the letters MCRA stand
+for, and what's its purpose?
+[01:18] Is it a mini risk assessment,
+[01:20] a tool to quickly
+evaluate the cyber risk
+[01:22] of a system or project?
+[01:24] Is it multi-cloud
+reference architecture,
+[01:28] a framework to design and
+implement cloud solutions
+[01:30] across different providers?
+[01:32] Or is it C, Microsoft
+cloud security baseline,
+[01:36] a set of recommendations
+[01:37] for Microsoft cloud
+security services?
+[01:40] Is it D, the Microsoft
+critical role analysis,
+[01:43] a method to identify
+[01:44] and prioritize the
+most important roles
+[01:46] of an organization?
+[01:48] Well, let's go for B. It's
+a multi-cloud reference
+[01:53] architecture, a
+framework to design
+[01:56] and implement a cloud solution
+across different providers.
+[01:59] And the MCRA is a guide that
+helps cybersecurity architects
+[02:02] to design and implement cloud
+solutions that are secure,
+[02:05] resilient, scalable,
+and interoperable
+[02:08] across different cloud
+service providers.
+[02:10] It covers topics such as
+cloud governance, identity
+[02:13] and access management, network
+security, data protection,
+[02:17] monitoring, and
+incident response.
+[02:19] And the other topic for
+this video, what is it?
+[02:22] The MCSB.
+[02:24] Is it the Microsoft cloud
+security benchmark,
+[02:30] a set of security controls
+for cloud services?
+[02:33] Is it Microsoft Cloud
+Service Broker,
+[02:36] a tool that enables seamless
+integration and management
+[02:38] of multiple Microsoft
+cloud services?
+[02:41] Is it the Cloud Strategy Board,
+[02:44] a committee that oversees
+the planning and execution
+[02:47] of Microsoft Cloud's
+initiatives?
+[02:50] Well, the answer is A.
+[02:52] The MCSB is a library
+[02:54] that defines the minimum
+security controls
+[02:56] and best practices that
+should be implemented
+[02:58] for any cloud service.
+[03:00] It covers topics such as
+encryption, authentication,
+[03:03] authorization, logging,
+auditing, and compliance.
+[03:08] The MCSB is aligned with the
+Microsoft Cloud Adoption
+[03:11] Framework, the Microsoft
+Well-Architected Framework,
+[03:14] and Zero Trust.
+[03:16] It helps to ensure a
+consistent level of security
+[03:19] across different
+cloud environments.
+[03:22] In this video, we will
+go into what the MCRA is
+[03:25] and what the MCSB is,
+where to find them,
+[03:28] and how to apply them.
+[03:29] We will first look at the
+MCRA and then at the MCSB.
+[03:34] So first the MCRA.
+[03:37] The Microsoft Cybersecurity
+Reference Architectures
+[03:40] describes Microsoft's
+cybersecurity capabilities
+[03:43] and technologies.
+[03:45] The diagrams in the MCRA
+describe how Microsoft's
+[03:48] security capabilities integrate
+with Microsoft platforms
+[03:52] and third-party platforms like
+Microsoft 365, Microsoft Azure,
+[03:57] and third parties like
+ServiceNow, Salesforce,
+[04:00] or platforms like Amazon
+Web Services, AWS,
+[04:04] and Google Cloud Platform, GCP,
+[04:06] first and third-party AI
+capabilities, and more and more.
+[04:11] Initially, the
+MCRA was initiated
+[04:13] to bring everything together,
+to connect the dots,
+[04:15] to be able to see
+the full picture.
+[04:18] Security architecture is a vast
+area, and it keeps expanding.
+[04:22] And there are more and more and
+more products, technologies,
+[04:25] and services that need
+to be pictured in.
+[04:28] You will see expansion,
+and the MCRA is now part
+[04:30] of what we call the Security
+Adoption Framework, or SAF.
+[04:34] For me, the MCRA has been an
+invaluable resource I use a lot
+[04:38] for understanding
+relationships, to borrow from,
+[04:41] or to base my assessments on.
+[04:43] I did a lot of gap analysis,
+[04:45] based on schematics
+from the MCRA.
+[04:48] I started with one schematic,
+but over the years,
+[04:52] many more have been added.
+[04:54] Some directly usable,
+some less, but everything
+[04:57] in the MCRA has had
+value for me so far.
+[05:01] Zero Trust and the MCRA, my
+most appreciated toolboxes
+[05:06] in my toolbox.
+[05:08] We will in this video
+go and have a look
+[05:10] at where you can find the MCRA,
+[05:11] and we'll share a couple
+of examples from it.
+[05:14] Note that the title is
+architectures, plural,
+[05:17] not architecture, singular.
+[05:20] So when it comes to
+capabilities and controls,
+[05:22] the MCRA has got
+some best practices
+[05:25] that it will help us with.
+[05:27] We see them here on the graphic.
+[05:31] It's all about learning what
+you have got available,
+[05:33] things that are
+in the portfolio,
+[05:36] and that will hopefully help
+to select the right thing
+[05:38] that is available, and using the
+right tool for the right job.
+[05:42] And we need to make sure
+that's going to happen
+[05:44] in the consistent
+pattern, right?
+[05:46] So all these elements are things
+[05:49] that the MCRA will help
+you with, being holistic,
+[05:53] being prepared for
+ransomware and attacks,
+[05:55] think about your
+incident response.
+[05:57] So there's content in the MCRA
+that will help with that.
+[06:00] When it comes to another
+example, attack protection.
+[06:04] Attack protection, we need
+to protect against attacks,
+[06:07] which means that we need
+[06:08] to continuously improve what we
+currently have to better set
+[06:12] up for the next thing that
+will, well, maybe hit us.
+[06:16] And for that, we need to use
+several kinds of toolings.
+[06:19] We need to evolve from just
+using a SIEM solution to more
+[06:23] than that, to use not only SIEM,
+but also to SOAR automation
+[06:28] and start using more and
+more extended detection
+[06:30] response capabilities.
+[06:31] So just a couple of
+examples from the MCRA.
+[06:36] Now, let's move to the MCSB.
+[06:39] Where the MCRA has
+more references,
+[06:41] the MCSB is more of a baseline.
+[06:44] The Microsoft cloud security
+benchmark is the successor
+[06:47] of the Azure Security Benchmark,
+[06:49] which was rebranded
+somewhere end of 2022.
+[06:53] The ASB was only for Azure.
+[06:56] The MCSB is much
+broader than that.
+[06:59] Any MCSB is based on guidance
+from external parties.
+[07:04] The Center for Internet
+Security, CIS,
+[07:06] the National Institute of
+Standards and Technologies,
+[07:08] NIST, and the Payment
+Card Industry Standards,
+[07:12] PCI DSS framework.
+[07:14] The Microsoft cloud security
+benchmark includes a collection
+[07:17] of high-impact security
+recommendations you can use
+[07:20] to help secure your cloud
+services in a single
+[07:23] or multi-cloud environment.
+[07:26] MCSB recommendations include two
+key aspects: security controls
+[07:30] and service baselines.
+[07:32] Security controls are generally
+applicable recommendations
+[07:36] across your cloud workload.
+[07:38] Each recommendation will,
+next to the recommendation,
+[07:41] also identify a list
+of stakeholders
+[07:43] that are typically involved
+in planning, approval,
+[07:46] or implementation
+of the benchmark.
+[07:48] It links back to roles
+and responsibilities
+[07:50] within an organization.
+[07:53] Service baselines
+apply the controls
+[07:55] to individual cloud services
+to provide recommendations
+[07:58] on that specific service's
+security configuration.
+[08:02] The baselines start with
+Azure, but they are expanded
+[08:04] to other cloud solutions.
+[08:07] All of this is done in the MCSB
+through 12 control domains.
+[08:11] In some of the other videos
+[08:13] in the cybersecurity architect
+series, I will refer
+[08:16] to these MCSB control
+elements very often.
+[08:21] For every domain, there will
+be advisories, and usually,
+[08:25] they are in a range between
+three and 11 advisories,
+[08:28] all of them relevant, but the
+lowest number should have the
+[08:30] highest priority.
+[08:32] Make sure you have coverage
+[08:34] of the domains you are
+designing your architectures.
+[08:36] And in any existing environment,
+we should start checking
+[08:39] if the elements are present
+and people are accountable,
+[08:42] and if not, we find ourselves
+an improvement point.
+[08:46] And then, depending on the
+risk, urgency, and cost,
+[08:48] and many other aspects, we will
+start driving improvements.
+[08:51] Let's look at the MCSB
+control elements together.
+[08:57] Cybersecurity
+capabilities and control.
+[08:59] On this graphic, I have taken
+two MCSB control domains
+[09:02] with their controls.
+[09:03] And as you can see, for
+governance and strategy,
+[09:06] there are 10 listed, but I think
+there is actually one more.
+[09:09] We will check that in a moment.
+[09:11] And before we go and check, I
+want to point out the numbering.
+[09:14] Everything listed is
+important, but one is higher
+[09:18] on a priority list
+than a lower number.
+[09:21] Life is all about priorities,
+and, in this case,
+[09:24] a lower number should give
+something a higher priority.
+[09:28] Another thing to note is that
+everything is connected.
+[09:31] The MCSB control
+domains are integrated
+[09:34] with the Cloud
+Adoption Framework
+[09:35] and the Well-Architected
+Framework, and vice versa.
+[09:41] If you take the
+Well-Architected Framework,
+[09:43] that has a security pillar, and
+there you will find information
+[09:46] on DevOps and DevOps security.
+[09:48] Important aspects from the
+Well-Architected Framework is
+[09:51] to ensure there is
+a threat model.
+[09:53] We see that back in the
+MCSB controls also.
+[09:57] I do hope you start
+seeing these connections
+[09:59] between the different areas
+we cover in the videos
+[10:02] or that are part
+[10:02] of the cybersecurity architect
+modules on Microsoft Learn.
+[10:06] And to complete the list, yes,
+[10:08] everything is conceptually
+grounded into Zero Trust.
+[10:12] And the MCRA we
+discussed earlier
+[10:13] in this video also has a lot
+of information on everything.
+[10:17] Let's look at the MCSB quickly.
+[10:21] Here we are at the main
+page on Microsoft Learn
+[10:25] for the Microsoft cloud
+security benchmark, aka.msMCSB.
+[10:30] That is where you will find
+all general information,
+[10:32] and then the information per
+MCSB security control element.
+[10:37] It will follow the pattern
+of the name for the domain
+[10:39] and then a numbered
+control element.
+[10:42] Consider it the
+baseline for cloud,
+[10:44] and we will have advisories
+per topic, for example,
+[10:46] on identity networking, but
+also incident response.
+[10:50] I guess you can say these
+controls are protective
+[10:53] or reactive.
+[10:55] You will see MCSB
+elements in other videos
+[10:57] and other parts of this course.
+[10:59] Let's look at one
+specific example, GS-1.
+[11:02] I've taken one of the
+control elements from GS
+[11:05] and put it onto a slide.
+[11:06] GS, what was that?
+[11:08] Governance and
+strategy, GS in short.
+[11:12] Why did I select this
+one for this video?
+[11:14] Well, because it's the one
+that will tell you to go
+[11:18] and do all the other ones.
+[11:20] It will start by
+ensuring that you define
+[11:21] and communicate a clear strategy
+for roles and responsibilities
+[11:24] in your security organization.
+[11:27] Everyone needs to be involved,
+everyone needs to be informed,
+[11:29] and everyone needs to
+be held accountable --
+[11:31] the whole organization,
+the whole team.
+[11:33] Security is a team sport.
+[11:36] Now, let's look at the other
+topic in this video, the MCRA.
+[11:42] An example for the MCRA, well,
+first of all, you go to the page
+[11:46] where you can find
+the MCRA, aka.msMCRA.
+[11:50] On the landing page, you can
+also find more information,
+[11:53] and you also find earlier
+versions of the slide deck
+[11:56] that makes up the
+Microsoft Cybersecurity
+[11:59] Reference Architectures.
+[12:02] In many of my videos and in
+the online course materials,
+[12:05] you will see the slides that
+were taken from the MCRA.
+[12:08] There are a couple that I'd like
+to highlight in this video,
+[12:11] and this is the first one.
+[12:14] This is the one a lot of people,
+[12:15] including myself, use
+for heat mapping.
+[12:18] It covers a lot of elements
+that need to be present
+[12:20] in an architecture of an
+operational environment.
+[12:24] First check is, are we covered
+if we include that area?
+[12:29] Next would be, how and
+how do we integrate it?
+[12:32] It helps to find
+gaps, blind spots,
+[12:35] and areas for improvement.
+[12:38] Download the MCRA and
+study the slides.
+[12:41] And when you go
+through the MCRA,
+[12:42] I'm pretty sure you'll
+find other elements
+[12:44] that appeal to you, too.
+[12:46] One that I've heard a lot
+of appreciation for in many
+[12:48] of my classroom deliveries
+is the next one I want
+[12:51] to highlight.
+[12:52] It's about Zero Trust.
+[12:55] Zero Trust security
+architecture.
+[12:56] Security is not easy.
+[12:57] It can be very complex
+and challenging,
+[12:59] and we need to ensure
+everything is embraced, and,
+[13:02] at some point,
+well, gets retired.
+[13:05] Having full visibility
+and thinking
+[13:07] about life cycle management,
+LCM for short, is essential.
+[13:12] But there's so much;
+therefore, we need to focus
+[13:14] on the most important and the
+easiest things to do first:
+[13:16] identify and prioritize.
+[13:18] And to get started with
+that, the recurring theme
+[13:21] in this video will
+be get started.
+[13:23] Get started where?
+[13:24] Get started somewhere.
+[13:26] Because when you start
+somewhere, you will uncover.
+[13:28] You will uncover, and that will
+help drive your next decision.
+[13:30] And that's what
+we see here also.
+[13:32] We observe, we
+decide, and we act.
+[13:36] Another, there are
+rules and commandments,
+[13:38] and we should adhere to these.
+[13:40] These immutable laws of security
+have been around for decades,
+[13:44] and they still hold true.
+[13:46] In many courses I deliver,
+I will start with the laws
+[13:48] of security because
+that helps to shift
+[13:51] into a cybersecurity mindset.
+[13:53] And most of these are very
+logical and easy to remember,
+[13:56] and they matured into the
+10 laws of cybersecurity.
+[13:59] On the graphic, you also see
+a mention of The Open Group.
+[14:04] You will find a lot of
+information in the current MCRA
+[14:07] about the efforts
+from The Open Group.
+[14:09] Latest were additional
+definitions on the rules
+[14:11] that The Open Group has started.
+[14:15] Here, you see an example of
+their Zero Trust commandments,
+[14:17] but I'm sure that we'll see
+more of that in future.
+[14:22] Another, and the
+last example for us
+[14:24] in this video, is
+about the mapping.
+[14:28] The portfolio of Microsoft's
+products and services is big.
+[14:35] It caters for elements around
+Zero Trust, PCI, Sys, NIST, CAF,
+[14:38] WEF, and other patterns, and
+things are subject to change.
+[14:43] And this can help to understand
+where a certain capability,
+[14:46] product, service may fit in.
+[14:49] So if it's a good fit for
+something, or maybe not.
+[14:52] So this slide from the MCRA
+brings back together elements
+[14:56] that you may need to consider.
+[14:59] Well, I hope you can
+benefit from this.
+[15:01] So you know where to
+find these slides.
+[15:03] Yes, it's the MCRA, and you
+can go and download it.
+[15:09] The last thing before we sum up
+the video and get to closure
+[15:13] for this video is to understand
+that everything is connected.
+[15:16] All the concepts and frameworks
+I discussed in this video
+[15:19] and other ones is connected
+and is connected to the role
+[15:22] of the cybersecurity architect.
+[15:24] But a high priority
+needs to be given
+[15:26] to modernizing the
+access controls.
+[15:28] Any access should start
+with strong validation
+[15:30] if access should be given.
+[15:32] Who's asking?
+[15:34] Why are they asking?
+[15:35] And are they good
+enough to get access?
+[15:37] It is elements like this
+that we see surface here
+[15:40] from both the MCRA and MCSB.
+[15:43] In another video, we
+will discuss identity
+[15:45] and identity management.
+[15:46] But let me give you
+a spoiler for that.
+[15:49] Identity is the new perimeter.
+[15:51] Identity is the foundation
+for securing and security.
+[15:56] To sum up, in this video, we
+discussed the MCSB and MCRA.
+[16:00] Both require further
+studies and reading,
+[16:03] but you now have a
+good starting point.
+[16:06] You know where to find them,
+[16:07] and you have an idea
+on how to use them.
+[16:09] So go and do.
+[16:11] If you don't know where to
+find them, here is a reminder
+[16:13] of the short links that will
+help you to get to them.
+[16:17] Thank you for
+watching the video.
+[16:19] There's many more
+videos in this series.
+[16:21] Hope to meet you in another one.
+[16:22] For now, goodbye and stay safe.

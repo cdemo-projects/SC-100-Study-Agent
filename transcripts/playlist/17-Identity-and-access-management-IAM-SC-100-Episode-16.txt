@@ -1,0 +1,652 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello,
+welcome to this video.
+[00:08] My name is Marco Nuijen and
+I'm a Trainer at Microsoft.
+[00:11] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architect.
+[00:16] In this video, I want to
+elaborate on Identity
+[00:18] and Access Management and
+Microsoft Entra specifically.
+[00:22] The content of this video is
+mostly aligned with the area
+[00:26] of security operations,
+identity and compliance
+[00:28] from a certification
+perspective.
+[00:31] Now, a question.
+[00:33] What is the role of identity and
+access management and Entra?
+[00:37] The main question for you to
+be able to answer is what is
+[00:41] that role and what
+about Entra for that?
+[00:44] Let us get us started
+[00:45] with a quiz question
+on the topic of IaM.
+[00:48] What is it?
+[00:49] Identity and access
+management, IaM, is important
+[00:51] from a cybersecurity
+perspective because, well,
+[00:54] it ensures that only authorized
+users can access the resources
+[00:58] they need and prevents
+unauthorized access.
+[01:01] Or is it because it
+enables users to create
+[01:04] and manage their own
+account and passwords
+[01:06] without any security controls?
+[01:09] Or is it, it allows users
+to share their credentials
+[01:12] with other users and
+applications without any risk?
+[01:15] Now, come on.
+[01:16] A, right? A is the
+correct answer.
+[01:18] Because IaM is the process of
+verifying the identity of users
+[01:21] and granting them the
+appropriate permissions
+[01:23] to access resources they need.
+[01:25] IaM helps protect the
+confidentiality, integrity,
+[01:29] and availability of
+data and systems
+[01:31] by preventing
+unauthorized access
+[01:33] and enforcing the principle
+of least privilege.
+[01:37] A and C are really,
+really wrong, right?
+[01:40] So identity should
+never be shared,
+[01:42] so that's not a good thing.
+[01:43] All right, the main
+objective for the video is
+[01:47] to remind ourselves of the
+importance of identities
+[01:50] and identity and
+access management
+[01:52] and capabilities with Entra.
+[01:55] This is an example from the
+Microsoft Cloud Security
+[01:58] Benchmark, the MCSB, where
+it focuses on identity.
+[02:01] Again, as explained in other
+videos, the lower the number,
+[02:05] the higher the priority.
+[02:07] IaM 1, Identity Management
+1, says we need
+[02:09] to use a centralized identity
+and authentication system.
+[02:12] This is something we need
+to check, implement,
+[02:15] and include in our designs.
+[02:17] In a Microsoft portfolio,
+this is covered by Entra ID
+[02:20] and Active Directory
+Domain Services.
+[02:23] That's why I've put them
+on the here, on the slide.
+[02:27] There are many aspects in the
+Entra capabilities, and as usual
+[02:30] for cloud, they will
+change and evolve.
+[02:33] As the cybersecurity
+architect, you would do well
+[02:36] to inform yourselves more
+about the capabilities
+[02:38] of the Entra family and
+what it can bring to you.
+[02:43] Now, stepping away from the
+MCSB, I've got a picture here
+[02:46] about the Zero
+Trust architecture
+[02:48] to remind ourselves
+of that again.
+[02:50] We see identities, endpoints,
+data, apps, infrastructure,
+[02:54] and network, and we try to
+bring all of that together
+[02:57] to have overall automation,
+visibility, and orchestration.
+[03:02] Entra and the Entra family
+capabilities will come back
+[03:05] regularly when we talk about
+identities and Zero Trust.
+[03:08] It is important to get familiar
+with the Entra family.
+[03:11] We will go and cover some
+aspects of that in this video.
+[03:17] A good starting place for
+Entra is the product page,
+[03:21] and there's a short link
+to that: aka.ms/entra.
+[03:25] There's a course on the role
+of identity administrator
+[03:27] that goes deeper into the
+aspects of identity management
+[03:30] and capabilities of Entra.
+[03:31] I would say it's
+foundational knowledge
+[03:33] for cybersecurity architects.
+[03:35] And in here I just want
+to remind you of some
+[03:38] of these capabilities.
+[03:40] For convenience, I also included
+a link to the certification page
+[03:44] for the identity
+administrator, aka.ms/sc300.
+[03:52] We will look at a couple
+of aspects in this video,
+[03:54] but you need to
+know or learn more,
+[03:56] and that's a good
+place to do so.
+[03:59] Tenancy. Tenants and tenancy
+are core concepts for Entra ID.
+[04:05] I often ask in the training if
+people know what a tenant is,
+[04:08] and many people have
+trouble answering that.
+[04:11] And you need to know.
+[04:13] And I can't ask you and wait
+for an answer in a video.
+[04:17] I ask Copilot, and
+you can do the same.
+[04:19] If you have a question, consider
+using an AI to get an answer.
+[04:23] A tenant represents an
+organization or entity
+[04:25] within the Microsoft
+Entra ecosystem.
+[04:29] It serves as a dedicated
+instance of Microsoft Entra ID
+[04:32] that an organization
+receives at the beginning
+[04:34] of their relationship
+with Microsoft.
+[04:37] Each tenant is distinct and
+separate from other tenants,
+[04:40] maintaining its own
+set of identities,
+[04:42] app registration
+and configurations.
+[04:45] Distinct and separate,
+it is a boundary.
+[04:47] It is something we get
+and we can control.
+[04:50] It is like a security boundary.
+[04:53] I often compare it to renting
+a flat in a building.
+[04:56] You become tenant
+in the building,
+[04:58] and you have your own flat.
+[04:59] You can bring in furniture, and
+you can live with your family,
+[05:02] and maybe the family will
+change in size over time.
+[05:05] You can also have guests in your
+flat, and you can use a lot
+[05:08] of infrastructure
+that is available.
+[05:10] An Enter ID tenant is like
+renting a flat in a building.
+[05:13] You get a place of your own in
+an existing infrastructure,
+[05:16] bring your apps, bring your
+family, and invite others in.
+[05:20] But what can we have in a
+tenant once we have one?
+[05:23] Users and applications?
+[05:24] Yes, but there's more.
+[05:26] A tenant can contain
+different types
+[05:28] of objects, such as accounts.
+[05:30] And accounts can represent
+users, devices, or applications.
+[05:35] For users, these can be internal
+accounts that we have created
+[05:38] or external accounts
+that we have invited
+[05:40] from another tenant.
+[05:43] We also have other objects
+like roles and groups.
+[05:46] Roles are specific
+sets of permissions,
+[05:48] such as the global administrator
+role, which allows an account
+[05:52] to manage everything if
+they are assigned the role.
+[05:55] We want to reduce this
+kind of privilege,
+[05:57] so role management is
+an area of focus for us
+[06:00] as cybersecurity architects.
+[06:02] And there are many roles
+with varying permissions
+[06:04] and different privileges.
+[06:06] We will have a separate video on
+privileges in the video series.
+[06:12] Another thing we can see
+on the diagram is groups,
+[06:15] which are useful for
+managing accounts together.
+[06:18] And if we have a million users,
+we don't want to deal with each
+[06:21] and every one separately.
+[06:22] We want to group them and
+handle them as a group.
+[06:26] And these are some of the things
+that we can have in a tenant.
+[06:30] Let's focus a bit more
+on identities itself.
+[06:31] What kind of identities
+do you need to think of?
+[06:35] What kind of identities do
+you need to include, address,
+[06:38] or assess in the
+cybersecurity architecture?
+[06:41] I included a little mind
+map I made earlier today
+[06:44] on this slide.
+[06:46] First level is identities
+[06:47] that are interactive
+and non-interactive.
+[06:49] You could say users
+and workloads.
+[06:53] Identities are typically,
+when they're interactive,
+[06:56] typically for
+people, for humans.
+[06:58] Identities that are not
+interactive are identities
+[07:00] for equipment and applications,
+and therefore workloads.
+[07:03] There is no human being
+that can interact.
+[07:05] They are different
+in their dynamics,
+[07:07] and they will be
+used differently.
+[07:10] When we talk about interactive
+identities, we can distinguish
+[07:13] between internal
+and external ones.
+[07:16] Internal ones are the ones
+[07:17] that we create ourselves
+in our own tenant.
+[07:19] While external identities
+are the ones that come
+[07:21] from other organizations,
+such as business partners
+[07:23] through business to business,
+or through social networks
+[07:26] like business to consumer.
+[07:29] There's also a kind of external
+identity which is based
+[07:31] on a verified credential.
+[07:34] We call it verified ID.
+[07:36] This is when a user has an
+identity that is verified by,
+[07:39] for example, a
+financial, governmental,
+[07:41] or healthcare institute, and can
+use an aspect of that identity
+[07:45] to interact with other services.
+[07:47] The user has chosen to
+leverage an existing identity
+[07:50] from a trusted party that
+they want to leverage.
+[07:53] For example, to prove
+that they're over 21,
+[07:56] only that they're over
+21, not anything else.
+[08:00] Internal accounts are the
+accounts that people belong
+[08:03] to in an organization.
+[08:04] People in our organization might
+get an account in a tenant.
+[08:08] They are either created directly
+in the tenant or synced
+[08:11] from on-premises using
+synchronization technologies.
+[08:15] The sync identities
+are typically known
+[08:17] as hybrid identity, because
+the user has an identity
+[08:20] in both the cloud worlds
+and the on-premise worlds.
+[08:23] Hybrid is the word that is
+often used for combining cloud
+[08:26] and on-premises technologies.
+[08:30] For non-interactive accounts,
+we can make a distinction
+[08:33] in devices and
+service principles.
+[08:35] Any device can have
+a registration
+[08:37] where some information about the
+device is stored in the tenant.
+[08:40] And Windows-based devices
+can also be joined,
+[08:43] where they've got a full
+object in a tenant,
+[08:46] similar to an
+account for a user,
+[08:48] but of course it's
+different in its dynamics
+[08:50] because it's non-interactive,
+it's for a device.
+[08:53] For service principles,
+there's another split,
+[08:57] and there's actually
+three kinds of them.
+[08:58] But one is legacy,
+and we'll not talk
+[09:00] about that one
+anymore from now on.
+[09:05] The two that are left out of
+the three are applications
+[09:08] and managed identities.
+[09:09] You see them in the graphic.
+[09:11] Applications need an identity
+to interact with the tenant,
+[09:15] so they must be registered and
+have a presence in the tenant.
+[09:18] Users who want to interact
+with an application also need
+[09:21] to get proof from the tenant
+[09:23] that is specific to
+the application.
+[09:26] Having an account
+[09:27] and an application registration
+is essential for the interaction
+[09:30] and establishing proof.
+[09:33] We also see managed identity
+as a service principle.
+[09:36] Managed identity is something
+we usually see in Azure.
+[09:40] Any service running on Azure
+that needs an identity, we can,
+[09:44] well, it can have a
+managed identity.
+[09:46] We can create a managed identity
+as a user and associate it
+[09:48] with the thing running on Azure,
+[09:50] or we can let the platform
+create it for us.
+[09:53] If we create it as a user,
+[09:54] it's called a user-signed
+managed identity.
+[09:57] If we let the platform
+create that identity,
+[09:59] it's called a system-signed
+managed identity.
+[10:02] This is very Azure-specific,
+but it helps
+[10:05] to avoid creating
+service accounts
+[10:07] that usually are not
+managed so very well.
+[10:11] So consider this a quick
+recap of what identities are
+[10:15] which ones and why
+do we have them.
+[10:17] And if any of them is not
+familiar to you, then go
+[10:20] and find, go and study on this.
+[10:23] And if you're going to take the
+certification, I'm pretty sure
+[10:26] that you'll get quite a lot of
+questions on what are these,
+[10:29] how do they work, how
+do you work with them?
+[10:31] And identities will come and go.
+[10:33] So we also need to
+think about lifecycles
+[10:35] and lifecycle management.
+[10:38] One of the things we need to
+watch out for and what we need
+[10:41] to consider is life cycles
+of different identities
+[10:44] and different entities.
+[10:46] How are they created?
+[10:47] How are they removed?
+[10:48] And what happens in between?
+[10:50] What about updates?
+[10:51] And who owns that?
+[10:52] It's about accountability.
+[10:54] Let's take a practical example.
+[10:56] Suppose I have an account that
+is created and provisioned,
+[10:59] and then it will be deleted
+when I leave the company.
+[11:02] How is my account provisioned
+[11:04] and how do I get all the things
+I need, like permissions,
+[11:06] software, application, roles?
+[11:08] Are they accurate and
+appropriate for my job?
+[11:11] What if I change roles,
+[11:12] do I still have the
+right permissions?
+[11:14] That needs to be verified.
+[11:15] And that's why we have to have a
+review process at the station,
+[11:20] as shown on the graphic
+on the right side.
+[11:23] We also need to think
+about delegation.
+[11:25] We need to assign
+tasks to people
+[11:27] who are responsible for a task.
+[11:29] So that's another factor
+we need to consider
+[11:32] in identity management
+delegation.
+[11:36] And what technology
+[11:37] and processes do we
+have to automate these?
+[11:40] Do we have an identity access
+management system that can do it
+[11:42] for us, or do we need to
+create some automation based
+[11:45] on protocols like SCIM,
+the System for Custom
+[11:48] and Identity Management?
+[11:51] Things to go and look for.
+[11:53] Also in the graphic,
+there's something else,
+[11:55] there's a mention of
+entitlement management.
+[11:59] One feature that can assist
+is entitlement management.
+[12:04] Entitlement management is an
+identity governance capability
+[12:08] that lets organizations handle
+identity and access lifecycle
+[12:11] at scale by automating
+workflows for access requests,
+[12:14] assignments to do reviews,
+and to let things expire.
+[12:19] People in an organization
+require access
+[12:21] to various groups, applications,
+and things like PowerPoint,
+[12:25] websites, portals, to be
+able to do their work.
+[12:28] This is hard to manage,
+and as needs change,
+[12:33] that needs to be reflected.
+[12:34] New applications are added,
+users need more access rights.
+[12:38] And it becomes more
+complex when you work
+[12:40] with external organizations.
+[12:43] As an external party,
+you may not know
+[12:46] in the other organization
+what is required.
+[12:49] You may not know what's
+available to you.
+[12:51] People from an external party
+won't know what applications,
+[12:55] groups, or sites exist.
+[12:57] And entitlement management
+can help you manage access
+[13:00] to groups, applications,
+SharePoint,
+[13:01] online sites more effectively
+for internal users and for users
+[13:06] that are not part of your
+organization, external users,
+[13:09] basically for everyone that
+needs access to those resources.
+[13:12] A great capability
+[13:14] of entitlement management is
+catalogs that can let users,
+[13:17] internal and external,
+see what's on offer
+[13:19] for them and then request it.
+[13:21] And then they get
+access automatically,
+[13:25] or if that's configured,
+someone else needs
+[13:27] to approve the access.
+[13:30] It helps users to be
+able to self-service,
+[13:32] and for us it helps
+since we get visibility
+[13:35] of who, what, where, and how.
+[13:38] And we can control
+access by expiration
+[13:40] or access review processes.
+[13:44] Access Reviews.
+[13:45] Access reviews are a process
+[13:47] where we can ask someone
+to confirm something.
+[13:50] For example, we have a group.
+[13:53] Are these people that
+are in the group,
+[13:56] are those the people
+that should be in it?
+[13:59] You oversee the group.
+[14:00] Are the memberships
+still accurate?
+[14:03] We will see these access
+reviews in many places,
+[14:06] like on applications,
+on roles, on groups,
+[14:08] but it's a crucial
+process to know about.
+[14:11] So we can ask someone
+responsible, is it still valid?
+[14:15] You own this group,
+go and inspect it,
+[14:17] and say whether it's
+still true or not.
+[14:23] Less is More.
+[14:24] We should aim for the least
+amount and the simplest option.
+[14:27] And when it comes to a
+tenant, that's no different.
+[14:29] In reality, you will
+encounter multi-tenancy.
+[14:33] Maybe you acquired
+another company.
+[14:35] They already had a tenant.
+[14:36] What to do?
+[14:36] Migrate everything or coexist?
+[14:39] But how do you manage everything
+in a coexistent situation?
+[14:43] Or maybe you have
+multiple tenants
+[14:44] because of compliance
+requirements.
+[14:46] Or maybe you're an organization
+that manages tenants
+[14:48] for other organizations.
+[14:50] In that case, you will encounter
+a multi-tenancy definitely.
+[14:54] So if you do, consider looking
+at technology like, for example,
+[14:57] Azure Lighthouse to make
+management a bit easier.
+[15:00] Lighthouse is
+typically a technology
+[15:02] that was created initially for
+service providers that deal
+[15:05] with management of many tenants.
+[15:08] And it's more and more
+used in companies
+[15:10] that have multiple tenants
+inside of a company.
+[15:13] So not so much a service
+provider traditionally,
+[15:15] but more like an internal
+service provider.
+[15:17] And it's a very good way to
+manage multiple tenants.
+[15:22] As a Microsoft
+cybersecurity architect,
+[15:24] you should use portals
+like the Entra portal
+[15:27] to assess an organization and
+make informed recommendations.
+[15:33] And I've included a couple of
+examples from the Entra portal.
+[15:37] So we use the portal to
+review your identity score,
+[15:41] access recommendations
+for improvement,
+[15:43] and view tenant objects
+such as users, groups,
+[15:46] roles, and applications.
+[15:48] Really leverage the Entra portal
+[15:49] to understand the
+current environment
+[15:51] and identify future
+enhancements.
+[15:54] One of my personal favorites
+is the identity governance
+[15:58] dashboards that will be there,
+that drives down into identities
+[16:03] and points out great
+recommendations,
+[16:05] so investigates the portals.
+[16:09] We are at the end of the video.
+[16:10] We discussed Entra in the light
+[16:12] of identity management
+capabilities, and of course,
+[16:14] like always, there's much more.
+[16:16] And I hope you are familiar with
+many of the things we discussed.
+[16:19] And if not, go out and
+investigate and learn more.
+[16:23] There's always more.
+[16:24] So study, study hard.
+[16:27] You can use short links
+like I've got here
+[16:30] that were in the presentation.
+[16:31] And the first one will take you
+to the Microsoft Entra main page
+[16:34] where you can find links to
+documentation on all features.
+[16:37] The second one will take you
+to the certification page
+[16:39] of a Microsoft Identity
+Administrator.
+[16:41] But course content can be
+seen as essential knowledge
+[16:45] for our Cybersecurity
+Architect Certification.
+[16:49] Thank you for
+watching the video.
+[16:51] Meet you again in another
+one, and stay safe.

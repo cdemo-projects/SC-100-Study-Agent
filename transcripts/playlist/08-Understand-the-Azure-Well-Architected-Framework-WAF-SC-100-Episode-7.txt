@@ -1,0 +1,678 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello and
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft cyber
+security architect.
+[00:18] In this video, we will focus
+on an important framework,
+[00:21] the Well-Architected
+Framework, or WAF, the WAF.
+[00:26] Discover how the
+Well-Architected Framework can
+[00:29] help you secure, optimize, and
+elevate your cloud workloads
+[00:33] with practical strategies
+and real-world insights.
+[00:37] The content of this video is
+mostly aligned with the area
+[00:40] of attention on security best
+practices and priorities
+[00:43] from a certification
+perspective.
+[00:46] Now, how to secure a workload?
+[00:49] Let us start with the main
+question that will lead us
+[00:51] to the Well-Architected
+Framework,
+[00:53] how to secure a workload.
+[00:55] What is a workload?
+[00:57] Can be a single app; can
+be a complex environment
+[01:00] that is needed from a
+business perspective.
+[01:02] But whatever it is, there
+must be some patterns we
+[01:05] can leverage.
+[01:07] One of the cloud providers
+started building a framework
+[01:09] around best practice
+for workloads
+[01:11] in the Microsoft portfolio that
+is represented in the concepts
+[01:14] of the Well-Architected
+Framework, WAF.
+[01:18] All right, a
+question, what is it?
+[01:20] What would be considered
+best practice
+[01:22] for securing a workload?
+[01:24] Is it use Defender
+for Cloud to monitor
+[01:26] and protect your
+resources from threats?
+[01:28] Is it using Entra to manage user
+identities and access controls?
+[01:33] Is it C here, using Azure
+Backup and Azure Site Recovery
+[01:36] to ensure data availability
+and resilience?
+[01:39] Or is it D, everything,
+all of the above.
+[01:43] D, right? All of the above.
+[01:46] There is no single solution
+to secure workload, right?
+[01:49] We just have to think
+about everything.
+[01:51] And next to these, we can think
+also of many other elements
+[01:54] that will help to
+secure a workload.
+[01:56] But there must be some help that
+has combined best practices
+[01:59] into something,
+something that is based
+[02:01] on practical experiences and
+elements of zero trust, yes,
+[02:05] yes, the Well-Architected
+Framework
+[02:08] and the topic for this video.
+[02:10] So, what is it, the
+Well-Architected Framework,
+[02:13] and why is there a lot
+of focus on getting grip
+[02:15] on development processes,
+also known as shift left?
+[02:19] And what do we have that
+can help us do assessments?
+[02:23] A task for the
+cybersecurity architect is
+[02:25] to help translate a
+cybersecurity strategy
+[02:28] into capabilities
+where you guide
+[02:30] and maintain that
+implementation.
+[02:32] That also means we
+need to assess, probe,
+[02:35] if things are what
+they need to be.
+[02:37] Let's go to the main topic,
+[02:38] which is the
+Well-Architected Framework.
+[02:41] Here it is, and I've
+included the short link
+[02:44] to the landing page
+as well aka.ms/WAF.
+[02:51] The Azure Well-Architected
+Framework is a design framework
+[02:53] that can improve the quality
+of workloads by helping it
+[02:57] to be resilient, be
+available, be recoverable,
+[03:02] deliver a sufficient
+return on investment,
+[03:04] support responsible
+development and operations,
+[03:08] accomplish its purpose within
+acceptable timeframes,
+[03:11] and be as secure as
+you need it to be.
+[03:14] The framework is
+founded on five pillars
+[03:16] of architectural excellence,
+which are maps to these goals.
+[03:20] These pillars are cost
+optimization, security,
+[03:23] reliability,
+operational excellence,
+[03:25] and performance efficiency.
+[03:29] Each pillar provides
+recommended practices,
+[03:31] risk considerations,
+and tradeoffs.
+[03:34] The design decisions must be
+balanced across all pillars,
+[03:37] given the business
+requirements, and the technical
+[03:40] and actionable guidance is
+broad enough for all workloads
+[03:43] and applies to a
+specific scenario.
+[03:47] Workload architecture isn't the
+same as its implementation.
+[03:50] The Well-Architected Framework
+can set you up for success
+[03:52] through architectural designs,
+[03:54] but the implementation
+choices depend
+[03:56] on the business requirements
+[03:57] and constraints of
+your organization.
+[04:00] The primary objective of the
+Well-Architected Framework is
+[04:04] to set you up for success
+[04:05] when you deploy your
+workload on Azure.
+[04:08] A successful implementation,
+well-architected design,
+[04:12] leads to successful
+implementation,
+[04:13] given the breadth and
+the depth of coverage
+[04:16] and concepts here
+should be well equipped
+[04:18] to make informed decisions.
+[04:21] Confidence and success
+proven assessments seen
+[04:24] on numerous workloads deployed
+on Azure back the tenants
+[04:27] of the framework, and if you
+understand the tradeoffs
+[04:30] and risks, the framework
+will help you to understand
+[04:32] that adopting the
+recommendations might require
+[04:35] making choices against
+the other pillars.
+[04:37] It highlights the tradeoffs
+and also the potential risks
+[04:40] that you may want to
+address in the short term.
+[04:43] If you optimize over time,
+the framework is designed
+[04:46] to be iterative use and as a
+tool for continuous improvement.
+[04:52] Measure the maturity of your
+workload against the guidance.
+[04:56] Treat that evaluation as a
+moving score that evolves
+[04:59] with your workload, ensuring
+[05:01] that the design remains
+efficient and effective
+[05:05] in meeting your
+business objectives.
+[05:08] For us, the cyber
+security architect,
+[05:10] the pillar that we leverage the
+best is the security pillar,
+[05:14] but make sure you
+investigate all the pillars
+[05:16] to have a good sense of what
+is in them and what is not.
+[05:22] On this graphic, you will
+find an easy shortcut
+[05:25] to the security
+specific landing page
+[05:27] in the Well-Architected
+Framework, aka.ms/wafsecure.
+[05:33] I've always found the
+information here very useful:
+[05:36] the principles, the checklist,
+the trade offs, and also,
+[05:39] more and more, I came to the
+realization that the focus
+[05:42] of the Well-Architected
+Framework is much
+[05:44] on the workload or
+application development.
+[05:47] I found that the principles
+and patterns are more generic
+[05:50] and can be used
+more generically.
+[05:52] Essentially, nowadays,
+everything is code,
+[05:54] infrastructure as code.
+[05:55] So develop your infra code
+in line with the concepts
+[05:59] from a framework like the
+Well-Architected Framework.
+[06:02] Our task, again, as architects,
+[06:03] is to make people aware,
+design, and check.
+[06:11] Workload owners should be ready,
+[06:13] considering all aspects
+they need to consider.
+[06:15] In the framework, we
+find guidance on that.
+[06:18] We need to know and need to
+verify with workload owners,
+[06:22] help them to get educated,
+and hold them accountable.
+[06:26] We also must understand how CIA
+principles are incorporated
+[06:30] into a workload and
+into workload design.
+[06:33] These are aspects of the
+CIA triad, which stands
+[06:36] for confidentiality,
+integrity, and availability,
+[06:41] where confidentiality means
+access is only granted
+[06:44] to authorized parties.
+[06:46] And integrity means that the
+data is accurate and consistent
+[06:50] and protected from
+unauthorized use
+[06:53] and unauthorized
+modification of course.
+[06:57] Availability means that the
+data is accessible and usable
+[07:00] when needed by an
+authorized party.
+[07:03] These elements must be present
+[07:05] or at least considered
+for every workload.
+[07:08] I say considered
+since there are,
+[07:10] and there will be tradeoffs.
+[07:12] Sometimes we need to accept
+something for a reason.
+[07:15] Maybe think about an example
+of this for yourselves.
+[07:18] And one example that comes
+to mind for me is a tradeoff
+[07:21] in reliability versus security.
+[07:24] From a reliability perspective,
+[07:26] we want to minimize the failure
+points that may be weighted
+[07:30] or traded off to a
+security concept
+[07:32] or multilayer defense,
+a defense in depth.
+[07:35] Another example can be cost.
+[07:37] We would like to add something,
+but from a cost perspective,
+[07:40] we cannot, a trade off, again.
+[07:42] Too expensive, too expensive
+to buy, too expensive to run,
+[07:46] since we don't have the
+competence, or too expensive
+[07:48] since we lack the people to
+do it in the first place.
+[07:52] There are actually examples
+of tradeoffs available
+[07:55] in the security pillar of the
+Well-Architected Framework.
+[07:59] It all comes down to a conscious
+decision-making process.
+[08:02] We need to strike a
+balance between security
+[08:04] and many, many other things.
+[08:07] It is frameworks like the
+Well-Architected Framework,
+[08:09] but also the Cloud Adoption
+Framework, that helps us
+[08:12] to uncover and have discussions
+and decisions about security.
+[08:17] What will help you is to
+bring it back to risks
+[08:19] and manage risks, like I have
+explained in another video.
+[08:23] So how can you make it
+practical for yourself?
+[08:27] I'll start checking.
+[08:28] Yes, there's a checklist.
+[08:32] Let's talk about the
+security maturity model
+[08:34] and how it guides you
+[08:34] in strengthening your
+workloads' security posture.
+[08:38] Think of it as a journey, one
+that starts with the basics
+[08:42] and builds up over time.
+[08:44] So begin by laying a
+strong foundation,
+[08:46] things like encryption
+and identity management.
+[08:50] Once those are in place,
+[08:51] you move to securing
+your deployment process
+[08:54] and hardening your systems.
+[08:57] As your security practices
+mature, you don't just wait
+[09:00] for threats to appear.
+[09:01] You start proactively looking
+for them through threat modeling
+[09:05] and enhanced monitoring.
+[09:08] Real-world protection
+insights then help you
+[09:11] to continuously improve
+your security mechanisms.
+[09:14] Have organizations dealing
+with advanced threats,
+[09:17] the model helps you put
+specialized defenses in place.
+[09:21] Remember, security
+isn't automatically --
+[09:25] it isn't auto magic.
+[09:26] It requires deliberate effort.
+[09:29] Incidents can lead to
+major financial cost,
+[09:31] regulatory issues, or
+loss of customer trust.
+[09:34] That's why taking a practical
+step-by-step approach is
+[09:37] so important.
+[09:39] It helps you implement
+effective security
+[09:41] without overwhelming your
+development or operations.
+[09:45] The security model is
+organized into five levels,
+[09:48] each with clear goals
+and strategies.
+[09:51] As you move through each
+stage, pay attention
+[09:54] to the tradeoffs
+and risks involved.
+[09:57] This structured approach
+empowers you to make informed,
+[10:00] balanced decisions about
+your security posture.
+[10:04] In the WAF, they have included
+the checklist per pillar.
+[10:08] For security, there
+are 12 elements
+[10:10] on the list, SE:01 to SE:12.
+[10:14] Well, if you look more closely,
+there are actually 13 elements.
+[10:19] A bit more on that in a moment.
+[10:22] This checklist presents a set
+of security recommendations
+[10:25] to help you ensure your
+workload is secure and aligned
+[10:29] with the zero trust model.
+[10:31] If you haven't
+checked all the boxes
+[10:33] and considered the tradeoffs,
+then your design might be
+[10:36] at risk, so carefully consider
+all the points covered
+[10:40] in the checklist
+to gain confidence
+[10:43] if the workload
+is secure enough.
+[10:45] We will not go and cover all 12
+elements here, but I do want
+[10:48] to highlight a
+couple of elements,
+[10:51] some things that will
+bring us closer to talking
+[10:53] about shifting left, more focus
+on code and code development.
+[10:58] If you look at the SE
+list, the security list,
+[11:01] the first will be
+about baselines.
+[11:04] I hope you're thinking about
+where to find baselines
+[11:07] that you can use and
+that you are thinking
+[11:09] of the Microsoft Cloud
+Security Benchmark, the MCSB.
+[11:13] There is a video on the
+topic, and the MCSB will come
+[11:16] by regularly many of our
+videos in this series.
+[11:19] For the second check, SE:02,
+[11:22] maintain a secure
+development life cycle,
+[11:25] and there are actually
+two elements.
+[11:27] Right, in SE:02,
+there's two elements,
+[11:29] so they're coded the
+same on the checklist.
+[11:31] That explains why there
+are actually 13 elements
+[11:33] and not 12 in total.
+[11:35] And the two for
+SE:02 are related
+[11:38] to a secure development
+life cycle.
+[11:40] I want to highlight something
+specific in that SE:02,
+[11:43] which is the part we need
+to think about DevSecOps.
+[11:50] What we want to get at is
+that element gets secured
+[11:53] as early on as possible.
+[11:55] Otherwise, we will always
+be after the fact,
+[11:59] trying to catch on, fixing
+something that is broken
+[12:02] to begin with, and
+we don't like that.
+[12:05] So in general, it's good to
+get security in as early
+[12:08] on as possible, and for code
+that is not any different.
+[12:12] It is the code itself
+that needs to be secured,
+[12:15] and are the code development
+processes secured?
+[12:18] Think of this as a
+very early investment,
+[12:21] and the more you invest
+in ensuring security
+[12:23] from the start, the more you
+will profit from it later.
+[12:27] The graphic illustrates
+a development process
+[12:30] with security activities and
+when they should be done,
+[12:33] when they should be initiated.
+[12:35] A crucial step starts with the
+first stage, threat modeling.
+[12:41] We have a separate video on that
+where we will go more into it,
+[12:45] but it is crucial to understand
+that what a workload is,
+[12:50] what the components are,
+and how they interact,
+[12:52] and threat modeling is
+a great way to do that.
+[12:55] It helps to get clarity
+on all components
+[12:57] and how they interact.
+[13:00] Code. We need to make sure code
+is secure from development
+[13:04] to testing, from
+acceptance to production,
+[13:07] and lessons learned get fed back
+[13:09] into the development
+process for improvements.
+[13:13] As I said a couple of
+minutes ago, nowadays,
+[13:16] everything has become code:
+applications code, deploy infra,
+[13:20] datas code, code like
+ARM templates, scripts,
+[13:23] Bicep, deployment stacks.
+[13:26] It will be crucial for us as
+cyber security architects
+[13:29] that the infrastructures we
+help to protect are based
+[13:31] on code, secured code.
+[13:34] It makes an environment
+repeatable and predictable,
+[13:38] and this aligns well with the
+overall pillar of zero trust,
+[13:41] right, visibility,
+orchestration, and automation.
+[13:45] So I'm explaining this
+through the checklist,
+[13:47] which is a great way to learn,
+[13:49] great list to start
+checking with.
+[13:50] Use the checklist.
+[13:51] Start checking.
+[13:53] If you want more options, sure.
+[13:54] What would be another
+approach to this?
+[13:58] Assessments on Microsoft Learn.
+[14:00] On Microsoft Learn, there are
+several assessments available
+[14:03] to us.
+[14:04] In another video, I explained
+the principle behind an
+[14:07] assessment in more detail.
+[14:08] And this video, I want to point
+[14:10] out two web application
+framework Well-Architected
+[14:13] Framework specific ones.
+[14:15] The Azure
+Well-Architected Review
+[14:17] and the Mission
+Critical specific one.
+[14:19] There are more, but these
+two are found to be the most
+[14:22] of interest for me when
+it comes to the role
+[14:25] of a cybersecurity architect.
+[14:29] I often use these to run myself
+through all the thinking
+[14:31] and decision points, or I use
+them in a workshop and run them
+[14:36] to have discussions on the
+elements in the review.
+[14:38] And lastly, it can also be
+connected to a live environment
+[14:41] and extract information
+from there directly.
+[14:44] So, yes, yes, you can connect
+it, ingest information
+[14:47] from a running environment,
+and examine that.
+[14:51] They are quite elaborate, and it
+will take a significant amount
+[14:53] of time to go through
+all the questions
+[14:55] and all the details
+in the questions.
+[14:57] We're not doing that
+here, but you should go
+[15:00] and do that by yourself.
+[15:02] And if you don't know what
+the question is asking you,
+[15:05] or if you are not familiar
+with elements in a question,
+[15:08] then you find yourself a gap
+in your existing knowledge
+[15:11] that you will need to fill.
+[15:12] And let's take an example.
+[15:13] Let's look at an example.
+[15:17] The first thing I will
+ask when I get somewhere,
+[15:19] where are the designs
+and documentation,
+[15:22] and how is that translated
+into, for example, a baseline?
+[15:26] As you can see, there's
+much granularity
+[15:28] with these assessment questions,
+and many topics here are subject
+[15:31] for later videos, updates,
+incident response, car drills,
+[15:36] for example, using Azure policy
+[15:38] and the Microsoft Cloud Security
+Benchmark, MCSB, compliance
+[15:42] and industry standards.
+[15:44] And on the main question
+on the left side,
+[15:45] we see that there
+is much, much more,
+[15:48] and there will always be
+more, but use tools like this
+[15:51] to help you with that.
+[15:54] Now, the Well-Architected
+Framework
+[15:57] and the Cloud Adoption Framework
+are very important frameworks
+[16:00] for us as cybersecurity
+architects.
+[16:03] The cloud adoption framework
+is covered in another video,
+[16:06] and in this one,
+we covered aspects
+[16:08] of the Well-Architected
+Framework.
+[16:09] The Well-Architected Framework
+is a framework we leverage
+[16:12] for workloads like the Cloud
+Adoption Framework is the
+[16:15] framework we leverage
+for cloud solutions,
+[16:18] and they are connected.
+[16:19] We need a cloud solution to
+land our workloads into.
+[16:23] A CAF-landing zone is where we
+can bring our Well-Architected
+[16:27] Framework thinking
+based workloads into.
+[16:30] This graphic is something I use
+to bring them together a bit
+[16:33] and help you with what
+is good to focus on.
+[16:36] I've divided it into
+Cloud Adoption Framework,
+[16:39] Well-Architected
+Framework, and also parts
+[16:42] on security and governance.
+[16:45] Cloud Adoption Framework is the
+bigger picture, the entire state
+[16:48] and connections to the
+business and other roles.
+[16:51] The Well-Architected
+Framework has more focus
+[16:53] on the workload directly,
+[16:55] making sure we can run it
+securely and cost efficiently.
+[16:59] If you use the online
+training content
+[17:01] for the cybersecurity
+architecture certifications,
+[17:03] you will find these
+kinds of comparisons.
+[17:06] Look for them.
+[17:08] They are great for asking
+you a challenging question
+[17:11] and make you decide
+on something.
+[17:13] In this example, it's the WAF
+and the CAF that we will use
+[17:17] for guidance, or
+elements from both.
+[17:20] Let's wrap up this
+video for now.
+[17:23] So in summary, in this video,
+[17:25] we discussed the
+Well-Architected Framework
+[17:27] and security aspects of it.
+[17:29] We talked about focusing on code
+[17:31] and where code is
+developed and stored.
+[17:34] We need to secure that,
+and we need to look
+[17:37] at how you can get started
+[17:39] by assessing an existing
+situation using checklists
+[17:43] and assessments.
+[17:46] These are some short
+links where you can go
+[17:48] and educate yourself further.
+[17:50] So go do and really, really
+go do and do an assessment.
+[17:53] You will benefit from it.
+[17:56] Now, thank you for
+watching this video.
+[17:58] I hope to meet you in
+another in the series
+[18:01] of the cybersecurity architect
+videos recorded for you.
+[18:03] Until that time,
+please stay safe.

@@ -1,0 +1,554 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello,
+welcome to this video.
+[00:08] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of Microsoft
+Cybersecurity Architect.
+[00:17] In this video, we will talk
+about security aspects
+[00:19] of Infrastructure as a Service
+and Platform as a Service.
+[00:23] Discover the essentials of
+securing Infrastructure
+[00:26] as a Service and Platform
+as a Service environments,
+[00:28] with practical tips and insights
+[00:30] for building robust
+cyber-resilient architectures.
+[00:35] The content of this video is
+mostly aligned with the area
+[00:38] of solutions for infrastructure
+[00:40] from a certification
+perspective.
+[00:43] I want to consider when we are
+dealing with Infrastructure
+[00:46] as a Service and
+Platform as a Service.
+[00:48] That's our main question
+for this video.
+[00:51] In this video, we will focus
+on the things we need to think
+[00:54] of from an IaaS and
+PaaS perspective.
+[00:58] When it comes to security
+aspects, I like to think
+[01:01] of a shared responsibility
+model as a good overview
+[01:04] of how different flavors
+[01:06] of cloud shift their
+responsibilities.
+[01:09] These need to be done by
+someone, but with cloud,
+[01:12] a lot of things are transferred
+to the cloud provider.
+[01:15] From a compliance perspective,
+we still care and we want
+[01:19] to know how the service
+provider has done it,
+[01:21] but we talk about that in
+one of the other videos
+[01:24] in the series about compliance.
+[01:27] The main element here
+is that we do not need
+[01:29] to secure everything ourselves.
+[01:32] An important takeaway
+from the diagram,
+[01:35] like we see on the presentation,
+is that there are things
+[01:39] which we always need to
+do ourselves: information
+[01:43] and data security, access
+of devices to what needs
+[01:46] to be accessed to managing
+the device itself,
+[01:49] and accounts and identities.
+[01:51] There will be capabilities
+that can help with that,
+[01:54] but it is up to us as
+customers to do it.
+[01:57] For example, mobile
+device management
+[01:59] and mobile application
+management can help
+[02:01] with devices, or we can
+leverage purview capabilities
+[02:05] for our data.
+[02:06] But it will not be
+done automatically.
+[02:09] Same for identities, can do
+it Entra, but still needs
+[02:13] to be managed and maintained
+by us as a customer.
+[02:17] Time to zoom in a little
+by starting with looking
+[02:21] at Infrastructure as a Service.
+[02:24] One of the key aspects
+of Infrastructure
+[02:26] as a Service security is how
+to protect virtual machines,
+[02:30] which are the main resource
+we use in this model.
+[02:33] Virtual machines have many
+challenges such as keeping them
+[02:36] up to date, managing
+their life cycle,
+[02:39] and preventing unauthorized
+access or data theft.
+[02:43] And there are a lot
+of chores, and types,
+[02:45] and sizes of virtual machines.
+[02:47] All come with their own
+benefits and challenges.
+[02:50] The VMs we run on Azure
+can be protected using
+[02:53] platform capabilities.
+[02:54] VMs outside are a bit
+more challenging,
+[02:57] but we can use capabilities
+to cater for those, too.
+[03:00] Think of protecting VMs
+by using authentication
+[03:03] and access controls,
+which allows us to define
+[03:06] who can access and
+manage the VMs
+[03:08] and what actions
+they can perform.
+[03:10] We can use role-based access
+controls and Azure policies
+[03:13] to enforce these rules on
+Azure, built into Azure
+[03:16] and extensible
+elsewhere, for example,
+[03:17] by using Azure Arc
+as a technology.
+[03:22] Protecting against malware,
+[03:23] which can compromise the
+integrity and confidentiality
+[03:26] of our data and applications,
+we can use defenders to detect
+[03:30] and prevent malware
+infections of our VMs,
+[03:33] Defender for Endpoint,
+Defender for Servers,
+[03:35] in Azure but also outside.
+[03:39] Managing our VM
+updates, which ensures
+[03:42] that our VMs have the
+latest security patches
+[03:44] and build fixes, we can use
+Azure Update management
+[03:47] and Azure Automation tool to
+like monitor the update process,
+[03:50] works in Azure and if we
+can reach a VM also outside
+[03:54] of Azure.
+[03:55] But we may need
+to deploy agents,
+[03:59] or maybe you are using
+another technology
+[04:01] to drive your date management,
+[04:04] managing our VM security
+posture, which helps us
+[04:06] to identify or remediate
+any vulnerabilities
+[04:08] or misconfigurations
+that may expose our VMs
+[04:11] to potential stress.
+[04:12] Think of SCCM and
+CWP capabilities
+[04:17] that we discuss
+in another video.
+[04:21] Encrypting our disks, which
+protects our data at rest
+[04:24] from unauthorized
+access for theft,
+[04:26] we can use Azure Disk
+Encryption to encrypt our disk
+[04:29] and store keys in Azure
+Key Vault and VM disks
+[04:32] with encryption keys
+that we can control.
+[04:34] Outside of Azure, we can
+also use technologies
+[04:36] like (inaudible) dm-crypt
+and vaulting to get
+[04:39] into a protected state.
+[04:41] But there is one other thing
+that is very common when working
+[04:44] with virtual machines.
+[04:45] People want to have
+access, console access.
+[04:50] Sometimes we need to use
+remoting when we work
+[04:53] with virtual machines.
+[04:55] The best way to do things
+[04:57] on a virtual machine
+is to use automation.
+[04:58] So we have scripts and command
+lines that can be written
+[05:01] in a controlled way, but
+sometimes we need people
+[05:04] to access the machines
+through a console.
+[05:07] We need to ensure that
+access is secure.
+[05:10] So I've put some
+options on the slides.
+[05:12] Now, we can use jump servers
+or controlled servers
+[05:15] that people must remote into,
+and then use them as a gateway
+[05:18] to the virtual machines.
+[05:20] Or if the user and the VM
+have direct visibility,
+[05:23] they might be able to
+use a direct console.
+[05:26] But it usually means that
+we must open many ports
+[05:29] on a network, which
+is not ideal.
+[05:32] So with centralizing
+functionality
+[05:34] like jump services better
+-- could be virtual server,
+[05:37] or virtual desktop, or we could
+also look at Azure Bastion.
+[05:41] Azure Bastion is like a
+jump server as a service.
+[05:45] What I like about Bastion
+is that it connects us
+[05:48] to verify explicitly from
+the zero-trust perspective.
+[05:53] First, you connect to Bastion,
+and then we can evaluate
+[05:55] that access request,
+weighing all the evidence,
+[05:57] and do that regularly.
+[05:59] And only if everything
+is what it needs to be,
+[06:01] then Bastion will let
+you connect to the VM
+[06:04] and it can stay between.
+[06:06] So the connection flows for
+Bastion, which can translate
+[06:09] from a web-based
+session at the front,
+[06:11] also to a console
+session towards the VM.
+[06:14] And out here, Bastion is
+for managing a VM, right?
+[06:17] It is not intended for
+building an end server --
+[06:20] an end user solution.
+[06:22] For that there are more suitable
+services in a portfolio.
+[06:28] Now, Paas, PaaS security,
+Platform as a Service,
+[06:31] has many different options
+depending on what we need to do.
+[06:34] And there are different types
+of Platform as a Service.
+[06:36] Here we use some
+aspects of that,
+[06:38] but there are more
+choices, right?
+[06:41] Data can go to storage
+accounts or databases.
+[06:44] Compute can be a container, or
+a function, or a logic app.
+[06:48] There are too many options to
+cover them all here, right,
+[06:51] so I just want to focus
+on things that are useful
+[06:53] from our architect's
+perspective.
+[06:56] We will talk about data later,
+but in this video, we will look
+[06:59] at some compute
+aspects in a moment.
+[07:03] Oh, identity, using identity.
+[07:06] Identity's new perimeter
+make workloads controllable
+[07:09] through an identity.
+[07:11] On Azure, we can use the
+"managed identity" feature.
+[07:14] Outside of Azure, we can use
+an auto service principle,
+[07:17] an application identity,
+to give an account access
+[07:20] to a Platform as a
+Service feature.
+[07:23] Test ready and be ready to act.
+[07:26] Now, features like
+defenders can help
+[07:28] with cloud security
+posture management
+[07:30] and cloud workload
+protection to improving
+[07:32] on all sorts of
+security features.
+[07:33] And think multilayer,
+defense in depth.
+[07:36] Have firewalls at the edge
+before an application,
+[07:39] protects from common attacks
+[07:40] like distributed denial
+of service and so on.
+[07:44] If you follow the
+guidance of framework
+[07:46] like the cloud
+adoption framework
+[07:47] and the well-architected
+framework,
+[07:49] then many of these elements
+will be integrators.
+[07:52] But what about compute,
+compute other than we know
+[07:55] from Infrastructure as a
+Service versus a machine?
+[07:59] We have choices, many choices.
+[08:01] And I personally like to use
+the Azure Pricing Calculator
+[08:05] to see what is available.
+[08:06] It gives me quick access and a
+good overview, including links
+[08:10] to learn more, and I can
+easily get some idea also
+[08:14] about the cost of a
+certain component.
+[08:17] Usually we choose the things
+we want from these options,
+[08:20] and then pay for them
+after using them.
+[08:22] But I want to understand
+the pricing dynamics.
+[08:24] And while it's more the job of
+architects, I'm curious, right,
+[08:28] especially about
+what is their --
+[08:30] what extra can we do
+to increase security?
+[08:34] You can see a security
+submenu on my screenshot,
+[08:37] and I want to focus on compute.
+[08:38] We find virtual machines,
+containers, apps, and more.
+[08:43] Now, let me simplify the
+compute options a little.
+[08:46] They are physical
+and they're virtual,
+[08:50] and then we have containers
+[08:51] and serverless computing
+as (inaudible).
+[08:54] What I'm showing in the graphic
+is the area that we worry
+[08:57] about as a customer
+on the platform.
+[08:58] With a VM we need to secure good
+data, et cetera, the Guestwares,
+[09:03] the middleware, and the apps,
+which is a lot of work.
+[09:06] When we use containers, the
+responsibility moves up.
+[09:09] We don't need to manage the
+hardware, operating system,
+[09:13] and the container runtime,
+just the container.
+[09:16] And with serverless computes,
+the focus is on the workload,
+[09:19] not the hardware, operating
+system, and the middleware,
+[09:22] that is provided, securing the
+platform, keeping it up to date.
+[09:26] That starts for us as
+customers to put effort into,
+[09:29] and that's good, right, so
+we can focus on other tasks.
+[09:32] But before we leave this
+topic, another factor.
+[09:35] What's the risk?
+[09:37] Can a container affect another
+[09:38] or can a virtual
+machine damage another
+[09:41] through the layers we see here?
+[09:43] Possibly, yes.
+[09:45] And if we have it as a
+risk on our risk lists,
+[09:48] we can deal with it by
+telling the platform
+[09:50] that we want our
+workload to be isolated.
+[09:53] It's like, "Hello, Azure,
+give me dedicated hardware
+[09:56] that would only be used
+by me or my organization,
+[09:59] or put it into a network
+segment that I'm using.
+[10:02] Don't expose it elsewhere."
+[10:03] It's like isolating it.
+[10:06] So we have a choice, right?
+[10:07] But as you can imagine,
+choice comes at a cost.
+[10:09] The isolation will
+add complexity
+[10:12] and cost to our solution.
+[10:13] And sometimes we
+need to add that.
+[10:15] Consider compliance,
+for example.
+[10:17] There are compliance frameworks
+that demand isolation
+[10:20] that could result in the need
+[10:21] for an isolated application
+service environment
+[10:24] to (inaudible) or a
+dedicated Kubernetes cluster
+[10:27] in a private subnet to run
+[10:29] and orchestrate your
+container workloads.
+[10:32] Now, containers.
+[10:33] Containers, they are everywhere.
+[10:37] And there are challenges
+with that and with them.
+[10:41] From all the "compute" options,
+this is the one we also lean
+[10:45] to more in this
+video, containers.
+[10:48] Many things get containerized.
+[10:50] It is more efficient since
+the operating system is
+[10:52] stripped out.
+[10:53] And they are very portable.
+[10:55] Containers are very portable.
+[10:57] With containers, there
+is nothing to install.
+[10:59] The idea is that an image is
+created representing the compute
+[11:03] workload, and when we need
+to run it, we pull the image
+[11:06] from a library and compute it.
+[11:08] It's smaller, it's portable,
+it's efficient, it's great.
+[11:12] And look at all the places where
+we can go and compute our image,
+[11:15] ACI, Azure Container Instances,
+Kubernetes, container apps,
+[11:19] just to name a few, and the
+images we can keep in a library,
+[11:23] like key Azure
+Container Registry.
+[11:26] So what are some
+security considerations?
+[11:30] Well, save and access images
+from a private registry,
+[11:33] such as the Azure Container
+Registry or Docker registry.
+[11:37] I use tools like Microsoft
+Defender for Cloud
+[11:40] to check container images
+in a private registry
+[11:43] and detect possible
+vulnerabilities.
+[11:46] Since containers can
+spend multiple clusters
+[11:48] in Azure regions, secure the
+credentials needed for logins
+[11:52] and -- or API access, and only
+allow authorized container
+[11:56] images and manage the
+flow of container images
+[11:59] into the development
+environments.
+[12:02] For security posture management,
+[12:03] use Microsoft
+Defender for Cloud.
+[12:05] It will help protect container
+options by comparing them
+[12:08] to the best practices from
+the Microsoft cloud security
+[12:11] benchmark, the MCSB baselines.
+[12:13] Think about using Defender
+for Containers as part
+[12:16] of Defender for Cloud.
+[12:17] That will help with cloud
+workload protection,
+[12:20] a deeper scan, and behavior
+of your containers,
+[12:23] and container solutions.
+[12:25] Monitor the runtime
+behavior of containers
+[12:28] and identify malicious or
+suspicious activities,
+[12:31] such as crypto mining,
+previous escalation,
+[12:34] or networking attacks.
+[12:36] Make sure you collect and
+analyze the container logs
+[12:39] and telemetry to get
+and provide visibility
+[12:41] into the container environment
+and detect anomalies
+[12:44] or indicators of compromise.
+[12:47] Integrate with Azure
+Kubernetes Service, AKS,
+[12:51] Azure Container
+Instances, ACI, Docker,
+[12:54] and other container platforms
+[12:55] to provide unified security
+solutions across hybrid
+[12:59] and multicloud scenarios,
+[13:02] and support automatic
+response actions and alerts
+[13:04] to help mitigate threats and
+remediate issues in real time.
+[13:09] I had one customer that found
+out her images were compromised.
+[13:13] Defender for Containers
+listened in and was able
+[13:15] to understand the containers
+were mining Monero, right,
+[13:19] it's abnormal behavior.
+[13:20] Defender for Containers
+was worth the investment.
+[13:23] In general, defenders make
+a difference in helping us
+[13:26] to protect, detect, and
+respond, but many of them need
+[13:29] to be turned on first.
+[13:31] That will be a gap to look for,
+[13:33] are there capabilities
+we can turn
+[13:35] on to strengthen our security
+posture and increase visibility?
+[13:39] But let's come to
+an end for now.
+[13:42] In this video, we looked
+at considerations
+[13:45] for Infrastructure as
+a Service and Platform
+[13:47] as a Service workloads, and
+for Platform as a Service
+[13:50] into container
+technologies specifically.
+[13:53] For understanding the end
+rerouting patterns better,
+[13:56] the Bastion
+documentation can help.
+[13:59] For capabilities that can help
+understand the protect workloads
+[14:01] in general, look at the
+documentation that comes
+[14:03] with Defender for Cloud.
+[14:05] They are listed as short
+links on the presentation.
+[14:09] Thank you for watching.
+[14:11] Explore the other videos
+[14:12] in the cybersecurity
+architect series for more.
+[14:15] There's always more.
+[14:16] And also, please go study, go
+eat, and make sure to stay safe.

@@ -1,0 +1,293 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello,
+welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+Cybersecurity Architects.
+[00:17] In this video, we focus
+on threat modeling,
+[00:20] unlock the essentials of threat
+modeling in an application
+[00:23] and data security, and discover
+why it matters and how it fits
+[00:26] into DevOps and get a quick
+dive into the STRIDE framework
+[00:29] in this focus video for
+cybersecurity architects.
+[00:32] The content of this video is
+mostly lined with the area
+[00:35] of solutions for
+application data
+[00:37] from a certification
+perspective.
+[00:39] A question, why should
+we have a threat model,
+[00:42] and that's the main
+question for this video.
+[00:45] The topics I want to visit with
+you are about DevOps security,
+[00:49] threat modeling and STRIDE,
+[00:52] the model that helps
+categorize threats.
+[00:55] Let's begin with some
+situational awareness.
+[00:58] Where does the topic fit?
+[00:59] Where is it in the
+bigger picture?
+[01:02] Here we have a graphic from
+the Microsoft cybersecurity
+[01:04] reference architecture, the
+MCRA, that is often used
+[01:07] for understanding capabilities.
+[01:09] The topics in this
+video align best
+[01:11] with securing a
+development lifecycle
+[01:13] in a Microsoft portfolio
+that is represented best
+[01:15] by the Microsoft Security
+Development Lifecycle, or SDL.
+[01:20] The guidance and libraries, we
+started constructing years ago
+[01:23] around how to improve
+development, code, and security.
+[01:26] In the graphic, we
+find that element
+[01:28] at the bottom right corner.
+[01:30] If you go to this
+graphic in the MCRA,
+[01:32] the link to the SDL
+will be clickable,
+[01:35] but I will also supply you
+with a short link in a moment
+[01:37] and also at the
+end of this video.
+[01:40] We should ensure there is
+security development going on,
+[01:43] whether it is for
+software development
+[01:45] or for infrastructure as code.
+[01:48] We should adopt best
+practices when it comes
+[01:50] to security development.
+[01:52] Now best practices,
+where can we find those?
+[01:55] I hope you think of the
+Cloud Adoption Framework,
+[01:57] the architected framework
+[01:59] and the Microsoft Cloud Security
+Benchmark next to the MCRA,
+[02:03] from which I was presenting
+graphics just a moment ago.
+[02:06] In the MCSB, we have the control
+domain of DS, DevOps Security,
+[02:10] with seven -- seven
+-- controls listed.
+[02:14] Here they are, DS-1 to 7, and
+as usual for the controls
+[02:18] in the MCSB, we should start
+at the top and move downwards.
+[02:22] So we should start with threat
+modeling, and we will focus
+[02:24] on that here, but make sure
+you do not overlook the other
+[02:28] controls mentioned here.
+[02:30] For example, at DS-7,
+logging, we need logging.
+[02:33] We need that visibility and
+integrate it with other data
+[02:36] to see the whole picture.
+[02:38] That is Zero Trust again,
+visibility, orchestration
+[02:41] and automation, but let's go
+back to DS 1, threat modeling.
+[02:46] Threat modeling is a systematic
+process of identifying,
+[02:50] analyzing, and prioritizing the
+potential threats to a system.
+[02:55] It helps to understand the
+infrastructure, the workload,
+[02:58] and the application that
+makes up the system,
+[03:00] as well as their dependencies
+and interactions.
+[03:03] It also gives us a way to start
+addressing the most critical
+[03:06] risks and mitigating them with
+appropriate countermeasures.
+[03:11] By performing threat modeling,
+we can improve the security
+[03:13] and resilience of our system and
+align our security objectives
+[03:16] with our business goals.
+[03:18] Start doing a model; draw it out
+and start leveraging that model
+[03:22] to identify and improve.
+[03:25] The link on the slide will help
+you to go to the SDL directory,
+[03:29] the SDL libraries of which
+threat modeling is an element.
+[03:33] There you will see
+the graphic I've got
+[03:35] on the screen currently,
+and you will see
+[03:37] that there's five major
+steps in threat modeling.
+[03:40] One, it's about defining
+security requirements.
+[03:44] Two, creating an application
+diagram, and then, three,
+[03:49] go and identify the threats.
+[03:50] And once they've been
+identified, do number four,
+[03:53] go mitigate those threats.
+[03:54] And then, of course, we have
+[03:56] to validate whether the threats
+have been mitigated enough
+[03:59] or effectively.
+[04:01] And threat modeling
+should be a part
+[04:02] of your routine development,
+of your development lifecycle,
+[04:06] enabling you to progressively
+refine your threat model
+[04:10] and further reduce risk.
+[04:12] And it's five simple
+steps, so go and do them.
+[04:15] But, of course, you will need to
+make choices to set a priority.
+[04:21] And that's also something where
+threat modeling can help you.
+[04:24] It uncovers interactions
+and threats, and then,
+[04:27] we need to quantify those.
+[04:30] Risk arises from
+identified threats,
+[04:32] encompassing both the likelihood
+and potential impact.
+[04:36] This assessment informs
+the implementation
+[04:38] of appropriate mitigation
+strategies to manage
+[04:40] or reduce risk to an
+acceptable level.
+[04:44] Alternatively, organizations may
+choose to accept certain risks.
+[04:48] Threat modeling supports
+risk-based thinking
+[04:51] and evaluation within
+the organization.
+[04:55] An application should undergo
+threat analysis as part
+[04:57] of their development, though
+this isn't always routine,
+[05:00] and the process
+involves identifying
+[05:02] and assessing threats to
+an application's security
+[05:05] and functionality, typically
+using reference models
+[05:09] like OWASP, the Open Web
+Application Security Project,
+[05:13] or Microsoft's STRIDE model.
+[05:15] Now, STRIDE is widely used, and
+knowledge of it is important,
+[05:19] also, for certification.
+[05:21] STRIDE, STRIDE is an acronym
+for application security.
+[05:26] It's Spoofing,
+Tampering, Repudiation,
+[05:30] Information disclosure,
+Denial of service,
+[05:32] and Elevation of privileges.
+[05:34] Together they make up STRIDE.
+[05:36] Threat modelers use STRIDE to
+identify and categorize risk
+[05:40] in each component
+or interaction,
+[05:42] evaluating their
+severity and likelihood.
+[05:45] Applying STRIDE helps find
+vulnerabilities early,
+[05:49] reduce exploitation risk, and
+meet regulatory compliance.
+[05:53] For more information,
+go inspect the link
+[05:55] about STRIDE,
+aka.ms.forge.stride.
+[05:59] Now, threat modeling,
+particularly
+[06:01] when you're using the
+STRIDE framework,
+[06:03] can present some challenges.
+[06:05] When initiating threat
+modeling, it's straightforward,
+[06:08] but maintaining consistency
+and effectiveness,
+[06:11] connecting things
+together with STRIDE,
+[06:12] requires a bit more attention.
+[06:14] The Microsoft Threat
+Modeling Tool was developed
+[06:16] to assist with those aspects.
+[06:18] The free tool, the free software
+application, enables developers
+[06:22] and security
+professionals to identify
+[06:24] and address potential
+threats within their system.
+[06:27] Users can diagram illustrating
+their application architecture,
+[06:30] systematically apply
+the STRIDE methodology
+[06:33] to assess each component,
+and generate reports
+[06:35] that include mitigation
+recommendations.
+[06:39] Additionally, the tool offers
+integration with Azure DevOps
+[06:41] and GitHub, making it
+possible for teams
+[06:44] to collaborate efficiently
+and monitor the progress
+[06:46] of their threat modeling work.
+[06:50] Here's a link to this great free
+tool, and download it and refer
+[06:55] to the Getting Started
+Guide to begin using it.
+[06:58] Use the tool to identify and
+address potential issues,
+[07:01] and note that both the tool and
+its application are included
+[07:05] in the Cybersecurity Architects
+certification objectives.
+[07:09] In this video, we discussed
+understanding threats
+[07:12] and how early threat
+modeling benefits any
+[07:14] development process.
+[07:16] We covered threat modeling
+basics, the STRIDE model,
+[07:19] and introduced a useful
+tool for threat modeling.
+[07:23] For reference, here
+are some short links
+[07:25] that were provided in the video.
+[07:27] One to security development
+lifecycle, the documentation
+[07:30] which covers a wide
+range of topics,
+[07:32] including threat modeling.
+[07:34] One to STRIDE, and one
+to that great free tool
+[07:37] that you should go and try out.
+[07:39] All right.
+[07:40] Thank you very much for
+watching this video.
+[07:42] There are more in the series
+[07:43] of the Cybersecurity Architect
+role, meet you in another one,
+[07:46] and until that time, stay safe.

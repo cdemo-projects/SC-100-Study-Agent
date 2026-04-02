@@ -1,0 +1,178 @@
+[
+  {
+    "domain": "1",
+    "objective": "1.3",
+    "scenario": "A financial services company is adopting a Zero Trust security model. They currently have a flat network with implicit trust for internal users. Their CISO wants to prioritize quick wins that reduce risk while the broader Zero Trust implementation is planned over 18 months.",
+    "stem": "Which approach should you recommend to accelerate the initial Zero Trust deployment?",
+    "choices": [
+      "A. Implement the Zero Trust Rapid Modernization Plan (RaMP) focusing on user identity and device verification",
+      "B. Redesign the entire network with micro-segmentation before addressing identity",
+      "C. Deploy Microsoft Defender for Cloud across all subscriptions as the first step",
+      "D. Implement Microsoft Purview Information Protection for all data classification"
+    ],
+    "correct": 0,
+    "explanation": "The Zero Trust RaMP provides prioritized quick wins, starting with identity and device verification, which are the highest-impact, fastest-to-deploy Zero Trust controls. The CISO asked for quick wins while planning the broader rollout.",
+    "wrongExplanations": [
+      "B: Micro-segmentation is important but is a long-term network project, not a quick win. RaMP specifically prioritizes identity before network.",
+      "C: Defender for Cloud is valuable for posture management but doesn't address the core Zero Trust principle of 'never trust, always verify' for user access.",
+      "D: Data classification is part of Zero Trust but is not the highest-priority quick win. RaMP starts with identity and devices, not data."
+    ],
+    "searchTerms": "Zero Trust Rapid Modernization Plan RaMP",
+    "examTip": "When a question mentions 'quick wins' + 'Zero Trust,' think RaMP. It's Microsoft's prioritized roadmap for Zero Trust adoption."
+  },
+  {
+    "domain": "2",
+    "objective": "2.1",
+    "scenario": "A multinational corporation uses Microsoft 365 E5 and Azure. Their SOC team needs to detect and respond to advanced threats across endpoints, email, identity, and cloud apps from a single console. They also need automated investigation and response capabilities to reduce analyst workload.",
+    "stem": "Which solution should you recommend as the primary detection and response platform?",
+    "choices": [
+      "A. Microsoft Sentinel with custom analytics rules",
+      "B. Microsoft Defender XDR",
+      "C. Microsoft Defender for Cloud with enhanced security features",
+      "D. Microsoft Entra ID Protection with Conditional Access"
+    ],
+    "correct": 1,
+    "explanation": "Microsoft Defender XDR provides unified detection and response across endpoints (Defender for Endpoint), email (Defender for Office 365), identity (Defender for Identity), and cloud apps (Defender for Cloud Apps) in a single console with automated investigation and response (AIR).",
+    "wrongExplanations": [
+      "A: Sentinel is a SIEM/SOAR platform for centralized logging and custom detection. It complements Defender XDR but doesn't provide the built-in cross-product correlation and automated investigation the scenario requires.",
+      "C: Defender for Cloud focuses on cloud security posture and workload protection, not cross-product detection across email, identity, and endpoints.",
+      "D: Entra ID Protection addresses identity risk only, not the full cross-domain detection and response scope described."
+    ],
+    "searchTerms": "Microsoft Defender XDR overview",
+    "examTip": "XDR = cross-product detection and response (endpoints, email, identity, cloud apps). Sentinel = SIEM for centralized logs and custom analytics. Know the difference."
+  },
+  {
+    "domain": "3",
+    "objective": "3.1",
+    "scenario": "An enterprise with workloads in Azure, AWS, and on-premises data centers needs a unified view of its security posture. They want to track compliance against industry benchmarks and get prioritized recommendations for hardening across all environments.",
+    "stem": "Which solution provides a unified security posture view across hybrid and multicloud environments?",
+    "choices": [
+      "A. Microsoft Sentinel with multi-workspace architecture",
+      "B. Microsoft Defender for Cloud with multicloud connectors",
+      "C. Azure Policy applied across all Azure subscriptions",
+      "D. Microsoft Entra Permissions Management"
+    ],
+    "correct": 1,
+    "explanation": "Defender for Cloud supports multicloud (Azure, AWS, GCP) and on-premises via Azure Arc. It provides Secure Score, compliance tracking against MCSB and industry benchmarks, and prioritized hardening recommendations across all connected environments.",
+    "wrongExplanations": [
+      "A: Sentinel is a SIEM for log collection and threat detection, not security posture management. It doesn't provide compliance scores or hardening recommendations.",
+      "C: Azure Policy only applies to Azure resources. It cannot assess posture in AWS or on-premises environments.",
+      "D: Entra Permissions Management handles cloud infrastructure entitlements (CIEM), not overall security posture management."
+    ],
+    "searchTerms": "Defender for Cloud multicloud security posture",
+    "examTip": "Multicloud posture management = Defender for Cloud. If a question mentions AWS + Azure + posture/compliance, that's the answer."
+  },
+  {
+    "domain": "4",
+    "objective": "4.3",
+    "scenario": "A healthcare company stores patient records in Azure SQL Database and Azure Blob Storage. They need to encrypt data at rest and in transit, manage encryption keys with full control over key lifecycle, and meet HIPAA requirements for key management auditability.",
+    "stem": "Which solution should you recommend for managing encryption keys with full lifecycle control and audit capabilities?",
+    "choices": [
+      "A. Azure Storage Service Encryption with Microsoft-managed keys",
+      "B. Azure Key Vault with customer-managed keys and audit logging enabled",
+      "C. Azure Information Protection with automatic labeling",
+      "D. Microsoft Purview Data Loss Prevention policies"
+    ],
+    "correct": 1,
+    "explanation": "Azure Key Vault with customer-managed keys (CMK) gives the organization full control over key creation, rotation, and revocation. Key Vault audit logging provides the auditability required for HIPAA compliance. CMK can be applied to both Azure SQL (TDE with CMK) and Blob Storage.",
+    "wrongExplanations": [
+      "A: Microsoft-managed keys provide encryption at rest, but the organization doesn't control the key lifecycle. The scenario specifically requires full key lifecycle control.",
+      "C: Azure Information Protection classifies and labels data but doesn't manage encryption keys or provide key lifecycle management.",
+      "D: Purview DLP prevents data exfiltration through policy enforcement but doesn't address encryption key management."
+    ],
+    "searchTerms": "Azure Key Vault customer managed keys",
+    "examTip": "When a question mentions 'control over key lifecycle' or 'key management audit,' the answer is Key Vault with customer-managed keys. Microsoft-managed keys = no control."
+  },
+  {
+    "domain": "2",
+    "objective": "2.3",
+    "scenario": "A large enterprise is implementing the enterprise access model to secure privileged access. They want to ensure that Global Administrator roles are only activated when needed, require approval workflows, and are time-limited. They also need to review whether existing role assignments are still necessary.",
+    "stem": "Which combination of features should you recommend?",
+    "choices": [
+      "A. Microsoft Entra PIM with just-in-time activation and access reviews",
+      "B. Microsoft Entra Conditional Access with session controls",
+      "C. Microsoft Defender for Identity with lateral movement detection",
+      "D. Microsoft Purview Privileged Access Management"
+    ],
+    "correct": 0,
+    "explanation": "Entra PIM provides just-in-time role activation (time-limited), approval workflows for privileged role activation, and access reviews to audit whether existing role assignments are still needed. This directly maps to all three requirements in the scenario.",
+    "wrongExplanations": [
+      "B: Conditional Access controls how users authenticate and access resources, but doesn't provide just-in-time privileged role activation or role assignment reviews.",
+      "C: Defender for Identity detects identity-based threats and lateral movement in AD, but doesn't manage privileged role activation or access reviews.",
+      "D: Purview PAM provides privileged access management for specific tasks in Microsoft 365, not Azure AD role management. PIM is the broader solution for managing privileged roles across Azure and Entra."
+    ],
+    "searchTerms": "Microsoft Entra PIM overview",
+    "examTip": "PIM = just-in-time privileged roles + approval workflows + access reviews. If a question mentions any of these three together, PIM is the answer."
+  },
+  {
+    "domain": "1",
+    "objective": "1.2",
+    "scenario": "An organization's security team is evaluating their cloud security architecture against industry best practices. They want to use a Microsoft-provided reference that shows how Microsoft security products integrate together and maps security capabilities to common threat scenarios.",
+    "stem": "Which resource should you recommend as the primary reference for this evaluation?",
+    "choices": [
+      "A. Microsoft Cloud Security Benchmark (MCSB)",
+      "B. Microsoft Cybersecurity Reference Architectures (MCRA)",
+      "C. Azure Well-Architected Framework Security Pillar",
+      "D. MITRE ATT&CK for Enterprise"
+    ],
+    "correct": 1,
+    "explanation": "MCRA provides detailed architecture diagrams showing how Microsoft security products integrate together, maps capabilities to threat scenarios, and serves as the primary reference for how the security portfolio fits together. It's the official 'big picture' view of Microsoft security architecture.",
+    "wrongExplanations": [
+      "A: MCSB provides security control benchmarks and recommendations for Azure services, but doesn't show how products integrate together or map to threat scenarios.",
+      "C: The WAF Security Pillar provides design principles for secure architectures, but is about architectural patterns, not how specific Microsoft security products integrate.",
+      "D: MITRE ATT&CK is an industry threat framework, not a Microsoft-specific integration reference. It's used for mapping detection coverage, not evaluating product architecture."
+    ],
+    "searchTerms": "Microsoft Cybersecurity Reference Architectures MCRA",
+    "examTip": "MCRA = how Microsoft security products fit together. MCSB = security control benchmarks for Azure resources. Know the difference."
+  },
+  {
+    "domain": "2",
+    "objective": "2.1",
+    "scenario": "A company's SOC receives alerts from multiple Microsoft security products. The security architect needs to design the detection and response architecture. Review the following architecture diagram showing the current data flow.",
+    "stem": "Based on the architecture below, which component is missing that would provide automated cross-product incident correlation?",
+    "diagram": {
+      "type": "mermaid",
+      "content": "graph LR\n    A[Defender for Endpoint] -->|Alerts| D[Sentinel]\n    B[Defender for Office 365] -->|Alerts| D\n    C[Defender for Identity] -->|Alerts| D\n    E[Defender for Cloud Apps] -->|Alerts| D\n    D -->|Manual Review| F[SOC Analyst]\n    style D fill:#569cd6,stroke:#333,color:#fff\n    style F fill:#ce9178,stroke:#333,color:#fff"
+    },
+    "choices": [
+      "A. Add Microsoft Defender XDR between the Defender products and Sentinel for automated incident correlation",
+      "B. Add Azure Monitor between the Defender products and Sentinel",
+      "C. Add Microsoft Entra ID Protection before Sentinel",
+      "D. Add a second Sentinel workspace for redundancy"
+    ],
+    "correct": 0,
+    "explanation": "The diagram shows all Defender products feeding directly into Sentinel (SIEM) with manual SOC review. The missing layer is Defender XDR, which provides automated cross-product incident correlation, automated investigation and response (AIR), and unified incident management. Sentinel should receive enriched, correlated incidents from XDR, not raw alerts from each product individually.",
+    "wrongExplanations": [
+      "B: Azure Monitor collects platform metrics and logs, not security incident correlation. It's an observability tool, not a security orchestration layer.",
+      "C: Entra ID Protection handles identity risk detection, not cross-product incident correlation. It's another signal source, not the correlation engine.",
+      "D: A second Sentinel workspace doesn't solve the correlation problem. The issue is that alerts arrive uncorrelated, not that there's insufficient capacity."
+    ],
+    "searchTerms": "Microsoft Defender XDR automated investigation",
+    "examTip": "When you see a diagram with Defender products feeding directly into Sentinel without XDR, the missing piece is always XDR for automated correlation. Sentinel is the SIEM; XDR is the correlation and automation layer."
+  },
+  {
+    "domain": "3",
+    "objective": "3.1",
+    "scenario": "An organization is designing its multicloud security posture management strategy. Review the architecture diagram showing their current monitoring setup across Azure, AWS, and on-premises environments.",
+    "stem": "Which component should be added to provide unified posture management across all three environments?",
+    "diagram": {
+      "type": "mermaid",
+      "content": "graph TD\n    subgraph Azure\n      A1[VMs] --> A2[Azure Security Center - Basic]\n      A3[Storage] --> A2\n    end\n    subgraph AWS\n      B1[EC2] --> B2[AWS Security Hub]\n      B3[S3] --> B2\n    end\n    subgraph On-Prem\n      C1[Windows Servers]\n      C2[Linux Servers]\n    end\n    A2 -->|Separate Dashboard| D[SOC]\n    B2 -->|Separate Dashboard| D\n    style D fill:#ce9178,stroke:#333,color:#fff"
+    },
+    "choices": [
+      "A. Replace AWS Security Hub with Microsoft Sentinel",
+      "B. Deploy Microsoft Defender for Cloud with multicloud connectors and Azure Arc for on-premises",
+      "C. Deploy Azure Policy across all environments",
+      "D. Implement Microsoft Entra Permissions Management for all cloud providers"
+    ],
+    "correct": 1,
+    "explanation": "Defender for Cloud with multicloud connectors can onboard AWS accounts (replacing the need for separate Security Hub dashboards) and Azure Arc extends posture management to on-premises servers. This provides a single unified Secure Score, compliance tracking, and hardening recommendations across all three environments.",
+    "wrongExplanations": [
+      "A: Sentinel is a SIEM for log aggregation and threat detection, not posture management. Replacing Security Hub with Sentinel doesn't provide compliance scores or hardening recommendations.",
+      "C: Azure Policy only applies to Azure resources and cannot manage posture in AWS or on-premises environments.",
+      "D: Entra Permissions Management addresses cloud entitlements (CIEM), not overall security posture, compliance benchmarks, or hardening recommendations."
+    ],
+    "searchTerms": "Defender for Cloud multicloud Azure Arc",
+    "examTip": "Diagram questions showing separate security dashboards per cloud = they need Defender for Cloud to unify. Azure Arc bridges on-premises into the same view."
+  }
+]

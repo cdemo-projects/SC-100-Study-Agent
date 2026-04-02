@@ -1,0 +1,668 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello, and
+welcome to this video.
+[00:09] My name is Marco Nuijen.
+[00:10] I'm a Trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:15] of a Microsoft
+Cybersecurity Architect.
+[00:17] In this video, we will discuss
+the topic of cyberthreat
+[00:20] with ransomware as an example,
+discover how to defend
+[00:24] against evolving cyberthreats
+with a focus on ransomware
+[00:27] as we break down key
+security best practices
+[00:30] and show why identity
+is the new perimeter
+[00:32] in this essential guide for
+cybersecurity architects.
+[00:36] The content of this video is
+mostly aligned with the area
+[00:39] of attention that is called
+Security Best Practices
+[00:41] and Priorities, that is
+for the certification.
+[00:44] Now, why is ransomware
+a priority?
+[00:47] There are many threats, and
+the landscape is changing
+[00:49] and evolving.
+[00:50] But over the last years,
+[00:51] a dominant attack pattern
+has been ransomware.
+[00:55] You will be dealing
+with it at some point,
+[00:56] and you better be prepared.
+[00:58] That is why I've
+created this video
+[01:00] where we will use
+ransomware as an example
+[01:02] of dealing with cyberthreats.
+[01:05] Spoiler alert.
+[01:07] In essence, this is
+business continuity
+[01:09] and disaster recovery, BCDR
+for short, as we've used it
+[01:13] in the industry for decades.
+[01:16] I consider cyberthreats a cause
+[01:17] of just another
+outage, a disaster.
+[01:20] And we are prepared
+for disasters
+[01:22] because we have invested in it.
+[01:25] And we're good at BCDR, right?
+[01:27] Well, okay, so let's focus
+a bit on ransomware.
+[01:31] What is it?
+[01:33] Let's start with a question.
+[01:35] What is ransomware?
+[01:37] Is it malware that encrypts
+files on a computer
+[01:40] and demands payment
+to decrypt them?
+[01:42] Is it a phishing email
+that tricks users
+[01:44] into revealing their password
+details, or malware spreads
+[01:48] through a network and deletes
+data on the infected machines?
+[01:52] Well, out of these, the
+best answer is, hey,
+[01:55] malware encrypts the
+files on the computer
+[01:58] and demands the payment
+to decrypt them.
+[02:00] And it has become a very
+nasty pattern by which a lot
+[02:04] of organizations get
+heavily impacted.
+[02:06] And yes, I know the
+attackers are shifting,
+[02:10] where they do not
+encrypt anymore.
+[02:12] They steal your data and
+threaten to release your data
+[02:15] to the public if
+you don't pay them.
+[02:17] Things evolve.
+[02:19] Our objective for this video
+is to discuss cyberthreats
+[02:22] and specifically ransomware,
+and what we can do
+[02:25] to protect our organizations.
+[02:27] And more importantly,
+[02:28] to be ready when it
+hits, because it will.
+[02:31] And we need to ensure
+we can survive
+[02:33] without too much
+loss of business.
+[02:36] Get ready but mostly be ready.
+[02:40] As I mentioned in the
+introduction, essentially,
+[02:42] we need to ensure our
+business continuity
+[02:44] and disaster recovery plans
+are there and tested.
+[02:47] Let's delve into
+that a bit first.
+[02:50] BCDR.
+[02:55] Imagine your business might
+be facing a failure --
+[02:58] an outage, a disaster, being
+impacted by ransomware.
+[03:01] How do we keep things running?
+[03:03] It all starts with proactive
+planning, preparation,
+[03:06] and building resilient systems.
+[03:08] First, you need to identify
+risks to your operations
+[03:11] like network issues, hardware
+failures, human error,
+[03:14] or even regional outages.
+[03:17] Once you know the risks,
+you classify them.
+[03:20] Are they common,
+something you can handle
+[03:22] with high availability,
+[03:23] or uncommon where disaster
+recovery comes in?
+[03:27] Next, design strategies
+to minimize those risks
+[03:30] and redundancy and replication,
+failover, and backups.
+[03:34] Don't forget, not all
+solutions are technical.
+[03:38] Process-based
+controls matter too.
+[03:41] Now, for disaster recovery,
+it's your plan for those rare
+[03:46] but catastrophic events,
+natural disasters,
+[03:51] critical human errors, or
+major security incidents
+[03:53] like ransomware attacks.
+[03:55] These can cause data
+loss and major outages.
+[03:59] Since disasters are
+rare but severe,
+[04:02] your response plan must
+address two key elements,
+[04:06] the Recovery Point
+Objective, or RPO,
+[04:08] which defines how much
+data loss is acceptable,
+[04:11] and Recovery Time
+Objective, RTO,
+[04:14] which sets the maximum
+acceptable downtime.
+[04:17] By planning, you ensure that
+even in the worst-case scenario,
+[04:21] your business can
+recover and continue
+[04:24] to serve your customers.
+[04:26] Let's look at a
+cause, a major cause,
+[04:28] of security incidents:
+ransomware.
+[04:32] Dealing with Ransomware.
+[04:34] Ransomware is a specific
+kind of malicious software
+[04:36] or malware used
+by cybercriminals
+[04:39] to render data
+systems inaccessible
+[04:42] for the purpose of
+extortion, ransom.
+[04:47] In a standard ransomware attack,
+[04:49] the cybercriminal achieves
+unauthorized access
+[04:53] to a victim's network,
+installs the ransomware,
+[04:56] usually in locations
+with sensitive data
+[04:58] or business-critical systems,
+and then executes the program,
+[05:02] blocking files, making
+them inaccessible
+[05:05] until the ransom is paid.
+[05:07] Usually, the ransom demand
+is for payment in the form
+[05:09] of cryptocurrency,
+such as Bitcoin
+[05:12] or anonymous cryptocurrencies
+like Monero.
+[05:16] But increasingly, attackers also
+steal sensitive data before
+[05:19] deploying the actual ransomware
+in what is known as a
+[05:22] "double-extortion
+ransomware attack."
+[05:26] The theft of data compels the
+victim to engage in negotiations
+[05:29] and raises the potential
+reputational, financial,
+[05:32] and legal cost of not
+paying the ransom,
+[05:35] as the attackers will not only
+leave the victim's data locked,
+[05:37] but also leak
+sensitive information
+[05:39] that could include
+confidential business data
+[05:42] or personally
+identifiable information.
+[05:45] And even more recently,
+ransomware parties have shifted
+[05:48] to just exfiltrating
+and extorting.
+[05:51] Technically less
+complicated for them,
+[05:53] which will render them a
+better return on investment.
+[05:57] Ransomware is a growing concern
+[05:58] because it can cause significant
+damage and disruption
+[06:02] to individuals and
+organizations.
+[06:05] Ransomware attackers can
+extort large sums of money
+[06:07] from their victims,
+who may lose access
+[06:09] to their essential
+files and systems.
+[06:12] Ransomware can also compromise
+the security and privacy
+[06:14] of sensitive data, such
+as personal information,
+[06:17] financial records, or
+intellectual property.
+[06:20] Moreover, ransomware can
+have negative impacts
+[06:22] on the reputation
+and credibility
+[06:24] of the affected parties, who may
+lose trust of their customers,
+[06:27] partners, and stakeholders.
+[06:29] Just open a news site and
+likely there will be a mention
+[06:32] of an organization that has
+lost data or is held at ransom.
+[06:35] It is a problem, and it's
+growing and growing and growing.
+[06:38] It's like the new normal, but of
+course it's not normal at all.
+[06:42] These are serious consequences.
+[06:44] And the impact on
+society is increasing.
+[06:47] And a great page to learn more
+on the topic are the page
+[06:50] on Microsoft Learn that
+explains what ransomware is
+[06:53] and how you can deal
+with the threat.
+[06:55] A short link to the
+page is displayed here
+[06:58] in the presentation.
+[07:00] And it's called
+"aks.ms/humor," but it's not
+[07:03] about being funny, right?
+[07:05] It's an abbreviation of
+Human Operated Ransomware,
+[07:08] and it's nothing to
+laugh at by itself.
+[07:12] So when you look at Human
+Operated Ransomware,
+[07:14] human is very profitable
+and it's very difficult
+[07:17] to capture the attackers.
+[07:19] Also, with the Internet,
+[07:21] the number of potential
+targets is incredible.
+[07:24] By now it's so widely spread
+that it is like a new normal.
+[07:28] It is not so much a question if
+we will be hit, but more when
+[07:33] and then how much impact
+there will be for us.
+[07:36] It is a big risk with
+a high likelihood
+[07:40] and potentially high impact.
+[07:42] So it needs to be on our
+list of items to focus on.
+[07:46] We need to be ready to deal with
+ransomware, but we also want
+[07:50] to prevent it as much as
+we can from happening.
+[07:53] We need to protect,
+detect, respond,
+[07:55] and potentially recover.
+[07:58] Over the years, our
+incident response teams
+[08:00] at Microsoft have been
+aiding a lot of customers
+[08:03] with ransomware situations.
+[08:05] That together with the lessons
+learned have come together
+[08:08] in advisories on what to do
+and how to do it, protect
+[08:11] and recover from ransomware.
+[08:13] Let's look at those
+advisories, high level first.
+[08:18] One, two, three, three
+elements to deploy.
+[08:22] Or ask Microsoft cybersecurity
+architect to verify explicitly,
+[08:27] has your organization
+readied themselves
+[08:29] for these three steps?
+[08:31] Number one, recovery.
+[08:34] First is to be ready
+when it happens.
+[08:36] Be able to recover what
+needs to be recovered.
+[08:40] Behind a simple step, there are
+a lot of activities that need
+[08:43] to be readied -- backups,
+[08:45] restore systems,
+people's processes.
+[08:48] And all of that needs to
+be tested regularly to see
+[08:50] if the results of a recovery
+process are indeed what they
+[08:53] need to be.
+[08:55] For me, this is very much
+something we have in enterprise
+[08:58] and architectures already,
+hopefully, right?
+[09:02] It's the Business Continuity
+[09:03] and Disaster Recovery,
+BCDR for short.
+[09:06] Ransomware is just another
+disaster waiting to happen,
+[09:09] and we need to be ready for it.
+[09:11] That is our segue into the topic
+of backup later in this video.
+[09:16] Number two
+[09:19] limit the blast radius.
+[09:21] The second element on the slide
+is something you should connect
+[09:24] to Zero Trust immediately.
+[09:26] Assume breach, reduce
+the blast radius.
+[09:29] If it happens, we want to
+limit spread and impact.
+[09:33] We need to find a way to be able
+to bring in layers of isolation,
+[09:37] and we need to know what is more
+and what is less important.
+[09:41] Again, there will be a lot
+of activity behind this.
+[09:45] An example could be
+working with the business
+[09:47] to understand the criticality
+of their workloads,
+[09:49] or within a workload,
+understand what is essential
+[09:53] and what is more
+like a nice-to-have.
+[09:55] Or when it comes to data,
+[09:57] we need to know what
+important data is
+[10:02] and what is, well,
+less important.
+[10:05] So think about how to
+do data classification,
+[10:08] labeling, and handling.
+[10:10] We will have another topic in
+the video series about that
+[10:12] since it's part of the
+course on the certification.
+[10:15] Number three, the third element,
+[10:18] is to make it hard
+for attackers.
+[10:19] Raise your shields.
+[10:20] Put up your barriers.
+[10:22] Not only from a
+networking perspective,
+[10:24] but make it more
+difficult for attackers
+[10:26] to obtain privileges,
+security privileges.
+[10:29] Yes, that will be a specific
+topic because it is so crucial.
+[10:33] And if you're thinking, well,
+yeah, yeah, well, yes, no, yeah,
+[10:36] well, then just make everyone
+a global administrator
+[10:39] and accept the risk.
+[10:40] No, right?
+[10:41] We're not going to do that.
+[10:42] That's not acceptable,
+at least not in my book.
+[10:45] And as we know from Zero
+Trust, the principle
+[10:47] of least privilege
+should always apply.
+[10:49] So that's where we link
+back to that content.
+[10:52] Attackers cannot steal from
+you what you do not have.
+[10:56] So don't carry around
+privileges that you don't need.
+[10:59] What also makes it harder for
+attackers is if you update.
+[11:02] Operating systems, middleware,
+runtimes, applications,
+[11:06] they all need to be managed
+and maintained and be kept
+[11:08] up to date and not
+updating is falling behind
+[11:12] and offering an attacker
+a window of opportunity.
+[11:16] Think about how you will
+do your update management
+[11:19] and what capabilities
+you will use for that.
+[11:22] A great resource to inspect more
+closely is the ransomware attack
+[11:26] poster that you will find on
+our Humor advisory pages.
+[11:30] It lists the three steps with
+more guidance and hyperlinks
+[11:33] to content, more information.
+[11:37] The posters are notable,
+and I know quite a couple
+[11:39] of organizations that literally
+print this out and stick it
+[11:42] on the wall and go do.
+[11:44] It helps to follow the guidance.
+[11:47] Pay special attention
+when you're studying
+[11:49] to the hyperlinked content in
+the poster if you're learning
+[11:52] about the topic, it contains
+information about backup
+[11:55] and other capabilities that
+is crucial to understand.
+[12:00] Since the topic is so crucial,
+I've listed some key takeaways.
+[12:04] Backup, have one.
+[12:06] Test it, be able to restore.
+[12:09] And protect the backups.
+[12:10] Attackers want to get to
+those and disrupt them.
+[12:13] And be ready for
+digital wipeouts.
+[12:15] Make sure your operating
+procedures can be performed even
+[12:18] if many IT systems are crippled.
+[12:21] I know of an instance where all
+the restore procedures were not
+[12:24] available because of an attack.
+[12:26] What do you do?
+[12:27] Well, don't get caught.
+[12:28] Prep for those situations also.
+[12:30] And protect privileges.
+[12:32] Attackers don't
+hack, they log in.
+[12:35] They borrow accounts
+and privileges
+[12:37] that come with accounts.
+[12:38] In almost every single
+ransomware attack situation,
+[12:41] attackers misused
+high privileges.
+[12:44] Get a grip on that.
+[12:45] Zero Trust privilege.
+[12:47] Zero Trust least privilege.
+[12:49] And validate request.
+[12:50] Zero Trust verify explicitly.
+[12:53] And be ready to recover
+Zero Trust assumed breach.
+[12:56] Make sure you come back
+into an operational state.
+[13:00] So be ready for the worst case.
+[13:03] In the events the attackers
+are successful, you will need
+[13:07] to be able to recover, need
+to be ready to respond.
+[13:10] Again, classical BCDR.
+[13:13] Essentially, with
+ransomware, ultimately,
+[13:15] we are facing a similar
+situation as with disasters,
+[13:18] something that impacts
+our continuity, BCDR,
+[13:21] again and again and again.
+[13:24] If your organization
+has planned for that,
+[13:25] then you are in a good spot.
+[13:27] If you have not yet,
+then make it a priority.
+[13:29] Make sure it gets covered.
+[13:32] And remember, it's not
+about if we get hit,
+[13:35] but what do we do
+when it happens?
+[13:39] And BCDR is part
+of what is needed
+[13:40] from a Cloud Adoption
+Framework perspective also.
+[13:43] It is in a management pillar of
+the Cloud Adoption Framework.
+[13:46] So if you're already leveraging
+the Cloud Adoption Framework,
+[13:49] it should be on the radar.
+[13:51] But verify explicitly,
+[13:53] you should check,
+check if it's done.
+[13:55] But also check the content
+there to familiarize yourself
+[13:58] with terminology like RTO
+or RPO and the technologies
+[14:02] that are offered in
+platforms to help
+[14:05] with doing backup and restores.
+[14:08] I've included a couple of
+links you can leverage
+[14:10] to get a better understanding
+of capabilities.
+[14:14] A link on backup and a link
+[14:15] on disaster recovery,
+backup and direct.
+[14:19] Get a better understanding
+of the services
+[14:20] and technologies
+that can help you.
+[14:22] A couple of examples for
+the backup services.
+[14:26] Services such as Microsoft
+Azure Backup Server, Maps,
+[14:29] Data Protection Manager, DPM,
+[14:31] and Microsoft Azure
+Recovery Services, MARS,
+[14:33] provide some key features for
+secure backup and restore.
+[14:37] Features like preventing,
+having an additional layer
+[14:40] of authentication which is added
+whenever a critical operation
+[14:43] like changing a
+passphrase is performed.
+[14:45] This validation is to ensure
+[14:47] that such operations can
+only be performed by people
+[14:51] that have valid
+Azure credentials.
+[14:54] Alerting, it's about
+knowing things.
+[14:56] An email notification
+can be sent
+[14:59] to an administrator whenever
+a critical operation,
+[15:01] like deleting a
+backup, is performed.
+[15:04] This ensures that the
+user is notified quickly
+[15:06] about such an action.
+[15:08] And of course, recovery.
+[15:10] Deleted backup data is retained
+for an additional 14 days
+[15:13] from the date of deletion.
+[15:15] This ensures recoverability of
+the data within a given period.
+[15:19] So there's no data loss
+even if an attack happens.
+[15:21] Also, a greater number
+[15:23] of minimum recovery
+points are maintained
+[15:25] to guard against corrupt data.
+[15:28] Now, if you focus on MARS,
+[15:31] the Azure Backup Services use
+the Microsoft Azure Recovery
+[15:34] Service or MARS agents to backup
+and restore files, folders,
+[15:37] and volume or system state
+[15:39] from an on-premises
+computer to Azure.
+[15:41] MARS now provides
+security features --
+[15:43] a passphrase to encrypt
+before upload and decrypt
+[15:46] after download
+from Azure Backup.
+[15:49] The deleted backup
+data is retained again
+[15:50] for an additional 14 days
+from the date of deletion.
+[15:54] And also note that you can
+enable Multi-User Authorization,
+[15:58] MUA, on your recovery services
+vault to add another layer
+[16:02] of protection for
+critical operations
+[16:04] of disabling security features.
+[16:06] Make it hard.
+[16:10] And we have the MCSB.
+[16:11] Remember the MCSB, the Microsoft
+Cloud Security Benchmark,
+[16:14] which has guidance for us?
+[16:17] The Microsoft Cloud Security
+Benchmark has guidance
+[16:19] on us based on the
+baselines that are coming
+[16:21] from NIST, SYS, and PCI.
+[16:24] In the series of videos, we
+have a video specifically
+[16:27] in the MCSB, but I want
+[16:28] to remind you here
+of that relation.
+[16:31] In the MCSB, there's
+a control domain,
+[16:33] and BR, backup and recovery.
+[16:36] For BR, there's four control
+elements that should be present,
+[16:40] and number one will be
+the most important one.
+[16:42] But when you look at
+them, I'm tempted to say
+[16:46] that number one is
+completely useless
+[16:49] if you don't do number four.
+[16:51] We need to be ready and we need
+to be able to do something.
+[16:55] If you don't test your backup,
+then what's the purpose
+[16:59] of it in the first place?
+[17:01] In this video, we covered
+topics on ransomware and how
+[17:03] to ensure readiness that will
+lead us to backups and restores.
+[17:08] There's a lot of
+guidance available,
+[17:09] and if you follow a best
+practices framework,
+[17:11] cloud-to-cloud
+adoption framework,
+[17:12] then elements will be
+covered from there.
+[17:15] Or if you use the MCSB to do
+a check, whatever you choose,
+[17:18] make sure your organization
+is ready to recover.
+[17:21] Help them to get
+ready and stay ready.
+[17:25] The links throughout the video
+that are listed here can help
+[17:28] to easily find related content.
+[17:31] So use these links for your
+own learning and your benefit.
+[17:35] Now, thank you for watching
+this video in the series.
+[17:38] Hope you go and
+watch another video.
+[17:40] Stay safe.

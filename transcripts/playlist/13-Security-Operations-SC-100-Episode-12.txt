@@ -1,0 +1,757 @@
+[00:00] [ Music ]
+[00:07] MARCO NUIJEN: Hello.
+[00:07] And welcome to this video.
+[00:09] My name is Marco Nuijen, and
+I'm a trainer at Microsoft.
+[00:12] This video is part of a series
+of videos about the role
+[00:14] of a Microsoft
+cybersecurity architect.
+[00:16] In this video, we will
+discuss the topic
+[00:18] of security operations, unlock
+the essentials of SecOps
+[00:22] and learn how security
+operations reduce risk,
+[00:25] strengthen compliance,
+[00:26] and protect your
+organization's digital future.
+[00:30] The content of this video is
+mostly aligned with the area
+[00:32] of security operations,
+identity, and compliance
+[00:35] from a certification
+perspective.
+[00:38] Now a question, what is SecOps?
+[00:39] That's the main question
+for this video.
+[00:41] What is it?
+[00:43] Explain goal of SecOps?
+[00:44] Well, look at the
+question and the answers.
+[00:46] Is it to reduce security
+risks and improve compliance?
+[00:50] Is it about increasing the
+operational speed and agility,
+[00:52] or is it both A and B?
+[00:54] Yes, hope you chose C. It
+[inaudible] do both, and more.
+[01:00] There will always be more,
+[01:01] but definitely C is the most
+appropriate answer here.
+[01:05] The purpose of this
+video is to explain more
+[01:08] about security operations
+and incident response,
+[01:10] and logging and
+threat detection.
+[01:12] What are they?
+[01:13] Who's involved?
+[01:14] These are the topics we want
+to cover in this video.
+[01:18] The main function of
+security operations,
+[01:21] cloud security
+operations, SecOps,
+[01:22] are detect, respond,
+and recover.
+[01:25] The attacks, this function
+involves developing
+[01:28] and implementing mechanisms and
+processes to monitor, analyze,
+[01:32] and identify cybersecurity
+events and incidents as well
+[01:36] as the potential or actual
+breaches or compromise
+[01:39] of the organization's assets,
+data, systems, and networks.
+[01:43] The detect function also
+improves maintaining situational
+[01:46] awareness and visibility of
+the cybersecurity posture
+[01:49] and performance
+[01:50] of the organization
+and its environment.
+[01:53] Respond. This function
+involves developing
+[01:55] and implementing plans and
+procedures to contain, isolate,
+[01:59] eradicate, and mitigate the
+impact and consequences
+[02:02] of cybersecurity incidents,
+[02:04] as well as restoring normal
+operations as soon as possible.
+[02:09] The response function also
+includes communicating
+[02:11] and coordinating with internal
+and external stakeholders
+[02:15] such as customers, partners,
+vendors, regulators,
+[02:18] law enforcement, and media as
+well as conducting analysis
+[02:22] and lessons learned to improve
+the cybersecurity capabilities
+[02:25] and processes.
+[02:27] Recover. This function
+involves developing
+[02:30] and implementing plans
+and procedures to restore
+[02:32] and resume the organization's
+services and operations
+[02:34] that were affected by
+cybersecurity incidents,
+[02:38] as well as incorporating
+feedback and lessons learned
+[02:41] to enhance the security and
+resilience of the organization.
+[02:45] Recover function also
+includes evaluating
+[02:47] and updating the cybersecurity
+policies, plans, procedures,
+[02:51] and governance structures
+[02:52] to address the changing
+risks and environment.
+[02:56] Typically many frameworks
+on cybersecurity cover more
+[02:59] than these three functions.
+[03:00] An example of that would be the
+National Institute of Standards
+[03:04] and Technology, NIST, framework
+[03:06] for improving critical
+infrastructure,
+[03:08] and the NIST
+Cybersecurity Framework.
+[03:10] That also includes functions
+that will identify and protect,
+[03:14] but those functions are
+not handled very often
+[03:17] within SecOps itself.
+[03:19] For more information on the
+broader picture on mapping to
+[03:21] and from NIST, you should
+go and have a look
+[03:24] at the Microsoft Cybersecurity
+Reference Architecture,
+[03:26] the MCRA.
+[03:28] We discussed it in a lot
+of video in this series,
+[03:30] and it's very helpful to
+understand the bigger picture
+[03:33] and different relationships.
+[03:34] So go and check out
+the MCRA again.
+[03:38] In the MCRA you'll
+find many things,
+[03:40] along which are
+the relationships
+[03:42] with the NIST
+Cybersecurity Framework.
+[03:44] Let's return to SecOps.
+[03:46] As we improve our skills
+and experience in SecOps,
+[03:48] we should also aim to be more
+proactive than reactive,
+[03:52] not just responding
+to incidents,
+[03:54] but actively searching for
+things that could pose a risk.
+[03:57] We need to seek out the factors
+that are trying to evade us.
+[04:00] The things that have bypassed
+our current defenses,
+[04:03] we need to remove what has
+breached, and prevent it
+[04:05] from happening again in future.
+[04:08] And integrated capabilities
+need to be managed.
+[04:12] We need to manage those threats.
+[04:13] Threats can come
+from many places,
+[04:14] and SecOps are
+about threats also.
+[04:17] Typically we want to use these
+[04:19] to come together
+holistically within SecOps.
+[04:21] We need to envision monitoring
+of the entire IT environment,
+[04:25] including public, private,
+and cloud infrastructures.
+[04:29] As we use more zero
+trust features,
+[04:31] SecOps can access more
+information to identify
+[04:34] and respond to threats.
+[04:36] And as more things
+are connected,
+[04:38] SecOps can use more resources
+to find what is hiding.
+[04:42] We have a video that
+explains zero trust,
+[04:44] but implementing zero trust
+means changing to defaulting
+[04:47] from trust to trusting
+only when necessary,
+[04:50] and verify explicitly would
+be one of the pillars
+[04:53] from zero trust that
+we're talking about here.
+[04:57] This also needs a dependable way
+[04:58] to verify trust
+when it's required.
+[05:01] Because you know, when we assume
+that requests are trustworthy,
+[05:05] setting up a method to
+confirm the trust readiness
+[05:07] of the request is vital to
+prove the trust readiness.
+[05:11] Zero trust; verify explicitly.
+[05:14] This confirmation requires
+getting visibility
+[05:16] into the actions
+[inaudible] request.
+[05:18] All the layers like protection,
+detection, investigation,
+[05:21] remediation and
+others that we see
+[05:24] on the graphic here
+improve your visibility,
+[05:27] which gives you better data
+for making trust decisions.
+[05:31] However, adopting zero trust
+approach in other areas
+[05:34] like identity [inaudible]
+infrastructure,
+[05:36] and networks will increase
+the number of incidents
+[05:38] that security operations of
+analysts need to resolve.
+[05:41] More input; more incidents,
+more work, more load.
+[05:47] So we also need to verify
+and possibly suggest how
+[05:49] to enhance the
+incident response.
+[05:52] Being able to handle the "more"
+and handle that quicker.
+[05:57] as we said before in other
+videos, security's a team sport.
+[06:00] We may not be accountable for
+SecOps or incident response
+[06:03] as a cybersecurity architect,
+but we collaborate
+[06:06] with others who may be.
+[06:07] We need to know what
+to look for and what
+[06:10] to talk about, and
+who to talk to.
+[06:11] It's all part of our job.
+[06:15] This is an example of how to
+deal with security incidents.
+[06:18] A security incident is when
+someone breaks into a system
+[06:21] and damages the leads, alters
+[06:23] or steals customer
+data, or personal data.
+[06:26] The security response team
+[06:28] and the different service
+team should work together
+[06:30] to follow the same steps to
+handle security incidents.
+[06:33] Preparation.
+[06:33] This means getting
+ready to respond
+[06:35] by having the right
+tools, processes,
+[06:37] skills, and readiness.
+[06:39] Detection and analysis.
+[06:41] This means finding out if
+there is a security incident
+[06:44] in live environments, and
+checking all the events
+[06:46] to confirm that it is a
+real security incident.
+[06:49] And then need to think
+about containment,
+[06:51] eradication, and recovery.
+[06:55] This means taking the necessary
+and appropriate actions
+[06:58] to stop the security incident
+based on the findings
+[07:00] from the previous step.
+[07:02] More investigation may also
+be needed in this step
+[07:04] to fully fix the problem caused
+by the security incident.
+[07:08] Based on the
+findings coordinated
+[07:09] by the security response
+team, a suitable plan to stop
+[07:12] and fix the security
+incident should be made
+[07:15] to reduce the harm of
+the security incident,
+[07:17] and get rid of the threats
+from the environment.
+[07:20] Containment means that the
+relevant service team should
+[07:23] carry out the plan with help
+from the security response team
+[07:26] to make sure the threat
+is successfully remove,
+[07:28] and the affected services
+are fully restored.
+[07:31] Finding all the impacted
+services makes it possible
+[07:34] to eliminate and fix
+the problem completely.
+[07:37] And eradication is the process
+of removing the main cause
+[07:40] of the security incident with
+a high level of certainty.
+[07:44] The purpose of eradication
+is two things.
+[07:46] To kick out the intruder
+completely from the environments
+[07:48] and to fix any weaknesses that
+allowed the incident to happen
+[07:52] or that lets the
+intruder come back.
+[07:55] We don't want them to come back.
+[07:57] An important part of
+the recovery process is
+[07:59] to use better detection
+controls to check
+[08:01] that the recovery plan has
+worked well, and that no signs
+[08:04] of breach are left
+in the environments.
+[08:07] Improved monitoring
+helps make sure
+[08:08] that eradication was effective,
+[08:10] and that the intruder
+cannot come back.
+[08:13] We also have
+post-incident activity.
+[08:15] This means the analysis is done
+after the problem is fixed.
+[08:18] The actions taken during the
+process are reviewed to see
+[08:23] if any changes are needed
+in the preparation
+[08:25] or detection and analysis steps.
+[08:28] Zero analysis of the root
+cause and investigation
+[08:30] to find any ways to
+improve system security
+[08:33] or the security incident
+response process,
+[08:35] adding new automated
+monitoring detection methods
+[08:38] to catch similar
+things in future.
+[08:41] How can we do all of this?
+[08:43] Where to start?
+[08:45] Well, maybe you should think
+[08:48] to look towards a
+benchmark like the MCSB.
+[08:51] In the MCSB, the Microsoft
+Cloud Security Benchmark,
+[08:54] there is the incident
+response, the IR, control.
+[08:57] This control on all these
+areas we just mentioned.
+[09:00] And there are advisories on how
+to do it and hopefully evolve.
+[09:05] Not only for a platform like
+Azure, but also for others.
+[09:08] So get familiar with the
+MCSB and the MCB in general.
+[09:12] And yes, we have a
+video specifically
+[09:14] about the MCSB in the series.
+[09:16] Maybe you've already seen
+that, and then you know
+[09:19] that will come back often,
+just like it does here now.
+[09:22] Let's look at two
+[09:24] of the incident response
+controls from the MCSB.
+[09:27] There's more, but let's
+just look at two of them.
+[09:30] IR1, Incident Response
+1, preparation.
+[09:33] Update incident response
+plan and handling process.
+[09:36] Ensure your organization follows
+the industry best practice
+[09:39] to develop processes and plans
+to respond to security incidents
+[09:42] on the cloud platform.
+[09:43] Be mindful about the shared
+responsibility model here
+[09:47] and the various instances across
+infrastructure as a service,
+[09:50] platform as a service, and
+software as a service services.
+[09:53] This will have a direct
+impact on how you collaborate
+[09:55] with your cloud provider
+in incident response
+[09:58] and handling activities such
+as incident notification
+[10:01] and triage, evidence
+collection, investigation,
+[10:04] eradication and recovery.
+[10:06] Regularly test the incident
+response plan and adding process
+[10:10] to ensure they're up to date.
+[10:12] IR2, Incident Response
+2, preparation.
+[10:15] Set up incident notification.
+[10:17] Ensure the security [inaudible]
+and [inaudible] notification
+[10:20] from the cloud service
+provider platform
+[10:22] in your environments
+can be received
+[10:24] by your correct contacts
+in your organization
+[10:26] to be able to respond correctly.
+[10:29] Evaluate if that's a part
+of your architecture,
+[10:31] and evaluate whether
+that's implemented.
+[10:33] If not, well then, you've
+found some work to be done
+[10:36] and probably people that need to
+be convinced about something.
+[10:39] And remember, as
+part of the role
+[10:40] of the cybersecurity architect,
+[10:42] we should help others
+understand, and we should help
+[10:45] to educate and next
+to finding gaps
+[10:48] in the first place
+at all, of course.
+[10:51] In the MCSB, there will
+be references to roles
+[10:54] that need to be involved.
+[10:55] Linking back to roles
+[10:56] and responsibilities we commonly
+find in the enterprise,
+[10:59] and we have included that in
+our guides and frameworks.
+[11:02] And the roles in the MCSB
+are the same as we refer
+[11:04] to in the Cloud
+Adoption Framework.
+[11:06] It's all connected.
+[11:08] But what about roles
+in SecOps itself?
+[11:11] In the security pillar of the
+Cloud Adoption Framework,
+[11:13] we can find more
+information about that,
+[11:15] like the graphic I'm using here,
+it will [inaudible] from that.
+[11:18] In the graphic, there
+are three tiers.
+[11:20] Tier 1, Tier 2, and Tier 3.
+[11:22] And the idea is that there's
+a lot of data coming
+[11:25] into the security operations
+center needs to be processed.
+[11:28] For that, we need people
+who can look at dashboards
+[11:30] and understand them,
+and then decide.
+[11:32] Maybe it's too complex or too
+important, and they decided
+[11:35] to pass to another team
+that has more expertise.
+[11:38] And then if it's
+more complicated,
+[11:40] they can maybe even raise
+it to another level.
+[11:43] And there, when it's
+technically hard or involved,
+[11:46] involves some data that people
+don't have access to at
+[11:48] that tier, they may raise
+it to another tier,
+[11:51] like Tier 3 in this example.
+[11:53] But we also have capabilities
+for hunting as we've discussed
+[11:56] in some of the other videos.
+[11:59] We need to look actively
+for things that are hidden.
+[12:02] So another key aspect of this
+graphic is the automation
+[12:05] at the bottom of the graphic.
+[12:07] If something is known,
+handle it automatically.
+[12:10] There's no time, there's no need
+to waste analysts' valuable time
+[12:15] on something that can
+be done automatically.
+[12:17] Our analysts usually have
+enough on their plate.
+[12:19] They're busy enough.
+[12:20] So I hope you are thinking
+here about zero trust again
+[12:24] in this context: visibility,
+orchestration, and automation.
+[12:29] And how to measure how busy are
+that are in the SecOps function,
+[12:34] typically we will
+use indicators,
+[12:36] like MTTA and MTTR for that.
+[12:40] MTTA, the mean time
+to acknowledge,
+[12:42] is how long it takes
+for an analyst to pick
+[12:44] up an incident from dashboards.
+[12:46] And MTTR is mean
+time to resolve.
+[12:50] How long after the incident was
+picked up; how long does it take
+[12:54] to be solved, to be closed?
+[12:56] And if the MTTA and MTTR
+are very high in values,
+[13:00] then they're a problem.
+[13:02] We may not have enough
+staff and too few people
+[13:04] to deal with the load.
+[13:06] We may need to
+consider expanding
+[13:08] or increasing our automation
+efforts, which is the aim
+[13:11] of many products and service
+in the Microsoft portfolio.
+[13:14] In many environments, operator
+overload is very common,
+[13:17] and a big challenge.
+[13:18] And that by itself is
+a very serious threat.
+[13:23] Now think about what
+actions you can take.
+[13:26] Modernizing your
+approach for example,
+[13:28] by including elements we've
+listed on this slide.
+[13:30] There's MTTA and MTTR to make
+things measurable, and it helps
+[13:34] to be able to express
+and elevate pain points
+[13:37] to the business level.
+[13:38] Consider changing or
+adding technology,
+[13:40] and some technology's changing
+from only using static analysis
+[13:44] of logs in a seamed
+solution, to adding the use
+[13:47] of specialized tools [inaudible]
+and also including AI nowadays.
+[13:53] This will give deep
+insights into assets
+[13:55] that offer high quality alerts
+and investigation experience
+[13:58] that complements the
+wide view of the scene.
+[14:02] Both type of tools are
+increasingly using AI machine
+[14:05] learning, behavioral analytics,
+[14:06] and integrated threat
+intelligence to help find
+[14:08] and prioritize unusual actions
+[14:11] that could indicate a
+malicious attacker.
+[14:14] The [inaudible] activities
+can be more focused
+[14:16] by integrating more internal
+content and context,
+[14:19] such as how risky the user
+accounts and devices are,
+[14:22] how important the data
+and applications are,
+[14:25] and what security boundaries
+are needed to protect them?
+[14:30] Coming back to a benchmark
+again, the MCSB.
+[14:33] Here we see the control
+[inaudible] MCSB
+[14:35] for threat detection
+and logging.
+[14:37] We need to have
+threat detection,
+[14:39] which will feed the
+incident response.
+[14:41] But what do we need to consider?
+[14:44] Things need to be turned on
+and the data from the elements
+[14:47] that was turned on
+need to be collected
+[14:49] and aggregated and analyzed.
+[14:51] We need to collect signals and
+information and integrate those.
+[14:55] Integration is needed to
+see the bigger picture.
+[14:59] Logging and threat
+detection covers controls
+[15:00] for detecting threats on
+cloud, and enabling collecting
+[15:03] and storing all that log
+from cloud services,
+[15:05] including enabling
+detection, investigation,
+[15:08] and remediation process
+that with controls
+[15:10] to generate high-quality alerts
+[15:11] with native threat detection
+in cloud services.
+[15:14] It also includes collecting logs
+[15:16] for the cloud
+monitoring service,
+[15:18] centralizing security analysis
+[inaudible] and log retention.
+[15:23] Use these MCSB controls to check
+your environments, and make sure
+[15:27] to include these
+control elements
+[15:29] in your designs and
+implementations.
+[15:34] As we're getting
+information from systems
+[15:36] and as we are centralizing
+those, here we have an example
+[15:40] with simplified schematic of how
+we can get logging information
+[15:43] from various resources, to
+gathering a platform like Azure.
+[15:48] Good to note is that by default,
+[15:51] a lot of the flow
+is standardized,
+[15:53] and flows into Azure Monitor.
+[15:54] But we need to maybe flow
+other kinds of information
+[15:58] into it also from other places.
+[16:01] And we may need to enrich
+it with the information
+[16:03] from other capabilities.
+[16:05] Start thinking of aggregation
+of data and analysis,
+[16:09] and maybe beyond Azure itself.
+[16:12] Start thinking about
+creating a data lake
+[16:14] as we now have available
+in Microsoft Defender.
+[16:18] SecOps is a modern way
+of reducing the risk
+[16:21] of active attacks by quickly
+finding and fixing them.
+[16:24] The graphic here from the MCRA.
+[16:25] It shows how different
+elements fit together
+[16:27] in the bigger picture.
+[16:29] My suggestion is to look at the
+graphic more closely yourself,
+[16:32] and the source being the
+MCRA [inaudible] and CRA.
+[16:36] For now, just focus on
+the log aggregation part.
+[16:40] At the bottom we see sources
+we collect data from.
+[16:44] We need to collect
+more and more data
+[16:46] to make sure we have visibility,
+and we need to make sense
+[16:49] of the data and bring it to a
+higher level of extraction,
+[16:52] where we can combine data
+from different sources.
+[16:55] In other videos, we will explore
+[inaudible] and Defender.
+[16:58] But for now, we know
+[17:00] that everything needs
+to be collected.
+[17:02] And one task for us as
+cybersecurity architects is
+[17:06] to ensure that there
+is full visibility
+[17:08] and full connectivity.
+[17:10] And analyzing all
+the data is hard.
+[17:12] And we face more and more data.
+[17:14] More than humans are
+likely to comprehend.
+[17:17] And another issue may be the
+speed at which we detect.
+[17:20] [inaudible] detection is based
+on rules, and development
+[17:23] and deployment of rules and
+management of that takes time.
+[17:27] We should have a look
+[17:27] at how data engineers
+work with large data.
+[17:30] If you do that,
+then you are likely
+[17:32] to sit there using AI
+for training models.
+[17:35] For those afraid of interacting
+with AI to help analyze data,
+[17:38] and maybe that's something
+that we should also do
+[17:40] for security-related data.
+[17:43] Use AI, and use it more
+to give us an advantage
+[17:46] for analyzing vast amounts
+of data we now have
+[17:49] in the security space.
+[17:51] Now Copilot and AI are
+covered in a separate video,
+[17:55] and they can significantly
+improve SecOps
+[17:57] through AI-driven insights,
+automation, and integrating
+[18:01] with Microsoft security tools.
+[18:02] Use these to accelerate
+data analysis,
+[18:05] and also to support less
+experienced analysts
+[18:08] and enable automated
+AI response,
+[18:11] ultimately reducing
+the MTTA and MTTR.
+[18:15] We're at the end of this video.
+[18:17] What we discussed are aspects
+of security operations,
+[18:19] incident response, and
+centralized logging.
+[18:23] For further investigation
+in topics from this video
+[18:26] and the content, look at
+the MCRA and the MSCB.
+[18:29] They are great.
+[18:30] But also think you need
+to look into for example,
+[18:32] the Cloud Adoption Framework.
+[18:34] I realize these are locations
+that are applicable
+[18:37] for all the videos
+in this series,
+[18:38] but therefore also included
+a couple other links here
+[18:42] with good info about incident
+response and security operations
+[18:45] that we've covered
+here directly.
+[18:47] Thank you for
+watching this video.
+[18:49] If you've got some more time,
+please go and watch one
+[18:53] of the other videos
+in the series.
+[18:56] Maybe I'll see you there.
+[18:58] Hope to meet you there.
+[18:59] Until that time, stay safe.
