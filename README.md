@@ -1,4 +1,4 @@
-# 🛡️ SC-100 Study Coach
+# 🛡️ SC-100 Study Agent
 
 A VS Code Copilot agent for preparing for the **SC-100: Microsoft Cybersecurity Architect** certification exam.
 
@@ -48,8 +48,8 @@ Passing score: **700**
 ### 1. 📥 Clone the Repo
 
 ```bash
-git clone https://github.com/cdemo-projects/sc100-study-coach.git
-cd sc100-study-coach
+git clone https://github.com/cdemo-projects/SC-100-Study-Agent.git
+cd SC-100-Study-Agent
 ```
 
 Or download the ZIP from the green **Code** button on GitHub and extract it.
@@ -189,8 +189,8 @@ Opens at `http://localhost:8100`. Features:
 
 Found a bug or have an idea to make this better?
 
-- **Report a bug:** [Open a GitHub Issue](https://github.com/cdemo-projects/sc100-study/issues/new?template=bug_report.md)
-- **Request a feature:** [Open a GitHub Issue](https://github.com/cdemo-projects/sc100-study/issues/new?template=feature_request.md)
+- **Report a bug:** [Open a GitHub Issue](https://github.com/cdemo-projects/SC-100-Study-Agent/issues/new?template=bug_report.md)
+- **Request a feature:** [Open a GitHub Issue](https://github.com/cdemo-projects/SC-100-Study-Agent/issues/new?template=feature_request.md)
 - **General feedback:** Feedback form (coming soon)
 
 The dashboard also has a **Feedback** tab with direct links to all of these.
