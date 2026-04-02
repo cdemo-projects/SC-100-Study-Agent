@@ -103,9 +103,47 @@ The **Azure MCP server** is built into VS Code with the [Azure Tools extension p
 
 Restart VS Code after adding the servers.
 
-### 4. 🚀 Start Studying
+### 4. � Open the Workspace
+
+**This step is important.** Open the cloned `SC-100-Study-Agent` folder in VS Code as your workspace:
+
+```
+File > Open Folder > select the SC-100-Study-Agent folder
+```
+
+The agent needs this folder open to:
+- 📝 Save your learning profile (`LEARNING_PROFILE.md`)
+- 📊 Write quiz scores and progress (`study-progress.json`)
+- 🔍 Search video transcripts (`transcripts/`)
+- 📚 Grow the question bank (`question-bank.json`)
+
+Without the workspace open, the agent can still teach and quiz you, but it won't be able to save progress or search transcripts.
+
+### 5. 🚀 Start Studying
 
 Open VS Code Copilot Chat and type `@sc100-study` followed by your message. The agent will greet you and offer to build your learning profile.
+
+### 📂 File Map
+
+Here's what each file does so nothing is a mystery:
+
+```
+SC-100-Study-Agent/
+├── 🤖 sc100-study.agent.md      ← The agent (copy to prompts folder)
+├── 📊 dashboard.html             ← Study dashboard (run with serve.py)
+├── 🐍 serve.py                   ← Dashboard server (python serve.py)
+├── 📈 study-progress.json        ← Your progress data (agent writes this)
+├── ❓ question-bank.json          ← Quiz questions (grows with every session)
+├── 📄 README.md                   ← You are here
+├── 📁 .github/
+│   └── ISSUE_TEMPLATE/           ← Bug report & feature request templates
+└── 🎥 transcripts/
+    ├── john-savill-study-cram.txt        ← John Savill's SC-100 Study Cram
+    └── playlist/                          ← 27 SC-100 course videos
+        ├── 01-Course-Preview...txt
+        ├── 02-Course-Intro...txt
+        └── ... (27 timestamped transcripts)
+```
 
 ## 💡 Usage
 
@@ -135,7 +173,7 @@ When you first message `@sc100-study`, the agent will offer a short learning pro
 - **The study plan** front-loads your skill gap domains and accounts for exam weight (Domains 2 and 3 are 25-30%)
 - **MS Learn navigation coaching** is built into every response, not just a separate mode. You're building exam-day search muscle memory as you study
 
-### 5. 📊 Study Dashboard (Optional)
+### 6. 📊 Study Dashboard (Optional)
 
 A visual dashboard tracks your progress, quiz scores, skill gaps, and lets you search across all 28 video transcripts.
 
