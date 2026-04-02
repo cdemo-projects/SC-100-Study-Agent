@@ -164,7 +164,7 @@ svg.ring .fg { stroke-linecap:round; transition:stroke-dashoffset .6s ease; }
 <div class="nav">
   <button class="active" onclick="showTab('overview')">Overview</button>
   <button onclick="showTab('quiz')">Quiz</button>
-  <button onclick="showTab('heatmap')">Weakness Map</button>
+  <button onclick="showTab('heatmap')">Skill Gaps Map</button>
   <button onclick="showTab('quizzes')">Quiz History</button>
   <button onclick="showTab('plan')">Study Plan</button>
   <button onclick="showTab('transcripts')">Transcripts</button>
@@ -239,7 +239,7 @@ svg.ring .fg { stroke-linecap:round; transition:stroke-dashoffset .6s ease; }
   <div class="tab" id="tab-heatmap">
     <div class="card">
       <h2>Objective Strength Map</h2>
-      <p style="font-size:12px;color:var(--text-dim);margin-bottom:16px">Based on quiz performance per objective. Green = strong, Yellow = needs review, Red = weak, Gray = not tested.</p>
+      <p style="font-size:12px;color:var(--text-dim);margin-bottom:16px">Based on quiz performance per objective. Green = strong, Yellow = needs review, Red = needs improvement, Gray = not tested.</p>
       <div class="heatmap" id="heatmap"></div>
     </div>
   </div>
@@ -476,15 +476,15 @@ function renderQuickStats() {
   const totalAsked = data.quiz_history.reduce((s,q) => s + q.total, 0);
   const avgScore = totalAsked ? Math.round(totalCorrect/totalAsked*100) : 0;
   const hrs = Math.round(data.total_study_time_minutes/60*10)/10;
-  const weakest = findWeakest();
+  const skillGaps = findSkillGaps();
   document.getElementById('quick-stats').innerHTML = `
     <div class="stat"><div class="value">${totalQ}</div><div class="label">Quiz sessions</div></div>
     <div class="stat"><div class="value">${avgScore}%</div><div class="label">Avg score</div></div>
     <div class="stat"><div class="value">${hrs}h</div><div class="label">Study time</div></div>
-    <div class="stat"><div class="value">${weakest}</div><div class="label">Weakest area</div></div>`;
+    <div class="stat"><div class="value">${skillGaps}</div><div class="label">Biggest skill gap</div></div>`;
 }
 
-function findWeakest() {
+function findSkillGaps() {
   let worst = '--', worstPct = 101;
   Object.entries(data.domains).forEach(([id, d]) => {
     Object.entries(d.objectives).forEach(([oid, o]) => {
