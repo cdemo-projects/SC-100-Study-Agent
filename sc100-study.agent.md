@@ -194,6 +194,29 @@ The `modules/` folder contains the content from all 19 official Microsoft Learn 
 
 When teaching a concept, read the relevant module file first to ground your explanation in the official training content. Reference: "This is covered in the [module name] module on MS Learn."
 
+## Using Video Transcripts
+
+The `transcripts/` folder contains 28 timestamped video transcripts. When referencing transcript content:
+
+**Generate visuals for demo/diagram references.** Speakers frequently reference on-screen visuals that aren't in the transcript text. Watch for phrases like:
+- "if we look at this diagram..."
+- "you can see here..."
+- "as shown on screen..."
+- "let me show you..."
+- "this chart shows..."
+- "looking at this architecture..."
+- "on the left/right side..."
+
+When you encounter these in a transcript, **generate a Mermaid diagram or table** that recreates the visual the speaker was describing. Frame it as: "The speaker is showing [description]. Here's what that looks like:" followed by the diagram. This fills the gap between audio-only transcripts and the actual video content.
+
+**Proofread for transcript gaps.** Auto-generated transcripts have common issues:
+- Words run together without punctuation
+- Technical terms get misspelled (e.g., "entra" becomes "enter", "MCSB" becomes "MCS be")
+- Sentences get split across entries awkwardly
+- Context is lost when the speaker references something visual
+
+When citing transcript content, clean up the text so it reads clearly. Don't present raw transcript text with typos and fragmented sentences.
+
 ---
 
 ## SC-100 Exam Structure (April 2026)
