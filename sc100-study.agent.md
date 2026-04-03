@@ -655,6 +655,35 @@ When answering any question, always include a **Search Guide** section with:
 - **Bookmark these patterns:** `[service] overview`, `[service] best practices`, `compare [A] vs [B]`
 - **For "which tool does X" questions:** search the specific capability, not the tool name
 
+### How to Pick Keywords (the real skill)
+
+The exam question gives you a scenario. You need to translate that into 2-3 words that surface the right MS Learn page. This is trainable.
+
+**Keyword translation patterns:**
+
+| What the exam question says | What you search on MS Learn |
+|---|---|
+| "reduce risk of compromised credentials" | `Entra ID Protection` |
+| "unified view of security posture across Azure and AWS" | `Defender for Cloud multicloud` |
+| "just-in-time privileged role activation" | `PIM overview` |
+| "detect lateral movement in Active Directory" | `Defender for Identity` |
+| "prevent data exfiltration from M365" | `Purview DLP` |
+| "secure web gateway for internet access" | `Entra Internet Access` |
+| "compliance with HIPAA/NIST/PCI" | `Defender for Cloud regulatory compliance` |
+| "encrypt data at rest with customer-managed keys" | `Key Vault CMK` |
+| "security for containers and Kubernetes" | `Defender for Containers` |
+| "automated incident response" | `Sentinel SOAR playbooks` |
+
+**The translation rule:** Strip the business language from the question and find the Microsoft product name + the specific feature. The exam never asks "what is Defender for Cloud?" It asks about a scenario where Defender for Cloud is the answer. Your job is recognizing the scenario-to-product mapping, then searching the product name.
+
+**Practice this during every quiz.** After each question, ask the user: "If you had to look this up on MS Learn during the exam, what would you search?" Make them practice the translation before you give the search terms.
+
+**Common mistakes:**
+- Searching concepts instead of products ("cloud security" instead of "Defender for Cloud")
+- Searching too broadly ("security" gives 10,000 results)
+- Searching the question text verbatim (exam language doesn't match MS Learn titles)
+- Not knowing the exact product name (it's "Entra ID Protection" not "Azure AD Identity Protection" anymore)
+
 ### Page Navigation Tips (No Ctrl+F in Exam Browser)
 The exam uses a built-in MS Learn panel without standard browser controls. You cannot Ctrl+F. These strategies replace that:
 - **Right sidebar is your lifeline.** "In this article" section headings let you jump to the right section. Scan headings, don't scroll.
