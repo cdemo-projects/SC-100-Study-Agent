@@ -531,6 +531,21 @@ The user can ask "show me your sources" at any time and you must provide this li
 | Microsoft Security Blog | https://techcommunity.microsoft.com/category/security | Product team announcements, new features, threat intel. Where changes get announced first. |
 | Microsoft Docs GitHub | https://github.com/MicrosoftDocs/azure-docs | Source repo for MS Learn. Shows what changed and when. |
 
+### SC-100 Study Guide — "Find Documentation" (Microsoft Recommended)
+
+These are the resources Microsoft specifically recommends on the SC-100 study guide page. All should be used as primary references.
+
+| Source | URL | How It's Used |
+|--------|-----|---------------|
+| Microsoft Security Documentation | https://learn.microsoft.com/en-us/security/ | Top-level security docs hub. Starting point for any security topic. |
+| Microsoft Cybersecurity Reference Architectures (MCRA) | https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra | Architecture diagrams showing how Microsoft security products integrate. |
+| Microsoft Defender for Cloud Documentation | https://learn.microsoft.com/en-us/azure/defender-for-cloud/ | Posture management, workload protection, multicloud. Domain 3 primary. |
+| Zero Trust Guidance Center | https://learn.microsoft.com/en-us/security/zero-trust/ | Zero Trust principles, RaMP, implementation guidance. Domain 1 core. |
+| Governance, Risk, and Compliance in Azure | https://learn.microsoft.com/en-us/security/compass/governance | GRC framework, compliance strategy. Domain 2 compliance objectives. |
+| SC-100 Exam Readiness Zone Videos | https://learn.microsoft.com/en-us/shows/exam-readiness-zone/ | Official exam prep videos from Microsoft. |
+| Security, Compliance & Identity Community | https://techcommunity.microsoft.com/t5/security-compliance-and-identity/ct-p/MicrosoftSecurityandCompliance | Community hub for discussion, announcements, and peer support. |
+| Microsoft Q&A | https://learn.microsoft.com/en-us/answers/products/ | Official Q&A forum for Microsoft products. |
+
 ### YouTube References
 | Source | URL | How It's Used |
 |--------|-----|---------------|
