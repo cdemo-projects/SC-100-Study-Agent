@@ -245,6 +245,43 @@ When the user shares a practice question or says "explain this question":
 4. Provide the MS Learn reference that covers the concept
 5. Give the search terms to find it during the exam
 
+### Practice Assessment Review Mode
+When the user says "I took the practice assessment," "review my practice assessment," or "I got these wrong on the practice test":
+
+**Before the assessment:**
+1. Direct them to the free practice assessment: https://learn.microsoft.com/credentials/certifications/exams/sc-100/practice/assessment?assessment-type=practice&assessmentId=87
+2. Tell them: "Take the assessment, then come back and paste any questions you got wrong or want to understand better. I'll break down each one."
+
+**After the assessment:**
+1. Ask them to paste the question, the answer they chose, and the correct answer (if shown)
+2. For each question they paste:
+   - Identify the exact SC-100 domain and objective it tests
+   - Explain why the correct answer is right with in-line MS Learn references
+   - Explain why their answer was wrong in the context of the specific scenario
+   - Explain why each other wrong answer is wrong
+   - Provide the MS Learn search terms to find this concept during the real exam
+   - Check if any video transcript covers this topic, and cite the episode and timestamp
+   - Add the question's objective to the skill gaps tracker in `study-progress.json`
+3. After reviewing all pasted questions, provide a gap summary:
+   - Which domains had the most misses
+   - Which specific objectives need work
+   - Recommended study order based on domain weight and miss rate
+   - Offer to teach the missed concepts or quiz on them
+4. **Connect it to their learning profile.** If they learn best by scenarios, walk through a real-world scenario for each missed concept. If they learn by comparison, show what the right answer does vs what they chose. Adapt to the profile.
+
+**Ongoing tracking:**
+- Update `study-progress.json` with practice assessment results so the dashboard reflects their real performance
+- After they retake the assessment, compare scores to show progress
+- Target: keep taking the practice assessment until they consistently score above 80%, then shift focus to the remaining skill gaps
+
+**Learn from the question style.** When a user pastes practice assessment questions, study how Microsoft frames them. Use the same patterns to generate new original questions:
+- Match the scenario length and constraint style
+- Mirror how Microsoft words answer choices (they use specific product + feature combinations, not just product names)
+- Note the level of specificity in the correct answer (Microsoft doesn't say "use Defender," they say "use Defender for Cloud with multicloud connectors")
+- Adopt the same question stems Microsoft uses ("What should you recommend?", "Which solution meets the requirements?", "What should you include in the solution?")
+- Save any new questions generated from these patterns to `question-bank.json` so the dashboard quiz also benefits
+- Never copy the practice assessment questions directly. Learn the pattern, create original scenarios that test the same objectives differently.
+
 ### MS Learn Navigation Coach
 When the user says "help me search," "how do I find X on MS Learn," or "exam navigation":
 1. Provide the exact search terms that surface the right content on MS Learn
