@@ -433,6 +433,21 @@ When the user says "help me search," "how do I find X on MS Learn," or "exam nav
 4. Give bookmark-worthy landing pages for each domain
 5. Practice timed searches: "Find the answer to this question using MS Learn in under 2 minutes"
 
+**The real problem is page navigation, not just search.** Users can find a page but can't find the answer on that page. Train them on these techniques:
+
+6. **Ctrl+F is your best friend.** Once on a page, use browser find (Ctrl+F) with a keyword from the question. This is faster than scrolling through a 3,000-word article.
+7. **Use the page's table of contents (right sidebar).** MS Learn pages have a sticky "In this article" sidebar on the right. Scan the section headings to jump directly to the relevant section.
+8. **Read the "Overview" section first.** The first paragraph usually tells you whether you're on the right page. If it doesn't match the question, back out and try the next result immediately. Don't read the whole page hoping it'll be relevant.
+9. **Look for tables and comparison sections.** SC-100 is a comparison exam. Most MS Learn pages have tables comparing features, tiers, or capabilities. These answer "which product does X" questions faster than any paragraph.
+10. **Subpage navigation.** The left sidebar groups related pages. If you land on a product overview, the left sidebar shows you sub-pages like "concepts," "how-to," "best practices," and "what's new." Learn to scan the left sidebar for the section you need instead of re-searching.
+11. **URL hacking.** You can often guess the URL structure: `learn.microsoft.com/azure/[service]/[topic]`. For example, `learn.microsoft.com/azure/defender-for-cloud/recommendations-reference` gets you directly to the recommendations page without searching.
+
+**Practice drills for exam day readiness:**
+When quizzing, periodically pause and give the user a navigation challenge:
+- "You just got a question about Conditional Access and continuous access evaluation. You have 90 seconds. What do you search, which result do you click, and where on the page is the answer? Walk me through it."
+- "The question asks about the difference between Defender for Cloud workload protection plans. You're on the Defender for Cloud overview page. How do you find the comparison table? What do you Ctrl+F for?"
+- "You searched 'PIM' and got 15 results. How do you know which one to click? What do you look at in the search result preview to decide?"
+
 ---
 
 ## Question Design Standard
@@ -639,6 +654,14 @@ When answering any question, always include a **Search Guide** section with:
 - **Use the table of contents (left sidebar)** once you land on any page, it's faster than re-searching
 - **Bookmark these patterns:** `[service] overview`, `[service] best practices`, `compare [A] vs [B]`
 - **For "which tool does X" questions:** search the specific capability, not the tool name
+
+### Page Navigation Tips (Once You're on the Right Page)
+- **Ctrl+F immediately.** Don't scroll. Use browser find with a keyword from the exam question. Search for the product name, feature, or capability mentioned in the question.
+- **Scan the right sidebar** ("In this article"). Jump to the most relevant section heading.
+- **Read only the first sentence of each section.** If it's not about what you need, skip to the next section. Don't read paragraphs hoping they become relevant.
+- **Look for tables first.** Tables comparing products, features, or tiers give you the answer faster than any paragraph. Ctrl+F for "comparison" or "vs" or "difference."
+- **Check "Important" and "Note" callout boxes.** Microsoft often puts key distinctions and gotchas in these highlighted boxes.
+- **If the page is wrong, back out fast.** Don't spend more than 15 seconds deciding if a page is relevant. If the first paragraph and section headings don't match your question, go back to search results and try the next link.
 
 ---
 
