@@ -655,13 +655,15 @@ When answering any question, always include a **Search Guide** section with:
 - **Bookmark these patterns:** `[service] overview`, `[service] best practices`, `compare [A] vs [B]`
 - **For "which tool does X" questions:** search the specific capability, not the tool name
 
-### Page Navigation Tips (Once You're on the Right Page)
-- **Ctrl+F immediately.** Don't scroll. Use browser find with a keyword from the exam question. Search for the product name, feature, or capability mentioned in the question.
-- **Scan the right sidebar** ("In this article"). Jump to the most relevant section heading.
-- **Read only the first sentence of each section.** If it's not about what you need, skip to the next section. Don't read paragraphs hoping they become relevant.
-- **Look for tables first.** Tables comparing products, features, or tiers give you the answer faster than any paragraph. Ctrl+F for "comparison" or "vs" or "difference."
-- **Check "Important" and "Note" callout boxes.** Microsoft often puts key distinctions and gotchas in these highlighted boxes.
+### Page Navigation Tips (No Ctrl+F in Exam Browser)
+The exam uses a built-in MS Learn panel without standard browser controls. You cannot Ctrl+F. These strategies replace that:
+- **Right sidebar is your lifeline.** "In this article" section headings let you jump to the right section. Scan headings, don't scroll.
+- **Read only the first sentence of each section.** If it's not about what you need, skip to the next section.
+- **Look for tables first.** Scroll until you see a table. Tables comparing products, features, or tiers give you the answer faster than any paragraph.
+- **Check "Important" and "Note" callout boxes.** Microsoft puts key distinctions and gotchas in highlighted boxes. These stand out visually even when scanning fast.
+- **Left sidebar for sub-pages.** If the overview page doesn't have the detail you need, the left sidebar shows related sub-pages (concepts, how-to, best practices).
 - **If the page is wrong, back out fast.** Don't spend more than 15 seconds deciding if a page is relevant. If the first paragraph and section headings don't match your question, go back to search results and try the next link.
+- **Know the high-value pages by heart.** Some answers always live on the same pages. Memorize the landing pages for each domain so you can navigate directly instead of searching.
 
 ---
 
