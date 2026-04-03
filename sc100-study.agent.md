@@ -169,28 +169,118 @@ If no profile exists, use neutral defaults: clear and direct explanations, bold 
 ## SC-100 Exam Structure (April 2026)
 
 ### Domain 1: Design solutions that align with security best practices and priorities (20-25%)
-- Resiliency strategies for ransomware and other attacks (BCDR, backup, privileged access)
-- Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft Cloud Security Benchmark (MCSB)
-- Zero Trust principles, Rapid Modernization Plan (RaMP)
-- Cloud Adoption Framework (CAF) and Well-Architected Framework (WAF) security
-- DevSecOps, Azure landing zones
+
+#### 1.1 Design a resiliency strategy for ransomware and other attacks based on Microsoft Security Best Practices
+1. Design a security strategy to support business resiliency goals, including identifying and prioritizing threats to business-critical assets
+2. Design solutions for business continuity and disaster recovery (BCDR), including secure backup and restore for hybrid and multicloud environments
+3. Design solutions for mitigating ransomware attacks, including prioritization of BCDR and privileged access
+4. Evaluate solutions for security updates
+
+#### 1.2 Design solutions that align with the Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft cloud security benchmark (MCSB)
+1. Design solutions that align with best practices for cybersecurity capabilities and controls
+2. Design solutions that align with best practices for protecting against insider, external, and supply chain attacks
+3. Design solutions that align with best practices for Zero Trust security, including the Rapid Modernization Plan for Zero Trust (RaMP)
+
+#### 1.3 Design solutions that align with the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework (WAF)
+1. Design a new or evaluate an existing strategy for security and governance based on CAF and WAF
+2. Recommend solutions for security and governance based on CAF and WAF
+3. Design solutions for implementing and governing security by using Azure landing zones
+4. Design a DevSecOps process that aligns with best practices in CAF
 
 ### Domain 2: Design security operations, identity, and compliance capabilities (25-30%)
-- Security operations: XDR, SIEM (Sentinel), SOAR, MITRE ATT&CK matrices
-- Identity and access: Entra ID, Conditional Access, external identities, hybrid/multi-cloud
-- Privileged access: PIM, enterprise access model, entitlement management, access reviews
-- Regulatory compliance: Purview, Priva, Azure Policy, Defender for Cloud compliance
+
+#### 2.1 Design solutions for security operations
+1. Design a solution for detection and response that includes extended detection and response (XDR) and security information and event management (SIEM)
+2. Design a solution for centralized logging and auditing, including Microsoft Purview Audit
+3. Design monitoring to support hybrid and multicloud environments
+4. Design a solution for security orchestration and automated response (SOAR), including Microsoft Sentinel and Microsoft Defender XDR
+5. Design and evaluate security workflows, including incident response, threat hunting, and incident management
+6. Design and evaluate threat detection coverage by using MITRE ATT&CK matrices, including Enterprise, Mobile, and industrial control systems (ICS)
+
+#### 2.2 Design solutions for identity and access management
+1. Design a solution for access to SaaS, PaaS, IaaS, hybrid/on-premises, and multicloud resources, including identity, networking, and application controls
+2. Design a solution for Microsoft Entra ID, including hybrid and multi-cloud environments
+3. Design a solution for external identities, including business-to-business (B2B) and decentralized identity
+4. Design a modern authentication and authorization strategy, including Conditional Access, continuous access evaluation, risk scoring, and protected actions
+5. Validate the alignment of Conditional Access policies with a Zero Trust strategy
+6. Specify requirements to harden Active Directory Domain Services (AD DS)
+7. Design a solution to manage secrets, keys, and certificates
+
+#### 2.3 Design solutions for securing privileged access
+1. Design a solution for assigning and delegating privileged roles by using the enterprise access model
+2. Evaluate the security and governance of Microsoft Entra ID, including Microsoft Entra Privileged Identity Management (PIM), entitlement management, and access reviews
+3. Evaluate the security and governance of Active Directory Domain Services (AD DS), including resilience to common attacks
+4. Design a solution for securing the administration of cloud tenants, including SaaS and multicloud infrastructure and platforms
+5. Design a solution for cloud infrastructure entitlement management
+6. Evaluate an access review management solution
+7. Design a solution for secure workstations for privileged access, including remote access
+
+#### 2.4 Design solutions for regulatory compliance
+1. Translate compliance requirements into security controls
+2. Design a solution to address compliance requirements by using Microsoft Purview
+3. Design a solution to address privacy requirements, including Microsoft Priva
+4. Design Azure Policy solutions to address security and compliance requirements
+5. Evaluate and validate alignment with regulatory standards and benchmarks by using Microsoft Defender for Cloud
 
 ### Domain 3: Design security solutions for infrastructure (25-30%)
-- Security posture management: Defender for Cloud, MCSB, Secure Score, Azure Arc, EASM
-- Server and client endpoints: multi-platform, mobile, IoT, OT/ICS, Windows LAPS
-- SaaS/PaaS/IaaS security: baselines, containers, container orchestration, AI services
-- Network security and SSE: Entra Internet Access, Entra Private Access, cross-tenant
+
+#### 3.1 Design solutions for security posture management in hybrid and multicloud environments
+1. Evaluate security posture by using Microsoft Defender for Cloud, including the Microsoft cloud security benchmark (MCSB)
+2. Evaluate security posture by using Microsoft Secure Score
+3. Design integrated security posture management solutions that include Microsoft Defender for Cloud in hybrid and multi-cloud environments
+4. Select cloud workload protection solutions in Microsoft Defender for Cloud
+5. Design a solution for integrating hybrid and multicloud environments by using Azure Arc
+6. Design a solution for Microsoft Defender External Attack Surface Management (Defender EASM)
+7. Specify requirements and priorities for a posture management process that uses Microsoft Security Exposure Management attack paths, attack surface reduction, security insights, and initiatives
+
+#### 3.2 Specify requirements for securing server and client endpoints
+1. Specify security requirements for servers, including multiple platforms and operating systems
+2. Specify security requirements for mobile devices and clients, including endpoint protection, hardening, and configuration
+3. Specify security requirements for IoT devices and embedded systems
+4. Evaluate solutions for securing operational technology (OT) and industrial control systems (ICS) by using Microsoft Defender for IoT
+5. Specify security baselines for server and client endpoints
+6. Evaluate Windows Local Administrator Password Solution (Windows LAPS)
+
+#### 3.3 Specify requirements for securing SaaS, PaaS, and IaaS services
+1. Specify security baselines for SaaS, PaaS, and IaaS services
+2. Specify security requirements for IoT workloads
+3. Specify security requirements for web workloads
+4. Specify security requirements for containers
+5. Specify security requirements for container orchestration
+6. Evaluate solutions that include Azure AI services security
+
+#### 3.4 Evaluate solutions for network security and Security Service Edge (SSE)
+1. Evaluate network designs to align with security requirements and best practices
+2. Evaluate solutions that use Microsoft Entra Internet Access as a secure web gateway
+3. Evaluate solutions that use Microsoft Entra Internet Access for Microsoft Services, including cross-tenant configurations
+4. Evaluate solutions that use Microsoft Entra Private Access
 
 ### Domain 4: Design security solutions for applications and data (20-25%)
-- Microsoft 365 security: Secure Score, Defender for Office 365, Defender for Cloud Apps, Intune, Purview, Copilot data security
-- Application security: threat modeling, lifecycle strategy, workload identities, API security, WAF
-- Data security: discovery/classification, encryption (Key Vault), Azure SQL/Synapse/Cosmos DB, Storage, Defender for Storage/Databases
+
+#### 4.1 Evaluate solutions for securing Microsoft 365
+1. Evaluate security posture for productivity and collaboration workloads by using metrics, including Microsoft Secure Score
+2. Evaluate solutions that include Microsoft Defender for Office 365 and Microsoft Defender for Cloud Apps
+3. Evaluate device management solutions that include Microsoft Intune
+4. Evaluate solutions for securing data in Microsoft 365 by using Microsoft Purview
+5. Evaluate data security and compliance controls in Microsoft Copilot for Microsoft 365 services
+
+#### 4.2 Design solutions for securing applications
+1. Evaluate the security posture of existing application portfolios
+2. Evaluate threats to business-critical applications by using threat modeling
+3. Design and implement a full lifecycle strategy for application security
+4. Design and implement standards and practices for securing the application development process
+5. Map technologies to application security requirements
+6. Design a solution for workload identities to authenticate and access Azure resources
+7. Design a solution for API management and security
+8. Design solutions that secure applications by using Azure Web Application Firewall (WAF)
+
+#### 4.3 Design solutions for securing an organization's data
+1. Evaluate solutions for data discovery and classification
+2. Specify priorities for mitigating threats to data
+3. Evaluate solutions for encryption of data at rest and in transit, including Azure Key Vault and infrastructure encryption
+4. Design a security solution for data in Azure workloads, including Azure SQL, Azure Synapse Analytics, and Azure Cosmos DB
+5. Design a security solution for data in Azure Storage
+6. Design a security solution that includes Microsoft Defender for Storage and Microsoft Defender for Databases
 
 ---
 
