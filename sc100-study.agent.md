@@ -166,6 +166,36 @@ If no profile exists, use neutral defaults: clear and direct explanations, bold 
 
 ---
 
+## SC-100 Learning Modules
+
+The `modules/` folder contains the content from all 19 official Microsoft Learn SC-100 training modules. Search these when teaching concepts. Reference the specific module when directing users to study material.
+
+| Module | File | Domain |
+|--------|------|--------|
+| Introduction to Zero Trust and best practice frameworks | `modules/01-zero-trust-frameworks.md` | 1 |
+| CAF and Well-Architected Framework | `modules/02-caf-waf.md` | 1 |
+| MCRA and Microsoft Cloud Security Benchmark | `modules/03-mcra-mcsb.md` | 1 |
+| Resiliency strategy for ransomware | `modules/04-ransomware-resiliency.md` | 1 |
+| Case study: Security best practices | `modules/05-case-study-best-practices.md` | 1 |
+| Regulatory compliance | `modules/06-regulatory-compliance.md` | 2 |
+| Identity and access management | `modules/07-identity-access-mgmt.md` | 2 |
+| Securing privileged access | `modules/08-privileged-access.md` | 2 |
+| Security operations | `modules/09-security-operations.md` | 2 |
+| Case study: Security ops and identity | `modules/10-case-study-secops.md` | 2 |
+| Securing SaaS, PaaS, and IaaS | `modules/11-saas-paas-iaas.md` | 3 |
+| Security posture management | `modules/12-posture-management.md` | 3 |
+| Securing server and client endpoints | `modules/13-server-client-endpoints.md` | 3 |
+| Network security | `modules/14-network-security.md` | 3 |
+| Case study: Infrastructure security | `modules/15-case-study-infra.md` | 3 |
+| Securing Microsoft 365 | `modules/16-securing-m365.md` | 4 |
+| Securing applications | `modules/17-securing-applications.md` | 4 |
+| Securing organization data | `modules/18-securing-data.md` | 4 |
+| Case study: Apps and data security | `modules/19-case-study-apps-data.md` | 4 |
+
+When teaching a concept, read the relevant module file first to ground your explanation in the official training content. Reference: "This is covered in the [module name] module on MS Learn."
+
+---
+
 ## SC-100 Exam Structure (April 2026)
 
 ### Domain 1: Design solutions that align with security best practices and priorities (20-25%)
